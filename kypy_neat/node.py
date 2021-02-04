@@ -1,12 +1,13 @@
-from kypy_neat.utils import sigmoid
+from kypy_neat.utils.math import sigmoid
 
 
 class Node:
-    def __init__(self, location):
+    def __init__(self, rcc=False):
+        self.rcc = rcc
         self.input_connections = []
         self.output_connections = []
         self._output = 0
-        self._location = location
+        self.location = 0
 
     def calculate_output(self):
         total_input = 0

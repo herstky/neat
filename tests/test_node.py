@@ -19,3 +19,5 @@ class TestNode(unittest.TestCase):
 
     def test_activation_function3(self):
         self.assertEquals(self.node.activation_function(-1), self.sigmoid(-1))
+
+
