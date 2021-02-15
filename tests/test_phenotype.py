@@ -1,127 +1,194 @@
 import unittest
 
-from kypy_neat.phenotype import Phenotype
+from kypy_neat.phenotype import Phenotype, StabilizationMethod
+from kypy_neat.genotype import Genotype
 from kypy_neat.traits import Node, Connection
+from kypy_neat.genes import NodeType, genetic_history
+from kypy_neat.utils.math import sigmoid
 
 
 class TestPhenotype(unittest.TestCase):
     def setUp(self):
-        pass
-#         self.phenotype = Phenotype(None)
+        genetic_history.reset()
 
-#     def test_get_topsorted_nodes1(self):
-#         self.phenotype._input_nodes = [Node(None) for i in range(3)]
-#         self.phenotype._hidden_nodes = [Node(None) for i in range(3)]
-#         self.phenotype._output_nodes = [Node(None) for i in range(3)]
+    def build_non_recurrent_nn1(self):
+        genotype = Genotype()
+        genotype.create_node_gene(NodeType.INPUT) # 1
+        genotype.create_node_gene(NodeType.OUTPUT) # 2
 
-#         Connection(None, self.phenotype.input_nodes[0], self.phenotype.hidden_nodes[0], 1) # 0
-#         Connection(None, self.phenotype.hidden_nodes[0], self.phenotype.output_nodes[0], 1) # 1
-#         Connection(None, self.phenotype.input_nodes[0], self.phenotype.output_nodes[1], 1) # 2
-#         Connection(None, self.phenotype.hidden_nodes[0], self.phenotype.hidden_nodes[1], 1) # 3
-#         Connection(None, self.phenotype.input_nodes[1], self.phenotype.hidden_nodes[1], 1) # 4
-#         Connection(None, self.phenotype.hidden_nodes[1], self.phenotype.output_nodes[1], 1) # 5
-#         Connection(None, self.phenotype.input_nodes[2], self.phenotype.hidden_nodes[2], 1) # 6
-#         Connection(None, self.phenotype.hidden_nodes[2], self.phenotype.hidden_nodes[1], 1) # 7
-#         Connection(None, self.phenotype.hidden_nodes[2], self.phenotype.output_nodes[2], 1) # 8
+        genotype.create_connection_gene(1, 2, 1)
 
-#         sorted_nodes = self.phenotype.get_topsorted_nodes(self.phenotype.all_nodes)
-
-#         node_list = [
-#             self.phenotype.input_nodes[2],
-#             self.phenotype.hidden_nodes[2],
-#             self.phenotype.output_nodes[2],
-#             self.phenotype.input_nodes[1],
-#             self.phenotype.input_nodes[0],
-#             self.phenotype.hidden_nodes[0],
-#             self.phenotype.hidden_nodes[1],
-#             self.phenotype.output_nodes[1],
-#             self.phenotype.output_nodes[0]
-#         ]
-
-#         self.assertEquals(sorted_nodes, node_list)
-
-#     def test_get_topsorted_nodes2(self):
-#         self.phenotype._input_nodes = [Node(None)]
-#         self.phenotype._hidden_nodes = [Node(None) for i in range(3)]
-#         self.phenotype._output_nodes = [Node(None)]
-
-#         Connection(None, self.phenotype.input_nodes[0], self.phenotype.hidden_nodes[1], 1) # 0
-#         Connection(None, self.phenotype.hidden_nodes[1], self.phenotype.hidden_nodes[0], 1) # 1
-#         Connection(None, self.phenotype.hidden_nodes[0], self.phenotype.hidden_nodes[2], 1) # 2
-#         Connection(None, self.phenotype.hidden_nodes[2], self.phenotype.output_nodes[0], 1) # 3
-
-#         sorted_nodes = self.phenotype.get_topsorted_nodes(self.phenotype.all_nodes)
-
-#         node_list = [
-#             self.phenotype.input_nodes[0],
-#             self.phenotype.hidden_nodes[1],
-#             self.phenotype.hidden_nodes[0],
-#             self.phenotype.hidden_nodes[2],
-#             self.phenotype.output_nodes[0]
-#         ]
-
-#         self.assertEquals(sorted_nodes, node_list)
-
-#     def test_update_locations1(self):
-#         self.phenotype._input_nodes = [Node(None)]
-#         self.phenotype._hidden_nodes = [Node(None) for i in range(3)]
-#         self.phenotype._output_nodes = [Node(None)]
-
-#         Connection(None, self.phenotype.input_nodes[0], self.phenotype.hidden_nodes[1], 1) # 0
-#         Connection(None, self.phenotype.hidden_nodes[1], self.phenotype.hidden_nodes[0], 1) # 1
-#         Connection(None, self.phenotype.hidden_nodes[0], self.phenotype.hidden_nodes[2], 1) # 2
-#         Connection(None, self.phenotype.hidden_nodes[2], self.phenotype.output_nodes[0], 1) # 3
-
-#         self.phenotype.update_locations()
+        phenotype = Phenotype(genotype)
         
-#         locations = [node.location for node in self.phenotype.all_nodes]
+        return phenotype
 
-#         self.assertEquals(locations, [0, 2, 1, 3, 4])
+    def build_non_recurrent_nn2(self):
+        genotype = Genotype()
+        genotype.create_node_gene(NodeType.INPUT) # 1
+        genotype.create_node_gene(NodeType.HIDDEN) # 2
+        genotype.create_node_gene(NodeType.OUTPUT) # 3
 
-#     def test_update_locations2(self):
-#         self.phenotype._input_nodes = [Node(None) for i in range(3)]
-#         self.phenotype._hidden_nodes = [Node(None) for i in range(3)]
-#         self.phenotype._output_nodes = [Node(None) for i in range(3)]
+        genotype.create_connection_gene(1, 2, 1)
+        genotype.create_connection_gene(2, 3, 1)
 
-#         Connection(None, self.phenotype.input_nodes[0], self.phenotype.hidden_nodes[0], 1) # 0
-#         Connection(None, self.phenotype.hidden_nodes[0], self.phenotype.output_nodes[0], 1) # 1
-#         Connection(None, self.phenotype.input_nodes[0], self.phenotype.output_nodes[1], 1) # 2
-#         Connection(None, self.phenotype.hidden_nodes[0], self.phenotype.hidden_nodes[1], 1) # 3
-#         Connection(None, self.phenotype.input_nodes[1], self.phenotype.hidden_nodes[1], 1) # 4
-#         Connection(None, self.phenotype.hidden_nodes[1], self.phenotype.output_nodes[1], 1) # 5
-#         Connection(None, self.phenotype.input_nodes[2], self.phenotype.hidden_nodes[2], 1) # 6
-#         Connection(None, self.phenotype.hidden_nodes[2], self.phenotype.hidden_nodes[1], 1) # 7
-#         Connection(None, self.phenotype.hidden_nodes[2], self.phenotype.output_nodes[2], 1) # 8
-
-#         self.phenotype.update_locations()
+        phenotype = Phenotype(genotype)
         
-#         locations = [node.location for node in self.phenotype.all_nodes]
+        return phenotype
 
-#         self.assertEquals(locations, [0, 0, 0, 1, 2, 1, 2, 3, 2])
+    def build_non_recurrent_nn3(self):
+        genotype = Genotype()
+        genotype.create_node_gene(NodeType.INPUT) # 1
+        genotype.create_node_gene(NodeType.INPUT) # 2
+        genotype.create_node_gene(NodeType.INPUT) # 3
+        genotype.create_node_gene(NodeType.OUTPUT) # 4
+        genotype.create_node_gene(NodeType.HIDDEN) # 5
+        genotype.create_node_gene(NodeType.HIDDEN) # 6
+        genotype.create_node_gene(NodeType.HIDDEN) # 7
 
-#     def test_update_locations3(self):
-#         self.phenotype._input_nodes = [Node(None, i + 1) for i in range(3)]
-#         self.phenotype._hidden_nodes = [Node(None, i + 5) for i in range(5)]
-#         self.phenotype._output_nodes = [Node(None, 4)]
+        genotype.create_connection_gene(1, 5, 1)
+        genotype.create_connection_gene(5, 4, 1)
 
-#         conn0 = Connection(None, self.phenotype.input_nodes[0], self.phenotype.hidden_nodes[0], 1) # 0
-#         conn1 = Connection(None, self.phenotype.hidden_nodes[0], self.phenotype.hidden_nodes[1], 1) # 1
-#         conn2 = Connection(None, self.phenotype.hidden_nodes[1], self.phenotype.hidden_nodes[2], 1) # 2
-#         conn3 = Connection(None, self.phenotype.hidden_nodes[2], self.phenotype.output_nodes[0], 1) # 3
-#         conn4 = Connection(None, self.phenotype.input_nodes[1], self.phenotype.hidden_nodes[3], 1) # 4
-#         conn5 = Connection(None, self.phenotype.hidden_nodes[3], self.phenotype.output_nodes[0], 1) # 5
-#         conn6 = Connection(None, self.phenotype.input_nodes[2], self.phenotype.hidden_nodes[4], 1) # 6
-#         conn7 = Connection(None, self.phenotype.hidden_nodes[4], self.phenotype.output_nodes[0], 1) # 7
-#         conn8 = Connection(None, self.phenotype.hidden_nodes[2], self.phenotype.hidden_nodes[3], 1) # 8
-#         conn9 = Connection(None, self.phenotype.hidden_nodes[4], self.phenotype.hidden_nodes[4], 1) # 9
+        genotype.create_connection_gene(2, 6, 1)
+        genotype.create_connection_gene(6, 4, 1)
 
-#         self.phenotype.hidden_nodes[3].rcc = True
-#         conn8.recurrent = True
-#         self.phenotype.hidden_nodes[4].rcc = True
-#         conn9.recurrent = True
+        genotype.create_connection_gene(3, 7, 1)
+        genotype.create_connection_gene(7, 4, 1)
 
-#         self.phenotype.update_locations()
+        genotype.create_connection_gene(7, 6, 1)
+        phenotype = Phenotype(genotype)
+
+        return phenotype
+
+    def build_non_recurrent_nn4(self):
+        genotype = Genotype()
+        genotype.create_node_gene(NodeType.INPUT) # 1
+        genotype.create_node_gene(NodeType.INPUT) # 2
+        genotype.create_node_gene(NodeType.INPUT) # 3
+        genotype.create_node_gene(NodeType.OUTPUT) # 4
+        genotype.create_node_gene(NodeType.HIDDEN) # 5
+        genotype.create_node_gene(NodeType.HIDDEN) # 6
+        genotype.create_node_gene(NodeType.HIDDEN) # 7
+
+        genotype.create_connection_gene(1, 5, 1)
+        genotype.create_connection_gene(5, 4, 1)
+
+        genotype.create_connection_gene(2, 6, 1)
+        genotype.create_connection_gene(6, 4, 1)
         
-#         locations = [node.location for node in self.phenotype.all_nodes]
+        genotype.create_connection_gene(6, 6, 1)
 
-#         self.assertEquals(locations, [0, 0, 0, 1, 2, 3, 1, 1, 4])
+        genotype.create_connection_gene(3, 7, 1)
+        genotype.create_connection_gene(7, 4, 1)
+
+        genotype.create_connection_gene(7, 6, 1)
+        phenotype = Phenotype(genotype)
+
+        return phenotype
+
+    def build_recurrent_nn1(self):
+        genotype = Genotype()
+        genotype.create_node_gene(NodeType.INPUT)
+        genotype.create_node_gene(NodeType.INPUT)
+        genotype.create_node_gene(NodeType.INPUT)
+        genotype.create_node_gene(NodeType.OUTPUT)
+        genotype.create_node_gene(NodeType.HIDDEN)
+        genotype.create_node_gene(NodeType.HIDDEN)
+
+        genotype.create_connection_gene(1, 4, 1)
+        genotype.create_connection_gene(1, 5, 1)
+        genotype.create_connection_gene(2, 5, 1)
+        genotype.create_connection_gene(3, 4, 1)
+        genotype.create_connection_gene(5, 6, 1)
+        genotype.create_connection_gene(6, 4, 1)
+        genotype.create_connection_gene(6, 5, 1)
+
+        phenotype = Phenotype(genotype)
+
+        return phenotype
+
+    def test_activate_1_pass(self):
+        phenotype = self.build_recurrent_nn1()
+        expected = sigmoid(1)
+        phenotype.activate([1, 1, 0])
+        output = phenotype.output_nodes[0].activation
+        self.assertEquals(output, expected)
+        
+    def test_activate_2_pass(self):
+        phenotype = self.build_recurrent_nn1()
+        expected = sigmoid(1.5)
+        phenotype.activate([1, 1, 0])
+        phenotype.activate([1, 1, 0])
+        output = phenotype.output_nodes[0].activation
+        self.assertEquals(output, expected)
+
+    def test_activate_3_pass(self):
+        phenotype = self.build_recurrent_nn1()
+        expected = sigmoid(sigmoid(sigmoid(2)) + 1)
+        phenotype.activate([1, 1, 0])
+        phenotype.activate([1, 1, 0])
+        phenotype.activate([1, 1, 0])
+        output = phenotype.output_nodes[0].activation
+        self.assertEquals(output, expected)
+
+    def test_activate_4_pass(self):
+        phenotype = self.build_recurrent_nn1()
+        expected = sigmoid(sigmoid(sigmoid(2.5)) + 1)
+        phenotype.activate([1, 1, 0])
+        phenotype.activate([1, 1, 0])
+        phenotype.activate([1, 1, 0])
+        phenotype.activate([1, 1, 0])
+        output = phenotype.output_nodes[0].activation
+        self.assertEquals(output, expected)
+
+    def test_activate_5_pass(self):
+        phenotype = self.build_recurrent_nn1()
+        expected = sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)
+        phenotype.activate([1, 1, 0])
+        phenotype.activate([1, 1, 0])
+        phenotype.activate([1, 1, 0])
+        phenotype.activate([1, 1, 0])
+        phenotype.activate([1, 1, 0])
+        output = phenotype.output_nodes[0].activation
+        self.assertEquals(output, expected)
+
+    def test_evaluate_network_iterative_5_pass(self):
+        phenotype = self.build_recurrent_nn1()
+        phenotype._stabilization_method = StabilizationMethod.ITERATIVE
+        phenotype._iteration_limit = 5
+        expected = sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)
+        output, *_ = phenotype.evaluate_network([1, 1, 0])
+        self.assertEquals(output, expected)
+
+    def test_evaluate_network_iterative_100_pass(self):
+        phenotype = self.build_recurrent_nn1()
+        phenotype._stabilization_method = StabilizationMethod.ITERATIVE
+        phenotype._iteration_limit = 100
+        expected = sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)
+        output, *_ = phenotype.evaluate_network([1, 1, 0])
+        self.assertAlmostEquals(output, expected, delta=0.0001)
+
+    def test_evaluate_network_output_delta(self):
+        phenotype = self.build_recurrent_nn1()
+        phenotype._stabilization_method = StabilizationMethod.OUTPUT_DELTA
+        expected = sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)
+        output, *_ = phenotype.evaluate_network([1, 1, 0])
+        self.assertAlmostEquals(output, expected, delta=0.0001)
+
+    def test_multiple_network_evaluations(self):
+        phenotype = self.build_recurrent_nn1()
+        phenotype._stabilization_method = StabilizationMethod.ITERATIVE
+        expected = sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)
+        for _ in range(100):
+            output, *_ = phenotype.evaluate_network([1, 1, 0])
+        self.assertEquals(output, expected)
+
+    def test_stabilization_comparison(self):
+        phenotype = self.build_recurrent_nn1()
+        for node in phenotype.all_nodes:
+            node._stability_threshold = 1E-16
+        phenotype._stabilization_method = StabilizationMethod.ITERATIVE
+        phenotype._iteration_limit = 100
+        output1, *_ = phenotype.evaluate_network([1, 1, 0])
+        phenotype._stabilization_method = StabilizationMethod.OUTPUT_DELTA
+        output2, *_ = phenotype.evaluate_network([1, 1, 0])
+        self.assertAlmostEquals(output1, output2, delta=1E-16)

@@ -12,9 +12,6 @@ class TestNodeGene(unittest.TestCase):
     def test_node_type(self):
         self.assertEquals(self.node_gene.node_type, NodeType.INPUT)
 
-    def test_rcc(self):
-        self.assertEquals(self.node_gene.rcc, False)
-
 class TestConnectionGene(unittest.TestCase):
     def setUp(self):
         self.connection_gene = ConnectionGene(1, None, 1, 2, 1)

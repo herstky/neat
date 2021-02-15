@@ -1,6 +1,13 @@
-from kypy_neat.connection import Connection
+# TODO: improve selectivity
+#       increase number of offspring relative to fitness
+#       improve speciation and culling
+#       Top priority: find root cause of top performance getting lost between generations
+#       
+
+from kypy_neat.experiments import Experiment
 
 def main():
-    print(Connection(1).activation_function(0.5))
+    exp = Experiment()
+    exp.run()
 
 main()

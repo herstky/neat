@@ -3,6 +3,7 @@
 # disjoint/excess nodes) of the fittest parent to the offspring, 
 # then add all connections of the fittest parent
 
+
 class NEAT:
     class History:
         def __init__(self):

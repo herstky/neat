@@ -15,10 +15,9 @@ class Gene:
         return self._genotype
 
 class NodeGene(Gene):
-    def __init__(self, id_, genotype, node_type, rcc=False):
+    def __init__(self, id_, genotype, node_type):
         super().__init__(id_, genotype)
         self._node_type = node_type
-        self.rcc = rcc
 
     @property
     def node_id(self):
@@ -29,13 +28,12 @@ class NodeGene(Gene):
         return self._node_type
 
 class ConnectionGene(Gene):
-    def __init__(self, id_, genotype, input_node_id, output_node_id, weight, enabled=True, recurrent=False):
+    def __init__(self, id_, genotype, input_node_id, output_node_id, weight, enabled=True):
         super().__init__(id_, genotype)
         self._input_node_id = input_node_id
         self._output_node_id = output_node_id
         self.weight = weight
         self.enabled = enabled
-        self.recurrent = recurrent
 
     @property
     def innovation_id(self):
@@ -91,7 +89,7 @@ class _GeneticHistory:
         node_id = self.get_num_nodes()
         return NodeGene(node_id, genotype, node_type)
 
-    def create_connection_gene(self, genotype, input_node_id, output_node_id, weight, enabled=True, recurrent=False):
+    def create_connection_gene(self, genotype, input_node_id, output_node_id, weight, enabled=True):
         structure = (input_node_id, output_node_id)
         if self.structure_exists(structure):
             innovation_id = self.get_innovation_id(structure)
@@ -100,7 +98,7 @@ class _GeneticHistory:
             innovation_id = self.get_num_connections()
             self._connection_dict[structure] = innovation_id
 
-        return ConnectionGene(innovation_id, genotype, input_node_id, output_node_id, weight, enabled, recurrent)
+        return ConnectionGene(innovation_id, genotype, input_node_id, output_node_id, weight, enabled)
 
     def structure_exists(self, structure):
         return structure in self._connection_dict
