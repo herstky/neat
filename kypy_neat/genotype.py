@@ -18,8 +18,8 @@ class Genotype:
     _end_weight_mutation_change = 0.7
     _end_weight_cold_mutation_chance = 0
     
-    _node_mutation_chance = 0.005
-    _connection_mutation_chance = 0.008
+    _node_mutation_chance = 0.05
+    _connection_mutation_chance = 0.08
 
     _toggle_chance = 0.0
     _reenable_chance = 0.0

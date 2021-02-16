@@ -13,7 +13,7 @@ class Agent:
         self._life_expectancy = 8
         self.error_sum = 0
         self.fitness = 0
-        self._kill = False
+        self._killed = False
         self._innovation_coeff = 0.5
 
     @property
@@ -37,7 +37,7 @@ class Agent:
     @property
     def expired(self):
         aged_out = rand.uniform(0, 1) < sigmoid(self.age, 3 / 2, -self._life_expectancy)
-        return aged_out or self._kill
+        return aged_out or self._killed
 
     def activate_network(self, inputs):
         return self._phenotype.evaluate_network(inputs)
@@ -54,4 +54,4 @@ class Agent:
         return self._phenotype.genotype
 
     def kill(self):
-        self._kill = True
+        self._killed = True

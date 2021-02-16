@@ -39,8 +39,12 @@ class Population:
     def species_count(self):
         return len(self._species)
 
-    def sorted_species(self):
-        return sorted(self._species, key=lambda x: x.total_shared_fitness, reverse=True)
+    def ranked_species(self, descending):
+        return sorted(self._species, key=lambda x: x.total_shared_fitness, reverse=descending)
+
+    @property
+    def aggregate_shared_fitness(self):
+        return sum([species.total_shared_fitness for species in self._species])
 
     def create_species(self, representative):
         new_species = Species(representative)
@@ -48,10 +52,7 @@ class Population:
         self._species.append(new_species)
         return new_species
 
-    def age_population(self):
-        for agent in self._agents:
-            agent.age += 1
-
+    def age_species(self):
         for species in self._species:
             species.age += 1
 
@@ -66,8 +67,6 @@ class Population:
         return agent.genotype.compatibilty(species.representative_genotype) < self._compatibility_threshold
 
     def speciate(self):
-        self.reset_species()
-
         for agent in self._agents:
             for species in self._species:
                 if self.compatible(agent, species):
@@ -83,57 +82,39 @@ class Population:
 
         self.cleanup_agents()
 
+    def cull_species_old(self):
+        ranked_species = self.ranked_species(False)
+        aggregate_shared_fitness = self.aggregate_shared_fitness
+        total_population_to_cull = self._cull_fraction * len(self._agents)
+        for species in self._species:
+            species_total_shared_fitness = species.total_shared_fitness
+            # species_pop_to_cull = total_population_to_cull * (1 - species_total_shared_fitness / aggregate_shared_fitness)
+            cull_fraction = (1 - species_total_shared_fitness / aggregate_shared_fitness)
+            species.cull(cull_fraction)
+
     def cull_species(self):
         for species in self._species:
             species.cull()
-
-        sorted_species = self.sorted_species()
-        sorted_species.reverse()
-        if len(self._species) > self._species_floor:
-            species_to_cull = int(len(self._species) * self._cull_fraction)
-        else:
-            species_to_cull = 0
-        for i in range(species_to_cull):
-            species = sorted_species[i]
-            if species.age > species.min_culling_age:
-                self.kill_species_agents(species)
-                self._species.remove(species)
-
-        species_copy = self._species[:]
-        for species in species_copy:
-            if species.extinct:
-                self._species.remove(species)
 
     def reset_species(self):
         for species in self._species:
             species.reset()
 
-    def mutate_species(self):
-        for species in self._species:
-            species.mutate()
-
     def breed_species(self):
+        aggregate_shared_fitness = self.aggregate_shared_fitness
         offspring = []
-        sorted_species = self.sorted_species()
-        breeding_pop = min(len(self._species), max(self._min_breeding_species, int(len(sorted_species) * self._breed_fraction)))
-        for i in range(breeding_pop):
-            interspecies_rank_multiplier = 1
-            if i < 2:
-                interspecies_rank_multiplier *= 2.0
-            elif i < 4:
-                interspecies_rank_multiplier *= 1.5
-            elif i < 6:
-                interspecies_rank_multiplier *= 1.2
+        for species in self._species:
+            species_total_shared_fitness = species.total_shared_fitness
+            species_offspring_share = self._starting_population * species_total_shared_fitness / aggregate_shared_fitness
 
-            offspring += self._species[i].breed(self, interspecies_rank_multiplier)
-        
+            offspring += species.breed(species_offspring_share)
+
         return offspring
 
     def prepare_generation(self):
         self._generation_champion = None
-        self.cleanup_agents()
         self.speciate()
-        pass
+        self.remove_extinct_species()
 
     def evaluate_agents(self, inputs, outputs):
         for agent in self._agents:
@@ -151,17 +132,24 @@ class Population:
             else:
                 self._generation_champion = agent
 
+    def record_species_results(self):
+        for species in self._species:
+            species.record_results()
+
     def finish_generation(self):
+        self.record_species_results()
         self.cull_species()
         offspring = self.breed_species()
-        print(f'{len(offspring)} offspring generated')
-        self.mutate_species()
-        self.age_population()
-        self._agents += offspring
+        self.reset_species()
+        self.replace_agents(offspring)
+        self.age_species()
 
-    def cleanup_agents(self):
-        agents_copy = self._agents[:]
-        for agent in agents_copy:
-            if agent.expired:
-                self._agents.remove(agent)
 
+    def replace_agents(self, offspring):
+        self._agents = offspring
+
+    def remove_extinct_species(self):
+        species_copy = self._species[:]
+        for species in species_copy:
+            if not len(species.agents):
+                self._species.remove(species)

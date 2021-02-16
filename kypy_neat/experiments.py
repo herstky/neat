@@ -14,25 +14,30 @@ class Experiment:
         
         self.outputs = [[0], [1], [1], [0]]
 
-    def evaluate_agents(self):
-        for agent in self.population.agents:
-            agent.error_sum = 0
-            for input_, expected_output in zip(self.inputs, self.outputs):
-                outputs, error = agent.activate_network(input_)
-                output = outputs[0]
-                agent.error_sum += abs(expected_output - output) + error
-
-            agent.fitness = pow(max(0, 4 - agent.error_sum), 2)
-
     def print_generation_results(self):
         top_performance = float('-inf')
         print('******************************** GENERATION RESULTS ***********************************')
         print()
         for species in self.population.species:
             champion = species.champion
+            if not champion:
+                raise RuntimeError('No champ')
             performance = max(0, (1 - champion.error_sum / 4) * 100)
             top_performance = max(top_performance, performance)
-            print(f'Species {species.species_id}, size: {len(species.agents)}, champion {champion.agent_id}: {performance:.1f}%')
+            age = species.age
+            size = species.results['size']
+            tot_shared_fitness = species.results['tot_shared_fitness']
+            avg_shared_fitness = species.results['avg_shared_fitness']
+            max_shared_fitness = species.results['max_shared_fitness']
+            min_shared_fitness = species.results['min_shared_fitness']
+            print(f'Species {species.species_id} - '
+                  f'Size: {size}, '
+                  f'Champ {champion.agent_id}: {performance:.1f}%, ' 
+                  f'Total: {tot_shared_fitness:.2f}, '
+                  f'Avg: {avg_shared_fitness:.2f}, '
+                  f'Max: {max_shared_fitness:.2f}, '
+                  f'Min: {min_shared_fitness:.2f}')
+
 
         self._best_performance = max(self._best_performance, top_performance)
 
