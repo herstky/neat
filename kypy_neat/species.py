@@ -1,5 +1,4 @@
 import random as rand
-import copy
 
 from kypy_neat.phenotype import Phenotype
 from kypy_neat.agent import Agent
@@ -11,16 +10,17 @@ class Species:
     def __init__(self, representative):
         Species._species_count += 1
         self._species_id = Species._species_count
-        self._representative_genotype = copy.deepcopy(representative.genotype)
+        self._representative_genotype = representative.genotype.generate_copy()
         self._agents = []
         self._agent_set = set()
         self.total_fitness_record = []
         self.age = 0
+        self._min_culling_age = 3 # number of generations before a species will be eligible for annihilation
         self.expired = False
-        self._cull_fraction = 0.1
+        self._cull_fraction = 0.3 # fraction of species to kill each generation
         self._population_floor = 0
         self._breed_fraction = 0.6
-        self._base_offspring_count = 4
+        self._base_offspring_count = 3
 
     @property
     def representative_genotype(self):
@@ -38,6 +38,10 @@ class Species:
     def extinct(self):
         return len(self._agents) == 0
 
+    @property
+    def min_culling_age(self):
+        return self._min_culling_age
+
     def add(self, agent):
         if agent in self._agent_set:
             raise RuntimeError('Agent already in this species')
@@ -49,19 +53,27 @@ class Species:
         self._agents.remove(agent)
         self._agent_set.remove(agent)
 
-    def fitness_share(self, agent):
-        if agent not in self._agent_set:
-            raise RuntimeError('Agent not in this species')
-
-        return agent.adjusted_fitness / len(self._agents)
-
     @property
     def count(self):
         return len(self._agents)
 
+    def fitness_share(self, agent):
+        if agent not in self._agent_set:
+            raise RuntimeError('Agent not in this species')
+
+        return agent.adjusted_fitness / self.count
+
     @property
     def average_fitness(self):
         return self.total_fitness / self.count
+
+    @property
+    def max_fitness(self):
+        return ranked_agents()[0].fitness
+
+    @property
+    def max_shared_fitness(self):
+        return self.fitness_share(ranked_agents()[0])
 
     @property
     def total_fitness(self):
@@ -71,51 +83,26 @@ class Species:
     def total_shared_fitness(self):
         return sum([self.fitness_share(agent) for agent in self._agents])
 
-    def sorted_agents(self):
-        return sorted(self._agents, key=lambda agent: self.fitness_share(agent), reverse=True)
+    def ranked_agents(self, descending=True):
+        return sorted(self._agents, key=lambda agent: self.fitness_share(agent), reverse=descending)
     
     @property
     def champion(self):
-        return self.sorted_agents()[0]
+        return self.ranked_agents()[0]
 
     def cull(self):
-        sorted_agents = self.sorted_agents()
-        sorted_agents.reverse()
+        ranked_agents = self.ranked_agents(False)
         # print(f'Species {self._species_id} starting population: {len(self._agents)}')
-        if len(sorted_agents) > self._population_floor:
-            cull_pop = int(len(sorted_agents) * self._cull_fraction)
+        if len(ranked_agents) > self._population_floor:
+            cull_pop = max(1, int(len(ranked_agents) * self._cull_fraction))
         else:
             cull_pop = 0
         # print(f'Population to cull: {cull_pop}')
         for i in range(cull_pop):
-            sorted_agents[i].kill()
+            ranked_agents[i].kill()
 
         agents_str = 'Agents: '
-        for agent in sorted_agents:
-            agents_str += f'{agent.agent_id} '
-            if agent.expired:
-                self.remove(agent)
-        
-        # print(agents_str)
-        # print(f'Species {self._species_id} ending population: {len(self._agents)}')
-        # print()
-
-    def cull1(self):
-        sorted_agents = self.sorted_agents()
-        sorted_agents.reverse()
-        cull_thresh = 0.5
-        # print(f'Species {self._species_id} starting population: {len(self._agents)}')
-
-        # if self.total_shared_fitness <= 0:
-        #     for agent in sorted_agents:
-        #         agent.kill()
-        # else:
-        #     for agent in sorted_agents:
-        #         if self.fitness_share(agent) * len(self._agents) / self.total_shared_fitness < cull_thresh:
-        #             agent.kill()
-
-        agents_str = 'Agents: '
-        for agent in sorted_agents:
+        for agent in ranked_agents:
             agents_str += f'{agent.agent_id} '
             if agent.expired:
                 self.remove(agent)
@@ -148,43 +135,54 @@ class Species:
         phenotype = Phenotype(genotype)
         return Agent(phenotype)
 
-    def breed(self, species_rank_multiplier):
+    def breed(self, population, interspecies_rank_multiplier):
         offspring = []
         if self.total_shared_fitness <= 0:
             return offspring
             
-        total_species_fitness = self.total_shared_fitness
         if len(self._agents) == 1:
             parent = self._agents[0]
             normalized_fitness = self.fitness_share(parent) / self.fitness_share(self.champion)
-            max_offspring = int(3 * self._base_offspring_count * normalized_fitness * species_rank_multiplier)
+            intraspecies_rank_multiplier = 1
+            if parent is population.generation_champion:
+                intraspecies_rank_multiplier *= 5
+            max_offspring = int(3 * self._base_offspring_count * normalized_fitness * interspecies_rank_multiplier * intraspecies_rank_multiplier)
             min_offspring = int(max_offspring / 2)
             num_offspring = rand.randint(min_offspring, max_offspring)
             for _ in range(num_offspring):
                 offspring.append(self.generate_offspring(parent, parent))
             return offspring
 
-        sorted_agents = self.sorted_agents()
+        ranked_agents = self.ranked_agents()
         breeding_population_size = len(self._agents) * self._breed_fraction
         i = 0
         while i + 1 < breeding_population_size:
-            parent1 = sorted_agents[i]
-            parent2 = sorted_agents[i + 1]
-            agent_rank_multiplier = 1 - i / len(self._agents)
+            parent1 = ranked_agents[i]
+            parent2 = ranked_agents[i + 1]
             mate_fitness = (self.fitness_share(parent1) + self.fitness_share(parent2)) / 2
             normalized_fitness = mate_fitness / self.fitness_share(self.champion)
-            max_offspring = int(self._base_offspring_count * normalized_fitness * species_rank_multiplier)
+            intraspecies_rank_multiplier = 1
+            if population.generation_champion in (parent1, parent2):
+                intraspecies_rank_multiplier *= 5
             if i == 0:
-                max_offspring *= 2
+                intraspecies_rank_multiplier *= 2
+            elif i < 2:
+                intraspecies_rank_multiplier *= 1.3
+            elif i > 10:
+                intraspecies_rank_multiplier *= 0.5
+
+            max_offspring = int(self._base_offspring_count * normalized_fitness * interspecies_rank_multiplier * intraspecies_rank_multiplier)
             min_offspring = int(max_offspring / 2) 
-            num_offspring = rand.randint(min_offspring, max_offspring)
-            for _ in range(num_offspring):
-                offspring.append(self.generate_offspring(parent1, parent2))
+            if max_offspring > 0:
+                num_offspring = rand.randint(min_offspring, max_offspring)
+                for _ in range(num_offspring):
+                    offspring.append(self.generate_offspring(parent1, parent2))
             i += 2
 
         return offspring
 
     def reset(self):
+        champion = self.champion
         self.total_fitness_record.append(self.total_shared_fitness)
         self._agents = []
         self._agent_set = set()

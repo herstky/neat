@@ -17,8 +17,8 @@ class Phenotype:
         self._node_map = {}
         self._connection_map = {}
         self._iteration_count = 0
-        self._iteration_limit = 5
-        self._activation_abort_limit = 200
+        self._iteration_limit = 30
+        self._activation_abort_limit = 50
         self._build()
 
     @property

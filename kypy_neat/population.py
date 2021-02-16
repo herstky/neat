@@ -13,7 +13,11 @@ class Population:
         self._species = []
         self._compatibility_threshold = 3.0
         self._starting_population = 150
-        self._cull_fraction = 0.1
+        self._cull_fraction = 0.2 # fraction of species to be annihilated each generation
+        self._species_floor = 8 # minimum number of species that must exist before any are annihilated
+        self._breed_fraction = 1 # fraction of species that will breed each round
+        self._min_breeding_species = 4 # minimum number of species that will breed each round
+        self._generation_champion = None
 
     @property
     def agents(self):
@@ -22,6 +26,10 @@ class Population:
     @property
     def species(self):
         return self._species
+
+    @property
+    def generation_champion(self):
+        return self._generation_champion
 
     @property
     def count(self):
@@ -81,11 +89,15 @@ class Population:
 
         sorted_species = self.sorted_species()
         sorted_species.reverse()
-        species_to_cull = int(len(self._species) * self._cull_fraction)
+        if len(self._species) > self._species_floor:
+            species_to_cull = int(len(self._species) * self._cull_fraction)
+        else:
+            species_to_cull = 0
         for i in range(species_to_cull):
             species = sorted_species[i]
-            self.kill_species_agents(species)
-            self._species.remove(species)
+            if species.age > species.min_culling_age:
+                self.kill_species_agents(species)
+                self._species.remove(species)
 
         species_copy = self._species[:]
         for species in species_copy:
@@ -103,22 +115,25 @@ class Population:
     def breed_species(self):
         offspring = []
         sorted_species = self.sorted_species()
-        for i, species in enumerate(sorted_species):
-            multiplier = 1 - i / len(sorted_species)
+        breeding_pop = min(len(self._species), max(self._min_breeding_species, int(len(sorted_species) * self._breed_fraction)))
+        for i in range(breeding_pop):
+            interspecies_rank_multiplier = 1
             if i < 2:
-                multiplier *= 3
+                interspecies_rank_multiplier *= 2.0
             elif i < 4:
-                multiplier *= 1.5
+                interspecies_rank_multiplier *= 1.5
             elif i < 6:
-                multiplier *= 1.2
+                interspecies_rank_multiplier *= 1.2
 
-            offspring += species.breed(multiplier)
+            offspring += self._species[i].breed(self, interspecies_rank_multiplier)
         
         return offspring
 
     def prepare_generation(self):
+        self._generation_champion = None
         self.cleanup_agents()
         self.speciate()
+        pass
 
     def evaluate_agents(self, inputs, outputs):
         for agent in self._agents:
@@ -130,6 +145,11 @@ class Population:
                 agent.error_sum += net_error
 
             agent.fitness = pow(max(0, 4 - agent.error_sum), 2)
+            if self._generation_champion:
+                if agent.error_sum < self._generation_champion.error_sum:
+                    self._generation_champion = agent
+            else:
+                self._generation_champion = agent
 
     def finish_generation(self):
         self.cull_species()

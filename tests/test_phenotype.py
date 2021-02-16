@@ -155,7 +155,7 @@ class TestPhenotype(unittest.TestCase):
         phenotype = self.build_recurrent_nn1()
         phenotype._stabilization_method = StabilizationMethod.ITERATIVE
         phenotype._iteration_limit = 5
-        expected = sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)
+        expected = [sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)]
         output, *_ = phenotype.evaluate_network([1, 1, 0])
         self.assertEquals(output, expected)
 
@@ -163,21 +163,23 @@ class TestPhenotype(unittest.TestCase):
         phenotype = self.build_recurrent_nn1()
         phenotype._stabilization_method = StabilizationMethod.ITERATIVE
         phenotype._iteration_limit = 100
-        expected = sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)
+        expected = [sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)]
         output, *_ = phenotype.evaluate_network([1, 1, 0])
-        self.assertAlmostEquals(output, expected, delta=0.0001)
+
+        self.assertAlmostEquals(output[0], expected[0], delta=0.0001)
 
     def test_evaluate_network_output_delta(self):
         phenotype = self.build_recurrent_nn1()
         phenotype._stabilization_method = StabilizationMethod.OUTPUT_DELTA
-        expected = sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)
+        expected = [sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)]
         output, *_ = phenotype.evaluate_network([1, 1, 0])
-        self.assertAlmostEquals(output, expected, delta=0.0001)
+        self.assertAlmostEquals(output[0], expected[0], delta=0.0001)
 
     def test_multiple_network_evaluations(self):
         phenotype = self.build_recurrent_nn1()
         phenotype._stabilization_method = StabilizationMethod.ITERATIVE
-        expected = sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)
+        phenotype._iteration_limit = 5
+        expected = [sigmoid(sigmoid(sigmoid(sigmoid(sigmoid(2)) + 2)) + 1)]
         for _ in range(100):
             output, *_ = phenotype.evaluate_network([1, 1, 0])
         self.assertEquals(output, expected)

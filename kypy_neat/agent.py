@@ -10,14 +10,21 @@ class Agent:
         self._agent_id = Agent._agent_count
         self._phenotype = phenotype
         self.age = 0
-        self._life_expectancy = 6
+        self._life_expectancy = 8
         self.error_sum = 0
         self.fitness = 0
         self._kill = False
+        self._innovation_coeff = 0.5
+
+    @property
+    def innovation_count(self):
+        return self.genotype.innovation_count
 
     @property
     def adjusted_fitness(self):
-        return self.fitness * (1 - sigmoid(self.age, 3 / 2, -self._life_expectancy))
+        # return self.fitness * (1 - sigmoid(self.age, 3 / 2, -self._life_expectancy)) * (1 + self._innovation_coeff * self.innovation_count)
+        # return self.fitness * (1 + self._innovation_coeff * self.innovation_count)
+        return self.fitness 
 
     @property
     def agent_id(self):
