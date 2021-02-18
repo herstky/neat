@@ -6,7 +6,7 @@ class Experiment:
         self.population = Population()
         self._best_performance = float('-inf')
         self._current_generation = 0
-        self._num_generations = 100
+        self._num_generations = 1000
         self.inputs = [[1, 0, 0],
                        [1, 0, 1],
                        [1, 1, 0],

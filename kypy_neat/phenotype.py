@@ -69,7 +69,8 @@ class Phenotype:
             node = self.generate_node(node_gene)
 
         for connection_gene in self._genotype.connection_genes:
-            connection = self.generate_connection(connection_gene)
+            if connection_gene.enabled:
+                connection = self.generate_connection(connection_gene)
 
     def generate_node(self, gene):
         node = Node(gene)
@@ -134,7 +135,7 @@ class Phenotype:
             for node in self.outer_nodes:
                 node.aggregate_input = 0
                 node.active = False
-                for conn in node.enabled_input_connections:
+                for conn in node.input_connections:
                     if conn.input_node.active or conn.input_node.node_type is NodeType.INPUT:
                         node.active = True
                     node.aggregate_input += conn.weight * conn.input_node.activation        

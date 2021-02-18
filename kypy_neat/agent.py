@@ -4,13 +4,14 @@ from kypy_neat.utils.math import sigmoid
 
 
 class Agent:
+    _agents_created = 0
     _agent_count = 0
     def __init__(self, phenotype):
+        Agent._agents_created += 1
         Agent._agent_count += 1
         self._agent_id = Agent._agent_count
         self._phenotype = phenotype
         self.age = 0
-        self._life_expectancy = 8
         self.error_sum = 0
         self.fitness = 0
         self._killed = False
@@ -33,8 +34,7 @@ class Agent:
 
     @property
     def expired(self):
-        aged_out = rand.uniform(0, 1) < sigmoid(self.age, 3 / 2, -self._life_expectancy)
-        return aged_out or self._killed
+        return self._killed
 
     def activate_network(self, inputs):
         return self._phenotype.evaluate_network(inputs)
@@ -51,4 +51,5 @@ class Agent:
         return self._phenotype.genotype
 
     def kill(self):
+        Agent._agent_count -= 1
         self._killed = True

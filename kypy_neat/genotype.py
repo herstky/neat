@@ -10,26 +10,31 @@ class Genotype:
     _mutate_starting_topologies = False
     
     _weight_mutation_chance = 0.8 # chance a genotype's weights will be considered for mutation
-    _weight_mutation_rate = 0.8 # chance for each individual weight to be perturbed
-    _weight_cold_mutation_rate = 0 # chance for each individual weight to be completely replaced
+    _weight_mutation_rate = 0.9 # chance for each individual weight to be perturbed
+    _weight_cold_mutation_rate = 0.1 # chance for each individual weight to be completely replaced
     _end_genotype_threshold = 0.8 # point after which mutations should be more likely  
-    _end_weight_mutation_rate = 1 # chance for each individual end weight to be perturbed
-    _end_weight_cold_mutation_rate = 0 # chance for each individual end weight to be completely replaced
+    _end_weight_mutation_rate = 0.9 # chance for each individual end weight to be perturbed
+    _end_weight_cold_mutation_rate = 0.1 # chance for each individual end weight to be completely replaced
 
-    _weight_mut_power = 8
-    _severe_weight_mut_chance = 0.2
-    _severe_weight_mut_power = 16
+    # K. Stanley states mutation power should not exceed 5.0
+    _weight_mut_power = 1.5
+    _severe_weight_mut_chance = 0
+    _severe_weight_mut_power = 5 
     _weight_cap = 8.0
 
-    _node_mutation_chance = 0.1
-    _connection_mutation_chance = 0.2
+    # K. Stanley states connection mutation chance should significantly exceed node mutation chance
+    # He recommends 0.03 and 0.05, respectively, for small populations. These values seem to perform
+    # well with this implementation
+    _node_mutation_chance = 0.03 
+    _connection_mutation_chance = 0.1
 
-    _toggle_chance = 0.0
-    _reenable_chance = 0.05
+    _toggle_chance = 0 # chance a genotype's connections will be considered for toggling state
+    _toggle_mutation_rate = 0.1  # chace for each individual connection to be toggles
+    _reenable_chance = 0.01
 
     _excess_coeff = 1
     _disjoint_coeff = 1
-    _weight_coeff = 0.1
+    _weight_coeff = 0.4
     
 
     def __init__(self):
@@ -72,8 +77,8 @@ class Genotype:
     def base_genotype_factory(cls):
         new_genotype = cls.base_genotype.generate_copy()
         if cls._mutate_starting_topologies:
-            new_genotype.mutate_weights()
             new_genotype.attempt_topological_mutations()
+        new_genotype.mutate_weights()
 
         return new_genotype
 
@@ -117,11 +122,6 @@ class Genotype:
                 conn.weight = weight_mod
             
             conn.weight = min(max(conn.weight, -self._weight_cap), self._weight_cap)
-
-    def mutate(self):
-        raise RuntimeError('mutate called') # TODO remove
-        self.mutate_weights()
-        self.mutate_connection_states()
 
     @classmethod
     def generate_weight_modifier(cls):
@@ -168,23 +168,24 @@ class Genotype:
         return True
 
     def attempt_topological_mutations(self):
-        if rand.uniform(0, 1) < self._node_mutation_chance:
+        if rand.uniform(0, 1) < Genotype._node_mutation_chance:
             self.attempt_node_mutation()
-        if rand.uniform(0, 1) < self._connection_mutation_chance:
+        if rand.uniform(0, 1) < Genotype._connection_mutation_chance:
             self.attempt_connection_mutation()
 
     def attempt_all_mutations(self):
-        if rand.uniform(0, 1) < self._node_mutation_chance:
+        if rand.uniform(0, 1) < Genotype._node_mutation_chance:
             self.attempt_node_mutation()
-        if rand.uniform(0, 1) < self._connection_mutation_chance:
+        if rand.uniform(0, 1) < Genotype._connection_mutation_chance:
             self.attempt_connection_mutation()
-        if rand.uniform(0, 1) < self._weight_mutation_chance:
+        if rand.uniform(0, 1) < Genotype._weight_mutation_chance:
             self.mutate_weights()
-
+        if rand.uniform(0, 1) < Genotype._toggle_chance:
+            self.mutate_connection_states()
 
     def mutate_connection_states(self):
         for conn in self._connection_genes:
-            if rand.uniform(0, 1) < self._toggle_chance:
+            if rand.uniform(0, 1) < Genotype._toggle_mutation_rate:
                 conn.enabled = not conn.enabled
 
     def attempt_reenable_connection_mutation(self):
@@ -201,7 +202,7 @@ class Genotype:
         self._connection_structures.add(new_gene.structure)
 
         if not new_gene.enabled:
-            new_gene.enabled = rand.uniform(0, 1) < self._reenable_chance
+            new_gene.enabled = rand.uniform(0, 1) < Genotype._reenable_chance
 
     def add_and_mutate_connection_gene(self, gene):  
         new_gene = gene_factory.create_connection_gene(self, gene.input_node_id, gene.output_node_id, gene.weight, gene.enabled)      
@@ -209,12 +210,12 @@ class Genotype:
         self._connection_structures.add(new_gene.structure)
 
         if not new_gene.enabled:
-            new_gene.enabled = rand.uniform(0, 1) < self._reenable_chance
+            new_gene.enabled = rand.uniform(0, 1) < Genotype._reenable_chance
 
         weight_mod = self.generate_weight_modifier()
-        if rand.uniform(0, 1) < self._weight_mutation_chance:
+        if rand.uniform(0, 1) < Genotype._weight_mutation_chance:
             new_gene.weight += weight_mod
-        elif rand.uniform(0, 1) < self._weight_cold_mutation_chance:
+        elif rand.uniform(0, 1) < Genotype._weight_cold_mutation_chance:
             new_gene.weight = weight_mod
             
         new_gene.weight = min(max(new_gene.weight, -self._weight_cap), self._weight_cap)

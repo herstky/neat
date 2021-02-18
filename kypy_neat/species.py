@@ -6,23 +6,25 @@ from kypy_neat.utils.timer import timer
 
 
 class Species:
+    _species_created = 0
     _species_count = 0
     _target_species_count = 20
     _compatibility_threshold = 5.0
     _compatibility_mod = 0.3
     _control_species_count = True
+    _cull_fraction = 0.8
 
     def __init__(self, representative):
+        Species._species_created += 1
         Species._species_count += 1
-        self._species_id = Species._species_count
+        self._species_id = Species._species_created
         self._representative_genotype = representative.genotype.generate_copy()
         self._agents = []
         self._agent_set = set()
         self.results = {}
         self.age = 0
-        self._min_culling_age = 3 # number of generations before a species will be eligible for annihilation
+        # self._min_culling_age = 3 # number of generations before a species will be eligible for annihilation
         self.expired = False
-        self._cull_fraction = 0
         self._population_floor = 0
         self._breed_fraction = 0.6
         self._base_offspring_count = 3
@@ -72,7 +74,7 @@ class Species:
         return self._min_culling_age
 
     def compatible(self, agent):
-        return agent.genotype.compatibilty(self.representative_genotype) < self._compatibility_threshold
+        return agent.genotype.compatibilty(self.representative_genotype) < Species._compatibility_threshold
 
     def in_species(self, agent):
         return agent in self._agent_set
@@ -119,6 +121,10 @@ class Species:
         return sum([self.fitness_share(agent) for agent in self._agents])
 
     @property
+    def total_living_shared_fitness(self):
+        return sum([self.fitness_share(agent) for agent in self.living_agents])
+
+    @property
     def average_shared_fitness(self):
         return self.total_shared_fitness / self.count
 
@@ -136,11 +142,18 @@ class Species:
 
             agent.phenotype.genotype.mutate()
 
+    # def cull(self):
+    #     cull_threshold = self._cull_fraction * self.average_shared_fitness
+    #     for agent in self._agents:
+    #         if self.fitness_share(agent) < cull_threshold:
+    #             agent.kill()
+
     def cull(self):
-        cull_threshold = self._cull_fraction * self.average_shared_fitness
-        for agent in self._agents:
-            if self.fitness_share(agent) < cull_threshold:
-                agent.kill()
+        ranked_agents = self.ranked_agents(False)
+        num_to_cull = int(Species._cull_fraction * self.count)
+
+        for i in range(num_to_cull):
+            ranked_agents[i].kill()
 
     def generate_offspring(self, parent1, parent2=None):
         if parent2 is None:
@@ -158,12 +171,10 @@ class Species:
             else:
                 genotype = parent2.genotype.favored_crossover(parent1.genotype)
 
-        # genotype.attempt_topological_mutations() # TODO reevaluate
-
         phenotype = Phenotype(genotype)
         return Agent(phenotype)
     
-    def replicate(self, agent):
+    def generate_clone(self, agent):
         genotype = agent.genotype.generate_copy()
         phenotype = Phenotype(genotype)
         return Agent(phenotype)
@@ -171,20 +182,22 @@ class Species:
     def breed(self, offspring_share):
         offspring = []
         ranked_agents = self.ranked_agents()
-        total_shared_fitness = self.total_shared_fitness
+        total_shared_fitness = self.total_living_shared_fitness
         living = self.num_alive
 
         if living == 0 or total_shared_fitness <= 0:
             return offspring
 
         # champ gets bonus offspring
-        champ = ranked_agents[0]
-        # num_champ_offspring = round(offspring_share * self.fitness_share(champ) / total_shared_fitness)
-        num_champ_offspring = 1
-        for _ in range(num_champ_offspring):
-            offspring.append(self.replicate(champ))
+        if len(self._agents) > 3:
+            champ = ranked_agents[0]
+            num_champ_clones = 1
+            for _ in range(num_champ_clones):
+                offspring.append(self.generate_clone(champ))
 
-        remaining_offspring_share = offspring_share - num_champ_offspring
+            remaining_offspring_share = offspring_share - num_champ_clones
+        else:
+            remaining_offspring_share = offspring_share
 
         i = 0
         while i < living:
@@ -203,7 +216,7 @@ class Species:
                 i += 2
 
         # any remaining offspring go to champ
-        while len(offspring) < int(offspring_share):
+        while len(offspring) < round(offspring_share):
             offspring.append(self.generate_offspring(champ))
         
         return offspring

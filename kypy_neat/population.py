@@ -100,8 +100,6 @@ class Population:
         aggregate_shared_fitness = self.aggregate_shared_fitness
         offspring = []
         champ = self._generation_champion
-        if champ.expired:
-            raise RuntimeError('Attempted to breed dead champion')
 
         champ_species = self.get_species_of_agent(champ)
         for _ in range(self._generation_champion_bonus_offspring):
@@ -114,8 +112,8 @@ class Population:
 
             offspring += species.breed(species_offspring_share)
 
-        while len(offspring) < self._target_population:
-            offspring.append(champ_species.generate_offspring(champ))
+        # while len(offspring) < self._target_population:
+        #     offspring.append(champ_species.generate_offspring(champ))
 
         return offspring
 
@@ -125,6 +123,7 @@ class Population:
         self.remove_extinct_species() 
 
     def evaluate_agents(self, inputs, outputs):
+        self._generation_champion = None
         for agent in self._agents:
             agent.error_sum = 0
             for input_, expected_outputs in zip(inputs, outputs):
@@ -133,12 +132,16 @@ class Population:
                     agent.error_sum += abs(expected_output - net_output)
                 agent.error_sum += net_error
 
-            agent.fitness = pow(max(0, 4 - agent.error_sum), 2)
-            if self._generation_champion:
-                if agent.error_sum < self._generation_champion.error_sum:
-                    self._generation_champion = agent
-            else:
+            agent.fitness = max(0, 4 - agent.error_sum)
+
+            # NOTE should probably change this to fitness basis if 
+            # adjusted_fitness calculation changes to prevent selecting a 
+            # generation_champ that is elligible to be culled
+            if not self._generation_champion:
                 self._generation_champion = agent
+            elif agent.error_sum < self._generation_champion.error_sum:
+                self._generation_champion.champ = False
+                self._generation_champion = agent 
 
     def record_species_results(self):
         for species in self._species:

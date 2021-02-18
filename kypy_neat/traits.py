@@ -23,19 +23,6 @@ class Node(Trait):
         self._stability_threshold = 1E-9
 
     @property
-    def enabled_input_connections(self):
-        res = []
-        for conn in self.input_connections:
-            if conn.enabled:
-                res.append(conn)
-        return res
-        # return [conn for conn in self.input_connections if conn.enabled]
-
-    @property
-    def enabled_output_connections(self):
-        return [conn for conn in self.output_connections if conn.enabled]
-
-    @property
     def node_type(self):
         return self.gene.node_type
 
@@ -49,7 +36,7 @@ class Node(Trait):
         self.activation = self.activation_function(self.aggregate_input)
 
     def activation_function(self, val):
-        return sigmoid(val)
+        return sigmoid(val, 4.9)
 
     def flush_back(self):
         if self.node_type is NodeType.INPUT:
