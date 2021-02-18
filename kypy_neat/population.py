@@ -118,6 +118,10 @@ class Population:
         self.speciate()
         self.remove_extinct_species() 
 
+    def record_species_results(self):
+        for species in self._species:
+            species.record_results()
+
     def finish_generation(self):
         self.record_species_results()
         self.cull_species()

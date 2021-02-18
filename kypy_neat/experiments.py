@@ -1,3 +1,5 @@
+import random
+
 from kypy_neat.population import Population
 
 
@@ -6,7 +8,7 @@ class Experiment:
         self.population = Population()
         self._best_performance = float('-inf')
         self._current_generation = 0
-        self._num_generations = 50
+        self._num_generations = 200
         self.inputs = [[1, 0, 0],
                        [1, 0, 1],
                        [1, 1, 0],
@@ -14,7 +16,17 @@ class Experiment:
         
         self.outputs = [[0], [1], [1], [0]]
 
+    def shuffle_data(self, inputs, outputs):
+        data = [x for x in zip(inputs, outputs)]
+        random.shuffle(data)
+        inputs = [x[0] for x in data]
+        outputs = [x[1] for x in data]
+
+        return inputs, outputs
+
     def evaluate_agents(self, inputs, outputs):
+        inputs, outputs = self.shuffle_data(inputs, outputs)
+        
         self.population.generation_champion = None
         for agent in self.population.agents:
             agent.error_sum = 0
@@ -47,7 +59,7 @@ class Experiment:
 
     def print_generation_results(self):
         top_performance = float('-inf')
-        print('******************************** GENERATION RESULTS ***********************************')
+        print('******************************** GENERATION RESULTS ****************************************')
         print()
         for species in self.population.species:
             champion = species.champion
@@ -80,7 +92,7 @@ class Experiment:
             end = ''
         print(f'Generation best: {top_performance:.1f}%{end}')
         print()
-        print('**************************************************************************************')
+        print('*******************************************************************************************')
         print()
 
     def run(self):
