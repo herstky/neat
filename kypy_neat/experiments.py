@@ -6,13 +6,44 @@ class Experiment:
         self.population = Population()
         self._best_performance = float('-inf')
         self._current_generation = 0
-        self._num_generations = 1000
+        self._num_generations = 50
         self.inputs = [[1, 0, 0],
                        [1, 0, 1],
                        [1, 1, 0],
                        [1, 1, 1]]
         
         self.outputs = [[0], [1], [1], [0]]
+
+    def evaluate_agents(self, inputs, outputs):
+        self.population.generation_champion = None
+        for agent in self.population.agents:
+            agent.error_sum = 0
+            agent.classification_error = 0
+            for input_, expected_outputs in zip(inputs, outputs):
+                net_outputs, net_error = agent.activate_network(input_)
+                for net_output, expected_output in zip(net_outputs, expected_outputs):
+                    agent.error_sum += abs(expected_output - net_output)
+                    if net_output < 0.5 and expected_output == 1:
+                        agent.classification_error += 1
+                    elif net_output >= 0.5 and expected_output == 0:
+                        agent.classification_error += 1
+                agent.error_sum += net_error
+
+            agent.fitness = max(0, 4 - agent.error_sum)
+
+            # NOTE should probably change this to fitness basis if 
+            # adjusted_fitness calculation changes to prevent selecting a 
+            # generation_champ that is elligible to be culled
+            if not self.population.generation_champion:
+                self.population.generation_champion = agent
+            elif agent.error_sum < self.population.generation_champion.error_sum:
+                self.population.generation_champion.champ = False
+                self.population.generation_champion = agent 
+
+    def record_species_results(self):
+        for species in self.population.species:
+            species.record_results()
+
 
     def print_generation_results(self):
         top_performance = float('-inf')
@@ -21,8 +52,8 @@ class Experiment:
         for species in self.population.species:
             champion = species.champion
             if not champion:
-                raise RuntimeError('No champ')
-            performance = max(0, (1 - champion.error_sum / 4) * 100)
+                raise RuntimeError('No champion assigned')
+            performance = max(0, (1 - champion.classification_error / 4) * 100)
             top_performance = max(top_performance, performance)
             age = species.age
             size = species.results['size']
@@ -57,7 +88,7 @@ class Experiment:
         for generation in range(1, self._num_generations + 1):
             self._current_generation = generation
             self.population.prepare_generation()
-            self.population.evaluate_agents(self.inputs, self.outputs)
+            self.evaluate_agents(self.inputs, self.outputs)
             self.population.finish_generation()
             self.print_generation_results()
         

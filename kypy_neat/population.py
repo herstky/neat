@@ -16,7 +16,7 @@ class Population:
         self._species_floor = 8 # minimum number of species that must exist before any are annihilated
         self._breed_fraction = 1 # fraction of species that will breed each round
         self._min_breeding_species = 4 # minimum number of species that will breed each round
-        self._generation_champion = None
+        self.generation_champion = None
         self._generation_champion_bonus_offspring = 0
 
     @property
@@ -26,10 +26,6 @@ class Population:
     @property
     def species(self):
         return self._species
-
-    @property
-    def generation_champion(self):
-        return self._generation_champion
 
     @property
     def count(self):
@@ -121,31 +117,6 @@ class Population:
         self._generation_champion = None
         self.speciate()
         self.remove_extinct_species() 
-
-    def evaluate_agents(self, inputs, outputs):
-        self._generation_champion = None
-        for agent in self._agents:
-            agent.error_sum = 0
-            for input_, expected_outputs in zip(inputs, outputs):
-                net_outputs, net_error = agent.activate_network(input_)
-                for net_output, expected_output in zip(net_outputs, expected_outputs):
-                    agent.error_sum += abs(expected_output - net_output)
-                agent.error_sum += net_error
-
-            agent.fitness = max(0, 4 - agent.error_sum)
-
-            # NOTE should probably change this to fitness basis if 
-            # adjusted_fitness calculation changes to prevent selecting a 
-            # generation_champ that is elligible to be culled
-            if not self._generation_champion:
-                self._generation_champion = agent
-            elif agent.error_sum < self._generation_champion.error_sum:
-                self._generation_champion.champ = False
-                self._generation_champion = agent 
-
-    def record_species_results(self):
-        for species in self._species:
-            species.record_results()
 
     def finish_generation(self):
         self.record_species_results()

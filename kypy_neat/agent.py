@@ -13,6 +13,7 @@ class Agent:
         self._phenotype = phenotype
         self.age = 0
         self.error_sum = 0
+        self.classification_error = 0
         self.fitness = 0
         self._killed = False
 
