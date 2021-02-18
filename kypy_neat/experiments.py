@@ -6,7 +6,7 @@ class Experiment:
         self.population = Population()
         self._best_performance = float('-inf')
         self._current_generation = 0
-        self._num_generations = 50
+        self._num_generations = 100
         self.inputs = [[1, 0, 0],
                        [1, 0, 1],
                        [1, 1, 0],
@@ -30,13 +30,13 @@ class Experiment:
             avg_shared_fitness = species.results['avg_shared_fitness']
             max_shared_fitness = species.results['max_shared_fitness']
             min_shared_fitness = species.results['min_shared_fitness']
-            print(f'Species {species.species_id} - '
+            print(f'Species {species.species_id} -- '
                   f'Size: {size}, '
-                  f'Champ {champion.agent_id}: {performance:.1f}%, ' 
                   f'Total: {tot_shared_fitness:.2f}, '
                   f'Avg: {avg_shared_fitness:.2f}, '
                   f'Max: {max_shared_fitness:.2f}, '
-                  f'Min: {min_shared_fitness:.2f}')
+                  f'Min: {min_shared_fitness:.2f}, '
+                  f'Champ {champion.agent_id}: {performance:.1f}%')
 
 
         self._best_performance = max(self._best_performance, top_performance)

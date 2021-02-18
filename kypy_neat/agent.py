@@ -14,7 +14,6 @@ class Agent:
         self.error_sum = 0
         self.fitness = 0
         self._killed = False
-        self._innovation_coeff = 0.5
 
     @property
     def innovation_count(self):
@@ -22,9 +21,7 @@ class Agent:
 
     @property
     def adjusted_fitness(self):
-        # return self.fitness * (1 - sigmoid(self.age, 3 / 2, -self._life_expectancy)) * (1 + self._innovation_coeff * self.innovation_count)
-        # return self.fitness * (1 + self._innovation_coeff * self.innovation_count)
-        return self.fitness 
+        return pow(self.fitness, 2)
 
     @property
     def agent_id(self):

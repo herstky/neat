@@ -73,7 +73,7 @@ class Phenotype:
 
     def generate_node(self, gene):
         node = Node(gene)
-        self._node_map[gene.node_id] = node
+        self._node_map[gene.innovation_id] = node
         if gene.node_type is NodeType.INPUT:
             self._input_nodes.append(node)
         elif gene.node_type is NodeType.HIDDEN:
@@ -143,7 +143,7 @@ class Phenotype:
                 if node.active:
                     node.activate()
 
-            initial_pass = False
+            initial_pass = False    
 
         return 0
 
@@ -158,9 +158,3 @@ class Phenotype:
         self.flush()
 
         return (output, error)
-
-
-            
-
-
-

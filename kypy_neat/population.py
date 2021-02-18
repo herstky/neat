@@ -11,13 +11,14 @@ class Population:
     def __init__(self):
         self._agents = []
         self._species = []
-        self._compatibility_threshold = 3.0
-        self._starting_population = 150
+        self._compatibility_threshold = 6.0
+        self._target_population = 150
         self._cull_fraction = 0.2 # fraction of species to be annihilated each generation
         self._species_floor = 8 # minimum number of species that must exist before any are annihilated
         self._breed_fraction = 1 # fraction of species that will breed each round
         self._min_breeding_species = 4 # minimum number of species that will breed each round
         self._generation_champion = None
+        self._generation_champion_bonus_offspring = 0
 
     @property
     def agents(self):
@@ -46,6 +47,13 @@ class Population:
     def aggregate_shared_fitness(self):
         return sum([species.total_shared_fitness for species in self._species])
 
+    def get_species_of_agent(self, agent):
+        for species in self._species:
+            if species.in_species(agent):
+                return species
+        else:
+            return None
+
     def create_species(self, representative):
         new_species = Species(representative)
         new_species.add(representative)
@@ -58,7 +66,7 @@ class Population:
 
     def initialize_population(self, num_inputs, num_outputs):
         Genotype.initialize_minimal_topology(num_inputs, num_outputs)
-        for _ in range(self._starting_population):
+        for _ in range(self._target_population):
             genotype = Genotype.base_genotype_factory()
             phenotype = Phenotype(genotype)
             self._agents.append(Agent(phenotype))
@@ -103,18 +111,31 @@ class Population:
     def breed_species(self):
         aggregate_shared_fitness = self.aggregate_shared_fitness
         offspring = []
+        champ = self._generation_champion
+        if champ.expired:
+            raise RuntimeError('Attempted to breed dead champion')
+
+        champ_species = self.get_species_of_agent(champ)
+        for _ in range(self._generation_champion_bonus_offspring):
+            offspring.append(champ_species.generate_offspring(champ))
+
+        num_remaining_offspring = self._target_population - len(offspring)
         for species in self._species:
             species_total_shared_fitness = species.total_shared_fitness
-            species_offspring_share = self._starting_population * species_total_shared_fitness / aggregate_shared_fitness
+            species_offspring_share = num_remaining_offspring * species_total_shared_fitness / aggregate_shared_fitness
 
             offspring += species.breed(species_offspring_share)
+
+        while len(offspring) < self._target_population:
+            offspring.append(champ_species.generate_offspring(champ))
 
         return offspring
 
     def prepare_generation(self):
         self._generation_champion = None
         self.speciate()
-        self.remove_extinct_species()
+        self.remove_extinct_species() 
+        pass
 
     def evaluate_agents(self, inputs, outputs):
         for agent in self._agents:

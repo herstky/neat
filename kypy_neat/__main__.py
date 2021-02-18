@@ -1,8 +1,9 @@
-# TODO: improve selectivity
-#       increase number of offspring relative to fitness
-#       improve speciation and culling
-#       Top priority: find root cause of top performance getting lost between generations
-#       
+# TODO: 
+#       round down when reproducing and give extra offspring to champs
+#       bias to generation champ
+#       low performing agents are still able to perpetuate new species. culling doesn't affect low pop species
+#       should use pareto dist to assign num offspring; 80% of outcomes are due to 20% of causes
+#       its possible the necessary innovations require massive weight changes and so perform badly for a while
 
 from kypy_neat.experiments import Experiment
 

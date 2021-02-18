@@ -17,7 +17,7 @@ class Species:
         self.age = 0
         self._min_culling_age = 3 # number of generations before a species will be eligible for annihilation
         self.expired = False
-        self._cull_fraction = 0.3 # fraction of species to kill each generation
+        self._cull_fraction = 0
         self._population_floor = 0
         self._breed_fraction = 0.6
         self._base_offspring_count = 3
@@ -40,8 +40,19 @@ class Species:
         return len(self._agents) == 0
 
     @property
+    def living_agents(self):
+        return [agent for agent in self._agents if not agent.expired]
+
+    @property
+    def num_alive(self):
+        return len(self.living_agents)
+
+    @property
     def min_culling_age(self):
         return self._min_culling_age
+
+    def in_species(self, agent):
+        return agent in self._agent_set
 
     def add(self, agent):
         if agent in self._agent_set:
@@ -95,12 +106,6 @@ class Species:
     def champion(self):
         return self._champion
 
-    def cull(self):
-        cull_threshold = self._cull_fraction * self.average_shared_fitness
-        for agent in self._agents:
-            if self.fitness_share(agent) < cull_threshold:
-                agent.kill()
-
     def mutate(self):
         for agent in self._agents:
             if agent is self.champion:
@@ -108,20 +113,35 @@ class Species:
 
             agent.phenotype.genotype.mutate()
 
-    def generate_offspring(self, parent1, parent2):
-        if parent1.adjusted_fitness < parent2.adjusted_fitness:
+    def cull(self):
+        cull_threshold = self._cull_fraction * self.average_shared_fitness
+        for agent in self._agents:
+            if self.fitness_share(agent) < cull_threshold:
+                agent.kill()
+
+    def generate_offspring(self, parent1, parent2=None):
+        if parent2 is None:
+            genotype = parent1.genotype.copy_and_mutate()
+
+        elif parent1.adjusted_fitness < parent2.adjusted_fitness:
             raise RuntimeError('Unexpected adjusted_fitness pairing')
 
-        if parent1.adjusted_fitness > parent2.adjusted_fitness:
+        elif parent1.adjusted_fitness > parent2.adjusted_fitness:
             genotype = parent1.genotype.favored_crossover(parent2.genotype)
+
         else: # adjusted_fitness must then be equal for both parents
             if rand.uniform(0, 1) > 0.5:
                 genotype = parent1.genotype.favored_crossover(parent2.genotype)
             else:
                 genotype = parent2.genotype.favored_crossover(parent1.genotype)
 
-        genotype.attempt_topological_mutations()
+        # genotype.attempt_topological_mutations() # TODO reevaluate
 
+        phenotype = Phenotype(genotype)
+        return Agent(phenotype)
+    
+    def replicate(self, agent):
+        genotype = agent.genotype.generate_copy()
         phenotype = Phenotype(genotype)
         return Agent(phenotype)
 
@@ -129,31 +149,39 @@ class Species:
         offspring = []
         ranked_agents = self.ranked_agents()
         total_shared_fitness = self.total_shared_fitness
-        living = 0
-        for agent in ranked_agents:
-            if agent.expired:
-                break
-            else:
-                living += 1
+        living = self.num_alive
 
         if living == 0 or total_shared_fitness <= 0:
             return offspring
+
+        # champ gets bonus offspring
+        champ = ranked_agents[0]
+        # num_champ_offspring = round(offspring_share * self.fitness_share(champ) / total_shared_fitness)
+        num_champ_offspring = 1
+        for _ in range(num_champ_offspring):
+            offspring.append(self.replicate(champ))
+
+        remaining_offspring_share = offspring_share - num_champ_offspring
 
         i = 0
         while i < living:
             if i + 1 > living - 1:
                 parent = ranked_agents[i]
-                num_offspring = round(offspring_share * self.fitness_share(parent) / total_shared_fitness)
+                num_offspring = round(remaining_offspring_share * self.fitness_share(parent) / total_shared_fitness)
                 for _ in range(num_offspring):
-                    offspring.append(self.generate_offspring(parent, parent))
+                    offspring.append(self.generate_offspring(parent))
                 i += 1
             else:
                 parent1 = ranked_agents[i]
                 parent2 = ranked_agents[i + 1]
-                num_offspring = round(offspring_share * (self.fitness_share(parent1) + self.fitness_share(parent2)) / total_shared_fitness) 
+                num_offspring = round(remaining_offspring_share * (self.fitness_share(parent1) + self.fitness_share(parent2)) / total_shared_fitness) 
                 for _ in range(num_offspring):
                     offspring.append(self.generate_offspring(parent1, parent2))
                 i += 2
+
+        # any remaining offspring go to champ
+        while len(offspring) < int(offspring_share):
+            offspring.append(self.generate_offspring(champ))
         
         return offspring
 

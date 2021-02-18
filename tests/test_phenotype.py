@@ -3,18 +3,18 @@ import unittest
 from kypy_neat.phenotype import Phenotype, StabilizationMethod
 from kypy_neat.genotype import Genotype
 from kypy_neat.traits import Node, Connection
-from kypy_neat.genes import NodeType, genetic_history
+from kypy_neat.genes import NodeType, gene_factory
 from kypy_neat.utils.math import sigmoid
 
 
 class TestPhenotype(unittest.TestCase):
     def setUp(self):
-        genetic_history.reset()
+        gene_factory.reset()
 
     def build_non_recurrent_nn1(self):
         genotype = Genotype()
-        genotype.create_node_gene(NodeType.INPUT) # 1
-        genotype.create_node_gene(NodeType.OUTPUT) # 2
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 1
+        genotype.create_node_gene(None, None, NodeType.OUTPUT) # 2
 
         genotype.create_connection_gene(1, 2, 1)
 
@@ -24,12 +24,13 @@ class TestPhenotype(unittest.TestCase):
 
     def build_non_recurrent_nn2(self):
         genotype = Genotype()
-        genotype.create_node_gene(NodeType.INPUT) # 1
-        genotype.create_node_gene(NodeType.HIDDEN) # 2
-        genotype.create_node_gene(NodeType.OUTPUT) # 3
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 1
+        genotype.create_node_gene(None, None, NodeType.OUTPUT) # 2
 
-        genotype.create_connection_gene(1, 2, 1)
-        genotype.create_connection_gene(2, 3, 1)
+        genotype.create_node_gene(1, 2, NodeType.HIDDEN) # 3
+
+        genotype.create_connection_gene(1, 3, 1)
+        genotype.create_connection_gene(3, 2, 1)
 
         phenotype = Phenotype(genotype)
         
@@ -37,13 +38,14 @@ class TestPhenotype(unittest.TestCase):
 
     def build_non_recurrent_nn3(self):
         genotype = Genotype()
-        genotype.create_node_gene(NodeType.INPUT) # 1
-        genotype.create_node_gene(NodeType.INPUT) # 2
-        genotype.create_node_gene(NodeType.INPUT) # 3
-        genotype.create_node_gene(NodeType.OUTPUT) # 4
-        genotype.create_node_gene(NodeType.HIDDEN) # 5
-        genotype.create_node_gene(NodeType.HIDDEN) # 6
-        genotype.create_node_gene(NodeType.HIDDEN) # 7
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 1
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 2
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 3
+        genotype.create_node_gene(None, None, NodeType.OUTPUT) # 4
+
+        genotype.create_node_gene(1, 4, NodeType.HIDDEN) # 5
+        genotype.create_node_gene(2, 4, NodeType.HIDDEN) # 6
+        genotype.create_node_gene(3, 4, NodeType.HIDDEN) # 7
 
         genotype.create_connection_gene(1, 5, 1)
         genotype.create_connection_gene(5, 4, 1)
@@ -61,13 +63,14 @@ class TestPhenotype(unittest.TestCase):
 
     def build_non_recurrent_nn4(self):
         genotype = Genotype()
-        genotype.create_node_gene(NodeType.INPUT) # 1
-        genotype.create_node_gene(NodeType.INPUT) # 2
-        genotype.create_node_gene(NodeType.INPUT) # 3
-        genotype.create_node_gene(NodeType.OUTPUT) # 4
-        genotype.create_node_gene(NodeType.HIDDEN) # 5
-        genotype.create_node_gene(NodeType.HIDDEN) # 6
-        genotype.create_node_gene(NodeType.HIDDEN) # 7
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 1
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 2
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 3
+        genotype.create_node_gene(None, None, NodeType.OUTPUT) # 4
+
+        genotype.create_node_gene(1, 4, NodeType.HIDDEN) # 5
+        genotype.create_node_gene(2, 4, NodeType.HIDDEN) # 6
+        genotype.create_node_gene(3, 4, NodeType.HIDDEN) # 7
 
         genotype.create_connection_gene(1, 5, 1)
         genotype.create_connection_gene(5, 4, 1)
@@ -87,12 +90,13 @@ class TestPhenotype(unittest.TestCase):
 
     def build_recurrent_nn1(self):
         genotype = Genotype()
-        genotype.create_node_gene(NodeType.INPUT)
-        genotype.create_node_gene(NodeType.INPUT)
-        genotype.create_node_gene(NodeType.INPUT)
-        genotype.create_node_gene(NodeType.OUTPUT)
-        genotype.create_node_gene(NodeType.HIDDEN)
-        genotype.create_node_gene(NodeType.HIDDEN)
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 1
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 2
+        genotype.create_node_gene(None, None, NodeType.INPUT) # 3
+        genotype.create_node_gene(None, None, NodeType.OUTPUT) # 4
+
+        genotype.create_node_gene(1, 6, NodeType.HIDDEN) # 5
+        genotype.create_node_gene(5, 4, NodeType.HIDDEN) # 6
 
         genotype.create_connection_gene(1, 4, 1)
         genotype.create_connection_gene(1, 5, 1)
