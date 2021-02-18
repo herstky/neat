@@ -16,9 +16,9 @@ class Genotype:
     _end_weight_mutation_rate = 1 # chance for each individual end weight to be perturbed
     _end_weight_cold_mutation_rate = 0 # chance for each individual end weight to be completely replaced
 
-    _weight_mut_power = 12
-    _severe_weight_mut_chance = 0.1
-    _severe_weight_mut_power = 24
+    _weight_mut_power = 8
+    _severe_weight_mut_chance = 0.2
+    _severe_weight_mut_power = 16
     _weight_cap = 8.0
 
     _node_mutation_chance = 0.1
