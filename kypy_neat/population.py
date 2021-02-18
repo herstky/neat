@@ -11,7 +11,6 @@ class Population:
     def __init__(self):
         self._agents = []
         self._species = []
-        self._compatibility_threshold = 6.0
         self._target_population = 150
         self._cull_fraction = 0.2 # fraction of species to be annihilated each generation
         self._species_floor = 8 # minimum number of species that must exist before any are annihilated
@@ -71,17 +70,16 @@ class Population:
             phenotype = Phenotype(genotype)
             self._agents.append(Agent(phenotype))
 
-    def compatible(self, agent, species):
-        return agent.genotype.compatibilty(species.representative_genotype) < self._compatibility_threshold
-
     def speciate(self):
         for agent in self._agents:
             for species in self._species:
-                if self.compatible(agent, species):
+                if species.compatible(agent):
                     species.add(agent)
                     break
             else:
                 self.create_species(agent)
+
+        Species.control_species_count()
 
     def kill_species_agents(self, species):
         agents = species.agents
@@ -89,16 +87,6 @@ class Population:
             agent.kill()
 
         self.cleanup_agents()
-
-    def cull_species_old(self):
-        ranked_species = self.ranked_species(False)
-        aggregate_shared_fitness = self.aggregate_shared_fitness
-        total_population_to_cull = self._cull_fraction * len(self._agents)
-        for species in self._species:
-            species_total_shared_fitness = species.total_shared_fitness
-            # species_pop_to_cull = total_population_to_cull * (1 - species_total_shared_fitness / aggregate_shared_fitness)
-            cull_fraction = (1 - species_total_shared_fitness / aggregate_shared_fitness)
-            species.cull(cull_fraction)
 
     def cull_species(self):
         for species in self._species:
@@ -135,7 +123,6 @@ class Population:
         self._generation_champion = None
         self.speciate()
         self.remove_extinct_species() 
-        pass
 
     def evaluate_agents(self, inputs, outputs):
         for agent in self._agents:
@@ -173,4 +160,5 @@ class Population:
         species_copy = self._species[:]
         for species in species_copy:
             if not len(species.agents):
+                species.annihilate()
                 self._species.remove(species)

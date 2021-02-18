@@ -7,6 +7,11 @@ from kypy_neat.utils.timer import timer
 
 class Species:
     _species_count = 0
+    _target_species_count = 20
+    _compatibility_threshold = 5.0
+    _compatibility_mod = 0.3
+    _control_species_count = True
+
     def __init__(self, representative):
         Species._species_count += 1
         self._species_id = Species._species_count
@@ -22,6 +27,18 @@ class Species:
         self._breed_fraction = 0.6
         self._base_offspring_count = 3
         self._champion = None
+
+    @classmethod
+    def control_species_count(cls):
+        if not cls._control_species_count:
+            return
+
+        if cls._species_count > cls._target_species_count:
+            cls._compatibility_threshold += cls._compatibility_mod
+        elif cls._species_count < cls._target_species_count:
+            cls._compatibility_threshold -= cls._compatibility_mod
+
+        cls._compatibility_threshold = max(cls._compatibility_mod, cls._compatibility_threshold)
 
     @property
     def representative_genotype(self):
@@ -39,6 +56,9 @@ class Species:
     def extinct(self):
         return len(self._agents) == 0
 
+    def annihilate(self):
+        Species._species_count -= 1
+
     @property
     def living_agents(self):
         return [agent for agent in self._agents if not agent.expired]
@@ -50,6 +70,9 @@ class Species:
     @property
     def min_culling_age(self):
         return self._min_culling_age
+
+    def compatible(self, agent):
+        return agent.genotype.compatibilty(self.representative_genotype) < self._compatibility_threshold
 
     def in_species(self, agent):
         return agent in self._agent_set

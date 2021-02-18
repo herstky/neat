@@ -285,9 +285,8 @@ class Genotype:
                     #     chosen_gene = gene1
                     # else:
                     chosen_gene = rand.choice([gene1, gene2])
-                    chosen_gene.weight = (gene1.weight + gene2.weight) / 2 # NOTE under test
-
                     offspring_genotype.inherit_connection_gene(chosen_gene)
+                    offspring_genotype._connection_genes[-1].weight = (gene1.weight + gene2.weight) / 2 # NOTE under test
                     p1 += 1
                     p2 += 1
                 elif gene1.innovation_id < gene2.innovation_id:
