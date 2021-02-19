@@ -64,6 +64,18 @@ class Phenotype:
         
         return True
 
+    def get_node(self, innovation_id):
+        if innovation_id in self._node_map:
+            return self._node_map[innovation_id]
+
+        return None
+
+    def get_connection(self, innovation_id):
+        if innovation_id in self._connection_map:
+            return self._connection_map[innovation_id]
+
+        return None
+
     def _build(self):
         for node_gene in self._genotype.node_genes:
             node = self.generate_node(node_gene)

@@ -96,7 +96,6 @@ class _GeneFactory:
         else:
             return None
     
-    # need a version of this method for copying node genes
     def create_node_gene(self, genotype, input_node_id, output_node_id, node_type):
         structure = (input_node_id, output_node_id)
         if self.node_innovation_exists(structure) and node_type not in (NodeType.INPUT, NodeType.OUTPUT):

@@ -155,7 +155,8 @@ class Species:
         for i in range(num_to_cull):
             ranked_agents[i].kill()
 
-    def generate_offspring(self, parent1, parent2=None):
+    @staticmethod
+    def generate_offspring(parent1, parent2=None):
         if parent2 is None:
             genotype = parent1.genotype.copy_and_mutate()
 
@@ -205,19 +206,19 @@ class Species:
                 parent = ranked_agents[i]
                 num_offspring = round(remaining_offspring_share * self.fitness_share(parent) / total_shared_fitness)
                 for _ in range(num_offspring):
-                    offspring.append(self.generate_offspring(parent))
+                    offspring.append(Species.generate_offspring(parent))
                 i += 1
             else:
                 parent1 = ranked_agents[i]
                 parent2 = ranked_agents[i + 1]
                 num_offspring = round(remaining_offspring_share * (self.fitness_share(parent1) + self.fitness_share(parent2)) / total_shared_fitness) 
                 for _ in range(num_offspring):
-                    offspring.append(self.generate_offspring(parent1, parent2))
+                    offspring.append(Species.generate_offspring(parent1, parent2))
                 i += 2
 
         # any remaining offspring go to champ
         while len(offspring) < round(offspring_share):
-            offspring.append(self.generate_offspring(champ))
+            offspring.append(Species.generate_offspring(champ))
         
         return offspring
 

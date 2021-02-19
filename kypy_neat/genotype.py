@@ -3,11 +3,14 @@ import time
 
 from kypy_neat.genes import NodeType, gene_factory
 from kypy_neat.utils.timer import timer
+from kypy_neat.phenotype import Phenotype
+from kypy_neat.traits import Connection
 
 
 class Genotype:
     base_genotype = None
     _mutate_starting_topologies = False
+    _allow_recurrence = False
     
     _weight_mutation_chance = 0.8 # chance a genotype's weights will be considered for mutation
     _weight_mutation_rate = 0.9 # chance for each individual weight to be perturbed
@@ -17,7 +20,7 @@ class Genotype:
     _end_weight_cold_mutation_rate = 0.1 # chance for each individual end weight to be completely replaced
 
     # K. Stanley states mutation power should not exceed 5.0
-    _weight_mut_power = 1.5
+    _weight_mut_power = 2
     _severe_weight_mut_chance = 0
     _severe_weight_mut_power = 5 
     _weight_cap = 8.0
@@ -25,11 +28,11 @@ class Genotype:
     # K. Stanley states connection mutation chance should significantly exceed node mutation chance
     # He recommends 0.03 and 0.05, respectively, for small populations. These values seem to perform
     # well with this implementation
-    _node_mutation_chance = 0.03 
-    _connection_mutation_chance = 0.1
+    _node_mutation_chance = 0.03
+    _connection_mutation_chance = 0.05
 
     _toggle_chance = 0 # chance a genotype's connections will be considered for toggling state
-    _toggle_mutation_rate = 0.1  # chace for each individual connection to be toggles
+    _toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
     _reenable_chance = 0.01
 
     _excess_coeff = 1
@@ -143,12 +146,34 @@ class Genotype:
         self._connection_structures.add(connection_gene.structure)
         return connection_gene
 
+    def _recurrency_test(self, input_node_id, output_node_id):
+        if Genotype._allow_recurrence:
+            return True
+
+        test_phenotype = Phenotype(self)
+        input_node = test_phenotype.get_node(input_node_id)
+        output_node = test_phenotype.get_node(output_node_id)
+        connection = Connection(None, input_node, output_node)
+
+        visited = set()
+        stack = [output_node]
+        while len(stack):
+            node = stack.pop()
+            if node not in visited:
+                if node is input_node:
+                    return False
+                visited.add(node)
+                for output_connnection in node.output_connections:
+                    stack.append(output_connnection.output_node)
+        
+        return True
+
     def attempt_connection_mutation(self):
         input_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]  
         output_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]
         structure = (input_node.innovation_id, output_node.innovation_id)
         weight = self.generate_weight_modifier()
-        if not self.structure_exists(structure):
+        if not self.structure_exists(structure) and self._recurrency_test(input_node.innovation_id, output_node.innovation_id):
             self.create_connection_gene(input_node.innovation_id, output_node.innovation_id, weight)
             # print(f'Connection mutated between nodes {input_node.innovation_id} and {output_node.innovation_id}')
             return True

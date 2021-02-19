@@ -1,6 +1,8 @@
 import random
 
 from kypy_neat.population import Population
+from kypy_neat.phenotype import Phenotype
+from kypy_neat.agent import Agent
 
 
 class Experiment:
@@ -8,7 +10,7 @@ class Experiment:
         self.population = Population()
         self._best_performance = float('-inf')
         self._current_generation = 0
-        self._num_generations = 200
+        self._num_generations = 500
         self.inputs = [[1, 0, 0],
                        [1, 0, 1],
                        [1, 1, 0],
@@ -27,7 +29,7 @@ class Experiment:
     def evaluate_agents(self, inputs, outputs):
         inputs, outputs = self.shuffle_data(inputs, outputs)
         
-        self.population.generation_champion = None
+        generation_champion = None
         for agent in self.population.agents:
             agent.error_sum = 0
             agent.classification_error = 0
@@ -46,11 +48,14 @@ class Experiment:
             # NOTE should probably change this to fitness basis if 
             # adjusted_fitness calculation changes to prevent selecting a 
             # generation_champ that is elligible to be culled
-            if not self.population.generation_champion:
-                self.population.generation_champion = agent
-            elif agent.error_sum < self.population.generation_champion.error_sum:
-                self.population.generation_champion.champ = False
-                self.population.generation_champion = agent 
+            if not generation_champion:
+                generation_champion = agent
+            elif agent.error_sum < generation_champion.error_sum:
+                generation_champion = agent 
+
+        genotype_copy = generation_champion.genotype.generate_copy()
+        phenotype = Phenotype(genotype_copy)
+        self.population.generation_champion = Agent(phenotype)
 
     def record_species_results(self):
         for species in self.population.species:

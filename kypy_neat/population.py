@@ -17,7 +17,7 @@ class Population:
         self._breed_fraction = 1 # fraction of species that will breed each round
         self._min_breeding_species = 4 # minimum number of species that will breed each round
         self.generation_champion = None
-        self._generation_champion_bonus_offspring = 0
+        self._generation_champion_bonus_offspring = 1
 
     @property
     def agents(self):
@@ -95,11 +95,10 @@ class Population:
     def breed_species(self):
         aggregate_shared_fitness = self.aggregate_shared_fitness
         offspring = []
-        champ = self._generation_champion
 
-        champ_species = self.get_species_of_agent(champ)
+        champ = self.generation_champion
         for _ in range(self._generation_champion_bonus_offspring):
-            offspring.append(champ_species.generate_offspring(champ))
+            offspring.append(Species.generate_offspring(champ))
 
         num_remaining_offspring = self._target_population - len(offspring)
         for species in self._species:
@@ -114,7 +113,7 @@ class Population:
         return offspring
 
     def prepare_generation(self):
-        self._generation_champion = None
+        self.generation_champion = None
         self.speciate()
         self.remove_extinct_species() 
 
