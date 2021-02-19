@@ -142,12 +142,6 @@ class Species:
 
             agent.phenotype.genotype.mutate()
 
-    # def cull(self):
-    #     cull_threshold = self._cull_fraction * self.average_shared_fitness
-    #     for agent in self._agents:
-    #         if self.fitness_share(agent) < cull_threshold:
-    #             agent.kill()
-
     def cull(self):
         ranked_agents = self.ranked_agents(False)
         num_to_cull = int(Species._cull_fraction * self.count)

@@ -31,8 +31,8 @@ class Genotype:
     # orders of magnitude greater than the node mutation chance, due to the number of failed connection
     # mutations that take place. It may be worth looking into a method that will make repeated attempts
     # at mutating a connection. 
-    _node_mutation_chance = 0.05
-    _connection_mutation_chance = 0.50
+    _node_mutation_chance = 0.02
+    _connection_mutation_chance = 0.9
 
     _toggle_chance = 0 # chance a genotype's connections will be considered for toggling state
     _toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
@@ -103,18 +103,6 @@ class Genotype:
 
     def connection_structure_exists(self, structure):
         return structure in self._connection_structures
-
-
-    # def mutate_weights(self):
-    #     for conn in self._connection_genes:
-    #         if rand.uniform(0, 1) < rate:
-    #             if rand.uniform(0, 1) < 0.8:
-    #                 conn.weight += self.generate_weight_modifier()
-    #             else:
-    #                 conn.weight = self.generate_weight_modifier()
-
-
-    #         conn.weight = min(max(conn.weight, -self._weight_cap), self._weight_cap)
 
     def mutate_weights(self):
         for i, conn in enumerate(self._connection_genes):
@@ -188,8 +176,6 @@ class Genotype:
             conn_to_split.enabled = False
             new_input_conn = self.create_connection_gene(conn_to_split.input_node_id, new_node.innovation_id, 1)
             new_out_conn = self.create_connection_gene(new_node.innovation_id, conn_to_split.output_node_id, conn_to_split.weight)
-            # print(f'Node mutated between nodes {conn_to_split.input_node_id} and {conn_to_split.output_node_id}')
-            print(f'node mutation: {structure}')
             return True
 
         return False
@@ -198,7 +184,7 @@ class Genotype:
         input_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]  
         output_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]
 
-        # prevents connections between input nodes
+        # prevent connections between input nodes
         if input_node.node_type is NodeType.INPUT and output_node.node_type is NodeType.INPUT: 
             return False
 
@@ -206,8 +192,6 @@ class Genotype:
         weight = self.generate_weight_modifier()
         if not self.connection_structure_exists(structure) and self._recurrency_test(input_node.innovation_id, output_node.innovation_id):
             self.create_connection_gene(input_node.innovation_id, output_node.innovation_id, weight)
-            # print(f'Connection mutated between nodes {input_node.innovation_id} and {output_node.innovation_id}')
-            print(f'connection mutation: {structure}')
             return True
 
         return False
@@ -323,16 +307,9 @@ class Genotype:
                 gene2 = other.connection_genes[p2]
                 if gene1.innovation_id == gene2.innovation_id:
                     num_matching += 1
-                    # Must prevent inheriting a disabled connection without 
-                    # inheriting the connections that replaced it
-                    # NOTE: May be better to allow invalid networks and 
-                    # to handle that in network activation method
-                    # if not gene2.enabled and gene1.enabled:
-                    #     chosen_gene = gene1
-                    # else:
                     chosen_gene = rand.choice([gene1, gene2])
                     offspring_genotype.inherit_connection_gene(chosen_gene)
-                    offspring_genotype._connection_genes[-1].weight = (gene1.weight + gene2.weight) / 2 # NOTE under test
+                    offspring_genotype._connection_genes[-1].weight = (gene1.weight + gene2.weight) / 2
                     p1 += 1
                     p2 += 1
                 elif gene1.innovation_id < gene2.innovation_id:
@@ -343,7 +320,6 @@ class Genotype:
                     num_disjoint += 1
                     p2 += 1
 
-        # offspring_genotype.attempt_topological_mutations() # NOTE under test
         offspring_genotype.attempt_all_mutations()
 
         return offspring_genotype

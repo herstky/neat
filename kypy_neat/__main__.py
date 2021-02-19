@@ -1,6 +1,4 @@
-# TODO: 
-#       might need to prevent recurrent connections to sensors
-#       check for node structures before adding to genotype!!
+# TODO: Change mutation attempts to fail less often
 
 from kypy_neat.experiments import Experiment
 
