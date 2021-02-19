@@ -17,6 +17,10 @@ class Agent:
         self.fitness = 0
         self._killed = False
 
+    @staticmethod
+    def agents_created():
+        return Agent._agents_created
+
     @property
     def innovation_count(self):
         return self.genotype.innovation_count

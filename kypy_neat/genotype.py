@@ -20,16 +20,19 @@ class Genotype:
     _end_weight_cold_mutation_rate = 0.1 # chance for each individual end weight to be completely replaced
 
     # K. Stanley states mutation power should not exceed 5.0
-    _weight_mut_power = 2
+    _weight_mut_power = 2.5
     _severe_weight_mut_chance = 0
     _severe_weight_mut_power = 5 
     _weight_cap = 8.0
 
     # K. Stanley states connection mutation chance should significantly exceed node mutation chance
-    # He recommends 0.03 and 0.05, respectively, for small populations. These values seem to perform
-    # well with this implementation
-    _node_mutation_chance = 0.03
-    _connection_mutation_chance = 0.05
+    # He recommends 0.03 and 0.05, respectively, for small populations.
+    # As it stands as of 2/19/21, this implementation requires a connection mutation chance that is
+    # orders of magnitude greater than the node mutation chance, due to the number of failed connection
+    # mutations that take place. It may be worth looking into a method that will make repeated attempts
+    # at mutating a connection. 
+    _node_mutation_chance = 0.05
+    _connection_mutation_chance = 0.50
 
     _toggle_chance = 0 # chance a genotype's connections will be considered for toggling state
     _toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
@@ -42,6 +45,7 @@ class Genotype:
 
     def __init__(self):
         self._node_genes = []
+        self._node_structures =set()
         self._connection_genes = []
         self._connection_structures = set()
 
@@ -50,6 +54,7 @@ class Genotype:
         for node_gene in self._node_genes:
             node_gene_copy = gene_factory.copy_node_gene(node_gene)
             genotype_copy._node_genes.append(node_gene_copy)
+            genotype_copy._node_structures.add(node_gene_copy.structure)
 
         for connection_gene in self._connection_genes:
             connection_gene_copy = gene_factory.copy_connection_gene(connection_gene)
@@ -93,7 +98,10 @@ class Genotype:
     def connection_genes(self):
         return self._connection_genes
 
-    def structure_exists(self, structure):
+    def node_structure_exists(self, structure):
+        return structure in self._node_structures
+
+    def connection_structure_exists(self, structure):
         return structure in self._connection_structures
 
 
@@ -138,6 +146,7 @@ class Genotype:
     def create_node_gene(self, input_node_id, output_node_id, node_type):
         node_gene = gene_factory.create_node_gene(self, input_node_id, output_node_id, node_type)
         self._node_genes.append(node_gene)
+        self._node_structures.add(node_gene.structure)
         return node_gene
 
     def create_connection_gene(self, input_node_id, output_node_id, weight, enabled=True):
@@ -168,29 +177,40 @@ class Genotype:
         
         return True
 
-    def attempt_connection_mutation(self):
-        input_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]  
-        output_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]
-        structure = (input_node.innovation_id, output_node.innovation_id)
-        weight = self.generate_weight_modifier()
-        if not self.structure_exists(structure) and self._recurrency_test(input_node.innovation_id, output_node.innovation_id):
-            self.create_connection_gene(input_node.innovation_id, output_node.innovation_id, weight)
-            # print(f'Connection mutated between nodes {input_node.innovation_id} and {output_node.innovation_id}')
-            return True
-
-        return False
-
     def attempt_node_mutation(self):
         if not len(self._connection_genes):
             return False
 
         conn_to_split = self._connection_genes[rand.randint(0, len(self._connection_genes) - 1)]
-        conn_to_split.enabled = False
-        new_node = self.create_node_gene(conn_to_split.input_node_id, conn_to_split.output_node_id, NodeType.HIDDEN)
-        new_input_conn = self.create_connection_gene(conn_to_split.input_node_id, new_node.innovation_id, 1)
-        new_out_conn = self.create_connection_gene(new_node.innovation_id, conn_to_split.output_node_id, conn_to_split.weight)
-        # print(f'Node mutated between nodes {conn_to_split.input_node_id} and {conn_to_split.output_node_id}')
-        return True
+        structure = (conn_to_split.input_node_id, conn_to_split.output_node_id)
+        if not self.node_structure_exists(structure):
+            new_node = self.create_node_gene(conn_to_split.input_node_id, conn_to_split.output_node_id, NodeType.HIDDEN)
+            conn_to_split.enabled = False
+            new_input_conn = self.create_connection_gene(conn_to_split.input_node_id, new_node.innovation_id, 1)
+            new_out_conn = self.create_connection_gene(new_node.innovation_id, conn_to_split.output_node_id, conn_to_split.weight)
+            # print(f'Node mutated between nodes {conn_to_split.input_node_id} and {conn_to_split.output_node_id}')
+            print(f'node mutation: {structure}')
+            return True
+
+        return False
+
+    def attempt_connection_mutation(self):
+        input_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]  
+        output_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]
+
+        # prevents connections between input nodes
+        if input_node.node_type is NodeType.INPUT and output_node.node_type is NodeType.INPUT: 
+            return False
+
+        structure = (input_node.innovation_id, output_node.innovation_id)
+        weight = self.generate_weight_modifier()
+        if not self.connection_structure_exists(structure) and self._recurrency_test(input_node.innovation_id, output_node.innovation_id):
+            self.create_connection_gene(input_node.innovation_id, output_node.innovation_id, weight)
+            # print(f'Connection mutated between nodes {input_node.innovation_id} and {output_node.innovation_id}')
+            print(f'connection mutation: {structure}')
+            return True
+
+        return False
 
     def attempt_topological_mutations(self):
         if rand.uniform(0, 1) < Genotype._node_mutation_chance:

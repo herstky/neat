@@ -90,7 +90,7 @@ class Experiment:
         self._best_performance = max(self._best_performance, top_performance)
 
         print()
-        print(f'Generation: {self._current_generation}, agents: {len(self.population.agents)}, species: {len(self.population.species)}')
+        print(f'Generation: {self._current_generation}, agents: {len(self.population.agents)}, species: {len(self.population.species)}, {Agent.agents_created()} networks evaluated')
         if top_performance > 75:
             end = ' !!!!!'
         else:
