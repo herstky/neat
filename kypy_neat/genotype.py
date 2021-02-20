@@ -27,8 +27,8 @@ class Genotype:
 
     # Kenneth Stanley states connection mutation chance should significantly exceed node mutation chance
     # He recommends 0.03 and 0.05, respectively, for small populations.
-    _node_mutation_chance = 0.08
-    _connection_mutation_chance = 0.3
+    _node_mutation_chance = 0.03
+    _connection_mutation_chance = 0.1
 
     _toggle_chance = 0 # chance a genotype's connections will be considered for toggling state
     _toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
@@ -162,24 +162,40 @@ class Genotype:
         return True
 
     def attempt_node_mutation(self):
-        if not len(self._connection_genes):
+        conn_candidates = []
+        for conn in self._connection_genes:
+            if not self.node_structure_exists(conn.structure):
+                conn_candidates.append(conn)
+
+        if not len(conn_candidates):
             return False
 
-        conn_to_split = self._connection_genes[rand.randint(0, len(self._connection_genes) - 1)]
-        structure = (conn_to_split.input_node_id, conn_to_split.output_node_id)
-        if not self.node_structure_exists(structure):
-            new_node = self.create_node_gene(conn_to_split.input_node_id, conn_to_split.output_node_id, NodeType.HIDDEN)
-            conn_to_split.enabled = False
-            new_input_conn = self.create_connection_gene(conn_to_split.input_node_id, new_node.innovation_id, 1)
-            new_out_conn = self.create_connection_gene(new_node.innovation_id, conn_to_split.output_node_id, conn_to_split.weight)
-            return True
+        selected_conn = rand.choice(conn_candidates)
+        new_node = self.create_node_gene(selected_conn.input_node_id, selected_conn.output_node_id, NodeType.HIDDEN)
+        selected_conn.enabled = False
+        new_input_conn = self.create_connection_gene(selected_conn.input_node_id, new_node.innovation_id, 1)
+        new_output_conn = self.create_connection_gene(new_node.innovation_id, selected_conn.output_node_id, selected_conn.weight)
+        return True
 
-        return False
+    # def attempt_node_mutation(self):
+    #     if not len(self._connection_genes):
+    #         return False
+
+    #     conn_to_split = self._connection_genes[rand.randint(0, len(self._connection_genes) - 1)]
+    #     structure = (conn_to_split.input_node_id, conn_to_split.output_node_id)
+    #     if not self.node_structure_exists(structure):
+    #         new_node = self.create_node_gene(conn_to_split.input_node_id, conn_to_split.output_node_id, NodeType.HIDDEN)
+    #         conn_to_split.enabled = False
+    #         new_input_conn = self.create_connection_gene(conn_to_split.input_node_id, new_node.innovation_id, 1)
+    #         new_out_conn = self.create_connection_gene(new_node.innovation_id, conn_to_split.output_node_id, conn_to_split.weight)
+    #         return True
+
+    #     return False
 
     def attempt_connection_mutation(self):
-        # input_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]  
-        # output_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]
-
+        # If recurrent connections are allowed, this function may force too 
+        # many early on if connection mutation chance is much greater than
+        # node mutation chance
         structure_candidates = []
         for input_node in self._node_genes:
             for output_node in self._node_genes:
