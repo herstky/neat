@@ -23,7 +23,6 @@ class Species:
         self._agent_set = set()
         self.results = {}
         self.age = 0
-        # self._min_culling_age = 3 # number of generations before a species will be eligible for annihilation
         self.expired = False
         self._population_floor = 0
         self._breed_fraction = 0.6

@@ -19,20 +19,16 @@ class Genotype:
     _end_weight_mutation_rate = 0.9 # chance for each individual end weight to be perturbed
     _end_weight_cold_mutation_rate = 0.1 # chance for each individual end weight to be completely replaced
 
-    # K. Stanley states mutation power should not exceed 5.0
+    # Kenneth Stanley states mutation power should not exceed 5.0
     _weight_mut_power = 2.5
     _severe_weight_mut_chance = 0
     _severe_weight_mut_power = 5 
     _weight_cap = 8.0
 
-    # K. Stanley states connection mutation chance should significantly exceed node mutation chance
+    # Kenneth Stanley states connection mutation chance should significantly exceed node mutation chance
     # He recommends 0.03 and 0.05, respectively, for small populations.
-    # As it stands as of 2/19/21, this implementation requires a connection mutation chance that is
-    # orders of magnitude greater than the node mutation chance, due to the number of failed connection
-    # mutations that take place. It may be worth looking into a method that will make repeated attempts
-    # at mutating a connection. 
-    _node_mutation_chance = 0.02
-    _connection_mutation_chance = 0.9
+    _node_mutation_chance = 0.08
+    _connection_mutation_chance = 0.3
 
     _toggle_chance = 0 # chance a genotype's connections will be considered for toggling state
     _toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
@@ -181,20 +177,43 @@ class Genotype:
         return False
 
     def attempt_connection_mutation(self):
-        input_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]  
-        output_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]
+        # input_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]  
+        # output_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]
 
-        # prevent connections between input nodes
-        if input_node.node_type is NodeType.INPUT and output_node.node_type is NodeType.INPUT: 
+        structure_candidates = []
+        for input_node in self._node_genes:
+            for output_node in self._node_genes:
+                structure = (input_node.innovation_id, output_node.innovation_id)
+                input_bridge = input_node.node_type is NodeType.INPUT and output_node.node_type is NodeType.INPUT
+                structure_exists = self.connection_structure_exists(structure)
+                recurrency_check = self._recurrency_test(input_node.innovation_id, output_node.innovation_id)
+                if not input_bridge and not structure_exists and recurrency_check:
+                    structure_candidates.append(structure)
+
+        if not len(structure_candidates):
             return False
 
-        structure = (input_node.innovation_id, output_node.innovation_id)
+        selected_structure = rand.choice(structure_candidates)
+        input_node_id, output_node_id = selected_structure
         weight = self.generate_weight_modifier()
-        if not self.connection_structure_exists(structure) and self._recurrency_test(input_node.innovation_id, output_node.innovation_id):
-            self.create_connection_gene(input_node.innovation_id, output_node.innovation_id, weight)
-            return True
+        self.create_connection_gene(input_node_id, output_node_id, weight)
+        return True
 
-        return False
+    # def attempt_connection_mutation(self):
+    #     input_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]  
+    #     output_node = self._node_genes[rand.randint(0, len(self._node_genes) - 1)]
+
+    #     # prevent connections between input nodes
+    #     if input_node.node_type is NodeType.INPUT and output_node.node_type is NodeType.INPUT: 
+    #         return False
+
+    #     structure = (input_node.innovation_id, output_node.innovation_id)
+    #     weight = self.generate_weight_modifier()
+    #     if not self.connection_structure_exists(structure) and self._recurrency_test(input_node.innovation_id, output_node.innovation_id):
+    #         self.create_connection_gene(input_node.innovation_id, output_node.innovation_id, weight)
+    #         return True
+
+    #     return False
 
     def attempt_topological_mutations(self):
         if rand.uniform(0, 1) < Genotype._node_mutation_chance:
