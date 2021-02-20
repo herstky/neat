@@ -1,7 +1,8 @@
-from kypy_neat.experiments import Experiment
+from kypy_neat.experiments import XOR, SinglePoleProblem
 
 def main():
-    exp = Experiment()
+    exp = SinglePoleProblem()
     exp.run()
+    # exp.evaluate_solution()
 
 main()

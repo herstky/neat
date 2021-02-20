@@ -127,7 +127,7 @@ class Phenotype:
     
     def activate(self, inputs):
         # Ref: https://stackoverflow.com/questions/55569260/feedforward-algorithm-in-neat-neural-evolution-of-augmenting-topologies
-        if type(inputs) is not list:
+        if type(inputs) not in (list, tuple):
             inputs = [inputs]
 
         if len(inputs) != len(self.input_nodes):

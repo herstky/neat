@@ -1,16 +1,43 @@
-import random
+import random as rand
+import math
+import pickle
 
 from kypy_neat.population import Population
-from kypy_neat.phenotype import Phenotype
 from kypy_neat.agent import Agent
+from kypy_neat.utils.timer import timer
 
 
 class Experiment:
-    def __init__(self):
-        self.population = Population()
-        self._best_performance = float('-inf')
+    def __init__(self, num_generations, population_size):
+        self._num_generations = num_generations
+        self.population = Population(population_size)
         self._current_generation = 0
-        self._num_generations = 500
+
+    def shuffle_data(self, inputs, outputs):
+        data = [entry for entry in zip(inputs, outputs)]
+        random.shuffle(data)
+        inputs = [input_ for input_, output in data]
+        outputs = [output for input_, output in data]
+
+        return inputs, outputs
+
+    def record_species_results(self):
+        for species in self.population.species:
+            species.record_results()
+
+    def epoch(self):
+        raise NotImplementedError
+
+    def print_generation_results(self):
+        raise NotImplementedError
+
+    def run(self):
+        raise NotImplementedError
+
+
+class XOR(Experiment):
+    def __init__(self, num_generations=100, population_size=150):
+        super().__init__(num_generations, population_size)
         self.inputs = [[1, 0, 0],
                        [1, 0, 1],
                        [1, 1, 0],
@@ -18,15 +45,7 @@ class Experiment:
         
         self.outputs = [[0], [1], [1], [0]]
 
-    def shuffle_data(self, inputs, outputs):
-        data = [x for x in zip(inputs, outputs)]
-        random.shuffle(data)
-        inputs = [x[0] for x in data]
-        outputs = [x[1] for x in data]
-
-        return inputs, outputs
-
-    def evaluate_agents(self, inputs, outputs):
+    def epoch(self, inputs, outputs):
         inputs, outputs = self.shuffle_data(inputs, outputs)
         
         generation_champion = None
@@ -45,22 +64,12 @@ class Experiment:
 
             agent.fitness = max(0, 4 - agent.error_sum)
 
-            # NOTE should probably change this to fitness basis if 
-            # adjusted_fitness calculation changes to prevent selecting a 
-            # generation_champ that is elligible to be culled
             if not generation_champion:
                 generation_champion = agent
             elif agent.error_sum < generation_champion.error_sum:
                 generation_champion = agent 
 
-        genotype_copy = generation_champion.genotype.generate_copy()
-        phenotype = Phenotype(genotype_copy)
-        self.population.generation_champion = Agent(phenotype)
-
-    def record_species_results(self):
-        for species in self.population.species:
-            species.record_results()
-
+        self.population.set_generation_champion(generation_champion)
 
     def print_generation_results(self):
         top_performance = float('-inf')
@@ -86,16 +95,9 @@ class Experiment:
                   f'Min: {min_shared_fitness:.2f}, '
                   f'Champ {champion.agent_id}: {performance:.1f}%')
 
-
-        self._best_performance = max(self._best_performance, top_performance)
-
         print()
-        print(f'Generation: {self._current_generation}, agents: {len(self.population.agents)}, species: {len(self.population.species)}, {Agent.agents_created()} networks evaluated')
-        if top_performance > 75:
-            end = ' !!!!!'
-        else:
-            end = ''
-        print(f'Generation best: {top_performance:.1f}%{end}')
+        print(f'Generation: {self._current_generation} -- Agents: {len(self.population.agents)}, Species: {len(self.population.species)}, Networks Evaluated: {Agent.agents_created()}')
+        print(f'Generation Best: {top_performance:.1f}%, Hidden Nodes: {len(self.population.generation_champion.phenotype.hidden_nodes)}')
         print()
         print('*******************************************************************************************')
         print()
@@ -105,13 +107,120 @@ class Experiment:
         for generation in range(1, self._num_generations + 1):
             self._current_generation = generation
             self.population.prepare_generation()
-            self.evaluate_agents(self.inputs, self.outputs)
+            self.epoch(self.inputs, self.outputs)
             self.population.finish_generation()
             self.print_generation_results()
-        
-        print()
-        print(f'Best overall performance: {self._best_performance:.5f}%')
-        print()
 
-class XOR(Experiment):
-    pass
+class SinglePoleProblem(Experiment):
+    def __init__(self, max_steps=1000, num_tests=50, num_generations=10, population_size=150):
+        super().__init__(num_generations, population_size)
+        self._max_steps = max_steps
+        self.num_tests = num_tests
+
+    def evaluate_agent(self, agent):
+        total = 0
+        for i in range(self.num_tests):
+            total += self.evaluate_agent_helper(agent) / self._max_steps * 100
+        
+        return total / self.num_tests
+
+    def evaluate_agent_helper(self, agent):
+        one_degree = 2 * math.pi / 360
+        twelve_degrees = 12 * one_degree
+        twenty_four_degrees = 24 * one_degree
+
+        x = rand.uniform(-2.4, 2.4)
+        x_dot = rand.uniform(-1, 1)
+        theta = rand.uniform(-0.2, 0.2)
+        theta_dot = rand.uniform(-1.5, 1.5)
+
+        action = 0
+
+        step = 0
+        while (step < self._max_steps):
+            bias = 1
+            x_n = (x + 2.4) / 4.8
+            x_dot_n = (x_dot + 0.75) / 1.5
+            theta_n = (theta + twelve_degrees) / twenty_four_degrees
+            theta_dot_n = (theta_dot + 1.0) / 2.0
+            inputs = (bias, x_n, x_dot_n, theta_n, theta_dot_n)
+            outputs, error = agent.activate_network(inputs)
+            if error:
+                return step
+
+            out1, out2 = outputs
+            if out1 > out2:
+                action = 0
+            else:
+                action = 1
+            
+            x, x_dot, theta, theta_dot = self.move_cart(action, x, x_dot, theta, theta_dot)
+
+            if (x < -2.4 or x > 2.4 or theta < -twelve_degrees or theta > twelve_degrees):
+                return step
+
+            step += 1
+        
+        return step
+
+    def move_cart(self, action, x, x_dot, theta, theta_dot):
+        gravity = 9.8
+        cart_mass = 1.0
+        pole_mass = 0.1
+        total_mass = cart_mass + pole_mass
+        length = 0.5
+        pole_mass_length = pole_mass * length
+        force_mag = 10.0
+        tau = 0.02
+
+        force = force_mag if action > 0 else -force_mag
+        
+        temp = (force + pole_mass_length * theta_dot * theta_dot * math.sin(theta)) / total_mass
+        theta_acc = (gravity * math.sin(theta) - math.cos(theta) * temp) / (length * (4 / 3 - pole_mass * math.cos(theta) * math.cos(theta) / total_mass))
+        x_acc = temp - pole_mass_length * theta_acc * math.cos(theta) / total_mass
+
+        x += tau * x_dot
+        x_dot += tau * x_acc
+        theta += tau * theta_dot
+        theta_dot += tau * theta_acc
+
+        return (x, x_dot, theta, theta_dot)
+
+    @timer
+    def epoch(self):
+        generation_champion = None
+        for agent in self.population.agents:
+            agent.fitness = self.evaluate_agent(agent)
+
+            if not generation_champion:
+                generation_champion = agent
+            elif agent.fitness > generation_champion.fitness:
+                generation_champion = agent 
+
+        self.population.set_generation_champion(generation_champion)
+        with open('spp_solution.obj', 'wb') as outfile:
+            pickle.dump(generation_champion, outfile)
+
+    def print_generation_results(self):
+        print(f'Generation: {self._current_generation}, '
+              f'Best: {self.population.generation_champion.fitness:.2f}%, '
+              f'Hidden Nodes: {len(self.population.generation_champion.phenotype.hidden_nodes)}, '
+              f'Networks Evaluated: {Agent.agents_created()}')
+
+    def run(self):
+        self.population.initialize_population(5, 2)
+        for generation in range(1, self._num_generations + 1):
+            self._current_generation = generation
+            self.population.prepare_generation()
+            self.epoch()
+            self.population.finish_generation()
+            self.print_generation_results()
+
+    def evaluate_solution(self):
+        with open('spp_solution.obj', 'rb') as infile:
+            agent = pickle.load(infile)
+
+        for i in range(1, self.num_tests + 1):
+            performance = self.evaluate_agent(agent)
+
+            print(f'Test: {i} -- Performance: {performance:.2f}%')        

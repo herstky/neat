@@ -8,11 +8,11 @@ from kypy_neat.utils.timer import timer
 class Species:
     _species_created = 0
     _species_count = 0
-    _target_species_count = 20
-    _compatibility_threshold = 5.0
-    _compatibility_mod = 0.3
-    _control_species_count = True
-    _cull_fraction = 0.8
+    target_species_count = 20
+    compatibility_threshold = 5.0
+    compatibility_mod = 0.3
+    control_species_count = True
+    cull_fraction = 0.8
 
     def __init__(self, representative):
         Species._species_created += 1
@@ -31,15 +31,15 @@ class Species:
 
     @classmethod
     def control_species_count(cls):
-        if not cls._control_species_count:
+        if not cls.control_species_count:
             return
 
-        if cls._species_count > cls._target_species_count:
-            cls._compatibility_threshold += cls._compatibility_mod
-        elif cls._species_count < cls._target_species_count:
-            cls._compatibility_threshold -= cls._compatibility_mod
+        if cls._species_count > cls.target_species_count:
+            cls.compatibility_threshold += cls.compatibility_mod
+        elif cls._species_count < cls.target_species_count:
+            cls.compatibility_threshold -= cls.compatibility_mod
 
-        cls._compatibility_threshold = max(cls._compatibility_mod, cls._compatibility_threshold)
+        cls.compatibility_threshold = max(cls.compatibility_mod, cls.compatibility_threshold)
 
     @property
     def representative_genotype(self):
@@ -73,7 +73,7 @@ class Species:
         return self._min_culling_age
 
     def compatible(self, agent):
-        return agent.genotype.compatibilty(self.representative_genotype) < Species._compatibility_threshold
+        return agent.genotype.compatibilty(self.representative_genotype) < Species.compatibility_threshold
 
     def in_species(self, agent):
         return agent in self._agent_set
@@ -143,7 +143,7 @@ class Species:
 
     def cull(self):
         ranked_agents = self.ranked_agents(False)
-        num_to_cull = int(Species._cull_fraction * self.count)
+        num_to_cull = int(Species.cull_fraction * self.count)
 
         for i in range(num_to_cull):
             ranked_agents[i].kill()

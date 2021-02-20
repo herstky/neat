@@ -8,14 +8,10 @@ from kypy_neat.utils.timer import timer
 
 
 class Population:
-    def __init__(self):
+    def __init__(self, size=150):
         self._agents = []
         self._species = []
-        self._target_population = 150
-        self._cull_fraction = 0.2 # fraction of species to be annihilated each generation
-        self._species_floor = 8 # minimum number of species that must exist before any are annihilated
-        self._breed_fraction = 1 # fraction of species that will breed each round
-        self._min_breeding_species = 4 # minimum number of species that will breed each round
+        self._size = size
         self.generation_champion = None
         self._generation_champion_bonus_offspring = 1
 
@@ -61,7 +57,7 @@ class Population:
 
     def initialize_population(self, num_inputs, num_outputs):
         Genotype.initialize_minimal_topology(num_inputs, num_outputs)
-        for _ in range(self._target_population):
+        for _ in range(self._size):
             genotype = Genotype.base_genotype_factory()
             phenotype = Phenotype(genotype)
             self._agents.append(Agent(phenotype))
@@ -100,7 +96,7 @@ class Population:
         for _ in range(self._generation_champion_bonus_offspring):
             offspring.append(Species.generate_offspring(champ))
 
-        num_remaining_offspring = self._target_population - len(offspring)
+        num_remaining_offspring = self._size - len(offspring)
         for species in self._species:
             species_total_shared_fitness = species.total_shared_fitness
             species_offspring_share = num_remaining_offspring * species_total_shared_fitness / aggregate_shared_fitness
@@ -139,3 +135,11 @@ class Population:
             if not len(species.agents):
                 species.annihilate()
                 self._species.remove(species)
+
+    def set_generation_champion(self, champion):
+        # Generation champion is copied in case the original gets culled
+        genotype_copy = champion.genotype.generate_copy()
+        phenotype = Phenotype(genotype_copy)
+        agent_copy = Agent(phenotype) 
+        agent_copy.fitness = champion.fitness
+        self.generation_champion = agent_copy
