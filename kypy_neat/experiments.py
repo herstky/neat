@@ -2,6 +2,8 @@ import random as rand
 import math
 import pickle
 
+from multiprocessing import Pool, Array, Value, Queue
+
 from kypy_neat.population import Population
 from kypy_neat.agent import Agent
 from kypy_neat.utils.timer import timer
@@ -112,7 +114,7 @@ class XOR(Experiment):
             self.print_generation_results()
 
 class SinglePoleProblem(Experiment):
-    def __init__(self, max_steps=500, num_tests=100, num_generations=20, population_size=150):
+    def __init__(self, max_steps=100, num_tests=5, num_generations=20, population_size=10):
         super().__init__(num_generations, population_size)
         self._max_steps = max_steps
         self.num_tests = num_tests
@@ -186,21 +188,39 @@ class SinglePoleProblem(Experiment):
 
         return (x, x_dot, theta, theta_dot)
 
+    # @timer
+    # def epoch(self):
+    #     generation_champion = None
+    #     for agent in self.population.agents:
+    #         agent.fitness = self.evaluate_agent(agent)
+
+    #         if not generation_champion:
+    #             generation_champion = agent
+    #         elif agent.fitness > generation_champion.fitness:
+    #             generation_champion = agent 
+
+    #     self.population.set_generation_champion(generation_champion)
+    #     with open('spp_solution.obj', 'wb') as outfile:
+    #         pickle.dump(generation_champion, outfile)
+
+    def process_agent(self, agent):
+        return (agent.agent_id, self.evaluate_agent(agent))
+
     @timer
     def epoch(self):
-        generation_champion = None
-        for agent in self.population.agents:
-            agent.fitness = self.evaluate_agent(agent)
+        with Pool() as pool:
+            output = pool.map(self.process_agent, self.population.agents)
 
-            if not generation_champion:
-                generation_champion = agent
-            elif agent.fitness > generation_champion.fitness:
-                generation_champion = agent 
+        for agent_id, fitness in output:
+            agent = self.population.get_agent(agent_id)
+            agent.fitness = fitness
 
+        generation_champion = max(self.population.agents, key=lambda agent: agent.fitness)
         self.population.set_generation_champion(generation_champion)
         with open('spp_solution.obj', 'wb') as outfile:
             pickle.dump(generation_champion, outfile)
 
+        
     def print_generation_results(self):
         print(f'Generation: {self._current_generation}, '
               f'Best: {self.population.generation_champion.fitness:.2f}%, '

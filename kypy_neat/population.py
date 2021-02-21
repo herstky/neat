@@ -10,6 +10,7 @@ from kypy_neat.utils.timer import timer
 class Population:
     def __init__(self, size=150):
         self._agents = []
+        self._agent_dict = {}
         self._species = []
         self._size = size
         self.generation_champion = None
@@ -55,12 +56,21 @@ class Population:
         for species in self._species:
             species.age += 1
 
+    def get_agent(self, agent_id):
+        if agent_id in self._agent_dict:
+            return self._agent_dict[agent_id]
+        
+        return None
+
     def initialize_population(self, num_inputs, num_outputs):
         Genotype.initialize_minimal_topology(num_inputs, num_outputs)
         for _ in range(self._size):
             genotype = Genotype.base_genotype_factory()
             phenotype = Phenotype(genotype)
-            self._agents.append(Agent(phenotype))
+            agent = Agent(phenotype)
+            self._agents.append(agent)
+            self._agent_dict[agent.agent_id] = agent
+
 
     def speciate(self):
         for agent in self._agents:
@@ -128,6 +138,7 @@ class Population:
 
     def replace_agents(self, offspring):
         self._agents = offspring
+        self._agent_dict = {agent.agent_id: agent for agent in offspring}
 
     def remove_extinct_species(self):
         species_copy = self._species[:]
