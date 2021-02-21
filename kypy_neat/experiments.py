@@ -15,7 +15,7 @@ class Experiment:
 
     def shuffle_data(self, inputs, outputs):
         data = [entry for entry in zip(inputs, outputs)]
-        random.shuffle(data)
+        rand.shuffle(data)
         inputs = [input_ for input_, output in data]
         outputs = [output for input_, output in data]
 
@@ -112,7 +112,7 @@ class XOR(Experiment):
             self.print_generation_results()
 
 class SinglePoleProblem(Experiment):
-    def __init__(self, max_steps=1000, num_tests=50, num_generations=10, population_size=150):
+    def __init__(self, max_steps=500, num_tests=100, num_generations=20, population_size=150):
         super().__init__(num_generations, population_size)
         self._max_steps = max_steps
         self.num_tests = num_tests
@@ -223,4 +223,4 @@ class SinglePoleProblem(Experiment):
         for i in range(1, self.num_tests + 1):
             performance = self.evaluate_agent(agent)
 
-            print(f'Test: {i} -- Performance: {performance:.2f}%')        
+            print(f'Test: {i} -- Performance: {performance:.2f}%')

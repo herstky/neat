@@ -27,11 +27,11 @@ class Genotype:
 
     # Kenneth Stanley states connection mutation chance should significantly exceed node mutation chance
     # He recommends 0.03 and 0.05, respectively, for small populations.
-    node_mutation_chance = 0.03
-    connection_mutation_chance = 0.06
+    node_mutation_chance = 0.05
+    connection_mutation_chance = 0.1
 
-    toggle_chance = 0.01 # chance a genotype's connections will be considered for toggling state
-    toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
+    toggle_chance = 0.0 # chance a genotype's connections will be considered for toggling state
+    toggle_mutation_rate = 0.0  # chace for each individual connection to be toggled
     reenable_chance = 0.01
 
     excess_coeff = 1
@@ -184,10 +184,15 @@ class Genotype:
         for input_node in self._node_genes:
             for output_node in self._node_genes:
                 structure = (input_node.innovation_id, output_node.innovation_id)
-                input_bridge = input_node.node_type is NodeType.INPUT and output_node.node_type is NodeType.INPUT
+                input_bridge = (input_node.node_type is NodeType.INPUT 
+                                and output_node.node_type is NodeType.INPUT 
+                                and input_node is not output_node)
+                output_bridge = (input_node.node_type is NodeType.OUTPUT 
+                                 and output_node.node_type is NodeType.OUTPUT 
+                                 and input_node is not output_node)
                 structure_exists = self.connection_structure_exists(structure)
                 recurrency_check = self._recurrency_test(input_node.innovation_id, output_node.innovation_id)
-                if not input_bridge and not structure_exists and recurrency_check:
+                if not input_bridge and not output_bridge and not structure_exists and recurrency_check:
                     structure_candidates.append(structure)
 
         if not len(structure_candidates):
