@@ -20,15 +20,15 @@ class Genotype:
     end_weight_cold_mutation_rate = 0.1 # chance for each individual end weight to be completely replaced
 
     # Kenneth Stanley states mutation power should not exceed 5.0
-    weight_mut_power = 2.5
-    severe_weight_mut_chance = 0
+    weight_mut_power = 2
+    severe_weight_mut_chance = 0.05
     severe_weight_mut_power = 5 
     weight_cap = 8.0
 
     # Kenneth Stanley states connection mutation chance should significantly exceed node mutation chance
     # He recommends 0.03 and 0.05, respectively, for small populations.
-    node_mutation_chance = 0.05
-    connection_mutation_chance = 0.1
+    node_mutation_chance = 0.03
+    connection_mutation_chance = 0.05
 
     toggle_chance = 0.0 # chance a genotype's connections will be considered for toggling state
     toggle_mutation_rate = 0.0  # chace for each individual connection to be toggled

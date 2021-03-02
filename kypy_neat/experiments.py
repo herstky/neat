@@ -114,18 +114,14 @@ class XOR(Experiment):
             self.print_generation_results()
 
 class SinglePoleProblem(Experiment):
-    def __init__(self, max_steps=100, num_tests=5, num_generations=20, population_size=10):
+    def __init__(self, max_steps=100000, num_tests=10, num_generations=7, population_size=150):
         super().__init__(num_generations, population_size)
         self._max_steps = max_steps
         self.num_tests = num_tests
 
     def evaluate_agent(self, agent):
-        total = 0
-        for i in range(self.num_tests):
-            total += self.evaluate_agent_helper(agent) / self._max_steps * 100
+        return self.evaluate_agent_helper(agent) / self._max_steps * 100
         
-        return total / self.num_tests
-
     def evaluate_agent_helper(self, agent):
         one_degree = 2 * math.pi / 360
         twelve_degrees = 12 * one_degree
@@ -174,12 +170,14 @@ class SinglePoleProblem(Experiment):
         pole_mass_length = pole_mass * length
         force_mag = 10.0
         tau = 0.02
+        cos_theta = math.cos(theta)
+        sin_theta = math.sin(theta)
 
         force = force_mag if action > 0 else -force_mag
         
-        temp = (force + pole_mass_length * theta_dot * theta_dot * math.sin(theta)) / total_mass
-        theta_acc = (gravity * math.sin(theta) - math.cos(theta) * temp) / (length * (4 / 3 - pole_mass * math.cos(theta) * math.cos(theta) / total_mass))
-        x_acc = temp - pole_mass_length * theta_acc * math.cos(theta) / total_mass
+        temp = (force + pole_mass_length * theta_dot * theta_dot * sin_theta) / total_mass
+        theta_acc = (gravity * sin_theta - cos_theta * temp) / (length * (4 / 3 - pole_mass * cos_theta * cos_theta / total_mass))
+        x_acc = temp - pole_mass_length * theta_acc * cos_theta / total_mass
 
         x += tau * x_dot
         x_dot += tau * x_acc
@@ -187,21 +185,6 @@ class SinglePoleProblem(Experiment):
         theta_dot += tau * theta_acc
 
         return (x, x_dot, theta, theta_dot)
-
-    # @timer
-    # def epoch(self):
-    #     generation_champion = None
-    #     for agent in self.population.agents:
-    #         agent.fitness = self.evaluate_agent(agent)
-
-    #         if not generation_champion:
-    #             generation_champion = agent
-    #         elif agent.fitness > generation_champion.fitness:
-    #             generation_champion = agent 
-
-    #     self.population.set_generation_champion(generation_champion)
-    #     with open('spp_solution.obj', 'wb') as outfile:
-    #         pickle.dump(generation_champion, outfile)
 
     def process_agent(self, agent):
         return (agent.agent_id, self.evaluate_agent(agent))
@@ -233,8 +216,8 @@ class SinglePoleProblem(Experiment):
             self._current_generation = generation
             self.population.prepare_generation()
             self.epoch()
-            self.population.finish_generation()
             self.print_generation_results()
+            self.population.finish_generation()
 
     def evaluate_solution(self):
         with open('spp_solution.obj', 'rb') as infile:
