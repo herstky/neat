@@ -107,7 +107,6 @@ class XOR(Experiment):
               f'Networks Evaluated: {self._results["networks_evaluated"]}')
         print(f'Generation Champion -- '
               f'Score: {top_performance:.1f}%, '
-              f'Error: {self.population.generation_champion.error_sum} '
               f'Hidden Nodes: {len(self.population.generation_champion.phenotype.hidden_nodes)}',
               f'Connections: {self.population.generation_champion.genotype.num_enabled_connection_genes}')
         print()

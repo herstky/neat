@@ -1,3 +1,5 @@
+# NOTE champions are not getting copied
+
 from kypy_neat.experiments import XOR, SinglePoleProblem
 
 def main():

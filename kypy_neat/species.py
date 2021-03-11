@@ -8,7 +8,7 @@ from kypy_neat.utils.timer import timer
 class Species:
     _species_created = 0
     _species_count = 0
-    target_species_count = 30
+    target_species_count = 15
     compatibility_threshold = 5.0
     compatibility_mod = 0.3
     control_species_count = True
