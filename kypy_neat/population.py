@@ -36,8 +36,12 @@ class Population:
         return sorted(self._species, key=lambda x: x.total_shared_fitness, reverse=descending)
 
     @property
-    def aggregate_shared_fitness(self):
+    def shared_fitness_sum(self):
         return sum([species.total_shared_fitness for species in self._species])
+
+    @property
+    def average_shared_fitness_sum(self):
+        return sum([species.average_shared_fitness for species in self._species])
 
     def get_species_of_agent(self, agent):
         for species in self._species:
@@ -98,8 +102,28 @@ class Population:
         for species in self._species:
             species.reset()
 
+    # def breed_species(self):
+    #     aggregate_shared_fitness = self.aggregate_shared_fitness
+    #     offspring = []
+
+    #     champ = self.generation_champion
+    #     for _ in range(self._generation_champion_bonus_offspring):
+    #         offspring.append(Species.generate_offspring(champ))
+
+    #     num_remaining_offspring = self._size - len(offspring)
+    #     for species in self._species:
+    #         species_total_shared_fitness = species.total_shared_fitness
+    #         species_offspring_share = num_remaining_offspring * species_total_shared_fitness / aggregate_shared_fitness
+
+    #         offspring += species.breed(species_offspring_share)
+
+    #     # while len(offspring) < self._size:
+    #     #     offspring.append(champ_species.generate_offspring(champ))
+
+    #     return offspring
+
     def breed_species(self):
-        aggregate_shared_fitness = self.aggregate_shared_fitness
+        average_shared_fitness_sum = self.average_shared_fitness_sum
         offspring = []
 
         champ = self.generation_champion
@@ -108,12 +132,10 @@ class Population:
 
         num_remaining_offspring = self._size - len(offspring)
         for species in self._species:
-            species_total_shared_fitness = species.total_shared_fitness
-            species_offspring_share = num_remaining_offspring * species_total_shared_fitness / aggregate_shared_fitness
-
+            species_offspring_share = num_remaining_offspring * species.average_shared_fitness / average_shared_fitness_sum
             offspring += species.breed(species_offspring_share)
 
-        # while len(offspring) < self._target_population:
+        # while len(offspring) < self._size:
         #     offspring.append(champ_species.generate_offspring(champ))
 
         return offspring
