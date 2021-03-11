@@ -101,8 +101,15 @@ class XOR(Experiment):
                   f'Champ {champion.agent_id}: {performance:.1f}%')
 
         print()
-        print(f'Generation: {self._current_generation} -- Agents: {self._results["pop_size"]}, Species: {self._results["num_species"]}, Networks Evaluated: {self._results["networks_evaluated"]}')
-        print(f'Generation Best: {top_performance:.1f}%, Hidden Nodes: {len(self.population.generation_champion.phenotype.hidden_nodes)}')
+        print(f'Generation: {self._current_generation} -- '
+              f'Agents: {self._results["pop_size"]}, '
+              f'Species: {self._results["num_species"]}, '
+              f'Networks Evaluated: {self._results["networks_evaluated"]}')
+        print(f'Generation Champion -- '
+              f'Score: {top_performance:.1f}%, '
+              f'Error: {self.population.generation_champion.error_sum} '
+              f'Hidden Nodes: {len(self.population.generation_champion.phenotype.hidden_nodes)}',
+              f'Connections: {self.population.generation_champion.genotype.num_enabled_connection_genes}')
         print()
         print('*******************************************************************************************')
         print()
