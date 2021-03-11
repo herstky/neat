@@ -28,7 +28,7 @@ class Genotype:
     # Kenneth Stanley states connection mutation chance should significantly exceed node mutation chance
     # He recommends 0.03 and 0.05, respectively, for small populations.
     node_mutation_chance = 0.03
-    connection_mutation_chance = 0.05
+    connection_mutation_chance = 0.1
 
     toggle_chance = 0.0 # chance a genotype's connections will be considered for toggling state
     toggle_mutation_rate = 0.0  # chace for each individual connection to be toggled
@@ -36,7 +36,7 @@ class Genotype:
 
     excess_coeff = 1
     disjoint_coeff = 1
-    weight_coeff = 0.4
+    weight_coeff = 0.1
     
     def __init__(self):
         self._node_genes = []
