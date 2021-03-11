@@ -8,7 +8,7 @@ from kypy_neat.utils.timer import timer
 class Species:
     _species_created = 0
     _species_count = 0
-    target_species_count = 10
+    target_species_count = 5
     compatibility_threshold = 5.0
     compatibility_mod = 0.3
     control_species_count = True
@@ -224,8 +224,8 @@ class Species:
         self._champion = ranked_agents[0]
         total_shared_fitness = self.total_shared_fitness
         self.results['size'] = self.count
-        self.results['tot_shared_fitness'] = total_shared_fitness
-        self.results['avg_shared_fitness'] = total_shared_fitness / self.count
+        self.results['tot_shared_fitness'] = self.total_shared_fitness
+        self.results['avg_shared_fitness'] = self.average_shared_fitness
         self.results['max_shared_fitness'] = self.fitness_share(ranked_agents[0])
         self.results['min_shared_fitness'] = self.fitness_share(ranked_agents[-1])
 

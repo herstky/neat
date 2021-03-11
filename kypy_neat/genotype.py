@@ -126,16 +126,30 @@ class Genotype:
 
         return rand.uniform(-1, 1) * power
 
+    def add_node_gene(self, node_gene):
+        idx = 0
+        for existing_gene in self._node_genes:
+            if node_gene.innovation_id > existing_gene.innovation_id:
+                idx += 1
+        self._node_genes.insert(idx, node_gene)
+        self._node_structures.add(node_gene.structure)
+
+    def add_connection_gene(self, connection_gene):
+        idx = 0
+        for existing_gene in self._connection_genes:
+            if connection_gene.innovation_id > existing_gene.innovation_id:
+                idx += 1
+        self._connection_genes.insert(idx, connection_gene)
+        self._connection_structures.add(connection_gene.structure)
+
     def create_node_gene(self, input_node_id, output_node_id, node_type):
         node_gene = gene_factory.create_node_gene(self, input_node_id, output_node_id, node_type)
-        self._node_genes.append(node_gene)
-        self._node_structures.add(node_gene.structure)
+        self.add_node_gene(node_gene)
         return node_gene
 
     def create_connection_gene(self, input_node_id, output_node_id, weight, enabled=True):
         connection_gene = gene_factory.create_connection_gene(self, input_node_id, output_node_id, weight, enabled)
-        self._connection_genes.append(connection_gene)
-        self._connection_structures.add(connection_gene.structure)
+        self.add_connection_gene(connection_gene)
         return connection_gene
 
     def _recurrency_test(self, input_node_id, output_node_id):
@@ -234,28 +248,26 @@ class Genotype:
         return False
 
     def inherit_connection_gene(self, gene):  
-        new_gene = gene_factory.create_connection_gene(self, gene.input_node_id, gene.output_node_id, gene.weight, gene.enabled)      
-        self._connection_genes.append(new_gene)
-        self._connection_structures.add(new_gene.structure)
+        connection_gene = gene_factory.create_connection_gene(self, gene.input_node_id, gene.output_node_id, gene.weight, gene.enabled)      
+        self.add_connection_gene(connection_gene)
 
-        if not new_gene.enabled:
-            new_gene.enabled = rand.uniform(0, 1) < Genotype.reenable_chance
+        if not connection_gene.enabled:
+            connection_gene.enabled = rand.uniform(0, 1) < Genotype.reenable_chance
 
     def add_and_mutate_connection_gene(self, gene):  
-        new_gene = gene_factory.create_connection_gene(self, gene.input_node_id, gene.output_node_id, gene.weight, gene.enabled)      
-        self._connection_genes.append(new_gene)
-        self._connection_structures.add(new_gene.structure)
+        connection_gene = gene_factory.create_connection_gene(self, gene.input_node_id, gene.output_node_id, gene.weight, gene.enabled)      
+        self.add_connection_gene(connection_gene)
 
-        if not new_gene.enabled:
-            new_gene.enabled = rand.uniform(0, 1) < Genotype.reenable_chance
+        if not connection_gene.enabled:
+            connection_gene.enabled = rand.uniform(0, 1) < Genotype.reenable_chance
 
         weight_mod = self.generate_weight_modifier()
         if rand.uniform(0, 1) < Genotype.weight_mutation_chance:
-            new_gene.weight += weight_mod
+            connection_gene.weight += weight_mod
         elif rand.uniform(0, 1) < Genotype._weight_cold_mutation_chance:
-            new_gene.weight = weight_mod
+            connection_gene.weight = weight_mod
             
-        new_gene.weight = min(max(new_gene.weight, -self.weight_cap), self.weight_cap)
+        connection_gene.weight = min(max(connection_gene.weight, -self.weight_cap), self.weight_cap)
 
     def compatibilty(self, other):
         num_disjoint = 0

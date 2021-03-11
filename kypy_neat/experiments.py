@@ -46,10 +46,13 @@ class XOR(Experiment):
                        [1, 1, 1]]
         
         self.outputs = [[0], [1], [1], [0]]
+        self._results = {}
 
     def epoch(self, inputs, outputs):
         inputs, outputs = self.shuffle_data(inputs, outputs)
-        
+        self._results['pop_size'] = len(self.population.agents)
+        self._results['networks_evaluated'] = Agent.agents_created()
+        self._results['num_species'] = len(self.population.species)
         generation_champion = None
         for agent in self.population.agents:
             agent.error_sum = 0
@@ -98,7 +101,7 @@ class XOR(Experiment):
                   f'Champ {champion.agent_id}: {performance:.1f}%')
 
         print()
-        print(f'Generation: {self._current_generation} -- Agents: {len(self.population.agents)}, Species: {len(self.population.species)}, Networks Evaluated: {Agent.agents_created()}')
+        print(f'Generation: {self._current_generation} -- Agents: {self._results["pop_size"]}, Species: {self._results["num_species"]}, Networks Evaluated: {self._results["networks_evaluated"]}')
         print(f'Generation Best: {top_performance:.1f}%, Hidden Nodes: {len(self.population.generation_champion.phenotype.hidden_nodes)}')
         print()
         print('*******************************************************************************************')
