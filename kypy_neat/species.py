@@ -8,11 +8,13 @@ from kypy_neat.utils.timer import timer
 class Species:
     _species_created = 0
     _species_count = 0
-    target_species_count = 15
+    target_species_count = 10
     compatibility_threshold = 5.0
     compatibility_mod = 0.3
     control_species_count = True
     cull_fraction = 0.8
+    stagnation_limit = 15
+    stagnation_penalty = 0.
 
     def __init__(self, representative):
         Species._species_created += 1
@@ -22,12 +24,25 @@ class Species:
         self._agents = []
         self._agent_set = set()
         self.results = {}
-        self.age = 0
-        self.expired = False
-        self._population_floor = 0
-        self._breed_fraction = 0.6
-        self._base_offspring_count = 3
-        self._champion = None
+        self._age = 0
+        self._extinct = False
+        self._best_fitness = float('-inf')
+        self._stagnation_duration = 0
+
+    @property
+    def extinct(self):
+        return self._extinct or not len(self._agents)
+
+    def eradicate(self):
+        self._extinct = True
+        for agent in self._agents:
+            agent.kill()
+        # self.reset()
+        Species._species_count -= 1
+
+    @property
+    def stagnated(self):
+        return self._stagnation_duration >= Species.stagnation_limit
 
     @classmethod
     def control_species_count(cls):
@@ -53,12 +68,12 @@ class Species:
     def agents(self):
         return tuple(self._agents)
 
-    @property
-    def extinct(self):
-        return len(self._agents) == 0
+    # @property
+    # def extinct(self):
+    #     return len(self._agents) == 0
 
-    def annihilate(self):
-        Species._species_count -= 1
+    # def annihilate(self):
+    #     Species._species_count -= 1
 
     @property
     def living_agents(self):
@@ -97,11 +112,17 @@ class Species:
         if agent not in self._agent_set:
             raise RuntimeError('Agent not in this species')
 
-        return agent.adjusted_fitness / self.count
+        penalty = Species.stagnation_penalty if self.stagnated else 0
+
+        return agent.adjusted_fitness * (1 - penalty) / self.count
 
     @property
     def average_fitness(self):
         return self.total_fitness / self.count
+
+    @property
+    def average_adjusted_fitness(self):
+        return self.total_adjusted_fitness / self.count
 
     @property
     def max_fitness(self):
@@ -109,7 +130,11 @@ class Species:
 
     @property
     def max_shared_fitness(self):
-        return self.fitness_share(ranked_agents()[0])
+        return self.fitness_share(self.ranked_agents()[0])
+
+    @property
+    def min_shared_fitness(self):
+        return self.fitness_share(self.ranked_agents()[-1])
 
     @property
     def total_fitness(self):
@@ -118,6 +143,10 @@ class Species:
     @property
     def total_shared_fitness(self):
         return sum([self.fitness_share(agent) for agent in self._agents])
+
+    @property
+    def total_adjusted_fitness(self):
+        return sum([agent.adjusted_fitness for agent in self._agents])
 
     @property
     def total_living_shared_fitness(self):
@@ -132,7 +161,7 @@ class Species:
     
     @property
     def champion(self):
-        return self._champion
+        return self.ranked_agents()[0]
 
     def mutate(self):
         for agent in self._agents:
@@ -141,7 +170,26 @@ class Species:
 
             agent.phenotype.genotype.mutate()
 
+    def advance(self):
+        self._age += 1
+        progressed = False
+        for agent in self._agents:
+            if agent.fitness > self._best_fitness:
+                self._best_fitness = agent.fitness
+                progressed = True
+        
+        if progressed:
+            self._stagnation_duration = 0
+        else:
+            self._stagnation_duration += 1
+
+        
+
     def cull(self):
+        # if self.stagnated:
+        #     self.eradicate()
+        #     return
+
         ranked_agents = self.ranked_agents(False)
         num_to_cull = int(Species.cull_fraction * self.count)
 
@@ -153,10 +201,10 @@ class Species:
         if parent2 is None:
             genotype = parent1.genotype.copy_and_mutate()
 
-        elif parent1.adjusted_fitness < parent2.adjusted_fitness:
-            raise RuntimeError('Unexpected adjusted_fitness pairing')
+        elif parent1.fitness < parent2.fitness: # NOTE This somehow can happen
+            raise RuntimeError('Unexpected fitness pairing')
 
-        elif parent1.adjusted_fitness > parent2.adjusted_fitness:
+        elif parent1.fitness > parent2.fitness:
             genotype = parent1.genotype.favored_crossover(parent2.genotype)
 
         else: # adjusted_fitness must then be equal for both parents
@@ -168,7 +216,8 @@ class Species:
         phenotype = Phenotype(genotype)
         return Agent(phenotype)
     
-    def generate_clone(self, agent):
+    @staticmethod
+    def generate_clone(agent):
         genotype = agent.genotype.generate_copy()
         phenotype = Phenotype(genotype)
         return Agent(phenotype)
@@ -187,7 +236,7 @@ class Species:
             champ = ranked_agents[0]
             num_champ_clones = 1
             for _ in range(num_champ_clones):
-                offspring.append(self.generate_clone(champ))
+                offspring.append(Species.generate_clone(champ))
 
             remaining_offspring_share = offspring_share - num_champ_clones
         else:
@@ -211,6 +260,7 @@ class Species:
 
         # any remaining offspring go to champ
         while len(offspring) < round(offspring_share):
+            champ = ranked_agents[0]
             offspring.append(Species.generate_offspring(champ))
         
         return offspring
@@ -218,15 +268,3 @@ class Species:
     def reset(self):
         self._agents = []
         self._agent_set = set()
-
-    def record_results(self):
-        ranked_agents = self.ranked_agents()
-        self._champion = ranked_agents[0]
-        total_shared_fitness = self.total_shared_fitness
-        self.results['size'] = self.count
-        self.results['tot_shared_fitness'] = self.total_shared_fitness
-        self.results['avg_shared_fitness'] = self.average_shared_fitness
-        self.results['max_shared_fitness'] = self.fitness_share(ranked_agents[0])
-        self.results['min_shared_fitness'] = self.fitness_share(ranked_agents[-1])
-
-

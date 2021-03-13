@@ -15,28 +15,28 @@ class Genotype:
     weight_mutation_chance = 0.8 # chance a genotype's weights will be considered for mutation
     weight_mutation_rate = 0.9 # chance for each individual weight to be perturbed
     weight_cold_mutation_rate = 0.1 # chance for each individual weight to be completely replaced
-    end_genotype_threshold = 1 # point after which mutations should be more likely  
+    end_genotype_threshold = 0.8 # point after which mutations should be more likely  
     end_weight_mutation_rate = 0.9 # chance for each individual end weight to be perturbed
     end_weight_cold_mutation_rate = 0.1 # chance for each individual end weight to be completely replaced
 
     # Kenneth Stanley states mutation power should not exceed 5.0
-    weight_mut_power = 2
-    severe_weight_mut_chance = 0.05
+    weight_mut_power = 2.5
+    severe_weight_mut_chance = 0.01
     severe_weight_mut_power = 5 
     weight_cap = 8.0
 
     # Kenneth Stanley states connection mutation chance should significantly exceed node mutation chance
     # He recommends 0.03 and 0.05, respectively, for small populations.
-    node_mutation_chance = 0.02
-    connection_mutation_chance = 0.08
+    node_mutation_chance = 0.03
+    connection_mutation_chance = 0.05
 
-    toggle_chance = 0.03 # chance a genotype's connections will be considered for toggling state
-    toggle_mutation_rate = 0.0  # chace for each individual connection to be toggled
-    reenable_chance = 0.01
+    toggle_chance = 0.05 # chance a genotype's connections will be considered for toggling state
+    toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
+    reenable_chance = 0.1
 
     excess_coeff = 1
     disjoint_coeff = 1
-    weight_coeff = 0.1
+    weight_coeff = 0.4
     
     def __init__(self):
         self._node_genes = []

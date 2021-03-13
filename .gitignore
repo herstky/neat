@@ -1,2 +1,4 @@
 .vscode/
 __pycache__/
+xor_agents/
+backups/

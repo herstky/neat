@@ -36,7 +36,7 @@ class Node(Trait):
         self.activation = self.activation_function(self.aggregate_input)
 
     def activation_function(self, val):
-        return sigmoid(val)
+        return sigmoid(val, 4.9)
 
     def flush_back(self):
         if self.node_type is NodeType.INPUT:

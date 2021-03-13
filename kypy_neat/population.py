@@ -56,10 +56,6 @@ class Population:
         self._species.append(new_species)
         return new_species
 
-    def age_species(self):
-        for species in self._species:
-            species.age += 1
-
     def get_agent(self, agent_id):
         if agent_id in self._agent_dict:
             return self._agent_dict[agent_id]
@@ -94,6 +90,10 @@ class Population:
 
         self.cleanup_agents()
 
+    def age_species(self):
+        for species in self._species:
+            species.advance()
+
     def cull_species(self):
         for species in self._species:
             species.cull()
@@ -123,16 +123,15 @@ class Population:
     #     return offspring
 
     def breed_species(self):
-        average_shared_fitness_sum = self.average_shared_fitness_sum
         offspring = []
 
         champ = self.generation_champion
         for _ in range(self._generation_champion_bonus_offspring):
-            offspring.append(Species.generate_offspring(champ))
+            offspring.append(Species.generate_clone(champ))
 
         num_remaining_offspring = self._size - len(offspring)
         for species in self._species:
-            species_offspring_share = num_remaining_offspring * species.average_shared_fitness / average_shared_fitness_sum
+            species_offspring_share = num_remaining_offspring * species.total_shared_fitness / self.shared_fitness_sum
             offspring += species.breed(species_offspring_share)
 
         # while len(offspring) < self._size:
@@ -150,13 +149,11 @@ class Population:
             species.record_results()
 
     def finish_generation(self):
-        self.record_species_results()
+        self.age_species()
         self.cull_species()
         offspring = self.breed_species()
         self.reset_species()
         self.replace_agents(offspring)
-        self.age_species()
-
 
     def replace_agents(self, offspring):
         self._agents = offspring
@@ -165,8 +162,7 @@ class Population:
     def remove_extinct_species(self):
         species_copy = self._species[:]
         for species in species_copy:
-            if not len(species.agents):
-                species.annihilate()
+            if species.extinct:
                 self._species.remove(species)
 
     def set_generation_champion(self, champion):
@@ -175,4 +171,6 @@ class Population:
         phenotype = Phenotype(genotype_copy)
         agent_copy = Agent(phenotype) 
         agent_copy.fitness = champion.fitness
+        agent_copy.error_sum = champion.error_sum
+        agent_copy.classification_error = champion.classification_error
         self.generation_champion = agent_copy

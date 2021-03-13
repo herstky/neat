@@ -9,7 +9,7 @@ class Agent:
     def __init__(self, phenotype):
         Agent._agents_created += 1
         Agent._agent_count += 1
-        self._agent_id = Agent._agent_count
+        self._agent_id = Agent._agents_created
         self._phenotype = phenotype
         self.age = 0
         self.error_sum = 0

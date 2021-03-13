@@ -1,0 +1,1974 @@
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 1 -- Agents: 150 | Species: 1 | Networks Evaluated: 150
+
+Species 1 -- Size: 150 | Total: 3.86 | Avg: 0.03 | Max: 0.03 | Min: 0.02 | Champion ID: 149 | Champion Error Sum: 1.71
+
+Champion 149 -- Error Sum: 1.71 | Classification Error: 1 | Hidden Nodes: 0 | Connections: 3
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 2 -- Agents: 150 | Species: 1 | Networks Evaluated: 301
+
+Species 1 -- Size: 150 | Total: 4.19 | Avg: 0.03 | Max: 0.04 | Min: 0.01 | Champion ID: 152 | Champion Error Sum: 1.45
+
+Champion 152 -- Error Sum: 1.45 | Classification Error: 1 | Hidden Nodes: 0 | Connections: 3
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 3 -- Agents: 151 | Species: 1 | Networks Evaluated: 453
+
+Species 1 -- Size: 151 | Total: 4.83 | Avg: 0.03 | Max: 0.05 | Min: 0.02 | Champion ID: 378 | Champion Error Sum: 1.26
+
+Champion 378 -- Error Sum: 1.26 | Classification Error: 1 | Hidden Nodes: 0 | Connections: 3
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 4 -- Agents: 151 | Species: 1 | Networks Evaluated: 605
+
+Species 1 -- Size: 151 | Total: 5.47 | Avg: 0.04 | Max: 0.05 | Min: 0.02 | Champion ID: 468 | Champion Error Sum: 1.26
+
+Champion 468 -- Error Sum: 1.26 | Classification Error: 1 | Hidden Nodes: 0 | Connections: 3
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 5 -- Agents: 150 | Species: 2 | Networks Evaluated: 756
+
+Species 1 -- Size: 148 | Total: 6.02 | Avg: 0.04 | Max: 0.06 | Min: 0.01 | Champion ID: 637 | Champion Error Sum: 1.12
+Species 2 -- Size: 2 | Total: 5.04 | Avg: 2.52 | Max: 2.93 | Min: 2.11 | Champion ID: 639 | Champion Error Sum: 1.58
+
+Champion 637 -- Error Sum: 1.12 | Classification Error: 1 | Hidden Nodes: 0 | Connections: 3
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 6 -- Agents: 150 | Species: 7 | Networks Evaluated: 907
+
+Species 1 -- Size: 2 | Total: 4.16 | Avg: 2.08 | Max: 2.19 | Min: 1.97 | Champion ID: 758 | Champion Error Sum: 1.91
+Species 2 -- Size: 140 | Total: 4.76 | Avg: 0.03 | Max: 0.05 | Min: 0.02 | Champion ID: 783 | Champion Error Sum: 1.34
+Species 3 -- Size: 1 | Total: 8.29 | Avg: 8.29 | Max: 8.29 | Min: 8.29 | Champion ID: 759 | Champion Error Sum: 1.12
+Species 4 -- Size: 3 | Total: 4.10 | Avg: 1.37 | Max: 1.39 | Min: 1.33 | Champion ID: 802 | Champion Error Sum: 1.96
+Species 5 -- Size: 2 | Total: 5.84 | Avg: 2.92 | Max: 2.98 | Min: 2.86 | Champion ID: 892 | Champion Error Sum: 1.56
+Species 6 -- Size: 1 | Total: 4.00 | Avg: 4.00 | Max: 4.00 | Min: 4.00 | Champion ID: 893 | Champion Error Sum: 2.00
+Species 7 -- Size: 1 | Total: 4.55 | Avg: 4.55 | Max: 4.55 | Min: 4.55 | Champion ID: 902 | Champion Error Sum: 1.87
+
+Champion 759 -- Error Sum: 1.12 | Classification Error: 1 | Hidden Nodes: 0 | Connections: 3
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 7 -- Agents: 151 | Species: 8 | Networks Evaluated: 1059
+
+Species 1 -- Size: 28 | Total: 5.07 | Avg: 0.18 | Max: 0.28 | Min: 0.09 | Champion ID: 955 | Champion Error Sum: 1.18
+Species 2 -- Size: 3 | Total: 5.22 | Avg: 1.74 | Max: 2.35 | Min: 1.34 | Champion ID: 923 | Champion Error Sum: 1.34
+Species 3 -- Size: 36 | Total: 7.60 | Avg: 0.21 | Max: 0.24 | Min: 0.11 | Champion ID: 944 | Champion Error Sum: 1.06
+Species 4 -- Size: 9 | Total: 4.11 | Avg: 0.46 | Max: 0.50 | Min: 0.44 | Champion ID: 979 | Champion Error Sum: 1.89
+Species 5 -- Size: 19 | Total: 4.87 | Avg: 0.26 | Max: 0.34 | Min: 0.20 | Champion ID: 988 | Champion Error Sum: 1.45
+Species 6 -- Size: 26 | Total: 4.00 | Avg: 0.15 | Max: 0.15 | Min: 0.15 | Champion ID: 1026 | Champion Error Sum: 2.00
+Species 7 -- Size: 29 | Total: 4.19 | Avg: 0.14 | Max: 0.16 | Min: 0.12 | Champion ID: 1033 | Champion Error Sum: 1.83
+Species 8 -- Size: 1 | Total: 7.33 | Avg: 7.33 | Max: 7.33 | Min: 7.33 | Champion ID: 956 | Champion Error Sum: 1.29
+
+Champion 944 -- Error Sum: 1.06 | Classification Error: 1 | Hidden Nodes: 0 | Connections: 3
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 8 -- Agents: 151 | Species: 10 | Networks Evaluated: 1211
+
+Species 2 -- Size: 19 | Total: 5.79 | Avg: 0.30 | Max: 0.38 | Min: 0.15 | Champion ID: 1078 | Champion Error Sum: 1.31
+Species 3 -- Size: 7 | Total: 8.04 | Avg: 1.15 | Max: 1.23 | Min: 1.07 | Champion ID: 1090 | Champion Error Sum: 1.06
+Species 4 -- Size: 7 | Total: 4.34 | Avg: 0.62 | Max: 0.67 | Min: 0.57 | Champion ID: 1097 | Champion Error Sum: 1.84
+Species 5 -- Size: 4 | Total: 5.70 | Avg: 1.43 | Max: 1.62 | Min: 1.10 | Champion ID: 1100 | Champion Error Sum: 1.45
+Species 6 -- Size: 2 | Total: 4.01 | Avg: 2.00 | Max: 2.01 | Min: 2.00 | Champion ID: 1104 | Champion Error Sum: 2.00
+Species 7 -- Size: 2 | Total: 4.59 | Avg: 2.29 | Max: 2.36 | Min: 2.23 | Champion ID: 1106 | Champion Error Sum: 1.83
+Species 8 -- Size: 103 | Total: 6.22 | Avg: 0.06 | Max: 0.08 | Min: 0.02 | Champion ID: 1149 | Champion Error Sum: 1.06
+Species 9 -- Size: 5 | Total: 5.12 | Avg: 1.02 | Max: 1.22 | Min: 0.80 | Champion ID: 1082 | Champion Error Sum: 1.53
+Species 10 -- Size: 1 | Total: 5.35 | Avg: 5.35 | Max: 5.35 | Min: 5.35 | Champion ID: 1088 | Champion Error Sum: 1.69
+Species 11 -- Size: 1 | Total: 8.18 | Avg: 8.18 | Max: 8.18 | Min: 8.18 | Champion ID: 1129 | Champion Error Sum: 1.14
+
+Champion 1149 -- Error Sum: 1.06 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 5
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 9 -- Agents: 151 | Species: 10 | Networks Evaluated: 1363
+
+Species 2 -- Size: 19 | Total: 5.87 | Avg: 0.31 | Max: 0.39 | Min: 0.23 | Champion ID: 1215 | Champion Error Sum: 1.29
+Species 3 -- Size: 8 | Total: 7.02 | Avg: 0.88 | Max: 1.08 | Min: 0.49 | Champion ID: 1217 | Champion Error Sum: 1.06
+Species 4 -- Size: 4 | Total: 4.55 | Avg: 1.14 | Max: 1.18 | Min: 1.05 | Champion ID: 1226 | Champion Error Sum: 1.83
+Species 5 -- Size: 9 | Total: 5.38 | Avg: 0.60 | Max: 0.72 | Min: 0.42 | Champion ID: 1229 | Champion Error Sum: 1.45
+Species 6 -- Size: 13 | Total: 4.01 | Avg: 0.31 | Max: 0.31 | Min: 0.31 | Champion ID: 1240 | Champion Error Sum: 1.98
+Species 7 -- Size: 15 | Total: 4.28 | Avg: 0.29 | Max: 0.33 | Min: 0.22 | Champion ID: 1262 | Champion Error Sum: 1.77
+Species 8 -- Size: 2 | Total: 6.28 | Avg: 3.14 | Max: 4.32 | Min: 1.96 | Champion ID: 1266 | Champion Error Sum: 1.06
+Species 9 -- Size: 22 | Total: 4.92 | Avg: 0.22 | Max: 0.33 | Min: 0.10 | Champion ID: 1305 | Champion Error Sum: 1.32
+Species 10 -- Size: 5 | Total: 3.57 | Avg: 0.71 | Max: 0.87 | Min: 0.49 | Champion ID: 1304 | Champion Error Sum: 1.91
+Species 11 -- Size: 54 | Total: 6.91 | Avg: 0.13 | Max: 0.16 | Min: 0.06 | Champion ID: 1346 | Champion Error Sum: 1.05
+
+Champion 1346 -- Error Sum: 1.05 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 8
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 10 -- Agents: 151 | Species: 13 | Networks Evaluated: 1515
+
+Species 2 -- Size: 5 | Total: 6.14 | Avg: 1.23 | Max: 1.47 | Min: 1.05 | Champion ID: 1366 | Champion Error Sum: 1.29
+Species 3 -- Size: 17 | Total: 8.37 | Avg: 0.49 | Max: 0.51 | Min: 0.44 | Champion ID: 1374 | Champion Error Sum: 1.05
+Species 4 -- Size: 21 | Total: 4.57 | Avg: 0.22 | Max: 0.29 | Min: 0.17 | Champion ID: 1396 | Champion Error Sum: 1.53
+Species 5 -- Size: 12 | Total: 5.79 | Avg: 0.48 | Max: 0.61 | Min: 0.30 | Champion ID: 1416 | Champion Error Sum: 1.30
+Species 6 -- Size: 6 | Total: 4.06 | Avg: 0.68 | Max: 0.68 | Min: 0.67 | Champion ID: 1424 | Champion Error Sum: 1.98
+Species 7 -- Size: 6 | Total: 4.77 | Avg: 0.80 | Max: 0.83 | Min: 0.65 | Champion ID: 1431 | Champion Error Sum: 1.77
+Species 8 -- Size: 60 | Total: 7.34 | Avg: 0.12 | Max: 0.14 | Min: 0.02 | Champion ID: 1470 | Champion Error Sum: 1.05
+Species 9 -- Size: 4 | Total: 6.27 | Avg: 1.57 | Max: 1.80 | Min: 0.95 | Champion ID: 1496 | Champion Error Sum: 1.32
+Species 10 -- Size: 14 | Total: 4.25 | Avg: 0.30 | Max: 0.45 | Min: 0.19 | Champion ID: 1371 | Champion Error Sum: 1.49
+Species 11 -- Size: 3 | Total: 8.13 | Avg: 2.71 | Max: 2.90 | Min: 2.45 | Champion ID: 1514 | Champion Error Sum: 1.05
+Species 12 -- Size: 1 | Total: 3.98 | Avg: 3.98 | Max: 3.98 | Min: 3.98 | Champion ID: 1393 | Champion Error Sum: 2.01
+Species 13 -- Size: 1 | Total: 6.32 | Avg: 6.32 | Max: 6.32 | Min: 6.32 | Champion ID: 1437 | Champion Error Sum: 1.49
+Species 14 -- Size: 1 | Total: 5.74 | Avg: 5.74 | Max: 5.74 | Min: 5.74 | Champion ID: 1505 | Champion Error Sum: 1.61
+
+Champion 1470 -- Error Sum: 1.05 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 11 -- Agents: 149 | Species: 14 | Networks Evaluated: 1665
+
+Species 2 -- Size: 5 | Total: 6.60 | Avg: 1.32 | Max: 1.47 | Min: 0.85 | Champion ID: 1521 | Champion Error Sum: 1.29
+Species 3 -- Size: 3 | Total: 7.24 | Avg: 2.41 | Max: 2.90 | Min: 1.53 | Champion ID: 1525 | Champion Error Sum: 1.05
+Species 4 -- Size: 1 | Total: 6.08 | Avg: 6.08 | Max: 6.08 | Min: 6.08 | Champion ID: 1528 | Champion Error Sum: 1.53
+Species 5 -- Size: 3 | Total: 6.50 | Avg: 2.17 | Max: 2.43 | Min: 1.83 | Champion ID: 1529 | Champion Error Sum: 1.30
+Species 6 -- Size: 4 | Total: 4.04 | Avg: 1.01 | Max: 1.02 | Min: 1.00 | Champion ID: 1532 | Champion Error Sum: 1.98
+Species 7 -- Size: 5 | Total: 4.64 | Avg: 0.93 | Max: 1.00 | Min: 0.81 | Champion ID: 1539 | Champion Error Sum: 1.76
+Species 8 -- Size: 2 | Total: 7.99 | Avg: 3.99 | Max: 4.35 | Min: 3.64 | Champion ID: 1541 | Champion Error Sum: 1.05
+Species 9 -- Size: 11 | Total: 6.22 | Avg: 0.57 | Max: 0.76 | Min: 0.36 | Champion ID: 1519 | Champion Error Sum: 1.11
+Species 10 -- Size: 2 | Total: 6.13 | Avg: 3.07 | Max: 3.16 | Min: 2.97 | Champion ID: 1551 | Champion Error Sum: 1.49
+Species 11 -- Size: 32 | Total: 6.98 | Avg: 0.22 | Max: 0.27 | Min: 0.12 | Champion ID: 1562 | Champion Error Sum: 1.05
+Species 12 -- Size: 24 | Total: 3.95 | Avg: 0.16 | Max: 0.17 | Min: 0.14 | Champion ID: 1571 | Champion Error Sum: 1.96
+Species 13 -- Size: 21 | Total: 5.56 | Avg: 0.26 | Max: 0.38 | Min: 0.10 | Champion ID: 1610 | Champion Error Sum: 1.16
+Species 14 -- Size: 35 | Total: 4.89 | Avg: 0.14 | Max: 0.20 | Min: 0.09 | Champion ID: 1657 | Champion Error Sum: 1.34
+Species 15 -- Size: 1 | Total: 8.42 | Avg: 8.42 | Max: 8.42 | Min: 8.42 | Champion ID: 1564 | Champion Error Sum: 1.10
+
+Champion 1562 -- Error Sum: 1.05 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 8
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 12 -- Agents: 149 | Species: 15 | Networks Evaluated: 1815
+
+Species 2 -- Size: 10 | Total: 6.71 | Avg: 0.67 | Max: 0.84 | Min: 0.38 | Champion ID: 1753 | Champion Error Sum: 1.11
+Species 3 -- Size: 12 | Total: 6.65 | Avg: 0.55 | Max: 0.72 | Min: 0.33 | Champion ID: 1676 | Champion Error Sum: 1.05
+Species 4 -- Size: 26 | Total: 4.59 | Avg: 0.18 | Max: 0.23 | Min: 0.14 | Champion ID: 1702 | Champion Error Sum: 1.53
+Species 5 -- Size: 10 | Total: 5.29 | Avg: 0.53 | Max: 0.74 | Min: 0.40 | Champion ID: 1723 | Champion Error Sum: 1.28
+Species 6 -- Size: 5 | Total: 4.01 | Avg: 0.80 | Max: 0.82 | Min: 0.77 | Champion ID: 1725 | Champion Error Sum: 1.98
+Species 7 -- Size: 5 | Total: 4.40 | Avg: 0.88 | Max: 1.00 | Min: 0.80 | Champion ID: 1730 | Champion Error Sum: 1.76
+Species 8 -- Size: 18 | Total: 7.53 | Avg: 0.42 | Max: 0.49 | Min: 0.22 | Champion ID: 1737 | Champion Error Sum: 1.04
+Species 9 -- Size: 3 | Total: 5.34 | Avg: 1.78 | Max: 2.63 | Min: 1.32 | Champion ID: 1754 | Champion Error Sum: 1.19
+Species 10 -- Size: 11 | Total: 5.93 | Avg: 0.54 | Max: 0.68 | Min: 0.22 | Champion ID: 1759 | Champion Error Sum: 1.26
+Species 11 -- Size: 4 | Total: 8.52 | Avg: 2.13 | Max: 2.18 | Min: 2.01 | Champion ID: 1667 | Champion Error Sum: 1.05
+Species 12 -- Size: 1 | Total: 4.17 | Avg: 4.17 | Max: 4.17 | Min: 4.17 | Champion ID: 1772 | Champion Error Sum: 1.96
+Species 15 -- Size: 40 | Total: 7.37 | Avg: 0.18 | Max: 0.22 | Min: 0.10 | Champion ID: 1811 | Champion Error Sum: 1.05
+Species 16 -- Size: 1 | Total: 4.00 | Avg: 4.00 | Max: 4.00 | Min: 4.00 | Champion ID: 1700 | Champion Error Sum: 2.00
+Species 17 -- Size: 2 | Total: 3.59 | Avg: 1.80 | Max: 2.00 | Min: 1.60 | Champion ID: 1706 | Champion Error Sum: 2.00
+Species 18 -- Size: 1 | Total: 8.62 | Avg: 8.62 | Max: 8.62 | Min: 8.62 | Champion ID: 1735 | Champion Error Sum: 1.06
+
+Champion 1737 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 13 -- Agents: 152 | Species: 15 | Networks Evaluated: 1968
+
+Species 2 -- Size: 10 | Total: 6.52 | Avg: 0.65 | Max: 0.85 | Min: 0.40 | Champion ID: 1848 | Champion Error Sum: 1.09
+Species 3 -- Size: 3 | Total: 7.72 | Avg: 2.57 | Max: 2.90 | Min: 1.93 | Champion ID: 1823 | Champion Error Sum: 1.05
+Species 4 -- Size: 1 | Total: 6.08 | Avg: 6.08 | Max: 6.08 | Min: 6.08 | Champion ID: 1825 | Champion Error Sum: 1.53
+Species 5 -- Size: 3 | Total: 7.27 | Avg: 2.42 | Max: 2.47 | Min: 2.37 | Champion ID: 1826 | Champion Error Sum: 1.28
+Species 6 -- Size: 4 | Total: 4.08 | Avg: 1.02 | Max: 1.06 | Min: 0.98 | Champion ID: 1831 | Champion Error Sum: 1.95
+Species 7 -- Size: 5 | Total: 4.73 | Avg: 0.95 | Max: 1.00 | Min: 0.83 | Champion ID: 1833 | Champion Error Sum: 1.76
+Species 8 -- Size: 24 | Total: 7.78 | Avg: 0.32 | Max: 0.37 | Min: 0.15 | Champion ID: 1838 | Champion Error Sum: 1.04
+Species 9 -- Size: 6 | Total: 7.53 | Avg: 1.26 | Max: 1.43 | Min: 1.00 | Champion ID: 1842 | Champion Error Sum: 1.07
+Species 10 -- Size: 1 | Total: 7.50 | Avg: 7.50 | Max: 7.50 | Min: 7.50 | Champion ID: 1851 | Champion Error Sum: 1.26
+Species 11 -- Size: 13 | Total: 7.55 | Avg: 0.58 | Max: 0.67 | Min: 0.31 | Champion ID: 1854 | Champion Error Sum: 1.05
+Species 12 -- Size: 23 | Total: 4.38 | Avg: 0.19 | Max: 0.30 | Min: 0.17 | Champion ID: 1868 | Champion Error Sum: 1.36
+Species 16 -- Size: 22 | Total: 4.00 | Avg: 0.18 | Max: 0.18 | Min: 0.18 | Champion ID: 1911 | Champion Error Sum: 2.00
+Species 17 -- Size: 9 | Total: 3.95 | Avg: 0.44 | Max: 0.45 | Min: 0.39 | Champion ID: 1913 | Champion Error Sum: 1.99
+Species 18 -- Size: 27 | Total: 6.47 | Avg: 0.24 | Max: 0.32 | Min: 0.13 | Champion ID: 1926 | Champion Error Sum: 1.05
+Species 19 -- Size: 1 | Total: 3.99 | Avg: 3.99 | Max: 3.99 | Min: 3.99 | Champion ID: 1916 | Champion Error Sum: 2.00
+
+Champion 1838 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 14 -- Agents: 150 | Species: 16 | Networks Evaluated: 2119
+
+Species 2 -- Size: 61 | Total: 5.69 | Avg: 0.09 | Max: 0.14 | Min: 0.05 | Champion ID: 2048 | Champion Error Sum: 1.05
+Species 3 -- Size: 10 | Total: 7.63 | Avg: 0.76 | Max: 0.87 | Min: 0.40 | Champion ID: 1977 | Champion Error Sum: 1.05
+Species 4 -- Size: 15 | Total: 4.70 | Avg: 0.31 | Max: 0.48 | Min: 0.22 | Champion ID: 2002 | Champion Error Sum: 1.32
+Species 5 -- Size: 10 | Total: 6.49 | Avg: 0.65 | Max: 0.74 | Min: 0.54 | Champion ID: 2020 | Champion Error Sum: 1.28
+Species 6 -- Size: 1 | Total: 4.96 | Avg: 4.96 | Max: 4.96 | Min: 4.96 | Champion ID: 2046 | Champion Error Sum: 1.77
+Species 7 -- Size: 5 | Total: 4.64 | Avg: 0.93 | Max: 1.00 | Min: 0.70 | Champion ID: 2038 | Champion Error Sum: 1.76
+Species 8 -- Size: 2 | Total: 8.11 | Avg: 4.06 | Max: 4.38 | Min: 3.73 | Champion ID: 2043 | Champion Error Sum: 1.04
+Species 9 -- Size: 8 | Total: 5.95 | Avg: 0.74 | Max: 1.02 | Min: 0.47 | Champion ID: 2050 | Champion Error Sum: 1.14
+Species 10 -- Size: 7 | Total: 5.97 | Avg: 0.85 | Max: 1.00 | Min: 0.62 | Champion ID: 2082 | Champion Error Sum: 1.35
+Species 11 -- Size: 3 | Total: 6.80 | Avg: 2.27 | Max: 2.91 | Min: 1.06 | Champion ID: 2091 | Champion Error Sum: 1.05
+Species 12 -- Size: 1 | Total: 6.95 | Avg: 6.95 | Max: 6.95 | Min: 6.95 | Champion ID: 2094 | Champion Error Sum: 1.36
+Species 16 -- Size: 1 | Total: 4.01 | Avg: 4.01 | Max: 4.01 | Min: 4.01 | Champion ID: 2095 | Champion Error Sum: 2.00
+Species 17 -- Size: 18 | Total: 3.98 | Avg: 0.22 | Max: 0.24 | Min: 0.20 | Champion ID: 2000 | Champion Error Sum: 1.93
+Species 18 -- Size: 1 | Total: 8.71 | Avg: 8.71 | Max: 8.71 | Min: 8.71 | Champion ID: 2098 | Champion Error Sum: 1.05
+Species 19 -- Size: 6 | Total: 4.00 | Avg: 0.67 | Max: 0.67 | Min: 0.67 | Champion ID: 2117 | Champion Error Sum: 2.00
+Species 20 -- Size: 1 | Total: 4.23 | Avg: 4.23 | Max: 4.23 | Min: 4.23 | Champion ID: 2044 | Champion Error Sum: 1.94
+
+Champion 2043 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 15 -- Agents: 150 | Species: 17 | Networks Evaluated: 2270
+
+Species 2 -- Size: 5 | Total: 7.24 | Avg: 1.45 | Max: 1.74 | Min: 1.01 | Champion ID: 2122 | Champion Error Sum: 1.05
+Species 3 -- Size: 9 | Total: 8.47 | Avg: 0.94 | Max: 0.97 | Min: 0.79 | Champion ID: 2155 | Champion Error Sum: 1.04
+Species 4 -- Size: 1 | Total: 7.17 | Avg: 7.17 | Max: 7.17 | Min: 7.17 | Champion ID: 2126 | Champion Error Sum: 1.32
+Species 5 -- Size: 2 | Total: 4.91 | Avg: 2.46 | Max: 3.71 | Min: 1.20 | Champion ID: 2127 | Champion Error Sum: 1.28
+Species 6 -- Size: 18 | Total: 4.26 | Avg: 0.24 | Max: 0.30 | Min: 0.20 | Champion ID: 2140 | Champion Error Sum: 1.67
+Species 7 -- Size: 3 | Total: 4.49 | Avg: 1.50 | Max: 1.67 | Min: 1.36 | Champion ID: 2147 | Champion Error Sum: 1.76
+Species 8 -- Size: 14 | Total: 5.75 | Avg: 0.41 | Max: 0.62 | Min: 0.21 | Champion ID: 2160 | Champion Error Sum: 1.06
+Species 9 -- Size: 2 | Total: 8.29 | Avg: 4.14 | Max: 4.19 | Min: 4.09 | Champion ID: 2166 | Champion Error Sum: 1.10
+Species 10 -- Size: 1 | Total: 3.99 | Avg: 3.99 | Max: 3.99 | Min: 3.99 | Champion ID: 2169 | Champion Error Sum: 2.00
+Species 11 -- Size: 8 | Total: 7.79 | Avg: 0.97 | Max: 1.09 | Min: 0.55 | Champion ID: 2178 | Champion Error Sum: 1.05
+Species 12 -- Size: 26 | Total: 5.30 | Avg: 0.20 | Max: 0.27 | Min: 0.13 | Champion ID: 2197 | Champion Error Sum: 1.33
+Species 16 -- Size: 15 | Total: 4.01 | Avg: 0.27 | Max: 0.28 | Min: 0.27 | Champion ID: 2209 | Champion Error Sum: 1.96
+Species 17 -- Size: 2 | Total: 4.14 | Avg: 2.07 | Max: 2.14 | Min: 2.00 | Champion ID: 2220 | Champion Error Sum: 1.93
+Species 18 -- Size: 30 | Total: 6.64 | Avg: 0.22 | Max: 0.29 | Min: 0.06 | Champion ID: 2228 | Champion Error Sum: 1.04
+Species 19 -- Size: 1 | Total: 4.01 | Avg: 4.01 | Max: 4.01 | Min: 4.01 | Champion ID: 2254 | Champion Error Sum: 2.00
+Species 20 -- Size: 12 | Total: 4.45 | Avg: 0.37 | Max: 0.50 | Min: 0.31 | Champion ID: 2266 | Champion Error Sum: 1.56
+Species 21 -- Size: 1 | Total: 3.98 | Avg: 3.98 | Max: 3.98 | Min: 3.98 | Champion ID: 2130 | Champion Error Sum: 2.00
+
+Champion 2155 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 16 -- Agents: 149 | Species: 18 | Networks Evaluated: 2420
+
+Species 2 -- Size: 60 | Total: 6.00 | Avg: 0.10 | Max: 0.14 | Min: 0.07 | Champion ID: 2273 | Champion Error Sum: 1.05
+Species 3 -- Size: 5 | Total: 7.56 | Avg: 1.51 | Max: 1.75 | Min: 0.64 | Champion ID: 2279 | Champion Error Sum: 1.04
+Species 4 -- Size: 11 | Total: 4.69 | Avg: 0.43 | Max: 0.66 | Min: 0.33 | Champion ID: 2311 | Champion Error Sum: 1.31
+Species 5 -- Size: 2 | Total: 5.72 | Avg: 2.86 | Max: 3.72 | Min: 2.00 | Champion ID: 2324 | Champion Error Sum: 1.27
+Species 6 -- Size: 7 | Total: 4.21 | Avg: 0.60 | Max: 0.78 | Min: 0.57 | Champion ID: 2325 | Champion Error Sum: 1.67
+Species 7 -- Size: 6 | Total: 4.18 | Avg: 0.70 | Max: 0.76 | Min: 0.64 | Champion ID: 2327 | Champion Error Sum: 1.86
+Species 8 -- Size: 2 | Total: 5.60 | Avg: 2.80 | Max: 4.31 | Min: 1.29 | Champion ID: 2332 | Champion Error Sum: 1.06
+Species 9 -- Size: 3 | Total: 7.01 | Avg: 2.34 | Max: 2.80 | Min: 1.42 | Champion ID: 2336 | Champion Error Sum: 1.10
+Species 10 -- Size: 9 | Total: 4.02 | Avg: 0.45 | Max: 0.48 | Min: 0.44 | Champion ID: 2339 | Champion Error Sum: 1.91
+Species 11 -- Size: 4 | Total: 8.66 | Avg: 2.16 | Max: 2.18 | Min: 2.15 | Champion ID: 2369 | Champion Error Sum: 1.05
+Species 12 -- Size: 2 | Total: 5.55 | Avg: 2.77 | Max: 3.56 | Min: 1.99 | Champion ID: 2373 | Champion Error Sum: 1.33
+Species 16 -- Size: 3 | Total: 4.03 | Avg: 1.34 | Max: 1.38 | Min: 1.32 | Champion ID: 2374 | Champion Error Sum: 1.96
+Species 17 -- Size: 2 | Total: 4.28 | Avg: 2.14 | Max: 2.17 | Min: 2.11 | Champion ID: 2383 | Champion Error Sum: 1.91
+Species 18 -- Size: 1 | Total: 8.75 | Avg: 8.75 | Max: 8.75 | Min: 8.75 | Champion ID: 2384 | Champion Error Sum: 1.04
+Species 19 -- Size: 17 | Total: 3.98 | Avg: 0.23 | Max: 0.24 | Min: 0.21 | Champion ID: 2392 | Champion Error Sum: 1.98
+Species 20 -- Size: 2 | Total: 5.60 | Avg: 2.80 | Max: 2.97 | Min: 2.63 | Champion ID: 2402 | Champion Error Sum: 1.56
+Species 21 -- Size: 11 | Total: 4.02 | Avg: 0.37 | Max: 0.39 | Min: 0.36 | Champion ID: 2409 | Champion Error Sum: 1.94
+Species 22 -- Size: 2 | Total: 4.01 | Avg: 2.01 | Max: 2.01 | Min: 2.00 | Champion ID: 2376 | Champion Error Sum: 1.99
+
+Champion 2279 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 17 -- Agents: 151 | Species: 19 | Networks Evaluated: 2572
+
+Species 2 -- Size: 20 | Total: 6.69 | Avg: 0.33 | Max: 0.43 | Min: 0.20 | Champion ID: 2423 | Champion Error Sum: 1.05
+Species 3 -- Size: 19 | Total: 7.49 | Avg: 0.39 | Max: 0.46 | Min: 0.11 | Champion ID: 2424 | Champion Error Sum: 1.04
+Species 4 -- Size: 5 | Total: 4.24 | Avg: 0.85 | Max: 0.89 | Min: 0.80 | Champion ID: 2510 | Champion Error Sum: 1.89
+Species 5 -- Size: 6 | Total: 5.16 | Avg: 0.86 | Max: 1.26 | Min: 0.40 | Champion ID: 2434 | Champion Error Sum: 1.25
+Species 6 -- Size: 3 | Total: 4.73 | Avg: 1.58 | Max: 1.81 | Min: 1.18 | Champion ID: 2445 | Champion Error Sum: 1.67
+Species 7 -- Size: 1 | Total: 4.00 | Avg: 4.00 | Max: 4.00 | Min: 4.00 | Champion ID: 2450 | Champion Error Sum: 2.00
+Species 8 -- Size: 7 | Total: 5.60 | Avg: 0.80 | Max: 1.23 | Min: 0.58 | Champion ID: 2541 | Champion Error Sum: 1.07
+Species 9 -- Size: 3 | Total: 4.82 | Avg: 1.61 | Max: 2.03 | Min: 1.33 | Champion ID: 2465 | Champion Error Sum: 1.53
+Species 10 -- Size: 1 | Total: 3.71 | Avg: 3.71 | Max: 3.71 | Min: 3.71 | Champion ID: 2474 | Champion Error Sum: 2.07
+Species 11 -- Size: 9 | Total: 6.79 | Avg: 0.75 | Max: 0.97 | Min: 0.45 | Champion ID: 2475 | Champion Error Sum: 1.05
+Species 12 -- Size: 12 | Total: 5.54 | Avg: 0.46 | Max: 0.59 | Min: 0.25 | Champion ID: 2484 | Champion Error Sum: 1.33
+Species 16 -- Size: 6 | Total: 4.11 | Avg: 0.68 | Max: 0.72 | Min: 0.65 | Champion ID: 2501 | Champion Error Sum: 1.93
+Species 17 -- Size: 9 | Total: 4.10 | Avg: 0.46 | Max: 0.51 | Min: 0.44 | Champion ID: 2572 | Champion Error Sum: 1.86
+Species 18 -- Size: 36 | Total: 7.14 | Avg: 0.20 | Max: 0.24 | Min: 0.08 | Champion ID: 2528 | Champion Error Sum: 1.04
+Species 19 -- Size: 1 | Total: 4.06 | Avg: 4.06 | Max: 4.06 | Min: 4.06 | Champion ID: 2549 | Champion Error Sum: 1.98
+Species 20 -- Size: 6 | Total: 4.90 | Avg: 0.82 | Max: 1.24 | Min: 0.46 | Champion ID: 2552 | Champion Error Sum: 1.27
+Species 21 -- Size: 2 | Total: 4.09 | Avg: 2.04 | Max: 2.12 | Min: 1.97 | Champion ID: 2562 | Champion Error Sum: 1.94
+Species 22 -- Size: 4 | Total: 4.04 | Avg: 1.01 | Max: 1.05 | Min: 1.00 | Champion ID: 2505 | Champion Error Sum: 1.95
+Species 23 -- Size: 1 | Total: 8.75 | Avg: 8.75 | Max: 8.75 | Min: 8.75 | Champion ID: 2545 | Champion Error Sum: 1.04
+
+Champion 2424 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 18 -- Agents: 151 | Species: 19 | Networks Evaluated: 2724
+
+Species 2 -- Size: 12 | Total: 6.32 | Avg: 0.53 | Max: 0.72 | Min: 0.33 | Champion ID: 2575 | Champion Error Sum: 1.05
+Species 3 -- Size: 3 | Total: 8.15 | Avg: 2.72 | Max: 2.92 | Min: 2.31 | Champion ID: 2576 | Champion Error Sum: 1.04
+Species 4 -- Size: 3 | Total: 4.31 | Avg: 1.44 | Max: 1.49 | Min: 1.33 | Champion ID: 2578 | Champion Error Sum: 1.89
+Species 6 -- Size: 8 | Total: 4.27 | Avg: 0.53 | Max: 0.68 | Min: 0.50 | Champion ID: 2588 | Champion Error Sum: 1.67
+Species 7 -- Size: 18 | Total: 4.00 | Avg: 0.22 | Max: 0.22 | Min: 0.22 | Champion ID: 2593 | Champion Error Sum: 2.00
+Species 8 -- Size: 4 | Total: 7.55 | Avg: 1.89 | Max: 2.15 | Min: 1.77 | Champion ID: 2611 | Champion Error Sum: 1.07
+Species 9 -- Size: 3 | Total: 4.27 | Avg: 1.42 | Max: 1.57 | Min: 1.34 | Champion ID: 2617 | Champion Error Sum: 1.83
+Species 10 -- Size: 14 | Total: 3.92 | Avg: 0.28 | Max: 0.30 | Min: 0.24 | Champion ID: 2633 | Champion Error Sum: 1.94
+Species 11 -- Size: 3 | Total: 8.69 | Avg: 2.90 | Max: 2.91 | Min: 2.88 | Champion ID: 2641 | Champion Error Sum: 1.05
+Species 12 -- Size: 2 | Total: 7.12 | Avg: 3.56 | Max: 3.56 | Min: 3.56 | Champion ID: 2642 | Champion Error Sum: 1.33
+Species 16 -- Size: 3 | Total: 4.28 | Avg: 1.43 | Max: 1.48 | Min: 1.37 | Champion ID: 2645 | Champion Error Sum: 1.89
+Species 17 -- Size: 7 | Total: 4.20 | Avg: 0.60 | Max: 0.65 | Min: 0.57 | Champion ID: 2647 | Champion Error Sum: 1.86
+Species 18 -- Size: 36 | Total: 7.91 | Avg: 0.22 | Max: 0.24 | Min: 0.11 | Champion ID: 2649 | Champion Error Sum: 1.04
+Species 19 -- Size: 17 | Total: 4.02 | Avg: 0.24 | Max: 0.25 | Min: 0.23 | Champion ID: 2666 | Champion Error Sum: 1.96
+Species 20 -- Size: 1 | Total: 3.48 | Avg: 3.48 | Max: 3.48 | Min: 3.48 | Champion ID: 2669 | Champion Error Sum: 2.13
+Species 21 -- Size: 7 | Total: 4.26 | Avg: 0.61 | Max: 0.70 | Min: 0.54 | Champion ID: 2672 | Champion Error Sum: 1.79
+Species 22 -- Size: 2 | Total: 4.26 | Avg: 2.13 | Max: 2.34 | Min: 1.91 | Champion ID: 2580 | Champion Error Sum: 1.84
+Species 23 -- Size: 7 | Total: 6.05 | Avg: 0.86 | Max: 1.25 | Min: 0.51 | Champion ID: 2704 | Champion Error Sum: 1.04
+Species 24 -- Size: 1 | Total: 3.71 | Avg: 3.71 | Max: 3.71 | Min: 3.71 | Champion ID: 2629 | Champion Error Sum: 2.07
+
+Champion 2576 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 19 -- Agents: 147 | Species: 17 | Networks Evaluated: 2872
+
+Species 2 -- Size: 9 | Total: 5.35 | Avg: 0.59 | Max: 0.97 | Min: 0.44 | Champion ID: 2727 | Champion Error Sum: 1.05
+Species 3 -- Size: 14 | Total: 7.58 | Avg: 0.54 | Max: 0.63 | Min: 0.16 | Champion ID: 2735 | Champion Error Sum: 1.04
+Species 4 -- Size: 11 | Total: 4.07 | Avg: 0.37 | Max: 0.46 | Min: 0.25 | Champion ID: 2798 | Champion Error Sum: 1.76
+Species 6 -- Size: 4 | Total: 4.36 | Avg: 1.09 | Max: 1.36 | Min: 0.99 | Champion ID: 2751 | Champion Error Sum: 1.67
+Species 8 -- Size: 23 | Total: 6.37 | Avg: 0.28 | Max: 0.37 | Min: 0.14 | Champion ID: 2759 | Champion Error Sum: 1.06
+Species 9 -- Size: 2 | Total: 3.67 | Avg: 1.84 | Max: 2.13 | Min: 1.55 | Champion ID: 2772 | Champion Error Sum: 1.94
+Species 10 -- Size: 1 | Total: 4.39 | Avg: 4.39 | Max: 4.39 | Min: 4.39 | Champion ID: 2871 | Champion Error Sum: 1.90
+Species 11 -- Size: 11 | Total: 6.93 | Avg: 0.63 | Max: 0.79 | Min: 0.25 | Champion ID: 2774 | Champion Error Sum: 1.05
+Species 12 -- Size: 14 | Total: 5.00 | Avg: 0.36 | Max: 0.51 | Min: 0.18 | Champion ID: 2789 | Champion Error Sum: 1.33
+Species 16 -- Size: 7 | Total: 4.36 | Avg: 0.62 | Max: 0.63 | Min: 0.58 | Champion ID: 2808 | Champion Error Sum: 1.89
+Species 17 -- Size: 7 | Total: 4.49 | Avg: 0.64 | Max: 0.75 | Min: 0.57 | Champion ID: 2847 | Champion Error Sum: 1.72
+Species 18 -- Size: 1 | Total: 8.76 | Avg: 8.76 | Max: 8.76 | Min: 8.76 | Champion ID: 2816 | Champion Error Sum: 1.04
+Species 20 -- Size: 10 | Total: 4.01 | Avg: 0.40 | Max: 0.51 | Min: 0.33 | Champion ID: 2823 | Champion Error Sum: 1.75
+Species 21 -- Size: 3 | Total: 4.23 | Avg: 1.41 | Max: 1.63 | Min: 1.27 | Champion ID: 2836 | Champion Error Sum: 1.79
+Species 22 -- Size: 8 | Total: 4.16 | Avg: 0.52 | Max: 0.60 | Min: 0.49 | Champion ID: 2846 | Champion Error Sum: 1.82
+Species 23 -- Size: 4 | Total: 6.67 | Avg: 1.67 | Max: 2.19 | Min: 1.16 | Champion ID: 2850 | Champion Error Sum: 1.04
+Species 24 -- Size: 18 | Total: 3.71 | Avg: 0.21 | Max: 0.22 | Min: 0.16 | Champion ID: 2861 | Champion Error Sum: 1.99
+
+Champion 2735 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 20 -- Agents: 151 | Species: 16 | Networks Evaluated: 3024
+
+Species 2 -- Size: 6 | Total: 6.42 | Avg: 1.07 | Max: 1.45 | Min: 0.57 | Champion ID: 2875 | Champion Error Sum: 1.05
+Species 3 -- Size: 5 | Total: 8.50 | Avg: 1.70 | Max: 1.75 | Min: 1.59 | Champion ID: 2879 | Champion Error Sum: 1.04
+Species 4 -- Size: 4 | Total: 5.37 | Avg: 1.34 | Max: 1.78 | Min: 0.89 | Champion ID: 2936 | Champion Error Sum: 1.33
+Species 6 -- Size: 7 | Total: 4.62 | Avg: 0.66 | Max: 0.78 | Min: 0.57 | Champion ID: 2885 | Champion Error Sum: 1.67
+Species 8 -- Size: 8 | Total: 7.28 | Avg: 0.91 | Max: 1.09 | Min: 0.50 | Champion ID: 2932 | Champion Error Sum: 1.05
+Species 9 -- Size: 7 | Total: 3.99 | Avg: 0.57 | Max: 0.61 | Min: 0.52 | Champion ID: 2901 | Champion Error Sum: 1.94
+Species 10 -- Size: 21 | Total: 4.27 | Avg: 0.20 | Max: 0.24 | Min: 0.18 | Champion ID: 2916 | Champion Error Sum: 1.76
+Species 11 -- Size: 1 | Total: 7.12 | Avg: 7.12 | Max: 7.12 | Min: 7.12 | Champion ID: 2935 | Champion Error Sum: 1.33
+Species 16 -- Size: 4 | Total: 4.12 | Avg: 1.03 | Max: 1.11 | Min: 0.95 | Champion ID: 2938 | Champion Error Sum: 1.89
+Species 17 -- Size: 3 | Total: 4.04 | Avg: 1.35 | Max: 1.74 | Min: 1.00 | Champion ID: 2942 | Champion Error Sum: 1.72
+Species 18 -- Size: 54 | Total: 7.38 | Avg: 0.14 | Max: 0.16 | Min: 0.07 | Champion ID: 2953 | Champion Error Sum: 1.04
+Species 20 -- Size: 1 | Total: 4.35 | Avg: 4.35 | Max: 4.35 | Min: 4.35 | Champion ID: 3001 | Champion Error Sum: 1.91
+Species 21 -- Size: 9 | Total: 4.31 | Avg: 0.48 | Max: 0.54 | Min: 0.44 | Champion ID: 3002 | Champion Error Sum: 1.79
+Species 22 -- Size: 4 | Total: 4.64 | Avg: 1.16 | Max: 1.20 | Min: 1.05 | Champion ID: 2944 | Champion Error Sum: 1.81
+Species 23 -- Size: 8 | Total: 7.55 | Avg: 0.94 | Max: 1.09 | Min: 0.50 | Champion ID: 3014 | Champion Error Sum: 1.04
+Species 24 -- Size: 9 | Total: 4.04 | Avg: 0.45 | Max: 0.47 | Min: 0.42 | Champion ID: 2920 | Champion Error Sum: 1.94
+
+Champion 2879 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 21 -- Agents: 152 | Species: 16 | Networks Evaluated: 3177
+
+Species 2 -- Size: 9 | Total: 6.58 | Avg: 0.73 | Max: 0.97 | Min: 0.43 | Champion ID: 3027 | Champion Error Sum: 1.05
+Species 3 -- Size: 12 | Total: 7.45 | Avg: 0.62 | Max: 0.73 | Min: 0.19 | Champion ID: 3034 | Champion Error Sum: 1.04
+Species 4 -- Size: 8 | Total: 5.84 | Avg: 0.73 | Max: 0.89 | Min: 0.50 | Champion ID: 3045 | Champion Error Sum: 1.33
+Species 6 -- Size: 4 | Total: 4.36 | Avg: 1.09 | Max: 1.36 | Min: 1.00 | Champion ID: 3054 | Champion Error Sum: 1.67
+Species 8 -- Size: 12 | Total: 7.33 | Avg: 0.61 | Max: 0.73 | Min: 0.25 | Champion ID: 3058 | Champion Error Sum: 1.05
+Species 9 -- Size: 2 | Total: 3.92 | Avg: 1.96 | Max: 2.08 | Min: 1.84 | Champion ID: 3067 | Champion Error Sum: 1.96
+Species 10 -- Size: 3 | Total: 4.45 | Avg: 1.48 | Max: 1.67 | Min: 1.36 | Champion ID: 3068 | Champion Error Sum: 1.76
+Species 11 -- Size: 39 | Total: 6.42 | Avg: 0.16 | Max: 0.22 | Min: 0.09 | Champion ID: 3075 | Champion Error Sum: 1.05
+Species 16 -- Size: 7 | Total: 4.24 | Avg: 0.61 | Max: 0.71 | Min: 0.55 | Champion ID: 3116 | Champion Error Sum: 1.77
+Species 17 -- Size: 7 | Total: 4.82 | Avg: 0.69 | Max: 0.80 | Min: 0.56 | Champion ID: 3052 | Champion Error Sum: 1.64
+Species 18 -- Size: 6 | Total: 7.85 | Avg: 1.31 | Max: 1.46 | Min: 0.75 | Champion ID: 3130 | Champion Error Sum: 1.04
+Species 20 -- Size: 28 | Total: 4.11 | Avg: 0.15 | Max: 0.18 | Min: 0.10 | Champion ID: 3141 | Champion Error Sum: 1.73
+Species 21 -- Size: 3 | Total: 4.44 | Avg: 1.48 | Max: 1.63 | Min: 1.19 | Champion ID: 3159 | Champion Error Sum: 1.79
+Species 22 -- Size: 10 | Total: 4.43 | Avg: 0.44 | Max: 0.59 | Min: 0.38 | Champion ID: 3126 | Champion Error Sum: 1.56
+Species 23 -- Size: 1 | Total: 5.42 | Avg: 5.42 | Max: 5.42 | Min: 5.42 | Champion ID: 3171 | Champion Error Sum: 1.67
+Species 24 -- Size: 1 | Total: 4.53 | Avg: 4.53 | Max: 4.53 | Min: 4.53 | Champion ID: 3176 | Champion Error Sum: 1.87
+
+Champion 3034 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 22 -- Agents: 150 | Species: 16 | Networks Evaluated: 3328
+
+Species 2 -- Size: 17 | Total: 5.50 | Avg: 0.32 | Max: 0.51 | Min: 0.21 | Champion ID: 3183 | Champion Error Sum: 1.05
+Species 3 -- Size: 5 | Total: 8.24 | Avg: 1.65 | Max: 1.75 | Min: 1.30 | Champion ID: 3185 | Champion Error Sum: 1.04
+Species 4 -- Size: 9 | Total: 4.94 | Avg: 0.55 | Max: 0.79 | Min: 0.30 | Champion ID: 3189 | Champion Error Sum: 1.33
+Species 6 -- Size: 7 | Total: 4.68 | Avg: 0.67 | Max: 0.78 | Min: 0.57 | Champion ID: 3197 | Champion Error Sum: 1.67
+Species 8 -- Size: 9 | Total: 8.07 | Avg: 0.90 | Max: 0.97 | Min: 0.69 | Champion ID: 3238 | Champion Error Sum: 1.04
+Species 9 -- Size: 2 | Total: 4.12 | Avg: 2.06 | Max: 2.12 | Min: 2.00 | Champion ID: 3216 | Champion Error Sum: 1.94
+Species 10 -- Size: 9 | Total: 4.90 | Avg: 0.54 | Max: 0.68 | Min: 0.42 | Champion ID: 3227 | Champion Error Sum: 1.53
+Species 11 -- Size: 2 | Total: 8.41 | Avg: 4.21 | Max: 4.35 | Min: 4.07 | Champion ID: 3228 | Champion Error Sum: 1.05
+Species 16 -- Size: 5 | Total: 5.03 | Avg: 1.01 | Max: 1.12 | Min: 0.94 | Champion ID: 3233 | Champion Error Sum: 1.64
+Species 17 -- Size: 2 | Total: 5.85 | Avg: 2.93 | Max: 2.96 | Min: 2.89 | Champion ID: 3258 | Champion Error Sum: 1.56
+Species 18 -- Size: 3 | Total: 6.45 | Avg: 2.15 | Max: 2.48 | Min: 1.92 | Champion ID: 3242 | Champion Error Sum: 1.27
+Species 20 -- Size: 1 | Total: 5.14 | Avg: 5.14 | Max: 5.14 | Min: 5.14 | Champion ID: 3247 | Champion Error Sum: 1.73
+Species 21 -- Size: 10 | Total: 4.46 | Avg: 0.45 | Max: 0.51 | Min: 0.39 | Champion ID: 3253 | Champion Error Sum: 1.73
+Species 22 -- Size: 1 | Total: 6.07 | Avg: 6.07 | Max: 6.07 | Min: 6.07 | Champion ID: 3260 | Champion Error Sum: 1.54
+Species 23 -- Size: 37 | Total: 4.92 | Avg: 0.13 | Max: 0.18 | Min: 0.09 | Champion ID: 3261 | Champion Error Sum: 1.39
+Species 24 -- Size: 31 | Total: 4.37 | Avg: 0.14 | Max: 0.17 | Min: 0.12 | Champion ID: 3323 | Champion Error Sum: 1.67
+
+Champion 3185 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 23 -- Agents: 150 | Species: 16 | Networks Evaluated: 3479
+
+Species 2 -- Size: 4 | Total: 5.21 | Avg: 1.30 | Max: 2.18 | Min: 1.00 | Champion ID: 3331 | Champion Error Sum: 1.05
+Species 3 -- Size: 9 | Total: 6.51 | Avg: 0.72 | Max: 0.97 | Min: 0.42 | Champion ID: 3333 | Champion Error Sum: 1.04
+Species 4 -- Size: 5 | Total: 5.23 | Avg: 1.05 | Max: 1.42 | Min: 0.55 | Champion ID: 3341 | Champion Error Sum: 1.33
+Species 6 -- Size: 2 | Total: 4.71 | Avg: 2.36 | Max: 2.72 | Min: 2.00 | Champion ID: 3344 | Champion Error Sum: 1.67
+Species 8 -- Size: 33 | Total: 7.15 | Avg: 0.22 | Max: 0.27 | Min: 0.08 | Champion ID: 3347 | Champion Error Sum: 1.04
+Species 9 -- Size: 8 | Total: 4.11 | Avg: 0.51 | Max: 0.54 | Min: 0.49 | Champion ID: 3357 | Champion Error Sum: 1.92
+Species 10 -- Size: 3 | Total: 5.77 | Avg: 1.92 | Max: 2.05 | Min: 1.69 | Champion ID: 3364 | Champion Error Sum: 1.52
+Species 11 -- Size: 4 | Total: 4.88 | Avg: 1.22 | Max: 1.41 | Min: 0.96 | Champion ID: 3378 | Champion Error Sum: 1.62
+Species 16 -- Size: 1 | Total: 3.09 | Avg: 3.09 | Max: 3.09 | Min: 3.09 | Champion ID: 3391 | Champion Error Sum: 2.24
+Species 17 -- Size: 31 | Total: 4.64 | Avg: 0.15 | Max: 0.20 | Min: 0.13 | Champion ID: 3458 | Champion Error Sum: 1.49
+Species 18 -- Size: 6 | Total: 5.21 | Avg: 0.87 | Max: 1.39 | Min: 0.40 | Champion ID: 3409 | Champion Error Sum: 1.12
+Species 20 -- Size: 21 | Total: 4.76 | Avg: 0.23 | Max: 0.29 | Min: 0.18 | Champion ID: 3436 | Champion Error Sum: 1.52
+Species 21 -- Size: 2 | Total: 4.57 | Avg: 2.28 | Max: 2.57 | Min: 2.00 | Champion ID: 3445 | Champion Error Sum: 1.73
+Species 22 -- Size: 17 | Total: 5.04 | Avg: 0.30 | Max: 0.40 | Min: 0.19 | Champion ID: 3451 | Champion Error Sum: 1.39
+Species 23 -- Size: 1 | Total: 6.81 | Avg: 6.81 | Max: 6.81 | Min: 6.81 | Champion ID: 3478 | Champion Error Sum: 1.39
+Species 24 -- Size: 3 | Total: 4.42 | Avg: 1.47 | Max: 1.81 | Min: 1.28 | Champion ID: 3479 | Champion Error Sum: 1.67
+
+Champion 3333 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 24 -- Agents: 148 | Species: 16 | Networks Evaluated: 3628
+
+Species 2 -- Size: 27 | Total: 5.79 | Avg: 0.21 | Max: 0.32 | Min: 0.07 | Champion ID: 3482 | Champion Error Sum: 1.05
+Species 3 -- Size: 5 | Total: 5.14 | Avg: 1.03 | Max: 1.75 | Min: 0.37 | Champion ID: 3490 | Champion Error Sum: 1.04
+Species 4 -- Size: 19 | Total: 4.40 | Avg: 0.23 | Max: 0.37 | Min: 0.16 | Champion ID: 3494 | Champion Error Sum: 1.33
+Species 6 -- Size: 5 | Total: 4.88 | Avg: 0.98 | Max: 1.31 | Min: 0.80 | Champion ID: 3500 | Champion Error Sum: 1.44
+Species 8 -- Size: 11 | Total: 5.99 | Avg: 0.54 | Max: 0.80 | Min: 0.27 | Champion ID: 3514 | Champion Error Sum: 1.04
+Species 9 -- Size: 3 | Total: 3.90 | Avg: 1.30 | Max: 1.44 | Min: 1.18 | Champion ID: 3515 | Champion Error Sum: 1.92
+Species 10 -- Size: 8 | Total: 5.54 | Avg: 0.69 | Max: 0.87 | Min: 0.50 | Champion ID: 3627 | Champion Error Sum: 1.36
+Species 11 -- Size: 1 | Total: 4.33 | Avg: 4.33 | Max: 4.33 | Min: 4.33 | Champion ID: 3535 | Champion Error Sum: 1.92
+Species 16 -- Size: 3 | Total: 3.67 | Avg: 1.22 | Max: 1.35 | Min: 0.99 | Champion ID: 3538 | Champion Error Sum: 1.99
+Species 17 -- Size: 4 | Total: 4.00 | Avg: 1.00 | Max: 1.58 | Min: 0.46 | Champion ID: 3556 | Champion Error Sum: 1.49
+Species 18 -- Size: 24 | Total: 6.47 | Avg: 0.27 | Max: 0.32 | Min: 0.19 | Champion ID: 3592 | Champion Error Sum: 1.24
+Species 20 -- Size: 1 | Total: 6.16 | Avg: 6.16 | Max: 6.16 | Min: 6.16 | Champion ID: 3562 | Champion Error Sum: 1.52
+Species 21 -- Size: 13 | Total: 4.91 | Avg: 0.38 | Max: 0.55 | Min: 0.31 | Champion ID: 3575 | Champion Error Sum: 1.33
+Species 22 -- Size: 2 | Total: 5.79 | Avg: 2.90 | Max: 3.40 | Min: 2.40 | Champion ID: 3577 | Champion Error Sum: 1.39
+Species 23 -- Size: 18 | Total: 5.78 | Avg: 0.32 | Max: 0.40 | Min: 0.22 | Champion ID: 3605 | Champion Error Sum: 1.32
+Species 24 -- Size: 4 | Total: 4.72 | Avg: 1.18 | Max: 1.40 | Min: 0.93 | Champion ID: 3621 | Champion Error Sum: 1.63
+
+Champion 3490 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 25 -- Agents: 152 | Species: 16 | Networks Evaluated: 3781
+
+Species 2 -- Size: 4 | Total: 5.77 | Avg: 1.44 | Max: 2.18 | Min: 1.08 | Champion ID: 3631 | Champion Error Sum: 1.05
+Species 3 -- Size: 8 | Total: 8.07 | Avg: 1.01 | Max: 1.10 | Min: 0.70 | Champion ID: 3630 | Champion Error Sum: 1.04
+Species 4 -- Size: 5 | Total: 4.59 | Avg: 0.92 | Max: 1.42 | Min: 0.76 | Champion ID: 3639 | Champion Error Sum: 1.33
+Species 6 -- Size: 7 | Total: 5.74 | Avg: 0.82 | Max: 1.02 | Min: 0.56 | Champion ID: 3750 | Champion Error Sum: 1.33
+Species 8 -- Size: 20 | Total: 5.57 | Avg: 0.28 | Max: 0.44 | Min: 0.13 | Champion ID: 3647 | Champion Error Sum: 1.04
+Species 9 -- Size: 6 | Total: 4.01 | Avg: 0.67 | Max: 0.73 | Min: 0.61 | Champion ID: 3659 | Champion Error Sum: 1.91
+Species 10 -- Size: 9 | Total: 4.95 | Avg: 0.55 | Max: 0.78 | Min: 0.38 | Champion ID: 3660 | Champion Error Sum: 1.36
+Species 11 -- Size: 12 | Total: 4.48 | Avg: 0.37 | Max: 0.63 | Min: 0.23 | Champion ID: 3686 | Champion Error Sum: 1.26
+Species 16 -- Size: 1 | Total: 3.96 | Avg: 3.96 | Max: 3.96 | Min: 3.96 | Champion ID: 3693 | Champion Error Sum: 2.01
+Species 17 -- Size: 9 | Total: 4.67 | Avg: 0.52 | Max: 0.70 | Min: 0.43 | Champion ID: 3701 | Champion Error Sum: 1.49
+Species 18 -- Size: 5 | Total: 6.77 | Avg: 1.35 | Max: 1.52 | Min: 0.90 | Champion ID: 3773 | Champion Error Sum: 1.24
+Species 20 -- Size: 40 | Total: 4.94 | Avg: 0.12 | Max: 0.18 | Min: 0.07 | Champion ID: 3717 | Champion Error Sum: 1.31
+Species 21 -- Size: 1 | Total: 4.27 | Avg: 4.27 | Max: 4.27 | Min: 4.27 | Champion ID: 3751 | Champion Error Sum: 1.93
+Species 22 -- Size: 20 | Total: 5.12 | Avg: 0.26 | Max: 0.35 | Min: 0.19 | Champion ID: 3753 | Champion Error Sum: 1.34
+Species 24 -- Size: 4 | Total: 5.46 | Avg: 1.37 | Max: 1.71 | Min: 1.04 | Champion ID: 3663 | Champion Error Sum: 1.39
+Species 25 -- Size: 1 | Total: 4.02 | Avg: 4.02 | Max: 4.02 | Min: 4.02 | Champion ID: 3695 | Champion Error Sum: 1.99
+
+Champion 3630 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 26 -- Agents: 152 | Species: 15 | Networks Evaluated: 3934
+
+Species 2 -- Size: 16 | Total: 5.88 | Avg: 0.37 | Max: 0.54 | Min: 0.25 | Champion ID: 3784 | Champion Error Sum: 1.05
+Species 3 -- Size: 7 | Total: 6.48 | Avg: 0.93 | Max: 1.25 | Min: 0.53 | Champion ID: 3794 | Champion Error Sum: 1.04
+Species 4 -- Size: 23 | Total: 4.32 | Avg: 0.19 | Max: 0.32 | Min: 0.13 | Champion ID: 3806 | Champion Error Sum: 1.28
+Species 6 -- Size: 26 | Total: 4.32 | Avg: 0.17 | Max: 0.27 | Min: 0.14 | Champion ID: 3807 | Champion Error Sum: 1.33
+Species 8 -- Size: 1 | Total: 8.76 | Avg: 8.76 | Max: 8.76 | Min: 8.76 | Champion ID: 3813 | Champion Error Sum: 1.04
+Species 10 -- Size: 9 | Total: 5.94 | Avg: 0.66 | Max: 0.78 | Min: 0.36 | Champion ID: 3820 | Champion Error Sum: 1.36
+Species 11 -- Size: 3 | Total: 7.40 | Avg: 2.47 | Max: 2.67 | Min: 2.22 | Champion ID: 3826 | Champion Error Sum: 1.17
+Species 16 -- Size: 5 | Total: 3.84 | Avg: 0.77 | Max: 0.80 | Min: 0.70 | Champion ID: 3851 | Champion Error Sum: 2.00
+Species 17 -- Size: 29 | Total: 4.14 | Avg: 0.14 | Max: 0.22 | Min: 0.13 | Champion ID: 3854 | Champion Error Sum: 1.49
+Species 18 -- Size: 10 | Total: 6.07 | Avg: 0.61 | Max: 0.82 | Min: 0.32 | Champion ID: 3863 | Champion Error Sum: 1.14
+Species 20 -- Size: 1 | Total: 7.23 | Avg: 7.23 | Max: 7.23 | Min: 7.23 | Champion ID: 3867 | Champion Error Sum: 1.31
+Species 21 -- Size: 9 | Total: 4.24 | Avg: 0.47 | Max: 0.72 | Min: 0.39 | Champion ID: 3895 | Champion Error Sum: 1.46
+Species 22 -- Size: 3 | Total: 6.03 | Avg: 2.01 | Max: 2.35 | Min: 1.33 | Champion ID: 3897 | Champion Error Sum: 1.34
+Species 24 -- Size: 4 | Total: 5.70 | Avg: 1.43 | Max: 1.71 | Min: 1.08 | Champion ID: 3907 | Champion Error Sum: 1.39
+Species 25 -- Size: 6 | Total: 4.05 | Avg: 0.68 | Max: 0.72 | Min: 0.66 | Champion ID: 3932 | Champion Error Sum: 1.92
+
+Champion 3794 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 27 -- Agents: 152 | Species: 14 | Networks Evaluated: 4087
+
+Species 2 -- Size: 4 | Total: 6.75 | Avg: 1.69 | Max: 2.18 | Min: 1.05 | Champion ID: 3943 | Champion Error Sum: 1.05
+Species 3 -- Size: 5 | Total: 8.47 | Avg: 1.69 | Max: 1.76 | Min: 1.56 | Champion ID: 3936 | Champion Error Sum: 1.04
+Species 4 -- Size: 6 | Total: 4.96 | Avg: 0.83 | Max: 1.23 | Min: 0.67 | Champion ID: 3945 | Champion Error Sum: 1.28
+Species 6 -- Size: 3 | Total: 6.08 | Avg: 2.03 | Max: 2.38 | Min: 1.56 | Champion ID: 3946 | Champion Error Sum: 1.33
+Species 8 -- Size: 61 | Total: 6.43 | Avg: 0.11 | Max: 0.14 | Min: 0.03 | Champion ID: 3966 | Champion Error Sum: 1.04
+Species 10 -- Size: 10 | Total: 5.70 | Avg: 0.57 | Max: 0.70 | Min: 0.22 | Champion ID: 3998 | Champion Error Sum: 1.35
+Species 11 -- Size: 12 | Total: 7.01 | Avg: 0.58 | Max: 0.71 | Min: 0.28 | Champion ID: 4011 | Champion Error Sum: 1.09
+Species 17 -- Size: 4 | Total: 4.66 | Avg: 1.17 | Max: 1.50 | Min: 0.98 | Champion ID: 4066 | Champion Error Sum: 1.55
+Species 18 -- Size: 3 | Total: 8.08 | Avg: 2.69 | Max: 2.73 | Min: 2.67 | Champion ID: 4019 | Champion Error Sum: 1.14
+Species 20 -- Size: 30 | Total: 5.46 | Avg: 0.18 | Max: 0.26 | Min: 0.11 | Champion ID: 4039 | Champion Error Sum: 1.20
+Species 21 -- Size: 1 | Total: 4.00 | Avg: 4.00 | Max: 4.00 | Min: 4.00 | Champion ID: 4064 | Champion Error Sum: 2.00
+Species 22 -- Size: 7 | Total: 5.16 | Avg: 0.74 | Max: 1.07 | Min: 0.48 | Champion ID: 4075 | Champion Error Sum: 1.27
+Species 24 -- Size: 2 | Total: 5.05 | Avg: 2.53 | Max: 2.90 | Min: 2.15 | Champion ID: 4078 | Champion Error Sum: 1.59
+Species 25 -- Size: 4 | Total: 4.28 | Avg: 1.07 | Max: 1.11 | Min: 1.01 | Champion ID: 4086 | Champion Error Sum: 1.89
+
+Champion 3936 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 28 -- Agents: 150 | Species: 12 | Networks Evaluated: 4238
+
+Species 2 -- Size: 18 | Total: 6.90 | Avg: 0.38 | Max: 0.48 | Min: 0.18 | Champion ID: 4090 | Champion Error Sum: 1.05
+Species 3 -- Size: 13 | Total: 7.04 | Avg: 0.54 | Max: 0.68 | Min: 0.30 | Champion ID: 4104 | Champion Error Sum: 1.04
+Species 4 -- Size: 5 | Total: 4.63 | Avg: 0.93 | Max: 1.48 | Min: 0.76 | Champion ID: 4116 | Champion Error Sum: 1.28
+Species 6 -- Size: 25 | Total: 4.95 | Avg: 0.20 | Max: 0.30 | Min: 0.15 | Champion ID: 4122 | Champion Error Sum: 1.26
+Species 8 -- Size: 6 | Total: 7.35 | Avg: 1.22 | Max: 1.46 | Min: 0.86 | Champion ID: 4137 | Champion Error Sum: 1.04
+Species 10 -- Size: 7 | Total: 4.67 | Avg: 0.67 | Max: 1.00 | Min: 0.57 | Champion ID: 4215 | Champion Error Sum: 1.36
+Species 17 -- Size: 8 | Total: 4.46 | Avg: 0.56 | Max: 0.75 | Min: 0.49 | Champion ID: 4146 | Champion Error Sum: 1.55
+Species 18 -- Size: 20 | Total: 6.46 | Avg: 0.32 | Max: 0.43 | Min: 0.16 | Champion ID: 4171 | Champion Error Sum: 1.08
+Species 21 -- Size: 20 | Total: 4.09 | Avg: 0.20 | Max: 0.23 | Min: 0.20 | Champion ID: 4135 | Champion Error Sum: 1.84
+Species 22 -- Size: 7 | Total: 5.43 | Avg: 0.78 | Max: 1.07 | Min: 0.59 | Champion ID: 4206 | Champion Error Sum: 1.27
+Species 24 -- Size: 13 | Total: 5.16 | Avg: 0.40 | Max: 0.45 | Min: 0.25 | Champion ID: 4212 | Champion Error Sum: 1.59
+Species 25 -- Size: 8 | Total: 4.24 | Avg: 0.53 | Max: 0.62 | Min: 0.49 | Champion ID: 4237 | Champion Error Sum: 1.78
+
+Champion 4104 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 29 -- Agents: 151 | Species: 12 | Networks Evaluated: 4390
+
+Species 2 -- Size: 16 | Total: 7.54 | Avg: 0.47 | Max: 0.55 | Min: 0.25 | Champion ID: 4251 | Champion Error Sum: 1.04
+Species 3 -- Size: 6 | Total: 5.94 | Avg: 0.99 | Max: 1.41 | Min: 0.60 | Champion ID: 4257 | Champion Error Sum: 1.09
+Species 4 -- Size: 21 | Total: 5.79 | Avg: 0.28 | Max: 0.35 | Min: 0.16 | Champion ID: 4276 | Champion Error Sum: 1.28
+Species 6 -- Size: 4 | Total: 6.15 | Avg: 1.54 | Max: 1.90 | Min: 1.00 | Champion ID: 4286 | Champion Error Sum: 1.25
+Species 8 -- Size: 26 | Total: 6.24 | Avg: 0.24 | Max: 0.34 | Min: 0.15 | Champion ID: 4287 | Champion Error Sum: 1.04
+Species 10 -- Size: 22 | Total: 4.49 | Avg: 0.20 | Max: 0.32 | Min: 0.14 | Champion ID: 4314 | Champion Error Sum: 1.36
+Species 17 -- Size: 12 | Total: 5.20 | Avg: 0.43 | Max: 0.54 | Min: 0.26 | Champion ID: 4331 | Champion Error Sum: 1.45
+Species 18 -- Size: 8 | Total: 6.91 | Avg: 0.86 | Max: 1.07 | Min: 0.51 | Champion ID: 4341 | Champion Error Sum: 1.08
+Species 21 -- Size: 5 | Total: 4.06 | Avg: 0.81 | Max: 0.93 | Min: 0.74 | Champion ID: 4348 | Champion Error Sum: 1.84
+Species 22 -- Size: 17 | Total: 4.84 | Avg: 0.28 | Max: 0.44 | Min: 0.17 | Champion ID: 4353 | Champion Error Sum: 1.27
+Species 24 -- Size: 2 | Total: 4.24 | Avg: 2.12 | Max: 2.31 | Min: 1.93 | Champion ID: 4372 | Champion Error Sum: 1.85
+Species 25 -- Size: 12 | Total: 4.25 | Avg: 0.35 | Max: 0.41 | Min: 0.28 | Champion ID: 4379 | Champion Error Sum: 1.78
+
+Champion 4251 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 30 -- Agents: 153 | Species: 12 | Networks Evaluated: 4544
+
+Species 2 -- Size: 27 | Total: 7.14 | Avg: 0.26 | Max: 0.33 | Min: 0.09 | Champion ID: 4403 | Champion Error Sum: 1.04
+Species 3 -- Size: 1 | Total: 3.99 | Avg: 3.99 | Max: 3.99 | Min: 3.99 | Champion ID: 4414 | Champion Error Sum: 2.00
+Species 4 -- Size: 6 | Total: 5.45 | Avg: 0.91 | Max: 1.23 | Min: 0.32 | Champion ID: 4419 | Champion Error Sum: 1.28
+Species 6 -- Size: 36 | Total: 5.32 | Avg: 0.15 | Max: 0.21 | Min: 0.11 | Champion ID: 4425 | Champion Error Sum: 1.25
+Species 8 -- Size: 5 | Total: 7.83 | Avg: 1.57 | Max: 1.75 | Min: 1.11 | Champion ID: 4452 | Champion Error Sum: 1.04
+Species 10 -- Size: 4 | Total: 5.28 | Avg: 1.32 | Max: 1.75 | Min: 0.76 | Champion ID: 4456 | Champion Error Sum: 1.36
+Species 17 -- Size: 9 | Total: 4.81 | Avg: 0.53 | Max: 0.72 | Min: 0.41 | Champion ID: 4460 | Champion Error Sum: 1.45
+Species 18 -- Size: 14 | Total: 7.48 | Avg: 0.53 | Max: 0.61 | Min: 0.29 | Champion ID: 4468 | Champion Error Sum: 1.08
+Species 21 -- Size: 5 | Total: 4.29 | Avg: 0.86 | Max: 0.94 | Min: 0.76 | Champion ID: 4487 | Champion Error Sum: 1.83
+Species 22 -- Size: 3 | Total: 6.17 | Avg: 2.06 | Max: 2.49 | Min: 1.51 | Champion ID: 4497 | Champion Error Sum: 1.27
+Species 24 -- Size: 37 | Total: 4.22 | Avg: 0.11 | Max: 0.15 | Min: 0.08 | Champion ID: 4538 | Champion Error Sum: 1.65
+Species 25 -- Size: 6 | Total: 4.55 | Avg: 0.76 | Max: 0.89 | Min: 0.67 | Champion ID: 4544 | Champion Error Sum: 1.69
+
+Champion 4403 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 31 -- Agents: 151 | Species: 12 | Networks Evaluated: 4696
+
+Species 2 -- Size: 46 | Total: 4.72 | Avg: 0.10 | Max: 0.19 | Min: 0.04 | Champion ID: 4547 | Champion Error Sum: 1.04
+Species 3 -- Size: 13 | Total: 5.14 | Avg: 0.40 | Max: 0.65 | Min: 0.30 | Champion ID: 4617 | Champion Error Sum: 1.10
+Species 4 -- Size: 7 | Total: 5.61 | Avg: 0.80 | Max: 1.05 | Min: 0.55 | Champion ID: 4597 | Champion Error Sum: 1.28
+Species 6 -- Size: 2 | Total: 6.10 | Avg: 3.05 | Max: 3.79 | Min: 2.31 | Champion ID: 4607 | Champion Error Sum: 1.25
+Species 8 -- Size: 15 | Total: 7.22 | Avg: 0.48 | Max: 0.58 | Min: 0.26 | Champion ID: 4609 | Champion Error Sum: 1.04
+Species 10 -- Size: 13 | Total: 6.18 | Avg: 0.48 | Max: 0.57 | Min: 0.30 | Champion ID: 4641 | Champion Error Sum: 1.28
+Species 17 -- Size: 22 | Total: 5.27 | Avg: 0.24 | Max: 0.34 | Min: 0.17 | Champion ID: 4671 | Champion Error Sum: 1.27
+Species 18 -- Size: 7 | Total: 7.80 | Avg: 1.11 | Max: 1.22 | Min: 0.85 | Champion ID: 4648 | Champion Error Sum: 1.08
+Species 21 -- Size: 10 | Total: 4.56 | Avg: 0.46 | Max: 0.54 | Min: 0.40 | Champion ID: 4660 | Champion Error Sum: 1.68
+Species 22 -- Size: 7 | Total: 5.26 | Avg: 0.75 | Max: 1.18 | Min: 0.57 | Champion ID: 4685 | Champion Error Sum: 1.13
+Species 24 -- Size: 1 | Total: 5.52 | Avg: 5.52 | Max: 5.52 | Min: 5.52 | Champion ID: 4687 | Champion Error Sum: 1.65
+Species 25 -- Size: 8 | Total: 4.51 | Avg: 0.56 | Max: 0.68 | Min: 0.45 | Champion ID: 4690 | Champion Error Sum: 1.67
+
+Champion 4547 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 32 -- Agents: 151 | Species: 12 | Networks Evaluated: 4848
+
+Species 2 -- Size: 14 | Total: 6.63 | Avg: 0.47 | Max: 0.63 | Min: 0.26 | Champion ID: 4699 | Champion Error Sum: 1.04
+Species 3 -- Size: 3 | Total: 7.02 | Avg: 2.34 | Max: 2.92 | Min: 1.29 | Champion ID: 4746 | Champion Error Sum: 1.04
+Species 4 -- Size: 1 | Total: 7.38 | Avg: 7.38 | Max: 7.38 | Min: 7.38 | Champion ID: 4704 | Champion Error Sum: 1.28
+Species 6 -- Size: 32 | Total: 5.91 | Avg: 0.18 | Max: 0.25 | Min: 0.12 | Champion ID: 4713 | Champion Error Sum: 1.18
+Species 8 -- Size: 6 | Total: 5.98 | Avg: 1.00 | Max: 1.38 | Min: 0.31 | Champion ID: 4747 | Champion Error Sum: 1.12
+Species 10 -- Size: 2 | Total: 7.32 | Avg: 3.66 | Max: 3.70 | Min: 3.62 | Champion ID: 4751 | Champion Error Sum: 1.28
+Species 17 -- Size: 11 | Total: 5.66 | Avg: 0.51 | Max: 0.69 | Min: 0.30 | Champion ID: 4758 | Champion Error Sum: 1.24
+Species 18 -- Size: 12 | Total: 7.40 | Avg: 0.62 | Max: 0.72 | Min: 0.35 | Champion ID: 4770 | Champion Error Sum: 1.05
+Species 21 -- Size: 5 | Total: 4.36 | Avg: 0.87 | Max: 1.08 | Min: 0.79 | Champion ID: 4771 | Champion Error Sum: 1.68
+Species 22 -- Size: 1 | Total: 8.24 | Avg: 8.24 | Max: 8.24 | Min: 8.24 | Champion ID: 4776 | Champion Error Sum: 1.13
+Species 24 -- Size: 59 | Total: 4.35 | Avg: 0.07 | Max: 0.10 | Min: 0.03 | Champion ID: 4797 | Champion Error Sum: 1.52
+Species 25 -- Size: 5 | Total: 5.47 | Avg: 1.09 | Max: 1.16 | Min: 0.93 | Champion ID: 4844 | Champion Error Sum: 1.59
+
+Champion 4699 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 33 -- Agents: 152 | Species: 11 | Networks Evaluated: 5001
+
+Species 2 -- Size: 46 | Total: 5.90 | Avg: 0.13 | Max: 0.19 | Min: 0.08 | Champion ID: 4851 | Champion Error Sum: 1.04
+Species 3 -- Size: 15 | Total: 7.51 | Avg: 0.50 | Max: 0.58 | Min: 0.37 | Champion ID: 4865 | Champion Error Sum: 1.04
+Species 4 -- Size: 22 | Total: 5.27 | Avg: 0.24 | Max: 0.34 | Min: 0.15 | Champion ID: 4889 | Champion Error Sum: 1.25
+Species 6 -- Size: 2 | Total: 6.68 | Avg: 3.34 | Max: 3.98 | Min: 2.69 | Champion ID: 4909 | Champion Error Sum: 1.18
+Species 8 -- Size: 6 | Total: 5.16 | Avg: 0.86 | Max: 1.38 | Min: 0.62 | Champion ID: 4942 | Champion Error Sum: 1.12
+Species 10 -- Size: 5 | Total: 4.75 | Avg: 0.95 | Max: 1.31 | Min: 0.77 | Champion ID: 4922 | Champion Error Sum: 1.44
+Species 17 -- Size: 46 | Total: 6.32 | Avg: 0.14 | Max: 0.18 | Min: 0.07 | Champion ID: 4976 | Champion Error Sum: 1.10
+Species 18 -- Size: 2 | Total: 8.65 | Avg: 4.33 | Max: 4.34 | Min: 4.31 | Champion ID: 4940 | Champion Error Sum: 1.05
+Species 21 -- Size: 4 | Total: 4.67 | Avg: 1.17 | Max: 1.35 | Min: 0.99 | Champion ID: 4945 | Champion Error Sum: 1.68
+Species 22 -- Size: 3 | Total: 4.29 | Avg: 1.43 | Max: 1.56 | Min: 1.33 | Champion ID: 4967 | Champion Error Sum: 1.84
+Species 24 -- Size: 1 | Total: 6.18 | Avg: 6.18 | Max: 6.18 | Min: 6.18 | Champion ID: 4995 | Champion Error Sum: 1.52
+
+Champion 4851 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 34 -- Agents: 150 | Species: 10 | Networks Evaluated: 5152
+
+Species 2 -- Size: 8 | Total: 6.06 | Avg: 0.76 | Max: 1.10 | Min: 0.44 | Champion ID: 5003 | Champion Error Sum: 1.04
+Species 3 -- Size: 3 | Total: 8.12 | Avg: 2.71 | Max: 2.92 | Min: 2.32 | Champion ID: 5005 | Champion Error Sum: 1.04
+Species 6 -- Size: 26 | Total: 5.64 | Avg: 0.22 | Max: 0.31 | Min: 0.13 | Champion ID: 5015 | Champion Error Sum: 1.18
+Species 8 -- Size: 12 | Total: 7.19 | Avg: 0.60 | Max: 0.73 | Min: 0.32 | Champion ID: 5040 | Champion Error Sum: 1.05
+Species 10 -- Size: 3 | Total: 5.90 | Avg: 1.97 | Max: 2.19 | Min: 1.69 | Champion ID: 5044 | Champion Error Sum: 1.44
+Species 17 -- Size: 2 | Total: 6.50 | Avg: 3.25 | Max: 4.20 | Min: 2.30 | Champion ID: 5051 | Champion Error Sum: 1.10
+Species 18 -- Size: 29 | Total: 7.17 | Avg: 0.25 | Max: 0.30 | Min: 0.09 | Champion ID: 5057 | Champion Error Sum: 1.05
+Species 21 -- Size: 9 | Total: 5.04 | Avg: 0.56 | Max: 0.60 | Min: 0.45 | Champion ID: 5086 | Champion Error Sum: 1.67
+Species 22 -- Size: 10 | Total: 4.65 | Avg: 0.47 | Max: 0.73 | Min: 0.39 | Champion ID: 5103 | Champion Error Sum: 1.30
+Species 24 -- Size: 48 | Total: 5.50 | Avg: 0.11 | Max: 0.16 | Min: 0.06 | Champion ID: 5112 | Champion Error Sum: 1.25
+
+Champion 5003 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 1 | Connections: 6
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 35 -- Agents: 152 | Species: 10 | Networks Evaluated: 5305
+
+Species 2 -- Size: 31 | Total: 6.24 | Avg: 0.20 | Max: 0.28 | Min: 0.12 | Champion ID: 5155 | Champion Error Sum: 1.04
+Species 3 -- Size: 32 | Total: 7.80 | Avg: 0.24 | Max: 0.27 | Min: 0.13 | Champion ID: 5168 | Champion Error Sum: 1.04
+Species 6 -- Size: 4 | Total: 5.69 | Avg: 1.42 | Max: 1.99 | Min: 1.00 | Champion ID: 5202 | Champion Error Sum: 1.18
+Species 8 -- Size: 14 | Total: 6.87 | Avg: 0.49 | Max: 0.63 | Min: 0.28 | Champion ID: 5185 | Champion Error Sum: 1.04
+Species 10 -- Size: 7 | Total: 5.12 | Avg: 0.73 | Max: 1.04 | Min: 0.57 | Champion ID: 5215 | Champion Error Sum: 1.30
+Species 17 -- Size: 39 | Total: 6.46 | Avg: 0.17 | Max: 0.22 | Min: 0.10 | Champion ID: 5243 | Champion Error Sum: 1.10
+Species 18 -- Size: 4 | Total: 5.09 | Avg: 1.27 | Max: 2.15 | Min: 0.63 | Champion ID: 5288 | Champion Error Sum: 1.07
+Species 21 -- Size: 8 | Total: 4.72 | Avg: 0.59 | Max: 0.75 | Min: 0.50 | Champion ID: 5291 | Champion Error Sum: 1.55
+Species 22 -- Size: 11 | Total: 5.62 | Avg: 0.51 | Max: 0.79 | Min: 0.21 | Champion ID: 5282 | Champion Error Sum: 1.06
+Species 24 -- Size: 2 | Total: 7.54 | Avg: 3.77 | Max: 3.77 | Min: 3.77 | Champion ID: 5304 | Champion Error Sum: 1.25
+
+Champion 5168 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 36 -- Agents: 152 | Species: 10 | Networks Evaluated: 5458
+
+Species 2 -- Size: 7 | Total: 5.89 | Avg: 0.84 | Max: 1.25 | Min: 0.51 | Champion ID: 5308 | Champion Error Sum: 1.04
+Species 3 -- Size: 3 | Total: 8.35 | Avg: 2.78 | Max: 2.93 | Min: 2.49 | Champion ID: 5312 | Champion Error Sum: 1.04
+Species 6 -- Size: 22 | Total: 6.21 | Avg: 0.28 | Max: 0.37 | Min: 0.18 | Champion ID: 5338 | Champion Error Sum: 1.16
+Species 8 -- Size: 7 | Total: 6.49 | Avg: 0.93 | Max: 1.25 | Min: 0.53 | Champion ID: 5339 | Champion Error Sum: 1.04
+Species 10 -- Size: 9 | Total: 6.27 | Avg: 0.70 | Max: 0.81 | Min: 0.45 | Champion ID: 5347 | Champion Error Sum: 1.30
+Species 17 -- Size: 2 | Total: 6.19 | Avg: 3.09 | Max: 4.20 | Min: 1.99 | Champion ID: 5359 | Champion Error Sum: 1.10
+Species 18 -- Size: 23 | Total: 7.44 | Avg: 0.32 | Max: 0.38 | Min: 0.16 | Champion ID: 5342 | Champion Error Sum: 1.04
+Species 21 -- Size: 10 | Total: 4.51 | Avg: 0.45 | Max: 0.60 | Min: 0.31 | Champion ID: 5382 | Champion Error Sum: 1.55
+Species 22 -- Size: 9 | Total: 6.82 | Avg: 0.76 | Max: 0.96 | Min: 0.25 | Champion ID: 5391 | Champion Error Sum: 1.06
+Species 24 -- Size: 60 | Total: 5.88 | Avg: 0.10 | Max: 0.14 | Min: 0.04 | Champion ID: 5420 | Champion Error Sum: 1.14
+
+Champion 5312 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 37 -- Agents: 149 | Species: 10 | Networks Evaluated: 5608
+
+Species 2 -- Size: 15 | Total: 6.51 | Avg: 0.43 | Max: 0.59 | Min: 0.13 | Champion ID: 5461 | Champion Error Sum: 1.04
+Species 3 -- Size: 39 | Total: 7.77 | Avg: 0.20 | Max: 0.23 | Min: 0.10 | Champion ID: 5491 | Champion Error Sum: 1.04
+Species 6 -- Size: 4 | Total: 6.72 | Avg: 1.68 | Max: 2.02 | Min: 1.04 | Champion ID: 5513 | Champion Error Sum: 1.16
+Species 8 -- Size: 15 | Total: 7.12 | Avg: 0.47 | Max: 0.59 | Min: 0.23 | Champion ID: 5522 | Champion Error Sum: 1.04
+Species 10 -- Size: 8 | Total: 5.23 | Avg: 0.65 | Max: 0.91 | Min: 0.50 | Champion ID: 5530 | Champion Error Sum: 1.30
+Species 17 -- Size: 39 | Total: 6.49 | Avg: 0.17 | Max: 0.22 | Min: 0.08 | Champion ID: 5556 | Champion Error Sum: 1.07
+Species 18 -- Size: 5 | Total: 5.44 | Avg: 1.09 | Max: 1.75 | Min: 0.80 | Champion ID: 5585 | Champion Error Sum: 1.04
+Species 21 -- Size: 7 | Total: 4.38 | Avg: 0.63 | Max: 0.86 | Min: 0.29 | Champion ID: 5590 | Champion Error Sum: 1.55
+Species 22 -- Size: 16 | Total: 6.12 | Avg: 0.38 | Max: 0.54 | Min: 0.23 | Champion ID: 5598 | Champion Error Sum: 1.06
+Species 24 -- Size: 1 | Total: 8.16 | Avg: 8.16 | Max: 8.16 | Min: 8.16 | Champion ID: 5608 | Champion Error Sum: 1.14
+
+Champion 5491 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 38 -- Agents: 152 | Species: 10 | Networks Evaluated: 5761
+
+Species 2 -- Size: 8 | Total: 7.00 | Avg: 0.88 | Max: 1.10 | Min: 0.32 | Champion ID: 5611 | Champion Error Sum: 1.04
+Species 3 -- Size: 3 | Total: 7.90 | Avg: 2.63 | Max: 2.93 | Min: 2.05 | Champion ID: 5610 | Champion Error Sum: 1.04
+Species 6 -- Size: 17 | Total: 6.55 | Avg: 0.39 | Max: 0.48 | Min: 0.24 | Champion ID: 5635 | Champion Error Sum: 1.15
+Species 8 -- Size: 8 | Total: 7.72 | Avg: 0.97 | Max: 1.10 | Min: 0.61 | Champion ID: 5639 | Champion Error Sum: 1.04
+Species 10 -- Size: 5 | Total: 6.90 | Avg: 1.38 | Max: 1.49 | Min: 1.17 | Champion ID: 5644 | Champion Error Sum: 1.27
+Species 17 -- Size: 2 | Total: 7.20 | Avg: 3.60 | Max: 4.31 | Min: 2.90 | Champion ID: 5648 | Champion Error Sum: 1.07
+Species 18 -- Size: 9 | Total: 7.18 | Avg: 0.80 | Max: 0.97 | Min: 0.49 | Champion ID: 5650 | Champion Error Sum: 1.04
+Species 21 -- Size: 7 | Total: 5.59 | Avg: 0.80 | Max: 0.93 | Min: 0.54 | Champion ID: 5664 | Champion Error Sum: 1.45
+Species 22 -- Size: 5 | Total: 6.89 | Avg: 1.38 | Max: 1.73 | Min: 0.95 | Champion ID: 5669 | Champion Error Sum: 1.06
+Species 24 -- Size: 88 | Total: 7.01 | Avg: 0.08 | Max: 0.10 | Min: 0.04 | Champion ID: 5757 | Champion Error Sum: 1.07
+
+Champion 5610 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 39 -- Agents: 150 | Species: 10 | Networks Evaluated: 5912
+
+Species 2 -- Size: 19 | Total: 5.36 | Avg: 0.28 | Max: 0.46 | Min: 0.09 | Champion ID: 5764 | Champion Error Sum: 1.04
+Species 3 -- Size: 28 | Total: 7.84 | Avg: 0.28 | Max: 0.31 | Min: 0.13 | Champion ID: 5802 | Champion Error Sum: 1.04
+Species 6 -- Size: 5 | Total: 6.98 | Avg: 1.40 | Max: 1.63 | Min: 1.15 | Champion ID: 5804 | Champion Error Sum: 1.15
+Species 8 -- Size: 15 | Total: 7.10 | Avg: 0.47 | Max: 0.59 | Min: 0.27 | Champion ID: 5809 | Champion Error Sum: 1.04
+Species 10 -- Size: 13 | Total: 6.50 | Avg: 0.50 | Max: 0.63 | Min: 0.31 | Champion ID: 5827 | Champion Error Sum: 1.13
+Species 17 -- Size: 33 | Total: 6.50 | Avg: 0.20 | Max: 0.26 | Min: 0.12 | Champion ID: 5865 | Champion Error Sum: 1.07
+Species 18 -- Size: 8 | Total: 7.81 | Avg: 0.98 | Max: 1.09 | Min: 0.51 | Champion ID: 5878 | Champion Error Sum: 1.04
+Species 21 -- Size: 9 | Total: 5.06 | Avg: 0.56 | Max: 0.72 | Min: 0.45 | Champion ID: 5887 | Champion Error Sum: 1.45
+Species 22 -- Size: 18 | Total: 6.45 | Avg: 0.36 | Max: 0.48 | Min: 0.18 | Champion ID: 5903 | Champion Error Sum: 1.06
+Species 24 -- Size: 2 | Total: 6.44 | Avg: 3.22 | Max: 4.29 | Min: 2.15 | Champion ID: 5912 | Champion Error Sum: 1.07
+
+Champion 5802 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 40 -- Agents: 151 | Species: 11 | Networks Evaluated: 6064
+
+Species 2 -- Size: 7 | Total: 7.28 | Avg: 1.04 | Max: 1.25 | Min: 0.59 | Champion ID: 5915 | Champion Error Sum: 1.04
+Species 3 -- Size: 5 | Total: 8.32 | Avg: 1.66 | Max: 1.76 | Min: 1.55 | Champion ID: 5920 | Champion Error Sum: 1.04
+Species 6 -- Size: 25 | Total: 5.78 | Avg: 0.23 | Max: 0.34 | Min: 0.12 | Champion ID: 5941 | Champion Error Sum: 1.08
+Species 8 -- Size: 13 | Total: 6.95 | Avg: 0.53 | Max: 0.68 | Min: 0.30 | Champion ID: 5950 | Champion Error Sum: 1.04
+Species 10 -- Size: 7 | Total: 7.66 | Avg: 1.09 | Max: 1.18 | Min: 0.99 | Champion ID: 5959 | Champion Error Sum: 1.13
+Species 17 -- Size: 4 | Total: 8.20 | Avg: 2.05 | Max: 2.15 | Min: 1.93 | Champion ID: 5968 | Champion Error Sum: 1.07
+Species 18 -- Size: 15 | Total: 7.36 | Avg: 0.49 | Max: 0.58 | Min: 0.25 | Champion ID: 5984 | Champion Error Sum: 1.04
+Species 21 -- Size: 10 | Total: 4.84 | Avg: 0.48 | Max: 0.65 | Min: 0.40 | Champion ID: 5990 | Champion Error Sum: 1.45
+Species 22 -- Size: 7 | Total: 5.23 | Avg: 0.75 | Max: 1.24 | Min: 0.57 | Champion ID: 6000 | Champion Error Sum: 1.06
+Species 24 -- Size: 57 | Total: 7.22 | Avg: 0.13 | Max: 0.15 | Min: 0.07 | Champion ID: 6029 | Champion Error Sum: 1.05
+Species 26 -- Size: 1 | Total: 8.59 | Avg: 8.59 | Max: 8.59 | Min: 8.59 | Champion ID: 6058 | Champion Error Sum: 1.07
+
+Champion 5920 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 41 -- Agents: 151 | Species: 11 | Networks Evaluated: 6216
+
+Species 2 -- Size: 38 | Total: 7.05 | Avg: 0.19 | Max: 0.23 | Min: 0.05 | Champion ID: 6067 | Champion Error Sum: 1.04
+Species 3 -- Size: 14 | Total: 7.05 | Avg: 0.50 | Max: 0.63 | Min: 0.27 | Champion ID: 6076 | Champion Error Sum: 1.04
+Species 6 -- Size: 2 | Total: 6.44 | Avg: 3.22 | Max: 4.27 | Min: 2.17 | Champion ID: 6091 | Champion Error Sum: 1.08
+Species 8 -- Size: 9 | Total: 6.63 | Avg: 0.74 | Max: 0.98 | Min: 0.38 | Champion ID: 6093 | Champion Error Sum: 1.04
+Species 10 -- Size: 2 | Total: 6.55 | Avg: 3.28 | Max: 3.97 | Min: 2.59 | Champion ID: 6100 | Champion Error Sum: 1.18
+Species 17 -- Size: 6 | Total: 6.68 | Avg: 1.11 | Max: 1.43 | Min: 0.62 | Champion ID: 6119 | Champion Error Sum: 1.07
+Species 18 -- Size: 3 | Total: 8.04 | Avg: 2.68 | Max: 2.92 | Min: 2.19 | Champion ID: 6127 | Champion Error Sum: 1.04
+Species 21 -- Size: 4 | Total: 5.05 | Avg: 1.26 | Max: 1.62 | Min: 0.84 | Champion ID: 6130 | Champion Error Sum: 1.45
+Species 22 -- Size: 8 | Total: 5.93 | Avg: 0.74 | Max: 1.08 | Min: 0.50 | Champion ID: 6134 | Champion Error Sum: 1.06
+Species 24 -- Size: 2 | Total: 6.38 | Avg: 3.19 | Max: 4.34 | Min: 2.04 | Champion ID: 6141 | Champion Error Sum: 1.05
+Species 26 -- Size: 63 | Total: 7.12 | Avg: 0.11 | Max: 0.14 | Min: 0.06 | Champion ID: 6195 | Champion Error Sum: 1.06
+
+Champion 6076 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 42 -- Agents: 149 | Species: 11 | Networks Evaluated: 6366
+
+Species 2 -- Size: 18 | Total: 6.47 | Avg: 0.36 | Max: 0.49 | Min: 0.22 | Champion ID: 6219 | Champion Error Sum: 1.04
+Species 3 -- Size: 5 | Total: 8.10 | Avg: 1.62 | Max: 1.76 | Min: 1.08 | Champion ID: 6218 | Champion Error Sum: 1.04
+Species 6 -- Size: 23 | Total: 5.60 | Avg: 0.24 | Max: 0.37 | Min: 0.05 | Champion ID: 6245 | Champion Error Sum: 1.08
+Species 8 -- Size: 8 | Total: 7.22 | Avg: 0.90 | Max: 1.10 | Min: 0.47 | Champion ID: 6253 | Champion Error Sum: 1.04
+Species 10 -- Size: 19 | Total: 6.86 | Avg: 0.36 | Max: 0.45 | Min: 0.20 | Champion ID: 6279 | Champion Error Sum: 1.09
+Species 17 -- Size: 8 | Total: 6.23 | Avg: 0.78 | Max: 1.07 | Min: 0.31 | Champion ID: 6288 | Champion Error Sum: 1.07
+Species 18 -- Size: 21 | Total: 7.24 | Avg: 0.34 | Max: 0.42 | Min: 0.19 | Champion ID: 6299 | Champion Error Sum: 1.04
+Species 21 -- Size: 11 | Total: 5.09 | Avg: 0.46 | Max: 0.59 | Min: 0.36 | Champion ID: 6321 | Champion Error Sum: 1.45
+Species 22 -- Size: 7 | Total: 5.92 | Avg: 0.85 | Max: 1.24 | Min: 0.28 | Champion ID: 6332 | Champion Error Sum: 1.06
+Species 24 -- Size: 28 | Total: 7.34 | Avg: 0.26 | Max: 0.31 | Min: 0.14 | Champion ID: 6338 | Champion Error Sum: 1.05
+Species 26 -- Size: 1 | Total: 8.63 | Avg: 8.63 | Max: 8.63 | Min: 8.63 | Champion ID: 6366 | Champion Error Sum: 1.06
+
+Champion 6218 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 43 -- Agents: 153 | Species: 10 | Networks Evaluated: 6520
+
+Species 2 -- Size: 17 | Total: 7.13 | Avg: 0.42 | Max: 0.52 | Min: 0.24 | Champion ID: 6369 | Champion Error Sum: 1.04
+Species 3 -- Size: 16 | Total: 7.66 | Avg: 0.48 | Max: 0.55 | Min: 0.12 | Champion ID: 6368 | Champion Error Sum: 1.04
+Species 6 -- Size: 5 | Total: 6.17 | Avg: 1.23 | Max: 1.71 | Min: 0.80 | Champion ID: 6389 | Champion Error Sum: 1.08
+Species 8 -- Size: 11 | Total: 7.09 | Avg: 0.64 | Max: 0.80 | Min: 0.37 | Champion ID: 6392 | Champion Error Sum: 1.04
+Species 17 -- Size: 8 | Total: 7.24 | Avg: 0.90 | Max: 1.07 | Min: 0.43 | Champion ID: 6411 | Champion Error Sum: 1.07
+Species 18 -- Size: 2 | Total: 8.77 | Avg: 4.39 | Max: 4.39 | Min: 4.39 | Champion ID: 6413 | Champion Error Sum: 1.04
+Species 21 -- Size: 3 | Total: 6.49 | Avg: 2.16 | Max: 2.16 | Min: 2.16 | Champion ID: 6416 | Champion Error Sum: 1.45
+Species 22 -- Size: 9 | Total: 6.72 | Avg: 0.75 | Max: 0.96 | Min: 0.34 | Champion ID: 6421 | Champion Error Sum: 1.06
+Species 24 -- Size: 41 | Total: 5.69 | Avg: 0.14 | Max: 0.21 | Min: 0.04 | Champion ID: 6430 | Champion Error Sum: 1.05
+Species 26 -- Size: 41 | Total: 7.88 | Avg: 0.19 | Max: 0.21 | Min: 0.03 | Champion ID: 6484 | Champion Error Sum: 1.06
+
+Champion 6368 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 44 -- Agents: 151 | Species: 10 | Networks Evaluated: 6672
+
+Species 2 -- Size: 25 | Total: 6.70 | Avg: 0.27 | Max: 0.35 | Min: 0.13 | Champion ID: 6523 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 7.73 | Avg: 0.64 | Max: 0.73 | Min: 0.34 | Champion ID: 6529 | Champion Error Sum: 1.04
+Species 6 -- Size: 18 | Total: 4.81 | Avg: 0.27 | Max: 0.36 | Min: 0.20 | Champion ID: 6631 | Champion Error Sum: 1.45
+Species 8 -- Size: 24 | Total: 7.38 | Avg: 0.31 | Max: 0.36 | Min: 0.19 | Champion ID: 6602 | Champion Error Sum: 1.04
+Species 17 -- Size: 14 | Total: 7.35 | Avg: 0.52 | Max: 0.62 | Min: 0.27 | Champion ID: 6667 | Champion Error Sum: 1.05
+Species 18 -- Size: 38 | Total: 7.09 | Avg: 0.19 | Max: 0.23 | Min: 0.10 | Champion ID: 6627 | Champion Error Sum: 1.04
+Species 21 -- Size: 12 | Total: 4.46 | Avg: 0.37 | Max: 0.49 | Min: 0.31 | Champion ID: 6630 | Champion Error Sum: 1.57
+Species 22 -- Size: 4 | Total: 5.86 | Avg: 1.46 | Max: 1.97 | Min: 1.00 | Champion ID: 6666 | Champion Error Sum: 1.19
+Species 24 -- Size: 3 | Total: 8.45 | Avg: 2.82 | Max: 2.89 | Min: 2.73 | Champion ID: 6668 | Champion Error Sum: 1.05
+Species 26 -- Size: 1 | Total: 8.67 | Avg: 8.67 | Max: 8.67 | Min: 8.67 | Champion ID: 6670 | Champion Error Sum: 1.06
+
+Champion 6529 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 45 -- Agents: 151 | Species: 10 | Networks Evaluated: 6824
+
+Species 2 -- Size: 12 | Total: 5.75 | Avg: 0.48 | Max: 0.73 | Min: 0.33 | Champion ID: 6675 | Champion Error Sum: 1.04
+Species 3 -- Size: 7 | Total: 8.03 | Avg: 1.15 | Max: 1.25 | Min: 0.83 | Champion ID: 6678 | Champion Error Sum: 1.04
+Species 6 -- Size: 4 | Total: 4.80 | Avg: 1.20 | Max: 1.62 | Min: 0.94 | Champion ID: 6684 | Champion Error Sum: 1.45
+Species 8 -- Size: 2 | Total: 8.09 | Avg: 4.05 | Max: 4.37 | Min: 3.72 | Champion ID: 6687 | Champion Error Sum: 1.04
+Species 17 -- Size: 9 | Total: 6.25 | Avg: 0.69 | Max: 0.96 | Min: 0.44 | Champion ID: 6690 | Champion Error Sum: 1.05
+Species 18 -- Size: 3 | Total: 7.02 | Avg: 2.34 | Max: 2.93 | Min: 1.43 | Champion ID: 6695 | Champion Error Sum: 1.04
+Species 21 -- Size: 3 | Total: 5.14 | Avg: 1.71 | Max: 1.97 | Min: 1.20 | Champion ID: 6699 | Champion Error Sum: 1.57
+Species 22 -- Size: 10 | Total: 6.02 | Avg: 0.60 | Max: 0.79 | Min: 0.41 | Champion ID: 6701 | Champion Error Sum: 1.19
+Species 24 -- Size: 79 | Total: 6.62 | Avg: 0.08 | Max: 0.11 | Min: 0.03 | Champion ID: 6723 | Champion Error Sum: 1.05
+Species 26 -- Size: 22 | Total: 8.37 | Avg: 0.38 | Max: 0.39 | Min: 0.26 | Champion ID: 6742 | Champion Error Sum: 1.06
+
+Champion 6678 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 46 -- Agents: 149 | Species: 10 | Networks Evaluated: 6974
+
+Species 2 -- Size: 6 | Total: 6.34 | Avg: 1.06 | Max: 1.46 | Min: 0.67 | Champion ID: 6832 | Champion Error Sum: 1.04
+Species 3 -- Size: 13 | Total: 8.04 | Avg: 0.62 | Max: 0.68 | Min: 0.33 | Champion ID: 6833 | Champion Error Sum: 1.04
+Species 6 -- Size: 11 | Total: 5.24 | Avg: 0.48 | Max: 0.62 | Min: 0.32 | Champion ID: 6857 | Champion Error Sum: 1.40
+Species 8 -- Size: 33 | Total: 7.85 | Avg: 0.24 | Max: 0.27 | Min: 0.12 | Champion ID: 6905 | Champion Error Sum: 1.04
+Species 17 -- Size: 8 | Total: 6.61 | Avg: 0.83 | Max: 1.08 | Min: 0.42 | Champion ID: 6908 | Champion Error Sum: 1.05
+Species 18 -- Size: 43 | Total: 6.81 | Avg: 0.16 | Max: 0.20 | Min: 0.07 | Champion ID: 6939 | Champion Error Sum: 1.04
+Species 21 -- Size: 23 | Total: 4.99 | Avg: 0.22 | Max: 0.31 | Min: 0.16 | Champion ID: 6953 | Champion Error Sum: 1.35
+Species 22 -- Size: 7 | Total: 5.23 | Avg: 0.75 | Max: 1.13 | Min: 0.45 | Champion ID: 6966 | Champion Error Sum: 1.18
+Species 24 -- Size: 4 | Total: 6.18 | Avg: 1.55 | Max: 2.17 | Min: 0.89 | Champion ID: 6970 | Champion Error Sum: 1.05
+Species 26 -- Size: 1 | Total: 8.67 | Avg: 8.67 | Max: 8.67 | Min: 8.67 | Champion ID: 6971 | Champion Error Sum: 1.06
+
+Champion 6833 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 47 -- Agents: 151 | Species: 10 | Networks Evaluated: 7126
+
+Species 2 -- Size: 20 | Total: 7.17 | Avg: 0.36 | Max: 0.44 | Min: 0.17 | Champion ID: 6977 | Champion Error Sum: 1.04
+Species 3 -- Size: 8 | Total: 7.32 | Avg: 0.91 | Max: 1.10 | Min: 0.50 | Champion ID: 6988 | Champion Error Sum: 1.04
+Species 6 -- Size: 5 | Total: 5.73 | Avg: 1.15 | Max: 1.41 | Min: 0.90 | Champion ID: 6996 | Champion Error Sum: 1.35
+Species 8 -- Size: 2 | Total: 8.58 | Avg: 4.29 | Max: 4.39 | Min: 4.19 | Champion ID: 7000 | Champion Error Sum: 1.04
+Species 17 -- Size: 8 | Total: 7.94 | Avg: 0.99 | Max: 1.08 | Min: 0.53 | Champion ID: 7002 | Champion Error Sum: 1.05
+Species 18 -- Size: 2 | Total: 8.75 | Avg: 4.38 | Max: 4.39 | Min: 4.37 | Champion ID: 7010 | Champion Error Sum: 1.04
+Species 21 -- Size: 2 | Total: 6.90 | Avg: 3.45 | Max: 3.51 | Min: 3.39 | Champion ID: 7012 | Champion Error Sum: 1.35
+Species 22 -- Size: 7 | Total: 6.71 | Avg: 0.96 | Max: 1.21 | Min: 0.59 | Champion ID: 7015 | Champion Error Sum: 1.09
+Species 24 -- Size: 63 | Total: 6.44 | Avg: 0.10 | Max: 0.14 | Min: 0.06 | Champion ID: 7022 | Champion Error Sum: 1.05
+Species 26 -- Size: 34 | Total: 8.36 | Avg: 0.25 | Max: 0.25 | Min: 0.17 | Champion ID: 7038 | Champion Error Sum: 1.06
+
+Champion 6988 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 48 -- Agents: 150 | Species: 10 | Networks Evaluated: 7277
+
+Species 2 -- Size: 6 | Total: 5.63 | Avg: 0.94 | Max: 1.46 | Min: 0.61 | Champion ID: 7129 | Champion Error Sum: 1.04
+Species 3 -- Size: 9 | Total: 7.90 | Avg: 0.88 | Max: 0.98 | Min: 0.47 | Champion ID: 7132 | Champion Error Sum: 1.04
+Species 6 -- Size: 10 | Total: 6.01 | Avg: 0.60 | Max: 0.70 | Min: 0.41 | Champion ID: 7140 | Champion Error Sum: 1.35
+Species 8 -- Size: 27 | Total: 7.97 | Avg: 0.30 | Max: 0.33 | Min: 0.12 | Champion ID: 7155 | Champion Error Sum: 1.04
+Species 17 -- Size: 7 | Total: 5.91 | Avg: 0.84 | Max: 1.24 | Min: 0.30 | Champion ID: 7188 | Champion Error Sum: 1.05
+Species 18 -- Size: 49 | Total: 6.77 | Avg: 0.14 | Max: 0.18 | Min: 0.06 | Champion ID: 7184 | Champion Error Sum: 1.04
+Species 21 -- Size: 29 | Total: 5.05 | Avg: 0.17 | Max: 0.25 | Min: 0.07 | Champion ID: 7266 | Champion Error Sum: 1.32
+Species 22 -- Size: 10 | Total: 5.51 | Avg: 0.55 | Max: 0.87 | Min: 0.40 | Champion ID: 7192 | Champion Error Sum: 1.05
+Species 24 -- Size: 1 | Total: 8.68 | Avg: 8.68 | Max: 8.68 | Min: 8.68 | Champion ID: 7275 | Champion Error Sum: 1.05
+Species 26 -- Size: 2 | Total: 6.25 | Avg: 3.12 | Max: 4.33 | Min: 1.91 | Champion ID: 7276 | Champion Error Sum: 1.06
+
+Champion 7132 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 49 -- Agents: 153 | Species: 10 | Networks Evaluated: 7431
+
+Species 2 -- Size: 12 | Total: 5.80 | Avg: 0.48 | Max: 0.73 | Min: 0.33 | Champion ID: 7280 | Champion Error Sum: 1.04
+Species 3 -- Size: 9 | Total: 7.57 | Avg: 0.84 | Max: 0.98 | Min: 0.45 | Champion ID: 7289 | Champion Error Sum: 1.04
+Species 6 -- Size: 5 | Total: 5.69 | Avg: 1.14 | Max: 1.41 | Min: 0.86 | Champion ID: 7297 | Champion Error Sum: 1.35
+Species 8 -- Size: 2 | Total: 8.69 | Avg: 4.34 | Max: 4.39 | Min: 4.30 | Champion ID: 7303 | Champion Error Sum: 1.04
+Species 17 -- Size: 8 | Total: 5.74 | Avg: 0.72 | Max: 1.08 | Min: 0.27 | Champion ID: 7307 | Champion Error Sum: 1.05
+Species 18 -- Size: 3 | Total: 5.79 | Avg: 1.93 | Max: 2.93 | Min: 0.00 | Champion ID: 7315 | Champion Error Sum: 1.04
+Species 21 -- Size: 3 | Total: 5.74 | Avg: 1.91 | Max: 2.40 | Min: 1.46 | Champion ID: 7316 | Champion Error Sum: 1.32
+Species 22 -- Size: 5 | Total: 7.85 | Avg: 1.57 | Max: 1.74 | Min: 1.04 | Champion ID: 7311 | Champion Error Sum: 1.05
+Species 24 -- Size: 94 | Total: 7.11 | Avg: 0.08 | Max: 0.09 | Min: 0.04 | Champion ID: 7394 | Champion Error Sum: 1.04
+Species 26 -- Size: 12 | Total: 8.34 | Avg: 0.70 | Max: 0.72 | Min: 0.51 | Champion ID: 7408 | Champion Error Sum: 1.05
+
+Champion 7289 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 50 -- Agents: 150 | Species: 10 | Networks Evaluated: 7582
+
+Species 2 -- Size: 9 | Total: 5.64 | Avg: 0.63 | Max: 0.98 | Min: 0.24 | Champion ID: 7434 | Champion Error Sum: 1.04
+Species 3 -- Size: 9 | Total: 7.18 | Avg: 0.80 | Max: 0.98 | Min: 0.45 | Champion ID: 7439 | Champion Error Sum: 1.04
+Species 6 -- Size: 9 | Total: 5.24 | Avg: 0.58 | Max: 0.78 | Min: 0.42 | Champion ID: 7448 | Champion Error Sum: 1.35
+Species 8 -- Size: 40 | Total: 7.74 | Avg: 0.19 | Max: 0.22 | Min: 0.00 | Champion ID: 7461 | Champion Error Sum: 1.04
+Species 17 -- Size: 10 | Total: 6.36 | Avg: 0.64 | Max: 0.87 | Min: 0.37 | Champion ID: 7507 | Champion Error Sum: 1.05
+Species 18 -- Size: 28 | Total: 7.04 | Avg: 0.25 | Max: 0.31 | Min: 0.14 | Champion ID: 7527 | Champion Error Sum: 1.04
+Species 21 -- Size: 23 | Total: 5.36 | Avg: 0.23 | Max: 0.31 | Min: 0.17 | Champion ID: 7536 | Champion Error Sum: 1.32
+Species 22 -- Size: 14 | Total: 6.59 | Avg: 0.47 | Max: 0.62 | Min: 0.29 | Champion ID: 7567 | Champion Error Sum: 1.05
+Species 24 -- Size: 7 | Total: 5.64 | Avg: 0.81 | Max: 1.25 | Min: 0.57 | Champion ID: 7574 | Champion Error Sum: 1.04
+Species 26 -- Size: 1 | Total: 8.68 | Avg: 8.68 | Max: 8.68 | Min: 8.68 | Champion ID: 7575 | Champion Error Sum: 1.05
+
+Champion 7439 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 51 -- Agents: 151 | Species: 10 | Networks Evaluated: 7734
+
+Species 2 -- Size: 23 | Total: 5.56 | Avg: 0.24 | Max: 0.38 | Min: 0.06 | Champion ID: 7585 | Champion Error Sum: 1.04
+Species 3 -- Size: 9 | Total: 8.14 | Avg: 0.90 | Max: 0.98 | Min: 0.77 | Champion ID: 7592 | Champion Error Sum: 1.04
+Species 6 -- Size: 6 | Total: 4.96 | Avg: 0.83 | Max: 1.17 | Min: 0.62 | Champion ID: 7601 | Champion Error Sum: 1.35
+Species 8 -- Size: 3 | Total: 7.03 | Avg: 2.34 | Max: 2.93 | Min: 1.18 | Champion ID: 7608 | Champion Error Sum: 1.04
+Species 17 -- Size: 6 | Total: 5.64 | Avg: 0.94 | Max: 1.45 | Min: 0.66 | Champion ID: 7610 | Champion Error Sum: 1.05
+Species 18 -- Size: 4 | Total: 7.26 | Avg: 1.81 | Max: 2.20 | Min: 1.00 | Champion ID: 7617 | Champion Error Sum: 1.04
+Species 21 -- Size: 4 | Total: 6.41 | Avg: 1.60 | Max: 1.85 | Min: 1.06 | Champion ID: 7604 | Champion Error Sum: 1.28
+Species 22 -- Size: 6 | Total: 6.23 | Avg: 1.04 | Max: 1.45 | Min: 0.40 | Champion ID: 7624 | Champion Error Sum: 1.05
+Species 24 -- Size: 61 | Total: 6.07 | Avg: 0.10 | Max: 0.14 | Min: 0.06 | Champion ID: 7629 | Champion Error Sum: 1.04
+Species 26 -- Size: 29 | Total: 8.28 | Avg: 0.29 | Max: 0.30 | Min: 0.13 | Champion ID: 7640 | Champion Error Sum: 1.05
+
+Champion 7592 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 52 -- Agents: 150 | Species: 10 | Networks Evaluated: 7885
+
+Species 2 -- Size: 8 | Total: 5.96 | Avg: 0.75 | Max: 1.10 | Min: 0.24 | Champion ID: 7737 | Champion Error Sum: 1.04
+Species 3 -- Size: 13 | Total: 8.42 | Avg: 0.65 | Max: 0.68 | Min: 0.55 | Champion ID: 7736 | Champion Error Sum: 1.04
+Species 6 -- Size: 8 | Total: 5.12 | Avg: 0.64 | Max: 0.88 | Min: 0.44 | Champion ID: 7754 | Champion Error Sum: 1.35
+Species 8 -- Size: 26 | Total: 7.50 | Avg: 0.29 | Max: 0.34 | Min: 0.15 | Champion ID: 7771 | Champion Error Sum: 1.04
+Species 17 -- Size: 12 | Total: 6.56 | Avg: 0.55 | Max: 0.72 | Min: 0.33 | Champion ID: 7801 | Champion Error Sum: 1.05
+Species 18 -- Size: 37 | Total: 7.07 | Avg: 0.19 | Max: 0.24 | Min: 0.11 | Champion ID: 7827 | Champion Error Sum: 1.04
+Species 21 -- Size: 28 | Total: 5.08 | Avg: 0.18 | Max: 0.26 | Min: 0.00 | Champion ID: 7842 | Champion Error Sum: 1.28
+Species 22 -- Size: 13 | Total: 6.72 | Avg: 0.52 | Max: 0.67 | Min: 0.29 | Champion ID: 7866 | Champion Error Sum: 1.05
+Species 24 -- Size: 3 | Total: 6.51 | Avg: 2.17 | Max: 2.91 | Min: 1.59 | Champion ID: 7881 | Champion Error Sum: 1.04
+Species 26 -- Size: 2 | Total: 8.64 | Avg: 4.32 | Max: 4.34 | Min: 4.31 | Champion ID: 7882 | Champion Error Sum: 1.05
+
+Champion 7736 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 53 -- Agents: 153 | Species: 10 | Networks Evaluated: 8039
+
+Species 2 -- Size: 21 | Total: 6.08 | Avg: 0.29 | Max: 0.42 | Min: 0.18 | Champion ID: 7888 | Champion Error Sum: 1.04
+Species 3 -- Size: 11 | Total: 8.10 | Avg: 0.74 | Max: 0.80 | Min: 0.47 | Champion ID: 7899 | Champion Error Sum: 1.04
+Species 6 -- Size: 5 | Total: 5.59 | Avg: 1.12 | Max: 1.41 | Min: 0.80 | Champion ID: 7909 | Champion Error Sum: 1.35
+Species 8 -- Size: 4 | Total: 8.51 | Avg: 2.13 | Max: 2.20 | Min: 2.04 | Champion ID: 7918 | Champion Error Sum: 1.04
+Species 17 -- Size: 8 | Total: 6.60 | Avg: 0.83 | Max: 1.08 | Min: 0.53 | Champion ID: 7922 | Champion Error Sum: 1.05
+Species 18 -- Size: 3 | Total: 7.58 | Avg: 2.53 | Max: 2.93 | Min: 1.76 | Champion ID: 7930 | Champion Error Sum: 1.04
+Species 21 -- Size: 8 | Total: 5.53 | Avg: 0.69 | Max: 0.93 | Min: 0.50 | Champion ID: 7933 | Champion Error Sum: 1.28
+Species 22 -- Size: 7 | Total: 6.93 | Avg: 0.99 | Max: 1.25 | Min: 0.57 | Champion ID: 7937 | Champion Error Sum: 1.05
+Species 24 -- Size: 62 | Total: 6.48 | Avg: 0.10 | Max: 0.14 | Min: 0.06 | Champion ID: 7951 | Champion Error Sum: 1.04
+Species 26 -- Size: 24 | Total: 8.05 | Avg: 0.34 | Max: 0.36 | Min: 0.16 | Champion ID: 7981 | Champion Error Sum: 1.05
+
+Champion 7899 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 54 -- Agents: 152 | Species: 10 | Networks Evaluated: 8192
+
+Species 2 -- Size: 9 | Total: 6.65 | Avg: 0.74 | Max: 0.98 | Min: 0.45 | Champion ID: 8042 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 7.29 | Avg: 0.61 | Max: 0.73 | Min: 0.33 | Champion ID: 8046 | Champion Error Sum: 1.04
+Species 6 -- Size: 16 | Total: 5.82 | Avg: 0.36 | Max: 0.45 | Min: 0.24 | Champion ID: 8058 | Champion Error Sum: 1.31
+Species 8 -- Size: 24 | Total: 7.39 | Avg: 0.31 | Max: 0.37 | Min: 0.17 | Champion ID: 8074 | Champion Error Sum: 1.04
+Species 17 -- Size: 13 | Total: 7.61 | Avg: 0.59 | Max: 0.67 | Min: 0.24 | Champion ID: 8108 | Champion Error Sum: 1.05
+Species 18 -- Size: 47 | Total: 7.14 | Avg: 0.15 | Max: 0.19 | Min: 0.06 | Champion ID: 8095 | Champion Error Sum: 1.04
+Species 21 -- Size: 12 | Total: 5.44 | Avg: 0.45 | Max: 0.62 | Min: 0.31 | Champion ID: 8159 | Champion Error Sum: 1.28
+Species 22 -- Size: 12 | Total: 6.64 | Avg: 0.55 | Max: 0.73 | Min: 0.20 | Champion ID: 8170 | Champion Error Sum: 1.05
+Species 24 -- Size: 4 | Total: 5.41 | Avg: 1.35 | Max: 2.18 | Min: 0.98 | Champion ID: 8185 | Champion Error Sum: 1.04
+Species 26 -- Size: 3 | Total: 8.68 | Avg: 2.89 | Max: 2.89 | Min: 2.89 | Champion ID: 8187 | Champion Error Sum: 1.05
+
+Champion 8046 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 55 -- Agents: 150 | Species: 10 | Networks Evaluated: 8343
+
+Species 2 -- Size: 26 | Total: 5.64 | Avg: 0.22 | Max: 0.34 | Min: 0.13 | Champion ID: 8195 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 8.15 | Avg: 0.68 | Max: 0.73 | Min: 0.46 | Champion ID: 8209 | Champion Error Sum: 1.04
+Species 6 -- Size: 4 | Total: 6.27 | Avg: 1.57 | Max: 1.86 | Min: 1.04 | Champion ID: 8222 | Champion Error Sum: 1.28
+Species 8 -- Size: 6 | Total: 7.72 | Avg: 1.29 | Max: 1.46 | Min: 0.71 | Champion ID: 8227 | Champion Error Sum: 1.04
+Species 17 -- Size: 10 | Total: 6.77 | Avg: 0.68 | Max: 0.87 | Min: 0.39 | Champion ID: 8233 | Champion Error Sum: 1.05
+Species 18 -- Size: 3 | Total: 8.76 | Avg: 2.92 | Max: 2.93 | Min: 2.91 | Champion ID: 8246 | Champion Error Sum: 1.04
+Species 21 -- Size: 10 | Total: 6.27 | Avg: 0.63 | Max: 0.77 | Min: 0.40 | Champion ID: 8249 | Champion Error Sum: 1.22
+Species 22 -- Size: 9 | Total: 7.51 | Avg: 0.83 | Max: 0.97 | Min: 0.45 | Champion ID: 8255 | Champion Error Sum: 1.05
+Species 24 -- Size: 59 | Total: 6.11 | Avg: 0.10 | Max: 0.15 | Min: 0.04 | Champion ID: 8265 | Champion Error Sum: 1.04
+Species 26 -- Size: 11 | Total: 8.34 | Avg: 0.76 | Max: 0.79 | Min: 0.66 | Champion ID: 8296 | Champion Error Sum: 1.05
+
+Champion 8209 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 56 -- Agents: 151 | Species: 10 | Networks Evaluated: 8495
+
+Species 2 -- Size: 6 | Total: 6.22 | Avg: 1.04 | Max: 1.46 | Min: 0.73 | Champion ID: 8346 | Champion Error Sum: 1.04
+Species 3 -- Size: 11 | Total: 7.03 | Avg: 0.64 | Max: 0.80 | Min: 0.38 | Champion ID: 8350 | Champion Error Sum: 1.04
+Species 6 -- Size: 11 | Total: 5.94 | Avg: 0.54 | Max: 0.67 | Min: 0.36 | Champion ID: 8360 | Champion Error Sum: 1.28
+Species 8 -- Size: 12 | Total: 7.72 | Avg: 0.64 | Max: 0.73 | Min: 0.33 | Champion ID: 8384 | Champion Error Sum: 1.04
+Species 17 -- Size: 9 | Total: 6.11 | Avg: 0.68 | Max: 0.96 | Min: 0.45 | Champion ID: 8404 | Champion Error Sum: 1.05
+Species 18 -- Size: 53 | Total: 7.04 | Avg: 0.13 | Max: 0.17 | Min: 0.00 | Champion ID: 8418 | Champion Error Sum: 1.04
+Species 21 -- Size: 23 | Total: 5.82 | Avg: 0.25 | Max: 0.35 | Min: 0.17 | Champion ID: 8460 | Champion Error Sum: 1.16
+Species 22 -- Size: 13 | Total: 6.23 | Avg: 0.48 | Max: 0.67 | Min: 0.31 | Champion ID: 8469 | Champion Error Sum: 1.05
+Species 24 -- Size: 8 | Total: 7.25 | Avg: 0.91 | Max: 1.09 | Min: 0.51 | Champion ID: 8482 | Champion Error Sum: 1.04
+Species 26 -- Size: 5 | Total: 8.51 | Avg: 1.70 | Max: 1.74 | Min: 1.57 | Champion ID: 8484 | Champion Error Sum: 1.05
+
+Champion 8350 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 57 -- Agents: 150 | Species: 10 | Networks Evaluated: 8646
+
+Species 2 -- Size: 29 | Total: 5.02 | Avg: 0.17 | Max: 0.30 | Min: 0.14 | Champion ID: 8498 | Champion Error Sum: 1.04
+Species 3 -- Size: 15 | Total: 7.36 | Avg: 0.49 | Max: 0.59 | Min: 0.23 | Champion ID: 8520 | Champion Error Sum: 1.04
+Species 6 -- Size: 7 | Total: 5.86 | Avg: 0.84 | Max: 1.06 | Min: 0.46 | Champion ID: 8534 | Champion Error Sum: 1.28
+Species 8 -- Size: 10 | Total: 7.40 | Avg: 0.74 | Max: 0.88 | Min: 0.50 | Champion ID: 8545 | Champion Error Sum: 1.04
+Species 17 -- Size: 12 | Total: 5.40 | Avg: 0.45 | Max: 0.72 | Min: 0.24 | Champion ID: 8559 | Champion Error Sum: 1.05
+Species 18 -- Size: 7 | Total: 6.82 | Avg: 0.97 | Max: 1.25 | Min: 0.59 | Champion ID: 8550 | Champion Error Sum: 1.04
+Species 21 -- Size: 10 | Total: 5.52 | Avg: 0.55 | Max: 0.82 | Min: 0.37 | Champion ID: 8580 | Champion Error Sum: 1.13
+Species 22 -- Size: 11 | Total: 6.93 | Avg: 0.63 | Max: 0.79 | Min: 0.36 | Champion ID: 8582 | Champion Error Sum: 1.05
+Species 24 -- Size: 38 | Total: 6.83 | Avg: 0.18 | Max: 0.23 | Min: 0.09 | Champion ID: 8592 | Champion Error Sum: 1.04
+Species 26 -- Size: 11 | Total: 8.19 | Avg: 0.74 | Max: 0.79 | Min: 0.36 | Champion ID: 8617 | Champion Error Sum: 1.05
+
+Champion 8520 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 58 -- Agents: 150 | Species: 10 | Networks Evaluated: 8797
+
+Species 2 -- Size: 11 | Total: 5.79 | Avg: 0.53 | Max: 0.80 | Min: 0.36 | Champion ID: 8649 | Champion Error Sum: 1.04
+Species 3 -- Size: 13 | Total: 7.77 | Avg: 0.60 | Max: 0.68 | Min: 0.45 | Champion ID: 8648 | Champion Error Sum: 1.04
+Species 6 -- Size: 14 | Total: 5.06 | Avg: 0.36 | Max: 0.53 | Min: 0.29 | Champion ID: 8666 | Champion Error Sum: 1.28
+Species 8 -- Size: 15 | Total: 5.80 | Avg: 0.39 | Max: 0.59 | Min: 0.00 | Champion ID: 8688 | Champion Error Sum: 1.04
+Species 17 -- Size: 11 | Total: 6.08 | Avg: 0.55 | Max: 0.79 | Min: 0.35 | Champion ID: 8707 | Champion Error Sum: 1.05
+Species 18 -- Size: 30 | Total: 7.09 | Avg: 0.24 | Max: 0.29 | Min: 0.13 | Champion ID: 8719 | Champion Error Sum: 1.04
+Species 21 -- Size: 21 | Total: 5.54 | Avg: 0.26 | Max: 0.40 | Min: 0.18 | Champion ID: 8757 | Champion Error Sum: 1.11
+Species 22 -- Size: 15 | Total: 6.45 | Avg: 0.43 | Max: 0.58 | Min: 0.00 | Champion ID: 8773 | Champion Error Sum: 1.04
+Species 24 -- Size: 12 | Total: 7.27 | Avg: 0.61 | Max: 0.73 | Min: 0.31 | Champion ID: 8774 | Champion Error Sum: 1.04
+Species 26 -- Size: 8 | Total: 7.89 | Avg: 0.99 | Max: 1.08 | Min: 0.48 | Champion ID: 8779 | Champion Error Sum: 1.05
+
+Champion 8648 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 59 -- Agents: 152 | Species: 10 | Networks Evaluated: 8950
+
+Species 2 -- Size: 19 | Total: 5.69 | Avg: 0.30 | Max: 0.46 | Min: 0.17 | Champion ID: 8800 | Champion Error Sum: 1.04
+Species 3 -- Size: 19 | Total: 7.98 | Avg: 0.42 | Max: 0.46 | Min: 0.21 | Champion ID: 8816 | Champion Error Sum: 1.04
+Species 6 -- Size: 5 | Total: 6.30 | Avg: 1.26 | Max: 1.48 | Min: 0.82 | Champion ID: 8834 | Champion Error Sum: 1.28
+Species 8 -- Size: 8 | Total: 6.41 | Avg: 0.80 | Max: 1.10 | Min: 0.26 | Champion ID: 8845 | Champion Error Sum: 1.04
+Species 17 -- Size: 16 | Total: 6.51 | Avg: 0.41 | Max: 0.54 | Min: 0.09 | Champion ID: 8860 | Champion Error Sum: 1.05
+Species 18 -- Size: 11 | Total: 7.33 | Avg: 0.67 | Max: 0.80 | Min: 0.28 | Champion ID: 8875 | Champion Error Sum: 1.04
+Species 21 -- Size: 14 | Total: 4.94 | Avg: 0.35 | Max: 0.60 | Min: 0.27 | Champion ID: 8882 | Champion Error Sum: 1.11
+Species 22 -- Size: 12 | Total: 5.74 | Avg: 0.48 | Max: 0.73 | Min: 0.22 | Champion ID: 8889 | Champion Error Sum: 1.04
+Species 24 -- Size: 36 | Total: 6.52 | Avg: 0.18 | Max: 0.24 | Min: 0.10 | Champion ID: 8902 | Champion Error Sum: 1.04
+Species 26 -- Size: 12 | Total: 8.19 | Avg: 0.68 | Max: 0.72 | Min: 0.47 | Champion ID: 8930 | Champion Error Sum: 1.05
+
+Champion 8816 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 60 -- Agents: 151 | Species: 10 | Networks Evaluated: 9102
+
+Species 2 -- Size: 13 | Total: 5.80 | Avg: 0.45 | Max: 0.68 | Min: 0.28 | Champion ID: 8953 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 7.62 | Avg: 0.64 | Max: 0.73 | Min: 0.34 | Champion ID: 8961 | Champion Error Sum: 1.04
+Species 6 -- Size: 20 | Total: 6.24 | Avg: 0.31 | Max: 0.38 | Min: 0.20 | Champion ID: 8977 | Champion Error Sum: 1.23
+Species 8 -- Size: 19 | Total: 8.07 | Avg: 0.42 | Max: 0.46 | Min: 0.27 | Champion ID: 9006 | Champion Error Sum: 1.04
+Species 17 -- Size: 9 | Total: 5.37 | Avg: 0.60 | Max: 0.97 | Min: 0.44 | Champion ID: 9028 | Champion Error Sum: 1.05
+Species 18 -- Size: 21 | Total: 6.95 | Avg: 0.33 | Max: 0.42 | Min: 0.19 | Champion ID: 9039 | Champion Error Sum: 1.04
+Species 21 -- Size: 23 | Total: 4.77 | Avg: 0.21 | Max: 0.36 | Min: 0.17 | Champion ID: 9057 | Champion Error Sum: 1.11
+Species 22 -- Size: 14 | Total: 6.78 | Avg: 0.48 | Max: 0.62 | Min: 0.29 | Champion ID: 9069 | Champion Error Sum: 1.04
+Species 24 -- Size: 15 | Total: 5.59 | Avg: 0.37 | Max: 0.58 | Min: 0.27 | Champion ID: 9079 | Champion Error Sum: 1.04
+Species 26 -- Size: 5 | Total: 8.15 | Avg: 1.63 | Max: 1.74 | Min: 1.33 | Champion ID: 9084 | Champion Error Sum: 1.05
+
+Champion 8961 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 61 -- Agents: 151 | Species: 10 | Networks Evaluated: 9254
+
+Species 2 -- Size: 17 | Total: 7.63 | Avg: 0.45 | Max: 0.52 | Min: 0.23 | Champion ID: 9105 | Champion Error Sum: 1.04
+Species 3 -- Size: 17 | Total: 7.35 | Avg: 0.43 | Max: 0.52 | Min: 0.24 | Champion ID: 9118 | Champion Error Sum: 1.04
+Species 6 -- Size: 9 | Total: 5.54 | Avg: 0.62 | Max: 0.87 | Min: 0.44 | Champion ID: 9139 | Champion Error Sum: 1.21
+Species 8 -- Size: 11 | Total: 8.22 | Avg: 0.75 | Max: 0.80 | Min: 0.59 | Champion ID: 9144 | Champion Error Sum: 1.04
+Species 17 -- Size: 14 | Total: 6.59 | Avg: 0.47 | Max: 0.62 | Min: 0.29 | Champion ID: 9156 | Champion Error Sum: 1.05
+Species 18 -- Size: 11 | Total: 7.38 | Avg: 0.67 | Max: 0.80 | Min: 0.36 | Champion ID: 9172 | Champion Error Sum: 1.04
+Species 21 -- Size: 6 | Total: 5.10 | Avg: 0.85 | Max: 1.39 | Min: 0.64 | Champion ID: 9181 | Champion Error Sum: 1.11
+Species 22 -- Size: 13 | Total: 7.25 | Avg: 0.56 | Max: 0.67 | Min: 0.10 | Champion ID: 9188 | Champion Error Sum: 1.04
+Species 24 -- Size: 34 | Total: 6.28 | Avg: 0.18 | Max: 0.26 | Min: 0.04 | Champion ID: 9200 | Champion Error Sum: 1.04
+Species 26 -- Size: 19 | Total: 8.33 | Avg: 0.44 | Max: 0.46 | Min: 0.32 | Champion ID: 9210 | Champion Error Sum: 1.05
+
+Champion 9118 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 62 -- Agents: 153 | Species: 10 | Networks Evaluated: 9408
+
+Species 2 -- Size: 16 | Total: 5.97 | Avg: 0.37 | Max: 0.55 | Min: 0.09 | Champion ID: 9257 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 8.35 | Avg: 0.70 | Max: 0.73 | Min: 0.57 | Champion ID: 9256 | Champion Error Sum: 1.04
+Species 6 -- Size: 12 | Total: 6.23 | Avg: 0.52 | Max: 0.65 | Min: 0.33 | Champion ID: 9282 | Champion Error Sum: 1.21
+Species 8 -- Size: 14 | Total: 7.78 | Avg: 0.56 | Max: 0.63 | Min: 0.29 | Champion ID: 9299 | Champion Error Sum: 1.04
+Species 17 -- Size: 9 | Total: 5.35 | Avg: 0.59 | Max: 0.97 | Min: 0.19 | Champion ID: 9320 | Champion Error Sum: 1.05
+Species 18 -- Size: 27 | Total: 7.01 | Avg: 0.26 | Max: 0.33 | Min: 0.13 | Champion ID: 9333 | Champion Error Sum: 1.04
+Species 21 -- Size: 28 | Total: 4.37 | Avg: 0.16 | Max: 0.30 | Min: 0.12 | Champion ID: 9352 | Champion Error Sum: 1.11
+Species 22 -- Size: 19 | Total: 6.21 | Avg: 0.33 | Max: 0.46 | Min: 0.10 | Champion ID: 9375 | Champion Error Sum: 1.04
+Species 24 -- Size: 14 | Total: 6.13 | Avg: 0.44 | Max: 0.62 | Min: 0.28 | Champion ID: 9391 | Champion Error Sum: 1.04
+Species 26 -- Size: 2 | Total: 8.53 | Avg: 4.26 | Max: 4.34 | Min: 4.19 | Champion ID: 9396 | Champion Error Sum: 1.05
+
+Champion 9256 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 63 -- Agents: 152 | Species: 10 | Networks Evaluated: 9561
+
+Species 2 -- Size: 20 | Total: 7.02 | Avg: 0.35 | Max: 0.44 | Min: 0.20 | Champion ID: 9411 | Champion Error Sum: 1.04
+Species 3 -- Size: 13 | Total: 7.14 | Avg: 0.55 | Max: 0.68 | Min: 0.30 | Champion ID: 9418 | Champion Error Sum: 1.04
+Species 6 -- Size: 4 | Total: 6.18 | Avg: 1.54 | Max: 1.95 | Min: 1.04 | Champion ID: 9431 | Champion Error Sum: 1.21
+Species 8 -- Size: 10 | Total: 7.56 | Avg: 0.76 | Max: 0.88 | Min: 0.40 | Champion ID: 9441 | Champion Error Sum: 1.04
+Species 17 -- Size: 11 | Total: 6.76 | Avg: 0.61 | Max: 0.79 | Min: 0.27 | Champion ID: 9451 | Champion Error Sum: 1.05
+Species 18 -- Size: 6 | Total: 6.71 | Avg: 1.12 | Max: 1.46 | Min: 0.67 | Champion ID: 9462 | Champion Error Sum: 1.04
+Species 21 -- Size: 9 | Total: 5.16 | Avg: 0.57 | Max: 0.93 | Min: 0.41 | Champion ID: 9467 | Champion Error Sum: 1.11
+Species 22 -- Size: 5 | Total: 6.51 | Avg: 1.30 | Max: 1.75 | Min: 0.81 | Champion ID: 9470 | Champion Error Sum: 1.04
+Species 24 -- Size: 46 | Total: 6.30 | Avg: 0.14 | Max: 0.19 | Min: 0.08 | Champion ID: 9476 | Champion Error Sum: 1.04
+Species 26 -- Size: 28 | Total: 8.24 | Avg: 0.29 | Max: 0.31 | Min: 0.15 | Champion ID: 9489 | Champion Error Sum: 1.05
+
+Champion 9418 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 64 -- Agents: 152 | Species: 10 | Networks Evaluated: 9714
+
+Species 2 -- Size: 12 | Total: 6.02 | Avg: 0.50 | Max: 0.73 | Min: 0.31 | Champion ID: 9564 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 7.34 | Avg: 0.61 | Max: 0.73 | Min: 0.33 | Champion ID: 9563 | Champion Error Sum: 1.04
+Species 6 -- Size: 22 | Total: 5.59 | Avg: 0.25 | Max: 0.35 | Min: 0.16 | Champion ID: 9582 | Champion Error Sum: 1.21
+Species 8 -- Size: 15 | Total: 6.90 | Avg: 0.46 | Max: 0.59 | Min: 0.27 | Champion ID: 9614 | Champion Error Sum: 1.04
+Species 17 -- Size: 12 | Total: 6.37 | Avg: 0.53 | Max: 0.72 | Min: 0.32 | Champion ID: 9630 | Champion Error Sum: 1.05
+Species 18 -- Size: 24 | Total: 7.64 | Avg: 0.32 | Max: 0.37 | Min: 0.15 | Champion ID: 9643 | Champion Error Sum: 1.04
+Species 21 -- Size: 21 | Total: 6.04 | Avg: 0.29 | Max: 0.40 | Min: 0.19 | Champion ID: 9666 | Champion Error Sum: 1.11
+Species 22 -- Size: 25 | Total: 6.17 | Avg: 0.25 | Max: 0.35 | Min: 0.06 | Champion ID: 9678 | Champion Error Sum: 1.04
+Species 24 -- Size: 7 | Total: 6.68 | Avg: 0.95 | Max: 1.25 | Min: 0.56 | Champion ID: 9705 | Champion Error Sum: 1.04
+Species 26 -- Size: 2 | Total: 6.87 | Avg: 3.44 | Max: 4.34 | Min: 2.53 | Champion ID: 9708 | Champion Error Sum: 1.05
+
+Champion 9563 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 65 -- Agents: 152 | Species: 10 | Networks Evaluated: 9867
+
+Species 2 -- Size: 19 | Total: 6.37 | Avg: 0.34 | Max: 0.46 | Min: 0.08 | Champion ID: 9717 | Champion Error Sum: 1.04
+Species 3 -- Size: 13 | Total: 7.72 | Avg: 0.59 | Max: 0.68 | Min: 0.31 | Champion ID: 9727 | Champion Error Sum: 1.04
+Species 6 -- Size: 3 | Total: 6.55 | Avg: 2.18 | Max: 2.60 | Min: 1.36 | Champion ID: 9739 | Champion Error Sum: 1.21
+Species 8 -- Size: 6 | Total: 7.94 | Avg: 1.32 | Max: 1.46 | Min: 1.11 | Champion ID: 9745 | Champion Error Sum: 1.04
+Species 17 -- Size: 10 | Total: 6.37 | Avg: 0.64 | Max: 0.87 | Min: 0.39 | Champion ID: 9759 | Champion Error Sum: 1.05
+Species 18 -- Size: 9 | Total: 7.71 | Avg: 0.86 | Max: 0.98 | Min: 0.47 | Champion ID: 9764 | Champion Error Sum: 1.04
+Species 21 -- Size: 8 | Total: 6.25 | Avg: 0.78 | Max: 1.04 | Min: 0.00 | Champion ID: 9770 | Champion Error Sum: 1.11
+Species 22 -- Size: 6 | Total: 6.18 | Avg: 1.03 | Max: 1.46 | Min: 0.67 | Champion ID: 9776 | Champion Error Sum: 1.04
+Species 24 -- Size: 54 | Total: 6.21 | Avg: 0.11 | Max: 0.16 | Min: 0.00 | Champion ID: 9782 | Champion Error Sum: 1.04
+Species 26 -- Size: 24 | Total: 7.90 | Avg: 0.33 | Max: 0.36 | Min: 0.15 | Champion ID: 9816 | Champion Error Sum: 1.05
+
+Champion 9727 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 66 -- Agents: 152 | Species: 10 | Networks Evaluated: 10020
+
+Species 2 -- Size: 8 | Total: 5.87 | Avg: 0.73 | Max: 1.10 | Min: 0.50 | Champion ID: 9870 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 6.98 | Avg: 0.58 | Max: 0.73 | Min: 0.33 | Champion ID: 9877 | Champion Error Sum: 1.04
+Species 6 -- Size: 25 | Total: 5.95 | Avg: 0.24 | Max: 0.32 | Min: 0.15 | Champion ID: 9924 | Champion Error Sum: 1.19
+Species 8 -- Size: 19 | Total: 7.64 | Avg: 0.40 | Max: 0.46 | Min: 0.25 | Champion ID: 9928 | Champion Error Sum: 1.04
+Species 17 -- Size: 10 | Total: 5.96 | Avg: 0.60 | Max: 0.87 | Min: 0.14 | Champion ID: 9952 | Champion Error Sum: 1.05
+Species 18 -- Size: 21 | Total: 6.74 | Avg: 0.32 | Max: 0.42 | Min: 0.18 | Champion ID: 9964 | Champion Error Sum: 1.04
+Species 21 -- Size: 29 | Total: 6.01 | Avg: 0.21 | Max: 0.29 | Min: 0.12 | Champion ID: 9991 | Champion Error Sum: 1.10
+Species 22 -- Size: 20 | Total: 5.72 | Avg: 0.29 | Max: 0.44 | Min: 0.00 | Champion ID: 9994 | Champion Error Sum: 1.04
+Species 24 -- Size: 5 | Total: 7.15 | Avg: 1.43 | Max: 1.75 | Min: 0.78 | Champion ID: 10013 | Champion Error Sum: 1.04
+Species 26 -- Size: 3 | Total: 8.68 | Avg: 2.89 | Max: 2.89 | Min: 2.89 | Champion ID: 10019 | Champion Error Sum: 1.05
+
+Champion 9877 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 67 -- Agents: 151 | Species: 10 | Networks Evaluated: 10172
+
+Species 2 -- Size: 26 | Total: 5.64 | Avg: 0.22 | Max: 0.34 | Min: 0.00 | Champion ID: 10023 | Champion Error Sum: 1.04
+Species 3 -- Size: 11 | Total: 8.24 | Avg: 0.75 | Max: 0.80 | Min: 0.38 | Champion ID: 10022 | Champion Error Sum: 1.04
+Species 6 -- Size: 2 | Total: 7.90 | Avg: 3.95 | Max: 3.96 | Min: 3.94 | Champion ID: 10049 | Champion Error Sum: 1.19
+Species 8 -- Size: 8 | Total: 8.30 | Avg: 1.04 | Max: 1.10 | Min: 0.85 | Champion ID: 10056 | Champion Error Sum: 1.04
+Species 17 -- Size: 12 | Total: 6.03 | Avg: 0.50 | Max: 0.73 | Min: 0.33 | Champion ID: 10069 | Champion Error Sum: 1.05
+Species 18 -- Size: 7 | Total: 7.57 | Avg: 1.08 | Max: 1.25 | Min: 0.41 | Champion ID: 10073 | Champion Error Sum: 1.04
+Species 21 -- Size: 7 | Total: 5.85 | Avg: 0.84 | Max: 1.20 | Min: 0.57 | Champion ID: 10079 | Champion Error Sum: 1.10
+Species 22 -- Size: 5 | Total: 6.30 | Avg: 1.26 | Max: 1.75 | Min: 0.44 | Champion ID: 10083 | Champion Error Sum: 1.04
+Species 24 -- Size: 54 | Total: 6.41 | Avg: 0.12 | Max: 0.16 | Min: 0.05 | Champion ID: 10089 | Champion Error Sum: 1.04
+Species 26 -- Size: 19 | Total: 8.13 | Avg: 0.43 | Max: 0.46 | Min: 0.22 | Champion ID: 10125 | Champion Error Sum: 1.05
+
+Champion 10022 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 68 -- Agents: 151 | Species: 10 | Networks Evaluated: 10324
+
+Species 2 -- Size: 9 | Total: 6.14 | Avg: 0.68 | Max: 0.98 | Min: 0.44 | Champion ID: 10175 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 7.53 | Avg: 0.63 | Max: 0.73 | Min: 0.29 | Champion ID: 10179 | Champion Error Sum: 1.04
+Species 6 -- Size: 34 | Total: 6.27 | Avg: 0.18 | Max: 0.23 | Min: 0.11 | Champion ID: 10192 | Champion Error Sum: 1.19
+Species 8 -- Size: 11 | Total: 7.21 | Avg: 0.66 | Max: 0.80 | Min: 0.37 | Champion ID: 10248 | Champion Error Sum: 1.04
+Species 17 -- Size: 7 | Total: 6.25 | Avg: 0.89 | Max: 1.25 | Min: 0.59 | Champion ID: 10265 | Champion Error Sum: 1.05
+Species 18 -- Size: 20 | Total: 6.78 | Avg: 0.34 | Max: 0.44 | Min: 0.19 | Champion ID: 10272 | Champion Error Sum: 1.04
+Species 21 -- Size: 34 | Total: 5.37 | Avg: 0.16 | Max: 0.25 | Min: 0.06 | Champion ID: 10286 | Champion Error Sum: 1.10
+Species 22 -- Size: 15 | Total: 5.62 | Avg: 0.37 | Max: 0.58 | Min: 0.09 | Champion ID: 10298 | Champion Error Sum: 1.04
+Species 24 -- Size: 6 | Total: 6.95 | Avg: 1.16 | Max: 1.46 | Min: 0.64 | Champion ID: 10316 | Champion Error Sum: 1.04
+Species 26 -- Size: 3 | Total: 8.68 | Avg: 2.89 | Max: 2.89 | Min: 2.89 | Champion ID: 10318 | Champion Error Sum: 1.05
+
+Champion 10179 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 69 -- Agents: 154 | Species: 10 | Networks Evaluated: 10479
+
+Species 2 -- Size: 24 | Total: 6.00 | Avg: 0.25 | Max: 0.37 | Min: 0.17 | Champion ID: 10327 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 7.03 | Avg: 0.59 | Max: 0.73 | Min: 0.33 | Champion ID: 10340 | Champion Error Sum: 1.04
+Species 6 -- Size: 4 | Total: 6.80 | Avg: 1.70 | Max: 1.98 | Min: 0.96 | Champion ID: 10353 | Champion Error Sum: 1.18
+Species 8 -- Size: 12 | Total: 8.00 | Avg: 0.67 | Max: 0.73 | Min: 0.40 | Champion ID: 10363 | Champion Error Sum: 1.04
+Species 17 -- Size: 16 | Total: 7.24 | Avg: 0.45 | Max: 0.55 | Min: 0.25 | Champion ID: 10371 | Champion Error Sum: 1.04
+Species 18 -- Size: 9 | Total: 5.97 | Avg: 0.66 | Max: 0.98 | Min: 0.43 | Champion ID: 10386 | Champion Error Sum: 1.04
+Species 21 -- Size: 4 | Total: 5.34 | Avg: 1.33 | Max: 2.10 | Min: 0.99 | Champion ID: 10393 | Champion Error Sum: 1.10
+Species 22 -- Size: 7 | Total: 5.95 | Avg: 0.85 | Max: 1.25 | Min: 0.57 | Champion ID: 10397 | Champion Error Sum: 1.04
+Species 24 -- Size: 54 | Total: 6.15 | Avg: 0.11 | Max: 0.16 | Min: 0.00 | Champion ID: 10404 | Champion Error Sum: 1.04
+Species 26 -- Size: 12 | Total: 7.70 | Avg: 0.64 | Max: 0.72 | Min: 0.33 | Champion ID: 10457 | Champion Error Sum: 1.05
+
+Champion 10340 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 70 -- Agents: 150 | Species: 10 | Networks Evaluated: 10630
+
+Species 2 -- Size: 12 | Total: 6.58 | Avg: 0.55 | Max: 0.73 | Min: 0.25 | Champion ID: 10482 | Champion Error Sum: 1.04
+Species 3 -- Size: 13 | Total: 7.30 | Avg: 0.56 | Max: 0.68 | Min: 0.31 | Champion ID: 10488 | Champion Error Sum: 1.04
+Species 6 -- Size: 19 | Total: 6.68 | Avg: 0.35 | Max: 0.42 | Min: 0.21 | Champion ID: 10500 | Champion Error Sum: 1.18
+Species 8 -- Size: 10 | Total: 7.78 | Avg: 0.78 | Max: 0.88 | Min: 0.37 | Champion ID: 10535 | Champion Error Sum: 1.04
+Species 17 -- Size: 8 | Total: 6.83 | Avg: 0.85 | Max: 1.09 | Min: 0.50 | Champion ID: 10557 | Champion Error Sum: 1.04
+Species 18 -- Size: 18 | Total: 6.73 | Avg: 0.37 | Max: 0.49 | Min: 0.18 | Champion ID: 10558 | Champion Error Sum: 1.04
+Species 21 -- Size: 40 | Total: 5.52 | Avg: 0.14 | Max: 0.21 | Min: 0.04 | Champion ID: 10572 | Champion Error Sum: 1.10
+Species 22 -- Size: 16 | Total: 6.47 | Avg: 0.40 | Max: 0.55 | Min: 0.25 | Champion ID: 10599 | Champion Error Sum: 1.04
+Species 24 -- Size: 10 | Total: 6.30 | Avg: 0.63 | Max: 0.87 | Min: 0.39 | Champion ID: 10616 | Champion Error Sum: 1.04
+Species 26 -- Size: 4 | Total: 7.10 | Avg: 1.77 | Max: 2.17 | Min: 1.35 | Champion ID: 10618 | Champion Error Sum: 1.05
+
+Champion 10488 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 71 -- Agents: 153 | Species: 10 | Networks Evaluated: 10784
+
+Species 2 -- Size: 21 | Total: 5.83 | Avg: 0.28 | Max: 0.42 | Min: 0.12 | Champion ID: 10633 | Champion Error Sum: 1.04
+Species 3 -- Size: 14 | Total: 7.49 | Avg: 0.54 | Max: 0.63 | Min: 0.28 | Champion ID: 10646 | Champion Error Sum: 1.04
+Species 6 -- Size: 8 | Total: 6.79 | Avg: 0.85 | Max: 0.99 | Min: 0.41 | Champion ID: 10659 | Champion Error Sum: 1.18
+Species 8 -- Size: 12 | Total: 8.28 | Avg: 0.69 | Max: 0.73 | Min: 0.58 | Champion ID: 10668 | Champion Error Sum: 1.04
+Species 17 -- Size: 12 | Total: 7.40 | Avg: 0.62 | Max: 0.73 | Min: 0.33 | Champion ID: 10691 | Champion Error Sum: 1.04
+Species 18 -- Size: 15 | Total: 6.98 | Avg: 0.47 | Max: 0.59 | Min: 0.21 | Champion ID: 10706 | Champion Error Sum: 1.04
+Species 21 -- Size: 5 | Total: 5.33 | Avg: 1.07 | Max: 1.68 | Min: 0.67 | Champion ID: 10715 | Champion Error Sum: 1.10
+Species 22 -- Size: 16 | Total: 6.60 | Avg: 0.41 | Max: 0.55 | Min: 0.24 | Champion ID: 10720 | Champion Error Sum: 1.04
+Species 24 -- Size: 37 | Total: 6.69 | Avg: 0.18 | Max: 0.24 | Min: 0.09 | Champion ID: 10729 | Champion Error Sum: 1.04
+Species 26 -- Size: 13 | Total: 8.59 | Avg: 0.66 | Max: 0.67 | Min: 0.62 | Champion ID: 10744 | Champion Error Sum: 1.05
+
+Champion 10646 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 72 -- Agents: 151 | Species: 10 | Networks Evaluated: 10936
+
+Species 2 -- Size: 16 | Total: 6.12 | Avg: 0.38 | Max: 0.55 | Min: 0.25 | Champion ID: 10787 | Champion Error Sum: 1.04
+Species 3 -- Size: 14 | Total: 7.65 | Avg: 0.55 | Max: 0.63 | Min: 0.29 | Champion ID: 10786 | Champion Error Sum: 1.04
+Species 6 -- Size: 13 | Total: 6.25 | Avg: 0.48 | Max: 0.61 | Min: 0.31 | Champion ID: 10808 | Champion Error Sum: 1.18
+Species 8 -- Size: 11 | Total: 8.07 | Avg: 0.73 | Max: 0.80 | Min: 0.50 | Champion ID: 10838 | Champion Error Sum: 1.04
+Species 17 -- Size: 9 | Total: 6.82 | Avg: 0.76 | Max: 0.97 | Min: 0.39 | Champion ID: 10848 | Champion Error Sum: 1.04
+Species 18 -- Size: 20 | Total: 7.00 | Avg: 0.35 | Max: 0.44 | Min: 0.20 | Champion ID: 10870 | Champion Error Sum: 1.04
+Species 21 -- Size: 36 | Total: 5.35 | Avg: 0.15 | Max: 0.23 | Min: 0.07 | Champion ID: 10876 | Champion Error Sum: 1.10
+Species 22 -- Size: 17 | Total: 6.92 | Avg: 0.41 | Max: 0.52 | Min: 0.24 | Champion ID: 10904 | Champion Error Sum: 1.04
+Species 24 -- Size: 11 | Total: 6.00 | Avg: 0.55 | Max: 0.79 | Min: 0.24 | Champion ID: 10915 | Champion Error Sum: 1.04
+Species 26 -- Size: 4 | Total: 8.41 | Avg: 2.10 | Max: 2.17 | Min: 1.91 | Champion ID: 10925 | Champion Error Sum: 1.05
+
+Champion 10786 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 73 -- Agents: 153 | Species: 10 | Networks Evaluated: 11090
+
+Species 2 -- Size: 17 | Total: 5.41 | Avg: 0.32 | Max: 0.52 | Min: 0.00 | Champion ID: 10939 | Champion Error Sum: 1.04
+Species 3 -- Size: 14 | Total: 7.57 | Avg: 0.54 | Max: 0.63 | Min: 0.30 | Champion ID: 10948 | Champion Error Sum: 1.04
+Species 6 -- Size: 9 | Total: 6.10 | Avg: 0.68 | Max: 0.90 | Min: 0.44 | Champion ID: 10963 | Champion Error Sum: 1.16
+Species 8 -- Size: 12 | Total: 7.62 | Avg: 0.64 | Max: 0.73 | Min: 0.37 | Champion ID: 10972 | Champion Error Sum: 1.04
+Species 17 -- Size: 8 | Total: 7.22 | Avg: 0.90 | Max: 1.09 | Min: 0.39 | Champion ID: 10989 | Champion Error Sum: 1.04
+Species 18 -- Size: 14 | Total: 6.34 | Avg: 0.45 | Max: 0.63 | Min: 0.27 | Champion ID: 11007 | Champion Error Sum: 1.04
+Species 21 -- Size: 6 | Total: 6.41 | Avg: 1.07 | Max: 1.40 | Min: 0.67 | Champion ID: 11015 | Champion Error Sum: 1.10
+Species 22 -- Size: 16 | Total: 6.37 | Avg: 0.40 | Max: 0.55 | Min: 0.25 | Champion ID: 11020 | Champion Error Sum: 1.04
+Species 24 -- Size: 30 | Total: 7.10 | Avg: 0.24 | Max: 0.29 | Min: 0.11 | Champion ID: 11029 | Champion Error Sum: 1.04
+Species 26 -- Size: 27 | Total: 7.83 | Avg: 0.29 | Max: 0.32 | Min: 0.13 | Champion ID: 11042 | Champion Error Sum: 1.05
+
+Champion 10948 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 74 -- Agents: 151 | Species: 10 | Networks Evaluated: 11242
+
+Species 2 -- Size: 15 | Total: 5.55 | Avg: 0.37 | Max: 0.59 | Min: 0.27 | Champion ID: 11093 | Champion Error Sum: 1.04
+Species 3 -- Size: 15 | Total: 7.24 | Avg: 0.48 | Max: 0.59 | Min: 0.29 | Champion ID: 11102 | Champion Error Sum: 1.04
+Species 6 -- Size: 15 | Total: 6.85 | Avg: 0.46 | Max: 0.54 | Min: 0.23 | Champion ID: 11122 | Champion Error Sum: 1.16
+Species 8 -- Size: 13 | Total: 7.37 | Avg: 0.57 | Max: 0.68 | Min: 0.31 | Champion ID: 11135 | Champion Error Sum: 1.04
+Species 17 -- Size: 20 | Total: 6.64 | Avg: 0.33 | Max: 0.44 | Min: 0.08 | Champion ID: 11152 | Champion Error Sum: 1.04
+Species 18 -- Size: 17 | Total: 6.53 | Avg: 0.38 | Max: 0.52 | Min: 0.21 | Champion ID: 11176 | Champion Error Sum: 1.04
+Species 21 -- Size: 27 | Total: 6.46 | Avg: 0.24 | Max: 0.31 | Min: 0.15 | Champion ID: 11190 | Champion Error Sum: 1.10
+Species 22 -- Size: 14 | Total: 6.56 | Avg: 0.47 | Max: 0.63 | Min: 0.28 | Champion ID: 11217 | Champion Error Sum: 1.04
+Species 24 -- Size: 10 | Total: 7.09 | Avg: 0.71 | Max: 0.87 | Min: 0.40 | Champion ID: 11228 | Champion Error Sum: 1.04
+Species 26 -- Size: 5 | Total: 8.61 | Avg: 1.72 | Max: 1.74 | Min: 1.66 | Champion ID: 11235 | Champion Error Sum: 1.05
+
+Champion 11102 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 75 -- Agents: 153 | Species: 10 | Networks Evaluated: 11396
+
+Species 2 -- Size: 15 | Total: 5.49 | Avg: 0.37 | Max: 0.59 | Min: 0.26 | Champion ID: 11245 | Champion Error Sum: 1.04
+Species 3 -- Size: 14 | Total: 8.12 | Avg: 0.58 | Max: 0.63 | Min: 0.29 | Champion ID: 11255 | Champion Error Sum: 1.04
+Species 6 -- Size: 8 | Total: 6.28 | Avg: 0.78 | Max: 1.04 | Min: 0.50 | Champion ID: 11271 | Champion Error Sum: 1.11
+Species 8 -- Size: 10 | Total: 7.92 | Avg: 0.79 | Max: 0.88 | Min: 0.41 | Champion ID: 11280 | Champion Error Sum: 1.04
+Species 17 -- Size: 7 | Total: 6.84 | Avg: 0.98 | Max: 1.25 | Min: 0.39 | Champion ID: 11299 | Champion Error Sum: 1.04
+Species 18 -- Size: 15 | Total: 7.44 | Avg: 0.50 | Max: 0.59 | Min: 0.27 | Champion ID: 11306 | Champion Error Sum: 1.04
+Species 21 -- Size: 9 | Total: 5.38 | Avg: 0.60 | Max: 0.94 | Min: 0.28 | Champion ID: 11315 | Champion Error Sum: 1.09
+Species 22 -- Size: 15 | Total: 5.57 | Avg: 0.37 | Max: 0.58 | Min: 0.26 | Champion ID: 11321 | Champion Error Sum: 1.04
+Species 24 -- Size: 39 | Total: 6.55 | Avg: 0.17 | Max: 0.22 | Min: 0.09 | Champion ID: 11334 | Champion Error Sum: 1.04
+Species 26 -- Size: 21 | Total: 7.92 | Avg: 0.38 | Max: 0.41 | Min: 0.19 | Champion ID: 11387 | Champion Error Sum: 1.05
+
+Champion 11255 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 76 -- Agents: 150 | Species: 10 | Networks Evaluated: 11547
+
+Species 2 -- Size: 18 | Total: 4.84 | Avg: 0.27 | Max: 0.49 | Min: 0.00 | Champion ID: 11399 | Champion Error Sum: 1.04
+Species 3 -- Size: 17 | Total: 8.08 | Avg: 0.48 | Max: 0.52 | Min: 0.30 | Champion ID: 11409 | Champion Error Sum: 1.04
+Species 6 -- Size: 12 | Total: 7.07 | Avg: 0.59 | Max: 0.70 | Min: 0.37 | Champion ID: 11425 | Champion Error Sum: 1.11
+Species 8 -- Size: 10 | Total: 7.31 | Avg: 0.73 | Max: 0.88 | Min: 0.43 | Champion ID: 11446 | Champion Error Sum: 1.04
+Species 17 -- Size: 17 | Total: 7.20 | Avg: 0.42 | Max: 0.52 | Min: 0.22 | Champion ID: 11467 | Champion Error Sum: 1.04
+Species 18 -- Size: 24 | Total: 6.45 | Avg: 0.27 | Max: 0.37 | Min: 0.00 | Champion ID: 11500 | Champion Error Sum: 1.04
+Species 21 -- Size: 22 | Total: 6.21 | Avg: 0.28 | Max: 0.39 | Min: 0.16 | Champion ID: 11506 | Champion Error Sum: 1.09
+Species 22 -- Size: 16 | Total: 6.08 | Avg: 0.38 | Max: 0.55 | Min: 0.23 | Champion ID: 11522 | Champion Error Sum: 1.04
+Species 24 -- Size: 9 | Total: 6.25 | Avg: 0.69 | Max: 0.97 | Min: 0.44 | Champion ID: 11532 | Champion Error Sum: 1.04
+Species 26 -- Size: 5 | Total: 7.78 | Avg: 1.56 | Max: 1.74 | Min: 1.18 | Champion ID: 11537 | Champion Error Sum: 1.05
+
+Champion 11409 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 77 -- Agents: 151 | Species: 10 | Networks Evaluated: 11699
+
+Species 2 -- Size: 15 | Total: 4.92 | Avg: 0.33 | Max: 0.59 | Min: 0.00 | Champion ID: 11550 | Champion Error Sum: 1.04
+Species 3 -- Size: 13 | Total: 5.96 | Avg: 0.46 | Max: 0.68 | Min: 0.31 | Champion ID: 11557 | Champion Error Sum: 1.04
+Species 6 -- Size: 12 | Total: 7.47 | Avg: 0.62 | Max: 0.70 | Min: 0.33 | Champion ID: 11570 | Champion Error Sum: 1.11
+Species 8 -- Size: 8 | Total: 7.49 | Avg: 0.94 | Max: 1.10 | Min: 0.52 | Champion ID: 11586 | Champion Error Sum: 1.04
+Species 17 -- Size: 6 | Total: 6.20 | Avg: 1.03 | Max: 1.46 | Min: 0.67 | Champion ID: 11611 | Champion Error Sum: 1.04
+Species 18 -- Size: 19 | Total: 6.48 | Avg: 0.34 | Max: 0.46 | Min: 0.00 | Champion ID: 11616 | Champion Error Sum: 1.04
+Species 21 -- Size: 11 | Total: 5.73 | Avg: 0.52 | Max: 0.77 | Min: 0.36 | Champion ID: 11624 | Champion Error Sum: 1.09
+Species 22 -- Size: 13 | Total: 7.37 | Avg: 0.57 | Max: 0.67 | Min: 0.31 | Champion ID: 11632 | Champion Error Sum: 1.04
+Species 24 -- Size: 34 | Total: 6.45 | Avg: 0.19 | Max: 0.26 | Min: 0.08 | Champion ID: 11641 | Champion Error Sum: 1.04
+Species 26 -- Size: 20 | Total: 7.73 | Avg: 0.39 | Max: 0.44 | Min: 0.20 | Champion ID: 11664 | Champion Error Sum: 1.05
+
+Champion 11557 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 78 -- Agents: 150 | Species: 10 | Networks Evaluated: 11850
+
+Species 2 -- Size: 14 | Total: 5.87 | Avg: 0.42 | Max: 0.63 | Min: 0.27 | Champion ID: 11702 | Champion Error Sum: 1.04
+Species 3 -- Size: 14 | Total: 6.96 | Avg: 0.50 | Max: 0.63 | Min: 0.29 | Champion ID: 11701 | Champion Error Sum: 1.04
+Species 6 -- Size: 9 | Total: 5.65 | Avg: 0.63 | Max: 0.93 | Min: 0.37 | Champion ID: 11724 | Champion Error Sum: 1.11
+Species 8 -- Size: 20 | Total: 8.11 | Avg: 0.41 | Max: 0.44 | Min: 0.29 | Champion ID: 11741 | Champion Error Sum: 1.04
+Species 17 -- Size: 15 | Total: 6.92 | Avg: 0.46 | Max: 0.58 | Min: 0.11 | Champion ID: 11767 | Champion Error Sum: 1.04
+Species 18 -- Size: 15 | Total: 5.85 | Avg: 0.39 | Max: 0.59 | Min: 0.25 | Champion ID: 11796 | Champion Error Sum: 1.04
+Species 21 -- Size: 22 | Total: 6.20 | Avg: 0.28 | Max: 0.39 | Min: 0.15 | Champion ID: 11806 | Champion Error Sum: 1.09
+Species 22 -- Size: 29 | Total: 7.00 | Avg: 0.24 | Max: 0.30 | Min: 0.13 | Champion ID: 11826 | Champion Error Sum: 1.04
+Species 24 -- Size: 8 | Total: 6.90 | Avg: 0.86 | Max: 1.09 | Min: 0.50 | Champion ID: 11835 | Champion Error Sum: 1.04
+Species 26 -- Size: 4 | Total: 8.70 | Avg: 2.18 | Max: 2.18 | Min: 2.18 | Champion ID: 11840 | Champion Error Sum: 1.05
+
+Champion 11701 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 79 -- Agents: 152 | Species: 10 | Networks Evaluated: 12003
+
+Species 2 -- Size: 18 | Total: 6.37 | Avg: 0.35 | Max: 0.49 | Min: 0.14 | Champion ID: 11853 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 7.93 | Avg: 0.66 | Max: 0.73 | Min: 0.34 | Champion ID: 11852 | Champion Error Sum: 1.04
+Species 6 -- Size: 8 | Total: 6.60 | Avg: 0.82 | Max: 1.04 | Min: 0.44 | Champion ID: 11887 | Champion Error Sum: 1.11
+Species 8 -- Size: 9 | Total: 6.54 | Avg: 0.73 | Max: 0.98 | Min: 0.44 | Champion ID: 11890 | Champion Error Sum: 1.04
+Species 17 -- Size: 10 | Total: 7.07 | Avg: 0.71 | Max: 0.88 | Min: 0.40 | Champion ID: 11899 | Champion Error Sum: 1.04
+Species 18 -- Size: 10 | Total: 7.29 | Avg: 0.73 | Max: 0.88 | Min: 0.40 | Champion ID: 11910 | Champion Error Sum: 1.04
+Species 21 -- Size: 14 | Total: 6.76 | Avg: 0.48 | Max: 0.61 | Min: 0.28 | Champion ID: 11882 | Champion Error Sum: 1.07
+Species 22 -- Size: 7 | Total: 7.65 | Avg: 1.09 | Max: 1.25 | Min: 0.57 | Champion ID: 11926 | Champion Error Sum: 1.04
+Species 24 -- Size: 42 | Total: 6.34 | Avg: 0.15 | Max: 0.21 | Min: 0.07 | Champion ID: 11933 | Champion Error Sum: 1.04
+Species 26 -- Size: 22 | Total: 8.00 | Avg: 0.36 | Max: 0.40 | Min: 0.20 | Champion ID: 11953 | Champion Error Sum: 1.05
+
+Champion 11852 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 80 -- Agents: 152 | Species: 10 | Networks Evaluated: 12156
+
+Species 2 -- Size: 16 | Total: 6.04 | Avg: 0.38 | Max: 0.55 | Min: 0.00 | Champion ID: 12006 | Champion Error Sum: 1.04
+Species 3 -- Size: 16 | Total: 7.50 | Avg: 0.47 | Max: 0.55 | Min: 0.28 | Champion ID: 12015 | Champion Error Sum: 1.04
+Species 6 -- Size: 17 | Total: 6.19 | Avg: 0.36 | Max: 0.49 | Min: 0.20 | Champion ID: 12047 | Champion Error Sum: 1.11
+Species 8 -- Size: 11 | Total: 7.38 | Avg: 0.67 | Max: 0.80 | Min: 0.00 | Champion ID: 12051 | Champion Error Sum: 1.04
+Species 17 -- Size: 11 | Total: 7.52 | Avg: 0.68 | Max: 0.80 | Min: 0.38 | Champion ID: 12074 | Champion Error Sum: 1.04
+Species 18 -- Size: 26 | Total: 6.61 | Avg: 0.25 | Max: 0.34 | Min: 0.00 | Champion ID: 12086 | Champion Error Sum: 1.04
+Species 21 -- Size: 14 | Total: 5.87 | Avg: 0.42 | Max: 0.61 | Min: 0.22 | Champion ID: 12104 | Champion Error Sum: 1.07
+Species 22 -- Size: 29 | Total: 6.57 | Avg: 0.23 | Max: 0.30 | Min: 0.09 | Champion ID: 12116 | Champion Error Sum: 1.04
+Species 24 -- Size: 8 | Total: 5.87 | Avg: 0.73 | Max: 1.09 | Min: 0.49 | Champion ID: 12143 | Champion Error Sum: 1.04
+Species 26 -- Size: 4 | Total: 7.88 | Avg: 1.97 | Max: 2.18 | Min: 1.48 | Champion ID: 12148 | Champion Error Sum: 1.05
+
+Champion 12015 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 81 -- Agents: 151 | Species: 10 | Networks Evaluated: 12308
+
+Species 2 -- Size: 15 | Total: 5.74 | Avg: 0.38 | Max: 0.59 | Min: 0.26 | Champion ID: 12159 | Champion Error Sum: 1.04
+Species 3 -- Size: 12 | Total: 7.13 | Avg: 0.59 | Max: 0.73 | Min: 0.34 | Champion ID: 12168 | Champion Error Sum: 1.04
+Species 6 -- Size: 11 | Total: 6.54 | Avg: 0.59 | Max: 0.76 | Min: 0.40 | Champion ID: 12179 | Champion Error Sum: 1.11
+Species 8 -- Size: 8 | Total: 7.82 | Avg: 0.98 | Max: 1.10 | Min: 0.62 | Champion ID: 12188 | Champion Error Sum: 1.04
+Species 17 -- Size: 11 | Total: 7.17 | Avg: 0.65 | Max: 0.80 | Min: 0.36 | Champion ID: 12204 | Champion Error Sum: 1.04
+Species 18 -- Size: 15 | Total: 6.07 | Avg: 0.40 | Max: 0.59 | Min: 0.00 | Champion ID: 12221 | Champion Error Sum: 1.04
+Species 21 -- Size: 8 | Total: 4.29 | Avg: 0.54 | Max: 1.07 | Min: 0.00 | Champion ID: 12228 | Champion Error Sum: 1.07
+Species 22 -- Size: 10 | Total: 6.34 | Avg: 0.63 | Max: 0.88 | Min: 0.40 | Champion ID: 12238 | Champion Error Sum: 1.04
+Species 24 -- Size: 32 | Total: 6.61 | Avg: 0.21 | Max: 0.27 | Min: 0.12 | Champion ID: 12243 | Champion Error Sum: 1.04
+Species 26 -- Size: 29 | Total: 7.98 | Avg: 0.28 | Max: 0.30 | Min: 0.14 | Champion ID: 12261 | Champion Error Sum: 1.05
+
+Champion 12168 -- Error Sum: 1.04 | Classification Error: 1 | Hidden Nodes: 2 | Connections: 10
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 82 -- Agents: 151 | Species: 10 | Networks Evaluated: 12460
+
+Species 2 -- Size: 16 | Total: 6.07 | Avg: 0.38 | Max: 0.55 | Min: 0.25 | Champion ID: 12311 | Champion Error Sum: 1.04
+Species 3 -- Size: 17 | Total: 8.11 | Avg: 0.48 | Max: 0.52 | Min: 0.28 | Champion ID: 12310 | Champion Error Sum: 1.04
+Species 6 -- Size: 12 | Total: 6.04 | Avg: 0.50 | Max: 0.70 | Min: 0.21 | Champion ID: 12339 | Champion Error Sum: 1.11
+Species 8 -- Size: 20 | Total: 8.54 | Avg: 0.43 | Max: 0.44 | Min: 0.36 | Champion ID: 12356 | Champion Error Sum: 1.04
+Species 17 -- Size: 11 | Total: 7.39 | Avg: 0.67 | Max: 0.80 | Min: 0.29 | Champion ID: 12384 | Champion Error Sum: 1.04
+Species 18 -- Size: 20 | Total: 7.22 | Avg: 0.36 | Max: 0.44 | Min: 0.20 | Champion ID: 12403 | Champion Error Sum: 1.04
+Species 21 -- Size: 19 | Total: 6.17 | Avg: 0.32 | Max: 0.45 | Min: 0.12 | Champion ID: 12414 | Champion Error Sum: 1.07
+Species 22 -- Size: 23 | Total: 6.55 | Avg: 0.28 | Max: 0.39 | Min: 0.15 | Champion ID: 12432 | Champion Error Sum: 1.02
+Species 24 -- Size: 10 | Total: 7.33 | Avg: 0.73 | Max: 0.87 | Min: 0.38 | Champion ID: 12447 | Champion Error Sum: 1.04
+Species 26 -- Size: 3 | Total: 8.52 | Avg: 2.84 | Max: 2.90 | Min: 2.71 | Champion ID: 12453 | Champion Error Sum: 1.05
+
+Champion 12432 -- Error Sum: 1.02 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 18
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 83 -- Agents: 151 | Species: 10 | Networks Evaluated: 12612
+
+Species 2 -- Size: 15 | Total: 5.72 | Avg: 0.38 | Max: 0.59 | Min: 0.22 | Champion ID: 12463 | Champion Error Sum: 1.04
+Species 3 -- Size: 11 | Total: 8.42 | Avg: 0.77 | Max: 0.80 | Min: 0.60 | Champion ID: 12471 | Champion Error Sum: 1.04
+Species 6 -- Size: 11 | Total: 5.83 | Avg: 0.53 | Max: 0.76 | Min: 0.26 | Champion ID: 12482 | Champion Error Sum: 1.11
+Species 8 -- Size: 7 | Total: 7.74 | Avg: 1.11 | Max: 1.25 | Min: 0.78 | Champion ID: 12493 | Champion Error Sum: 1.04
+Species 17 -- Size: 10 | Total: 7.74 | Avg: 0.77 | Max: 0.88 | Min: 0.41 | Champion ID: 12502 | Champion Error Sum: 1.04
+Species 18 -- Size: 10 | Total: 5.76 | Avg: 0.58 | Max: 0.88 | Min: 0.00 | Champion ID: 12517 | Champion Error Sum: 1.04
+Species 21 -- Size: 6 | Total: 5.16 | Avg: 0.86 | Max: 1.43 | Min: 0.28 | Champion ID: 12524 | Champion Error Sum: 1.07
+Species 22 -- Size: 11 | Total: 7.46 | Avg: 0.68 | Max: 0.81 | Min: 0.37 | Champion ID: 12533 | Champion Error Sum: 1.02
+Species 24 -- Size: 44 | Total: 6.59 | Avg: 0.15 | Max: 0.20 | Min: 0.08 | Champion ID: 12537 | Champion Error Sum: 1.04
+Species 26 -- Size: 26 | Total: 8.11 | Avg: 0.31 | Max: 0.33 | Min: 0.15 | Champion ID: 12561 | Champion Error Sum: 1.05
+
+Champion 12533 -- Error Sum: 1.02 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 17
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 84 -- Agents: 153 | Species: 10 | Networks Evaluated: 12766
+
+Species 2 -- Size: 12 | Total: 5.20 | Avg: 0.43 | Max: 0.73 | Min: 0.33 | Champion ID: 12615 | Champion Error Sum: 1.04
+Species 3 -- Size: 18 | Total: 7.60 | Avg: 0.42 | Max: 0.49 | Min: 0.22 | Champion ID: 12625 | Champion Error Sum: 1.04
+Species 6 -- Size: 22 | Total: 6.57 | Avg: 0.30 | Max: 0.39 | Min: 0.11 | Champion ID: 12735 | Champion Error Sum: 1.08
+Species 8 -- Size: 15 | Total: 7.81 | Avg: 0.52 | Max: 0.59 | Min: 0.27 | Champion ID: 12657 | Champion Error Sum: 1.04
+Species 17 -- Size: 11 | Total: 8.44 | Avg: 0.77 | Max: 0.80 | Min: 0.65 | Champion ID: 12688 | Champion Error Sum: 1.03
+Species 18 -- Size: 27 | Total: 6.74 | Avg: 0.25 | Max: 0.33 | Min: 0.00 | Champion ID: 12704 | Champion Error Sum: 1.04
+Species 21 -- Size: 12 | Total: 5.87 | Avg: 0.49 | Max: 0.71 | Min: 0.27 | Champion ID: 12717 | Champion Error Sum: 1.07
+Species 22 -- Size: 23 | Total: 6.36 | Avg: 0.28 | Max: 0.39 | Min: 0.15 | Champion ID: 12743 | Champion Error Sum: 1.01
+Species 24 -- Size: 9 | Total: 6.89 | Avg: 0.77 | Max: 0.97 | Min: 0.17 | Champion ID: 12754 | Champion Error Sum: 1.04
+Species 26 -- Size: 4 | Total: 8.22 | Avg: 2.06 | Max: 2.18 | Min: 1.81 | Champion ID: 12760 | Champion Error Sum: 1.05
+
+Champion 12743 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 18
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 85 -- Agents: 153 | Species: 10 | Networks Evaluated: 12920
+
+Species 2 -- Size: 18 | Total: 5.46 | Avg: 0.30 | Max: 0.49 | Min: 0.21 | Champion ID: 12769 | Champion Error Sum: 1.04
+Species 3 -- Size: 10 | Total: 6.87 | Avg: 0.69 | Max: 0.88 | Min: 0.40 | Champion ID: 12779 | Champion Error Sum: 1.04
+Species 6 -- Size: 10 | Total: 6.31 | Avg: 0.63 | Max: 0.86 | Min: 0.41 | Champion ID: 12838 | Champion Error Sum: 1.06
+Species 8 -- Size: 10 | Total: 8.15 | Avg: 0.82 | Max: 0.88 | Min: 0.48 | Champion ID: 12797 | Champion Error Sum: 1.04
+Species 17 -- Size: 14 | Total: 7.23 | Avg: 0.52 | Max: 0.63 | Min: 0.25 | Champion ID: 12810 | Champion Error Sum: 1.03
+Species 18 -- Size: 10 | Total: 6.60 | Avg: 0.66 | Max: 0.88 | Min: 0.40 | Champion ID: 12828 | Champion Error Sum: 1.04
+Species 21 -- Size: 8 | Total: 6.18 | Avg: 0.77 | Max: 1.07 | Min: 0.41 | Champion ID: 12835 | Champion Error Sum: 1.07
+Species 22 -- Size: 12 | Total: 6.76 | Avg: 0.56 | Max: 0.74 | Min: 0.28 | Champion ID: 12768 | Champion Error Sum: 1.01
+Species 24 -- Size: 43 | Total: 6.82 | Avg: 0.16 | Max: 0.20 | Min: 0.09 | Champion ID: 12854 | Champion Error Sum: 1.04
+Species 26 -- Size: 18 | Total: 8.31 | Avg: 0.46 | Max: 0.48 | Min: 0.35 | Champion ID: 12872 | Champion Error Sum: 1.05
+
+Champion 12768 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 18
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 86 -- Agents: 152 | Species: 10 | Networks Evaluated: 13073
+
+Species 2 -- Size: 12 | Total: 5.48 | Avg: 0.46 | Max: 0.73 | Min: 0.33 | Champion ID: 12923 | Champion Error Sum: 1.04
+Species 3 -- Size: 17 | Total: 7.22 | Avg: 0.42 | Max: 0.52 | Min: 0.23 | Champion ID: 12931 | Champion Error Sum: 1.04
+Species 6 -- Size: 19 | Total: 7.14 | Avg: 0.38 | Max: 0.46 | Min: 0.21 | Champion ID: 13036 | Champion Error Sum: 1.06
+Species 8 -- Size: 16 | Total: 6.73 | Avg: 0.42 | Max: 0.55 | Min: 0.00 | Champion ID: 12966 | Champion Error Sum: 1.04
+Species 17 -- Size: 8 | Total: 7.55 | Avg: 0.94 | Max: 1.10 | Min: 0.52 | Champion ID: 12988 | Champion Error Sum: 1.03
+Species 18 -- Size: 25 | Total: 7.57 | Avg: 0.30 | Max: 0.35 | Min: 0.16 | Champion ID: 13002 | Champion Error Sum: 1.04
+Species 21 -- Size: 18 | Total: 7.36 | Avg: 0.41 | Max: 0.48 | Min: 0.19 | Champion ID: 13025 | Champion Error Sum: 1.07
+Species 22 -- Size: 22 | Total: 6.67 | Avg: 0.30 | Max: 0.41 | Min: 0.14 | Champion ID: 13047 | Champion Error Sum: 1.01
+Species 24 -- Size: 10 | Total: 5.77 | Avg: 0.58 | Max: 0.87 | Min: 0.20 | Champion ID: 13056 | Champion Error Sum: 1.04
+Species 26 -- Size: 5 | Total: 7.78 | Avg: 1.56 | Max: 1.74 | Min: 0.82 | Champion ID: 13061 | Champion Error Sum: 1.05
+
+Champion 13047 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 18
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 87 -- Agents: 151 | Species: 10 | Networks Evaluated: 13225
+
+Species 2 -- Size: 19 | Total: 6.32 | Avg: 0.33 | Max: 0.47 | Min: 0.21 | Champion ID: 13169 | Champion Error Sum: 1.02
+Species 3 -- Size: 11 | Total: 7.98 | Avg: 0.73 | Max: 0.80 | Min: 0.36 | Champion ID: 13088 | Champion Error Sum: 1.04
+Species 6 -- Size: 9 | Total: 7.22 | Avg: 0.80 | Max: 0.96 | Min: 0.46 | Champion ID: 13099 | Champion Error Sum: 1.06
+Species 8 -- Size: 7 | Total: 8.14 | Avg: 1.16 | Max: 1.25 | Min: 0.98 | Champion ID: 13109 | Champion Error Sum: 1.04
+Species 17 -- Size: 20 | Total: 7.33 | Avg: 0.37 | Max: 0.45 | Min: 0.18 | Champion ID: 13141 | Champion Error Sum: 1.01
+Species 18 -- Size: 12 | Total: 7.32 | Avg: 0.61 | Max: 0.73 | Min: 0.34 | Champion ID: 13144 | Champion Error Sum: 1.04
+Species 21 -- Size: 12 | Total: 6.64 | Avg: 0.55 | Max: 0.72 | Min: 0.33 | Champion ID: 13154 | Champion Error Sum: 1.06
+Species 22 -- Size: 11 | Total: 6.64 | Avg: 0.60 | Max: 0.81 | Min: 0.36 | Champion ID: 13163 | Champion Error Sum: 1.01
+Species 24 -- Size: 31 | Total: 6.62 | Avg: 0.21 | Max: 0.28 | Min: 0.10 | Champion ID: 13175 | Champion Error Sum: 1.04
+Species 26 -- Size: 19 | Total: 8.10 | Avg: 0.43 | Max: 0.46 | Min: 0.33 | Champion ID: 13186 | Champion Error Sum: 1.05
+
+Champion 13163 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 18
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 88 -- Agents: 151 | Species: 10 | Networks Evaluated: 13377
+
+Species 2 -- Size: 12 | Total: 6.67 | Avg: 0.56 | Max: 0.74 | Min: 0.32 | Champion ID: 13228 | Champion Error Sum: 1.02
+Species 3 -- Size: 19 | Total: 7.75 | Avg: 0.41 | Max: 0.46 | Min: 0.22 | Champion ID: 13237 | Champion Error Sum: 1.04
+Species 6 -- Size: 20 | Total: 7.12 | Avg: 0.36 | Max: 0.44 | Min: 0.20 | Champion ID: 13259 | Champion Error Sum: 1.05
+Species 8 -- Size: 20 | Total: 7.92 | Avg: 0.40 | Max: 0.44 | Min: 0.27 | Champion ID: 13277 | Champion Error Sum: 1.04
+Species 17 -- Size: 5 | Total: 7.01 | Avg: 1.40 | Max: 1.78 | Min: 0.92 | Champion ID: 13307 | Champion Error Sum: 1.01
+Species 18 -- Size: 26 | Total: 6.55 | Avg: 0.25 | Max: 0.34 | Min: 0.15 | Champion ID: 13316 | Champion Error Sum: 1.04
+Species 21 -- Size: 15 | Total: 6.15 | Avg: 0.41 | Max: 0.58 | Min: 0.14 | Champion ID: 13273 | Champion Error Sum: 1.05
+Species 22 -- Size: 18 | Total: 6.01 | Avg: 0.33 | Max: 0.50 | Min: 0.15 | Champion ID: 13227 | Champion Error Sum: 1.01
+Species 24 -- Size: 10 | Total: 7.42 | Avg: 0.74 | Max: 0.87 | Min: 0.40 | Champion ID: 13362 | Champion Error Sum: 1.04
+Species 26 -- Size: 6 | Total: 8.26 | Avg: 1.38 | Max: 1.45 | Min: 1.30 | Champion ID: 13367 | Champion Error Sum: 1.05
+
+Champion 13227 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 18
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 89 -- Agents: 152 | Species: 11 | Networks Evaluated: 13530
+
+Species 2 -- Size: 19 | Total: 7.18 | Avg: 0.38 | Max: 0.47 | Min: 0.18 | Champion ID: 13380 | Champion Error Sum: 1.02
+Species 3 -- Size: 10 | Total: 7.83 | Avg: 0.78 | Max: 0.88 | Min: 0.40 | Champion ID: 13393 | Champion Error Sum: 1.04
+Species 6 -- Size: 8 | Total: 6.64 | Avg: 0.83 | Max: 1.11 | Min: 0.50 | Champion ID: 13404 | Champion Error Sum: 1.02
+Species 8 -- Size: 8 | Total: 7.82 | Avg: 0.98 | Max: 1.10 | Min: 0.50 | Champion ID: 13412 | Champion Error Sum: 1.04
+Species 17 -- Size: 27 | Total: 7.54 | Avg: 0.28 | Max: 0.33 | Min: 0.15 | Champion ID: 13451 | Champion Error Sum: 1.01
+Species 18 -- Size: 7 | Total: 6.87 | Avg: 0.98 | Max: 1.26 | Min: 0.39 | Champion ID: 13455 | Champion Error Sum: 1.04
+Species 21 -- Size: 11 | Total: 6.16 | Avg: 0.56 | Max: 0.80 | Min: 0.18 | Champion ID: 13467 | Champion Error Sum: 1.03
+Species 22 -- Size: 14 | Total: 7.43 | Avg: 0.53 | Max: 0.64 | Min: 0.27 | Champion ID: 13472 | Champion Error Sum: 1.01
+Species 24 -- Size: 35 | Total: 6.62 | Avg: 0.19 | Max: 0.25 | Min: 0.11 | Champion ID: 13480 | Champion Error Sum: 1.04
+Species 26 -- Size: 12 | Total: 8.21 | Avg: 0.68 | Max: 0.73 | Min: 0.50 | Champion ID: 13498 | Champion Error Sum: 1.05
+Species 27 -- Size: 1 | Total: 8.40 | Avg: 8.40 | Max: 8.40 | Min: 8.40 | Champion ID: 13459 | Champion Error Sum: 1.10
+
+Champion 13472 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 18
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 90 -- Agents: 151 | Species: 10 | Networks Evaluated: 13682
+
+Species 2 -- Size: 20 | Total: 7.26 | Avg: 0.36 | Max: 0.45 | Min: 0.20 | Champion ID: 13587 | Champion Error Sum: 1.01
+Species 3 -- Size: 8 | Total: 7.42 | Avg: 0.93 | Max: 1.10 | Min: 0.50 | Champion ID: 13537 | Champion Error Sum: 1.04
+Species 6 -- Size: 5 | Total: 4.75 | Avg: 0.95 | Max: 1.34 | Min: 0.79 | Champion ID: 13552 | Champion Error Sum: 1.41
+Species 8 -- Size: 8 | Total: 8.49 | Avg: 1.06 | Max: 1.10 | Min: 0.94 | Champion ID: 13556 | Champion Error Sum: 1.04
+Species 17 -- Size: 4 | Total: 8.84 | Avg: 2.21 | Max: 2.24 | Min: 2.15 | Champion ID: 13564 | Champion Error Sum: 1.01
+Species 18 -- Size: 71 | Total: 7.64 | Avg: 0.11 | Max: 0.12 | Min: 0.04 | Champion ID: 13567 | Champion Error Sum: 1.04
+Species 21 -- Size: 5 | Total: 6.86 | Avg: 1.37 | Max: 1.76 | Min: 0.80 | Champion ID: 13578 | Champion Error Sum: 1.03
+Species 22 -- Size: 5 | Total: 7.56 | Avg: 1.51 | Max: 1.79 | Min: 0.40 | Champion ID: 13583 | Champion Error Sum: 1.01
+Species 24 -- Size: 9 | Total: 7.61 | Avg: 0.85 | Max: 0.97 | Min: 0.44 | Champion ID: 13588 | Champion Error Sum: 1.04
+Species 27 -- Size: 16 | Total: 5.21 | Avg: 0.33 | Max: 0.51 | Min: 0.13 | Champion ID: 13636 | Champion Error Sum: 1.14
+
+Champion 13583 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 18
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 91 -- Agents: 150 | Species: 10 | Networks Evaluated: 13833
+
+Species 2 -- Size: 23 | Total: 6.60 | Avg: 0.29 | Max: 0.39 | Min: 0.08 | Champion ID: 13685 | Champion Error Sum: 1.01
+Species 3 -- Size: 14 | Total: 7.38 | Avg: 0.53 | Max: 0.63 | Min: 0.24 | Champion ID: 13691 | Champion Error Sum: 1.04
+Species 6 -- Size: 10 | Total: 6.78 | Avg: 0.68 | Max: 0.88 | Min: 0.45 | Champion ID: 13772 | Champion Error Sum: 1.03
+Species 8 -- Size: 13 | Total: 7.77 | Avg: 0.60 | Max: 0.68 | Min: 0.31 | Champion ID: 13720 | Champion Error Sum: 1.04
+Species 17 -- Size: 29 | Total: 6.91 | Avg: 0.24 | Max: 0.31 | Min: 0.10 | Champion ID: 13736 | Champion Error Sum: 1.01
+Species 18 -- Size: 9 | Total: 6.67 | Avg: 0.74 | Max: 0.98 | Min: 0.26 | Champion ID: 13770 | Champion Error Sum: 1.04
+Species 21 -- Size: 15 | Total: 6.23 | Avg: 0.42 | Max: 0.58 | Min: 0.11 | Champion ID: 13777 | Champion Error Sum: 1.04
+Species 22 -- Size: 23 | Total: 7.24 | Avg: 0.31 | Max: 0.39 | Min: 0.14 | Champion ID: 13793 | Champion Error Sum: 1.01
+Species 24 -- Size: 13 | Total: 7.59 | Avg: 0.58 | Max: 0.67 | Min: 0.29 | Champion ID: 13816 | Champion Error Sum: 1.04
+Species 27 -- Size: 1 | Total: 4.56 | Avg: 4.56 | Max: 4.56 | Min: 4.56 | Champion ID: 13833 | Champion Error Sum: 1.87
+
+Champion 13685 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 19
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 92 -- Agents: 152 | Species: 10 | Networks Evaluated: 13986
+
+Species 2 -- Size: 15 | Total: 5.42 | Avg: 0.36 | Max: 0.60 | Min: 0.00 | Champion ID: 13835 | Champion Error Sum: 1.01
+Species 3 -- Size: 9 | Total: 7.67 | Avg: 0.85 | Max: 0.98 | Min: 0.45 | Champion ID: 13842 | Champion Error Sum: 1.04
+Species 6 -- Size: 2 | Total: 8.73 | Avg: 4.36 | Max: 4.41 | Min: 4.32 | Champion ID: 13851 | Champion Error Sum: 1.03
+Species 8 -- Size: 10 | Total: 7.35 | Avg: 0.74 | Max: 0.88 | Min: 0.40 | Champion ID: 13862 | Champion Error Sum: 1.04
+Species 17 -- Size: 3 | Total: 8.92 | Avg: 2.97 | Max: 2.98 | Min: 2.96 | Champion ID: 13872 | Champion Error Sum: 1.01
+Species 18 -- Size: 25 | Total: 5.75 | Avg: 0.23 | Max: 0.35 | Min: 0.11 | Champion ID: 13876 | Champion Error Sum: 1.04
+Species 21 -- Size: 14 | Total: 6.00 | Avg: 0.43 | Max: 0.63 | Min: 0.12 | Champion ID: 13888 | Champion Error Sum: 1.04
+Species 22 -- Size: 5 | Total: 8.71 | Avg: 1.74 | Max: 1.79 | Min: 1.58 | Champion ID: 13895 | Champion Error Sum: 1.01
+Species 24 -- Size: 10 | Total: 6.82 | Avg: 0.68 | Max: 0.87 | Min: 0.35 | Champion ID: 13901 | Champion Error Sum: 1.04
+Species 27 -- Size: 59 | Total: 4.19 | Avg: 0.07 | Max: 0.13 | Min: 0.02 | Champion ID: 13940 | Champion Error Sum: 1.22
+
+Champion 13836 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 19
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 93 -- Agents: 150 | Species: 10 | Networks Evaluated: 14137
+
+Species 2 -- Size: 10 | Total: 6.36 | Avg: 0.64 | Max: 0.90 | Min: 0.26 | Champion ID: 13991 | Champion Error Sum: 1.01
+Species 3 -- Size: 10 | Total: 8.22 | Avg: 0.82 | Max: 0.88 | Min: 0.52 | Champion ID: 13993 | Champion Error Sum: 1.04
+Species 6 -- Size: 23 | Total: 7.42 | Avg: 0.32 | Max: 0.38 | Min: 0.16 | Champion ID: 14009 | Champion Error Sum: 1.03
+Species 8 -- Size: 7 | Total: 7.50 | Avg: 1.07 | Max: 1.25 | Min: 0.62 | Champion ID: 14055 | Champion Error Sum: 1.04
+Species 17 -- Size: 33 | Total: 7.00 | Avg: 0.21 | Max: 0.27 | Min: 0.04 | Champion ID: 14070 | Champion Error Sum: 1.01
+Species 18 -- Size: 5 | Total: 7.09 | Avg: 1.42 | Max: 1.76 | Min: 0.80 | Champion ID: 14100 | Champion Error Sum: 1.04
+Species 21 -- Size: 32 | Total: 6.22 | Avg: 0.19 | Max: 0.28 | Min: 0.08 | Champion ID: 14054 | Champion Error Sum: 1.03
+Species 22 -- Size: 21 | Total: 6.95 | Avg: 0.33 | Max: 0.43 | Min: 0.13 | Champion ID: 14108 | Champion Error Sum: 1.01
+Species 24 -- Size: 8 | Total: 7.97 | Avg: 1.00 | Max: 1.09 | Min: 0.49 | Champion ID: 14133 | Champion Error Sum: 1.04
+Species 27 -- Size: 1 | Total: 7.72 | Avg: 7.72 | Max: 7.72 | Min: 7.72 | Champion ID: 14137 | Champion Error Sum: 1.22
+
+Champion 13991 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 20
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 94 -- Agents: 151 | Species: 10 | Networks Evaluated: 14289
+
+Species 2 -- Size: 19 | Total: 6.52 | Avg: 0.34 | Max: 0.47 | Min: 0.00 | Champion ID: 14140 | Champion Error Sum: 1.01
+Species 3 -- Size: 9 | Total: 7.75 | Avg: 0.86 | Max: 0.98 | Min: 0.44 | Champion ID: 14147 | Champion Error Sum: 1.04
+Species 6 -- Size: 3 | Total: 7.03 | Avg: 2.34 | Max: 2.94 | Min: 1.46 | Champion ID: 14156 | Champion Error Sum: 1.03
+Species 8 -- Size: 14 | Total: 6.89 | Avg: 0.49 | Max: 0.63 | Min: 0.24 | Champion ID: 14160 | Champion Error Sum: 1.04
+Species 17 -- Size: 2 | Total: 6.37 | Avg: 3.18 | Max: 4.48 | Min: 1.89 | Champion ID: 14172 | Champion Error Sum: 1.01
+Species 18 -- Size: 29 | Total: 6.66 | Avg: 0.23 | Max: 0.30 | Min: 0.09 | Champion ID: 14174 | Champion Error Sum: 1.04
+Species 21 -- Size: 3 | Total: 6.70 | Avg: 2.23 | Max: 2.94 | Min: 1.36 | Champion ID: 14189 | Champion Error Sum: 1.03
+Species 22 -- Size: 4 | Total: 8.64 | Avg: 2.16 | Max: 2.24 | Min: 2.10 | Champion ID: 14191 | Champion Error Sum: 1.01
+Species 24 -- Size: 10 | Total: 6.80 | Avg: 0.68 | Max: 0.87 | Min: 0.39 | Champion ID: 14195 | Champion Error Sum: 1.04
+Species 27 -- Size: 58 | Total: 6.08 | Avg: 0.10 | Max: 0.15 | Min: 0.04 | Champion ID: 14260 | Champion Error Sum: 1.08
+
+Champion 14140 -- Error Sum: 1.01 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 20
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 95 -- Agents: 152 | Species: 10 | Networks Evaluated: 14442
+
+Species 2 -- Size: 15 | Total: 6.73 | Avg: 0.45 | Max: 0.60 | Min: 0.22 | Champion ID: 14292 | Champion Error Sum: 1.01
+Species 3 -- Size: 10 | Total: 7.46 | Avg: 0.75 | Max: 0.88 | Min: 0.40 | Champion ID: 14297 | Champion Error Sum: 1.04
+Species 6 -- Size: 10 | Total: 7.23 | Avg: 0.72 | Max: 0.88 | Min: 0.40 | Champion ID: 14316 | Champion Error Sum: 1.03
+Species 8 -- Size: 7 | Total: 8.08 | Avg: 1.15 | Max: 1.25 | Min: 0.84 | Champion ID: 14335 | Champion Error Sum: 1.04
+Species 17 -- Size: 34 | Total: 6.89 | Avg: 0.20 | Max: 0.26 | Min: 0.05 | Champion ID: 14349 | Champion Error Sum: 1.00
+Species 18 -- Size: 3 | Total: 7.69 | Avg: 2.56 | Max: 2.93 | Min: 1.86 | Champion ID: 14379 | Champion Error Sum: 1.04
+Species 21 -- Size: 41 | Total: 6.73 | Avg: 0.16 | Max: 0.22 | Min: 0.05 | Champion ID: 14387 | Champion Error Sum: 1.02
+Species 22 -- Size: 24 | Total: 6.68 | Avg: 0.28 | Max: 0.37 | Min: 0.16 | Champion ID: 14409 | Champion Error Sum: 1.01
+Species 24 -- Size: 7 | Total: 7.11 | Avg: 1.02 | Max: 1.25 | Min: 0.57 | Champion ID: 14434 | Champion Error Sum: 1.04
+Species 27 -- Size: 1 | Total: 8.53 | Avg: 8.53 | Max: 8.53 | Min: 8.53 | Champion ID: 14442 | Champion Error Sum: 1.08
+
+Champion 14349 -- Error Sum: 1.00 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 15
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 96 -- Agents: 151 | Species: 10 | Networks Evaluated: 14594
+
+Species 2 -- Size: 14 | Total: 6.64 | Avg: 0.47 | Max: 0.64 | Min: 0.13 | Champion ID: 14445 | Champion Error Sum: 1.01
+Species 3 -- Size: 7 | Total: 7.38 | Avg: 1.05 | Max: 1.25 | Min: 0.59 | Champion ID: 14449 | Champion Error Sum: 1.04
+Species 6 -- Size: 2 | Total: 6.41 | Avg: 3.21 | Max: 4.41 | Min: 2.00 | Champion ID: 14456 | Champion Error Sum: 1.03
+Species 8 -- Size: 11 | Total: 7.47 | Avg: 0.68 | Max: 0.80 | Min: 0.37 | Champion ID: 14463 | Champion Error Sum: 1.04
+Species 17 -- Size: 3 | Total: 5.66 | Avg: 1.89 | Max: 3.00 | Min: 1.32 | Champion ID: 14474 | Champion Error Sum: 1.00
+Species 18 -- Size: 34 | Total: 7.02 | Avg: 0.21 | Max: 0.26 | Min: 0.11 | Champion ID: 14482 | Champion Error Sum: 1.04
+Species 21 -- Size: 7 | Total: 6.16 | Avg: 0.88 | Max: 1.27 | Min: 0.35 | Champion ID: 14500 | Champion Error Sum: 1.02
+Species 22 -- Size: 3 | Total: 8.15 | Avg: 2.72 | Max: 2.98 | Min: 2.34 | Champion ID: 14502 | Champion Error Sum: 1.01
+Species 24 -- Size: 10 | Total: 7.02 | Avg: 0.70 | Max: 0.87 | Min: 0.30 | Champion ID: 14505 | Champion Error Sum: 1.04
+Species 27 -- Size: 60 | Total: 6.95 | Avg: 0.12 | Max: 0.14 | Min: 0.02 | Champion ID: 14542 | Champion Error Sum: 1.05
+
+Champion 14474 -- Error Sum: 1.00 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 15
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 97 -- Agents: 150 | Species: 10 | Networks Evaluated: 14745
+
+Species 2 -- Size: 15 | Total: 6.45 | Avg: 0.43 | Max: 0.60 | Min: 0.13 | Champion ID: 14682 | Champion Error Sum: 1.00
+Species 3 -- Size: 13 | Total: 6.26 | Avg: 0.48 | Max: 0.68 | Min: 0.28 | Champion ID: 14603 | Champion Error Sum: 1.04
+Species 6 -- Size: 14 | Total: 7.36 | Avg: 0.53 | Max: 0.63 | Min: 0.29 | Champion ID: 14618 | Champion Error Sum: 1.03
+Species 8 -- Size: 8 | Total: 7.98 | Avg: 1.00 | Max: 1.10 | Min: 0.72 | Champion ID: 14656 | Champion Error Sum: 1.04
+Species 17 -- Size: 24 | Total: 6.20 | Avg: 0.26 | Max: 0.37 | Min: 0.15 | Champion ID: 14670 | Champion Error Sum: 1.00
+Species 18 -- Size: 3 | Total: 8.15 | Avg: 2.72 | Max: 2.93 | Min: 2.54 | Champion ID: 14688 | Champion Error Sum: 1.04
+Species 21 -- Size: 33 | Total: 6.60 | Avg: 0.20 | Max: 0.27 | Min: 0.04 | Champion ID: 14691 | Champion Error Sum: 1.02
+Species 22 -- Size: 30 | Total: 6.24 | Avg: 0.21 | Max: 0.30 | Min: 0.06 | Champion ID: 14718 | Champion Error Sum: 1.01
+Species 24 -- Size: 9 | Total: 7.37 | Avg: 0.82 | Max: 0.97 | Min: 0.44 | Champion ID: 14736 | Champion Error Sum: 1.04
+Species 27 -- Size: 1 | Total: 8.70 | Avg: 8.70 | Max: 8.70 | Min: 8.70 | Champion ID: 14745 | Champion Error Sum: 1.05
+
+Champion 14670 -- Error Sum: 1.00 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 15
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 98 -- Agents: 151 | Species: 10 | Networks Evaluated: 14897
+
+Species 2 -- Size: 16 | Total: 7.13 | Avg: 0.45 | Max: 0.56 | Min: 0.25 | Champion ID: 14748 | Champion Error Sum: 1.00
+Species 3 -- Size: 5 | Total: 7.74 | Avg: 1.55 | Max: 1.76 | Min: 0.93 | Champion ID: 14752 | Champion Error Sum: 1.04
+Species 6 -- Size: 3 | Total: 8.82 | Avg: 2.94 | Max: 2.94 | Min: 2.94 | Champion ID: 14757 | Champion Error Sum: 1.03
+Species 8 -- Size: 9 | Total: 7.77 | Avg: 0.86 | Max: 0.98 | Min: 0.46 | Champion ID: 14762 | Champion Error Sum: 1.04
+Species 17 -- Size: 4 | Total: 8.97 | Avg: 2.24 | Max: 2.25 | Min: 2.23 | Champion ID: 14747 | Champion Error Sum: 1.00
+Species 18 -- Size: 39 | Total: 7.02 | Avg: 0.18 | Max: 0.23 | Min: 0.10 | Champion ID: 14775 | Champion Error Sum: 1.04
+Species 21 -- Size: 4 | Total: 6.95 | Avg: 1.74 | Max: 2.22 | Min: 1.44 | Champion ID: 14801 | Champion Error Sum: 1.02
+Species 22 -- Size: 2 | Total: 7.41 | Avg: 3.71 | Max: 4.48 | Min: 2.94 | Champion ID: 14803 | Champion Error Sum: 1.01
+Species 24 -- Size: 8 | Total: 7.68 | Avg: 0.96 | Max: 1.09 | Min: 0.54 | Champion ID: 14805 | Champion Error Sum: 1.04
+Species 27 -- Size: 61 | Total: 6.65 | Avg: 0.11 | Max: 0.14 | Min: 0.02 | Champion ID: 14867 | Champion Error Sum: 1.05
+
+Champion 14747 -- Error Sum: 1.00 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 15
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 99 -- Agents: 152 | Species: 10 | Networks Evaluated: 15050
+
+Species 2 -- Size: 16 | Total: 6.04 | Avg: 0.38 | Max: 0.56 | Min: 0.00 | Champion ID: 14900 | Champion Error Sum: 1.00
+Species 3 -- Size: 16 | Total: 8.02 | Avg: 0.50 | Max: 0.55 | Min: 0.25 | Champion ID: 14905 | Champion Error Sum: 1.04
+Species 6 -- Size: 12 | Total: 8.05 | Avg: 0.67 | Max: 0.74 | Min: 0.32 | Champion ID: 14922 | Champion Error Sum: 1.03
+Species 8 -- Size: 7 | Total: 7.76 | Avg: 1.11 | Max: 1.25 | Min: 0.60 | Champion ID: 14951 | Champion Error Sum: 1.04
+Species 17 -- Size: 19 | Total: 5.77 | Avg: 0.30 | Max: 0.47 | Min: 0.11 | Champion ID: 14960 | Champion Error Sum: 1.00
+Species 18 -- Size: 4 | Total: 7.65 | Avg: 1.91 | Max: 2.20 | Min: 1.06 | Champion ID: 14983 | Champion Error Sum: 1.04
+Species 21 -- Size: 32 | Total: 6.47 | Avg: 0.20 | Max: 0.28 | Min: 0.13 | Champion ID: 14985 | Champion Error Sum: 1.02
+Species 22 -- Size: 36 | Total: 6.47 | Avg: 0.18 | Max: 0.25 | Min: 0.08 | Champion ID: 14980 | Champion Error Sum: 1.00
+Species 24 -- Size: 9 | Total: 7.77 | Avg: 0.86 | Max: 0.97 | Min: 0.44 | Champion ID: 15040 | Champion Error Sum: 1.04
+Species 27 -- Size: 1 | Total: 8.70 | Avg: 8.70 | Max: 8.70 | Min: 8.70 | Champion ID: 15050 | Champion Error Sum: 1.05
+
+Champion 14960 -- Error Sum: 1.00 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 15
+
+****************************************************************************************************************
+
+******************************************* GENERATION RESULTS **************************************************
+
+Generation 100 -- Agents: 150 | Species: 10 | Networks Evaluated: 15201
+
+Species 2 -- Size: 18 | Total: 7.24 | Avg: 0.40 | Max: 0.50 | Min: 0.12 | Champion ID: 15056 | Champion Error Sum: 1.00
+Species 3 -- Size: 5 | Total: 7.90 | Avg: 1.58 | Max: 1.76 | Min: 0.87 | Champion ID: 15058 | Champion Error Sum: 1.04
+Species 6 -- Size: 3 | Total: 7.25 | Avg: 2.42 | Max: 2.94 | Min: 1.46 | Champion ID: 15062 | Champion Error Sum: 1.03
+Species 8 -- Size: 12 | Total: 7.41 | Avg: 0.62 | Max: 0.73 | Min: 0.32 | Champion ID: 15069 | Champion Error Sum: 1.04
+Species 17 -- Size: 3 | Total: 8.98 | Avg: 2.99 | Max: 3.00 | Min: 2.98 | Champion ID: 15052 | Champion Error Sum: 1.00
+Species 18 -- Size: 41 | Total: 7.60 | Avg: 0.19 | Max: 0.21 | Min: 0.10 | Champion ID: 15083 | Champion Error Sum: 1.04
+Species 21 -- Size: 6 | Total: 6.01 | Avg: 1.00 | Max: 1.48 | Min: 0.28 | Champion ID: 15102 | Champion Error Sum: 1.02
+Species 22 -- Size: 2 | Total: 8.37 | Avg: 4.18 | Max: 4.50 | Min: 3.87 | Champion ID: 15104 | Champion Error Sum: 1.00
+Species 24 -- Size: 8 | Total: 7.27 | Avg: 0.91 | Max: 1.09 | Min: 0.51 | Champion ID: 15106 | Champion Error Sum: 1.04
+Species 27 -- Size: 52 | Total: 6.76 | Avg: 0.13 | Max: 0.17 | Min: 0.02 | Champion ID: 15180 | Champion Error Sum: 1.05
+
+Champion 15052 -- Error Sum: 1.00 | Classification Error: 1 | Hidden Nodes: 4 | Connections: 15
+
+****************************************************************************************************************
+
