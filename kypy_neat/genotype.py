@@ -30,9 +30,9 @@ class Genotype:
     node_mutation_chance = 0.03
     connection_mutation_chance = 0.05
 
-    toggle_chance = 0.05 # chance a genotype's connections will be considered for toggling state
+    toggle_chance = 0.1 # chance a genotype's connections will be considered for toggling state
     toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
-    reenable_chance = 0.1
+    reenable_chance = 0.2
 
     excess_coeff = 1
     disjoint_coeff = 1

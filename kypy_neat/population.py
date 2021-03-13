@@ -56,6 +56,10 @@ class Population:
         self._species.append(new_species)
         return new_species
 
+    def age_species(self):
+        for species in self._species:
+            species.advance()
+
     def get_agent(self, agent_id):
         if agent_id in self._agent_dict:
             return self._agent_dict[agent_id]
@@ -89,10 +93,6 @@ class Population:
             agent.kill()
 
         self.cleanup_agents()
-
-    def age_species(self):
-        for species in self._species:
-            species.advance()
 
     def cull_species(self):
         for species in self._species:
@@ -149,11 +149,12 @@ class Population:
             species.record_results()
 
     def finish_generation(self):
-        self.age_species()
+        # self.record_species_results()
         self.cull_species()
         offspring = self.breed_species()
         self.reset_species()
         self.replace_agents(offspring)
+        self.age_species()
 
     def replace_agents(self, offspring):
         self._agents = offspring
@@ -162,7 +163,8 @@ class Population:
     def remove_extinct_species(self):
         species_copy = self._species[:]
         for species in species_copy:
-            if species.extinct:
+            if not len(species.agents):
+                species.annihilate()
                 self._species.remove(species)
 
     def set_generation_champion(self, champion):
