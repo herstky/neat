@@ -27,8 +27,8 @@ class Genotype:
 
     # Kenneth Stanley states connection mutation chance should significantly exceed node mutation chance
     # He recommends 0.03 and 0.05, respectively, for small populations.
-    node_mutation_chance = 0.03
-    connection_mutation_chance = 0.05
+    node_mutation_chance = 0.05
+    connection_mutation_chance = 0.08
 
     toggle_chance = 0.1 # chance a genotype's connections will be considered for toggling state
     toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
