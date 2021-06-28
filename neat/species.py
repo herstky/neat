@@ -1,8 +1,8 @@
 import random as rand
 
-from kypy_neat.phenotype import Phenotype
-from kypy_neat.agent import Agent
-from kypy_neat.utils.timer import timer
+from neat.phenotype import Phenotype
+from neat.agent import Agent
+from neat.utils.timer import timer
 
 
 class Species:

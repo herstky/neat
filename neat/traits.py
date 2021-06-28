@@ -1,5 +1,5 @@
-from kypy_neat.utils.math import sigmoid
-from kypy_neat.genes import NodeType
+from neat.utils.math import sigmoid
+from neat.genes import NodeType
 
 class Trait:
     def __init__(self, gene):

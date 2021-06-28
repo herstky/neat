@@ -2,11 +2,9 @@ import random as rand
 import math
 import pickle
 
-from multiprocessing import Pool, Array, Value, Queue
-
-from kypy_neat.population import Population
-from kypy_neat.agent import Agent
-from kypy_neat.utils.timer import timer
+from neat.population import Population
+from neat.agent import Agent
+from neat.utils.timer import timer
 
 
 class Experiment:
@@ -51,7 +49,7 @@ class Experiment:
 
 
 class XOR(Experiment):
-    def __init__(self, num_generations=100, population_size=150):
+    def __init__(self, num_generations=50, population_size=150):
         super().__init__(num_generations, population_size)
         self.inputs = [[1, 0, 0],
                        [1, 0, 1],
@@ -163,119 +161,3 @@ class XOR(Experiment):
             self.epoch(self.inputs, self.outputs)
             self.print_generation_results()
             self.population.finish_generation()
-
-
-class SinglePoleProblem(Experiment):
-    def __init__(self, max_steps=100000, num_tests=10, num_generations=7, population_size=150):
-        super().__init__(num_generations, population_size)
-        self._max_steps = max_steps
-        self.num_tests = num_tests
-
-    def evaluate_agent(self, agent):
-        return self.evaluate_agent_helper(agent) / self._max_steps * 100
-        
-    def evaluate_agent_helper(self, agent):
-        one_degree = 2 * math.pi / 360
-        twelve_degrees = 12 * one_degree
-        twenty_four_degrees = 24 * one_degree
-
-        x = rand.uniform(-2.4, 2.4)
-        x_dot = rand.uniform(-1, 1)
-        theta = rand.uniform(-0.2, 0.2)
-        theta_dot = rand.uniform(-1.5, 1.5)
-
-        action = 0
-
-        step = 0
-        while (step < self._max_steps):
-            bias = 1
-            x_n = (x + 2.4) / 4.8
-            x_dot_n = (x_dot + 0.75) / 1.5
-            theta_n = (theta + twelve_degrees) / twenty_four_degrees
-            theta_dot_n = (theta_dot + 1.0) / 2.0
-            inputs = (bias, x_n, x_dot_n, theta_n, theta_dot_n)
-            outputs, error = agent.activate_network(inputs)
-            if error:
-                return step
-
-            out1, out2 = outputs
-            if out1 > out2:
-                action = 0
-            else:
-                action = 1
-            
-            x, x_dot, theta, theta_dot = self.move_cart(action, x, x_dot, theta, theta_dot)
-
-            if (x < -2.4 or x > 2.4 or theta < -twelve_degrees or theta > twelve_degrees):
-                return step
-
-            step += 1
-        
-        return step
-
-    def move_cart(self, action, x, x_dot, theta, theta_dot):
-        gravity = 9.8
-        cart_mass = 1.0
-        pole_mass = 0.1
-        total_mass = cart_mass + pole_mass
-        length = 0.5
-        pole_mass_length = pole_mass * length
-        force_mag = 10.0
-        tau = 0.02
-        cos_theta = math.cos(theta)
-        sin_theta = math.sin(theta)
-
-        force = force_mag if action > 0 else -force_mag
-        
-        temp = (force + pole_mass_length * theta_dot * theta_dot * sin_theta) / total_mass
-        theta_acc = (gravity * sin_theta - cos_theta * temp) / (length * (4 / 3 - pole_mass * cos_theta * cos_theta / total_mass))
-        x_acc = temp - pole_mass_length * theta_acc * cos_theta / total_mass
-
-        x += tau * x_dot
-        x_dot += tau * x_acc
-        theta += tau * theta_dot
-        theta_dot += tau * theta_acc
-
-        return (x, x_dot, theta, theta_dot)
-
-    def process_agent(self, agent):
-        return (agent.agent_id, self.evaluate_agent(agent))
-
-    @timer
-    def epoch(self):
-        with Pool() as pool:
-            output = pool.map(self.process_agent, self.population.agents)
-
-        for agent_id, fitness in output:
-            agent = self.population.get_agent(agent_id)
-            agent.fitness = fitness
-
-        generation_champion = max(self.population.agents, key=lambda agent: agent.fitness)
-        self.population.set_generation_champion(generation_champion)
-        with open('spp_solution.obj', 'wb') as outfile:
-            pickle.dump(generation_champion, outfile)
-
-        
-    def print_generation_results(self):
-        print(f'Generation: {self._current_generation}, '
-              f'Best: {self.population.generation_champion.fitness:.2f}%, '
-              f'Hidden Nodes: {len(self.population.generation_champion.phenotype.hidden_nodes)}, '
-              f'Networks Evaluated: {Agent.agents_created()}')
-
-    def run(self):
-        self.population.initialize_population(5, 2)
-        for generation in range(1, self._num_generations + 1):
-            self._current_generation = generation
-            self.population.prepare_generation()
-            self.epoch()
-            self.print_generation_results()
-            self.population.finish_generation()
-
-    def evaluate_solution(self):
-        with open('spp_solution.obj', 'rb') as infile:
-            agent = pickle.load(infile)
-
-        for i in range(1, self.num_tests + 1):
-            performance = self.evaluate_agent(agent)
-
-            print(f'Test: {i} -- Performance: {performance:.2f}%')

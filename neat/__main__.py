@@ -1,6 +1,4 @@
-# NOTE champions are not getting copied
-
-from kypy_neat.experiments import XOR, SinglePoleProblem
+from neat.experiments import XOR
 
 def evaluate_result(exp):
     agent = exp.load_agent('xor_agents/gen100_id15055')
@@ -16,9 +14,6 @@ def evaluate_result(exp):
 
 def main():
     exp = XOR()
-    # evaluate_result(exp)
-    # exp = SinglePoleProblem()
     exp.run()
-    # exp.evaluate_solution()
 
 main()

@@ -1,10 +1,10 @@
 import time
 
-from kypy_neat.species import Species
-from kypy_neat.genotype import Genotype
-from kypy_neat.phenotype import Phenotype
-from kypy_neat.agent import Agent
-from kypy_neat.utils.timer import timer
+from neat.species import Species
+from neat.genotype import Genotype
+from neat.phenotype import Phenotype
+from neat.agent import Agent
+from neat.utils.timer import timer
 
 
 class Population:

@@ -1,7 +1,7 @@
 from enum import Enum
 
-from kypy_neat.genes import NodeType, NodeGene, ConnectionGene
-from kypy_neat.traits import Node, Connection
+from neat.genes import NodeType, NodeGene, ConnectionGene
+from neat.traits import Node, Connection
 
 class StabilizationMethod(Enum):
     ITERATIVE = 1

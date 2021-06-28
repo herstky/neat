@@ -1,7 +1,4 @@
-import random as rand
-
-from kypy_neat.utils.math import sigmoid
-
+from neat.utils.math import sigmoid
 
 class Agent:
     _agents_created = 0
