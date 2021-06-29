@@ -6,22 +6,22 @@ from neat.phenotype import Phenotype
 class Genotype:
     base_genotype = None
     mutate_starting_topologies = False
-    allow_recurrence = True
+    allow_recurrence = False
     
     starting_weight_variance = 1
-    genotype_mutation_chance = 0.8
-    stable_weight_mutation_chance = 0.9
+    genotype_mutation_chance = 0
+    stable_weight_mutation_chance = 0.7
     stable_weight_cold_mutation_chance = 0.1
     stable_gene_threshold = 0.8 
     unstable_weight_mutation_chance = 0.9
     unstable_weight_cold_mutation_chance = 0.1
     severe_weight_mutation_chance = 0.01
-    weight_mutation_power = 5
+    weight_mutation_power = 2
     severe_weight_mutation_power = 5 
     weight_cap = 8.0
 
     node_mutation_chance = 0.03
-    connection_mutation_chance = 0.1
+    connection_mutation_chance = 0.08
 
     toggle_connection_chance = 0.1 # chance a genotype's connections will be considered for toggling state
     toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
@@ -129,23 +129,23 @@ class Genotype:
     def mutate_weights(self):
         for i, conn in enumerate(self._connection_genes):
             stable = not self._exceeds_stable_genes(i)
-            self._mutate_weight(conn, stable)
+            self._attempt_mutate_weight(conn, stable)
 
-    def _mutate_weight(self, conn, stable):
+    def _attempt_mutate_weight(self, conn, stable=True):
         if stable:
-            self._mutate_stabe_gene(conn)
+            self._attempt_mutate_stable_connection(conn)
         else:
-            self._mutate_unstable_gene(conn)
-        self._cap_connection_weight
+            self._attempt_mutate_unstable_connection(conn)
+        self._cap_connection_weight(conn)
 
     def _exceeds_stable_genes(self, index):
         return index / len(self._connection_genes) < self.stable_gene_threshold
 
-    def _mutate_unstable_gene(self, conn):
+    def _attempt_mutate_unstable_connection(self, conn):
         self._attempt_weight_mutation(conn, self.unstable_weight_mutation_chance)
         self._attempt_cold_weight_mutation(conn, self.unstable_weight_cold_mutation_chance)
 
-    def _mutate_stabe_gene(self, conn):
+    def _attempt_mutate_stable_connection(self, conn):
         self._attempt_weight_mutation(conn, self.stable_weight_mutation_chance)
         self._attempt_cold_weight_mutation(conn, self.stable_weight_cold_mutation_chance)
 
@@ -319,32 +319,27 @@ class Genotype:
 
     def _mutate_connection_states(self):
         for conn in self._connection_genes:
-            if self._event_occurs(Genotype.toggle_mutation_rate):
-                conn.enabled = not conn.enabled
+            self._attempt_toggle_connection(conn)
+
+    def _attempt_toggle_connection(self, conn):
+        if self._event_occurs(Genotype.toggle_mutation_rate):
+            conn.enabled = not conn.enabled
 
     def _inherit_connection_gene(self, gene):  
         connection_gene = gene_factory.create_connection_gene(self, gene.input_node_id, gene.output_node_id, gene.weight, gene.enabled)      
         self.add_connection_gene(connection_gene)
+        self._attempt_reenable_connection(connection_gene)
 
-        if not connection_gene.enabled:
-            connection_gene.enabled = self._event_occurs(Genotype.reenable_connection_chance)
+    def _attempt_reenable_connection(self, conn):
+        if not conn.enabled:
+            conn.enabled = self._event_occurs(Genotype.reenable_connection_chance)
 
     def _add_and_mutate_connection_gene(self, gene):  
         connection_gene = gene_factory.create_connection_gene(self, gene.input_node_id, gene.output_node_id, gene.weight, gene.enabled)      
         self.add_connection_gene(connection_gene)
-
-        if not connection_gene.enabled:
-            connection_gene.enabled = self._event_occurs(Genotype.reenable_connection_chance)
-
-        weight_delta = self._generate_weight_modifier()
-        # FIXME
-        if self._event_occurs(Genotype.genotype_mutation_chance):
-            connection_gene.weight += weight_delta
-        elif self._event_occurs(Genotype._weight_cold_mutation_chance):
-            connection_gene.weight = weight_delta
+        self._attempt_reenable_connection(connection_gene)
+        self._attempt_mutate_weight(connection_gene)
             
-        connection_gene.weight = min(max(connection_gene.weight, -self.weight_cap), self.weight_cap)
-
     def compatibilty(self, other):
         num_disjoint = 0
         num_excess = 0
