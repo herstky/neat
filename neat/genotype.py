@@ -1,36 +1,33 @@
 import random as rand
-import time
 
 from neat.genes import NodeType, gene_factory
 from neat.utils.timer import timer
 from neat.phenotype import Phenotype
 from neat.traits import Connection, Node
 
-
 class Genotype:
     base_genotype = None
     mutate_starting_topologies = False
     allow_recurrence = False
     
-    weight_mutation_chance = 0.8 # chance a genotype's weights will be considered for mutation
-    stable_weight_mutation_chance = 0.9 # chance for each individual weight to be perturbed
-    stable_weight_cold_mutation_chance = 0.1 # chance for each individual weight to be completely replaced
-    stable_gene_threshold = 0.8 # point after which mutations should be more likely  
-    unstable_weight_mutation_chance = 0.9 # chance for each individual end weight to be perturbed
-    unstable_weight_cold_mutation_chance = 0.1 # chance for each individual end weight to be completely replaced
-
-    starting_weight_power = 1
-    weight_mut_power = 5
-    severe_weight_mut_chance = 0.01
-    severe_weight_mut_power = 5 
+    starting_weight_variance = 1
+    genotype_mutation_chance = 0.8
+    stable_weight_mutation_chance = 0.9
+    stable_weight_cold_mutation_chance = 0.1
+    stable_gene_threshold = 0.8 
+    unstable_weight_mutation_chance = 0.9
+    unstable_weight_cold_mutation_chance = 0.1
+    severe_weight_mutation_chance = 0.01
+    weight_mutation_power = 5
+    severe_weight_mutation_power = 5 
     weight_cap = 8.0
 
     node_mutation_chance = 0.03
     connection_mutation_chance = 0.1
 
-    toggle_chance = 0.1 # chance a genotype's connections will be considered for toggling state
+    toggle_connection_chance = 0.1 # chance a genotype's connections will be considered for toggling state
     toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
-    reenable_chance = 0.2
+    reenable_connection_chance = 0.2
 
     excess_coeff = 1
     disjoint_coeff = 1
@@ -65,20 +62,26 @@ class Genotype:
                 self.create_connection_gene(
                     input_node.innovation_id, 
                     output_node.innovation_id, 
-                    self.generate_starting_weight())
+                    self._generate_starting_weight())
     
     @classmethod
-    def generate_starting_weight(cls):
-        return rand.uniform(-1, 1) * cls.starting_weight_power  
+    def _generate_starting_weight(cls):
+        return rand.uniform(-1, 1) * cls.starting_weight_variance  
 
     @classmethod
-    def generate_weight_modifier(cls):
-        if rand.uniform(0, 1) < cls.severe_weight_mut_chance:
-            power = cls.severe_weight_mut_power
+    def _generate_weight_modifier(cls):
+        if rand.uniform(0, 1) < cls.severe_weight_mutation_chance:
+            return cls._generate_severe_weight_modifier()
         else:
-            power = cls.weight_mut_power
+            return cls._generate_normal_weight_modifier()
 
-        return rand.uniform(-1, 1) * power
+    @classmethod
+    def _generate_normal_weight_modifier(cls):
+        return rand.uniform(-1, 1) * cls.weight_mutation_power
+
+    @classmethod
+    def _generate_severe_weight_modifier(cls):
+        return rand.uniform(-1, 1) * cls.severe_weight_mutation_power
 
     def generate_copy(self):
         genotype_copy = Genotype()
@@ -131,7 +134,7 @@ class Genotype:
                 mutation_chance = self.stable_weight_mutation_chance
                 cold_mutation_chance = self.stable_weight_cold_mutation_chance
 
-            weight_delta = self.generate_weight_modifier()
+            weight_delta = self._generate_weight_modifier()
             if rand.uniform(0, 1) < mutation_chance:
                 conn.weight += weight_delta
             if rand.uniform(0, 1) < cold_mutation_chance:
@@ -152,11 +155,11 @@ class Genotype:
 
     def _attempt_weight_mutation(self, conn, chance):
         if rand.uniform(0, 1) < chance:
-            conn.weight += self.generate_weight_modifier()
+            conn.weight += self._generate_weight_modifier()
 
     def _attempt_cold_weight_mutation(self, conn, chance):
         if rand.uniform(0, 1) < chance:
-            conn.weight = self.generate_weight_modifier()
+            conn.weight = self._generate_weight_modifier()
 
     @property
     def node_genes(self):
@@ -195,48 +198,38 @@ class Genotype:
         self.add_connection_gene(connection_gene)
         return connection_gene
 
-    def _recurrency_test(self, input_node_id, output_node_id):
-        if Genotype.allow_recurrence:
-            return True
-
-        test_phenotype = Phenotype(self)
-        input_node = test_phenotype.get_node(input_node_id)
-        output_node = test_phenotype.get_node(output_node_id)
-        connection = Connection(None, input_node, output_node)
-
-        visited = set()
-        stack = [output_node]
-        while len(stack):
-            node = stack.pop()
-            if node not in visited:
-                if node is input_node:
-                    return False
-                visited.add(node)
-                for output_connnection in node.output_connections:
-                    stack.append(output_connnection.output_node)
-        
+    def attempt_node_mutation(self):
+        connection_to_split = self._get_connection_to_split()
+        if connection_to_split is None:
+            return False
+        self._build_node_mutation(connection_to_split)
         return True
 
-    def attempt_node_mutation(self):
+    def _get_connection_to_split(self):
         conn_candidates = []
         for conn in self._connection_genes:
             if not self.node_structure_exists(conn.structure):
                 conn_candidates.append(conn)
-
         if not len(conn_candidates):
-            return False
+            return None
+        else:
+            return rand.choice(conn_candidates)
 
-        selected_conn = rand.choice(conn_candidates)
-        new_node = self._create_node_gene(selected_conn.input_node_id, selected_conn.output_node_id, NodeType.HIDDEN)
-        selected_conn.enabled = False
-        new_input_conn = self.create_connection_gene(selected_conn.input_node_id, new_node.innovation_id, 1)
-        new_output_conn = self.create_connection_gene(new_node.innovation_id, selected_conn.output_node_id, selected_conn.weight)
-        return True
+    def _build_node_mutation(self, connection_to_split):
+        new_node = self._create_hidden_node(
+            connection_to_split.input_node_id, 
+            connection_to_split.output_node_id)
+        connection_to_split.enabled = False
+        self.create_connection_gene(
+            connection_to_split.input_node_id, 
+            new_node.innovation_id,
+            1)
+        self.create_connection_gene(
+            new_node.innovation_id, 
+            connection_to_split.output_node_id, 
+            connection_to_split.weight)
 
     def attempt_connection_mutation(self):
-        # If recurrent connections are allowed, this function may force too 
-        # many early on if connection mutation chance is much greater than
-        # node mutation chance
         structure_candidates = []
         for input_node in self._node_genes:
             for output_node in self._node_genes:
@@ -248,7 +241,9 @@ class Genotype:
                                  and output_node.node_type is NodeType.OUTPUT 
                                  and input_node is not output_node)
                 structure_exists = self.connection_structure_exists(structure)
-                recurrency_check = self._recurrency_test(input_node.innovation_id, output_node.innovation_id)
+                recurrency_check = Genotype.allow_recurrence or not self._is_recurrent(
+                    input_node.innovation_id, 
+                    output_node.innovation_id)
                 if not input_bridge and not output_bridge and not structure_exists and recurrency_check:
                     structure_candidates.append(structure)
 
@@ -257,9 +252,27 @@ class Genotype:
 
         selected_structure = rand.choice(structure_candidates)
         input_node_id, output_node_id = selected_structure
-        weight = self.generate_starting_weight()
+        weight = self._generate_starting_weight()
         self.create_connection_gene(input_node_id, output_node_id, weight)
         return True
+
+    def _is_recurrent(self, input_node_id, output_node_id):
+        test_phenotype = Phenotype(self)
+        input_node = test_phenotype.get_node(input_node_id)
+        output_node = test_phenotype.get_node(output_node_id)
+
+        visited = set()
+        stack = [output_node]
+        while len(stack):
+            node = stack.pop()
+            if node not in visited:
+                if node is input_node:
+                    return True
+                visited.add(node)
+                for output_connnection in node.output_connections:
+                    stack.append(output_connnection.output_node)
+
+        return False
 
     def attempt_topological_mutations(self):
         if rand.uniform(0, 1) < Genotype.node_mutation_chance:
@@ -272,9 +285,9 @@ class Genotype:
             self.attempt_node_mutation()
         if rand.uniform(0, 1) < Genotype.connection_mutation_chance:
             self.attempt_connection_mutation()
-        if rand.uniform(0, 1) < Genotype.weight_mutation_chance:
+        if rand.uniform(0, 1) < Genotype.genotype_mutation_chance:
             self.mutate_weights()
-        if rand.uniform(0, 1) < Genotype.toggle_chance:
+        if rand.uniform(0, 1) < Genotype.toggle_connection_chance:
             self.mutate_connection_states()
 
     def mutate_connection_states(self):
@@ -295,17 +308,17 @@ class Genotype:
         self.add_connection_gene(connection_gene)
 
         if not connection_gene.enabled:
-            connection_gene.enabled = rand.uniform(0, 1) < Genotype.reenable_chance
+            connection_gene.enabled = rand.uniform(0, 1) < Genotype.reenable_connection_chance
 
     def add_and_mutate_connection_gene(self, gene):  
         connection_gene = gene_factory.create_connection_gene(self, gene.input_node_id, gene.output_node_id, gene.weight, gene.enabled)      
         self.add_connection_gene(connection_gene)
 
         if not connection_gene.enabled:
-            connection_gene.enabled = rand.uniform(0, 1) < Genotype.reenable_chance
+            connection_gene.enabled = rand.uniform(0, 1) < Genotype.reenable_connection_chance
 
-        weight_delta = self.generate_weight_modifier()
-        if rand.uniform(0, 1) < Genotype.weight_mutation_chance:
+        weight_delta = self._generate_weight_modifier()
+        if rand.uniform(0, 1) < Genotype.genotype_mutation_chance:
             connection_gene.weight += weight_delta
         elif rand.uniform(0, 1) < Genotype._weight_cold_mutation_chance:
             connection_gene.weight = weight_delta
