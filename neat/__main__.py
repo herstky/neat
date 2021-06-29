@@ -7,7 +7,6 @@ def evaluate_result(exp):
     for _ in range(10):
         shuffled_inputs, shuffled_outputs = exp.shuffle_data(inputs, outputs)
         exp.evaluate_agent(agent, shuffled_inputs, shuffled_outputs)
-        # print(f'Inputs: {shuffled_inputs}, Outputs: {shuffled_outputs}')
         print(f'Classification Error: {agent.classification_error}, '
             f'Actual Error: {agent.error_sum}, '
             f'Fitness: {agent.fitness}')
