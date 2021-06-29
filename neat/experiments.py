@@ -3,6 +3,7 @@ import math
 import pickle
 
 from neat.population import Population
+from neat.genotype import Genotype
 from neat.agent import Agent
 from neat.utils.timer import timer
 
@@ -37,6 +38,10 @@ class Experiment:
     def evaluate_agent(self, agent):
         raise NotImplementedError
 
+    def initialize(self, num_inputs, num_outputs):
+        Genotype.initialize(num_inputs, num_outputs)
+        self.population.initialize()
+
     def save_agent(self, agent, filename):
         with open(filename, 'wb') as outfile:
             pickle.dump(agent, outfile)
@@ -47,7 +52,6 @@ class Experiment:
         
         return agent
 
-
 class XOR(Experiment):
     def __init__(self, num_generations=50, population_size=150):
         super().__init__(num_generations, population_size)
@@ -55,8 +59,8 @@ class XOR(Experiment):
                        [1, 0, 1],
                        [1, 1, 0],
                        [1, 1, 1]]
-        
         self.outputs = [[0], [1], [1], [0]]
+        self.initialize(len(self.inputs[0]), len(self.outputs[0]))
         self._results = {}
 
     def evaluate_agent(self, agent, inputs, outputs):
@@ -154,7 +158,6 @@ class XOR(Experiment):
         print()
 
     def run(self):
-        self.population.initialize_population(len(self.inputs[0]), 1)
         for generation in range(1, self._num_generations + 1):
             self._current_generation = generation
             self.population.prepare_generation()

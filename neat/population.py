@@ -66,8 +66,7 @@ class Population:
         
         return None
 
-    def initialize_population(self, num_inputs, num_outputs):
-        Genotype.initialize_minimal_topology(num_inputs, num_outputs)
+    def initialize(self):
         for _ in range(self._size):
             genotype = Genotype.base_genotype_factory()
             phenotype = Phenotype(genotype)
@@ -102,26 +101,6 @@ class Population:
         for species in self._species:
             species.reset()
 
-    # def breed_species(self):
-    #     aggregate_shared_fitness = self.aggregate_shared_fitness
-    #     offspring = []
-
-    #     champ = self.generation_champion
-    #     for _ in range(self._generation_champion_bonus_offspring):
-    #         offspring.append(Species.generate_offspring(champ))
-
-    #     num_remaining_offspring = self._size - len(offspring)
-    #     for species in self._species:
-    #         species_total_shared_fitness = species.total_shared_fitness
-    #         species_offspring_share = num_remaining_offspring * species_total_shared_fitness / aggregate_shared_fitness
-
-    #         offspring += species.breed(species_offspring_share)
-
-    #     # while len(offspring) < self._size:
-    #     #     offspring.append(champ_species.generate_offspring(champ))
-
-    #     return offspring
-
     def breed_species(self):
         offspring = []
 
@@ -133,9 +112,6 @@ class Population:
         for species in self._species:
             species_offspring_share = num_remaining_offspring * species.total_shared_fitness / self.shared_fitness_sum
             offspring += species.breed(species_offspring_share)
-
-        # while len(offspring) < self._size:
-        #     offspring.append(champ_species.generate_offspring(champ))
 
         return offspring
 
@@ -149,7 +125,6 @@ class Population:
             species.record_results()
 
     def finish_generation(self):
-        # self.record_species_results()
         self.cull_species()
         offspring = self.breed_species()
         self.reset_species()

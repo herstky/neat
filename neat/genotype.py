@@ -43,6 +43,32 @@ class Genotype:
         self._node_structures = set()
         self._connection_genes = []
         self._connection_structures = set()
+    
+    @classmethod
+    def initialize(cls, num_inputs, num_outputs):
+        cls.base_genotype = cls.generate_genotype_with_minimal_topology(num_inputs, num_outputs)
+    
+    @classmethod
+    def generate_genotype_with_minimal_topology(cls, num_inputs, num_outputs):
+        base_genotype = Genotype()
+        input_nodes = []
+        output_nodes = []
+        for _ in range(num_inputs):
+            input_nodes.append(base_genotype.create_node_gene(None, None, NodeType.INPUT))
+
+        for _ in range(num_outputs):
+            output_nodes.append(base_genotype.create_node_gene(None, None, NodeType.OUTPUT))
+
+        for i in range(len(input_nodes)):
+            for j in range(len(output_nodes)):
+                input_node = input_nodes[i]
+                output_node = output_nodes[j]
+                base_genotype.create_connection_gene(
+                    input_node.innovation_id, 
+                    output_node.innovation_id, 
+                    cls.generate_weight_modifier())
+
+        return base_genotype
 
     def generate_copy(self):
         genotype_copy = Genotype()
@@ -59,25 +85,9 @@ class Genotype:
         return genotype_copy
 
     @classmethod
-    def initialize_minimal_topology(cls, num_inputs, num_outputs):
-        cls.base_genotype = Genotype()
-        input_nodes = []
-        output_nodes = []
-        for _ in range(num_inputs):
-            input_nodes.append(cls.base_genotype.create_node_gene(None, None, NodeType.INPUT))
-
-        for _ in range(num_outputs):
-            output_nodes.append(cls.base_genotype.create_node_gene(None, None, NodeType.OUTPUT))
-
-
-        for i in range(len(input_nodes)):
-            for j in range(len(output_nodes)):
-                input_node = input_nodes[i]
-                output_node = output_nodes[j]
-                cls.base_genotype.create_connection_gene(input_node.innovation_id, output_node.innovation_id, cls.generate_weight_modifier())
-
-    @classmethod
     def base_genotype_factory(cls):
+        if cls.base_genotype is None:
+            cls.initialize_base_genotype()
         new_genotype = cls.base_genotype.generate_copy()
         if cls.mutate_starting_topologies:
             new_genotype.attempt_topological_mutations()
@@ -311,7 +321,7 @@ class Genotype:
                 self.disjoint_coeff * num_disjoint / N + 
                 self.weight_coeff * total_weight_diff / num_matching)
 
-    def favored_crossover(self, other):
+    def crossover_genotypes(self, other):
         num_disjoint = 0
         num_excess = 0
         num_matching = 0

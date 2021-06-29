@@ -132,7 +132,7 @@ class Species:
 
     @property
     def max_fitness(self):
-        return ranked_agents()[0].fitness
+        return self.ranked_agents()[0].fitness
 
     @property
     def max_shared_fitness(self):
@@ -189,11 +189,11 @@ class Species:
             genotype = parent1.genotype.copy_and_mutate()
         elif parent1.adjusted_fitness == parent2.adjusted_fitness: # adjusted_fitness must then be equal for both parents
             if rand.uniform(0, 1) > 0.5:
-                genotype = parent1.genotype.favored_crossover(parent2.genotype)
+                genotype = parent1.genotype.crossover_genotypes(parent2.genotype)
             else:
-                genotype = parent2.genotype.favored_crossover(parent1.genotype)
+                genotype = parent2.genotype.crossover_genotypes(parent1.genotype)
         else:
-            genotype = parent1.genotype.favored_crossover(parent2.genotype)
+            genotype = parent1.genotype.crossover_genotypes(parent2.genotype)
 
         phenotype = Phenotype(genotype)
         return Agent(phenotype)
