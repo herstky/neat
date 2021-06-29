@@ -68,7 +68,7 @@ class Population:
 
     def initialize(self):
         for _ in range(self._size):
-            genotype = Genotype.base_genotype_factory()
+            genotype = Genotype.generate_mutated_base_genotype_copy()
             phenotype = Phenotype(genotype)
             agent = Agent(phenotype)
             self._agents.append(agent)
