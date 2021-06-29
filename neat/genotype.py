@@ -4,7 +4,7 @@ import time
 from neat.genes import NodeType, gene_factory
 from neat.utils.timer import timer
 from neat.phenotype import Phenotype
-from neat.traits import Connection
+from neat.traits import Connection, Node
 
 
 class Genotype:
@@ -46,29 +46,37 @@ class Genotype:
     
     @classmethod
     def initialize(cls, num_inputs, num_outputs):
-        cls.base_genotype = cls.generate_genotype_with_minimal_topology(num_inputs, num_outputs)
-    
+        cls.base_genotype = cls._generate_base_genotype(num_inputs, num_outputs)
+
     @classmethod
-    def generate_genotype_with_minimal_topology(cls, num_inputs, num_outputs):
+    def _generate_base_genotype(cls, num_inputs, num_outputs):
         base_genotype = Genotype()
-        input_nodes = []
-        output_nodes = []
-        for _ in range(num_inputs):
-            input_nodes.append(base_genotype.create_node_gene(None, None, NodeType.INPUT))
+        base_genotype._build_minimal_topology(num_inputs, num_outputs)
+        return base_genotype
 
-        for _ in range(num_outputs):
-            output_nodes.append(base_genotype.create_node_gene(None, None, NodeType.OUTPUT))
+    def _build_minimal_topology(self, num_inputs, num_outputs):
+        input_nodes = [self._create_input_node() for _ in range(num_inputs)]
+        output_nodes = [self._create_output_node() for _ in range(num_outputs)]
+        self._build_connections(input_nodes, output_nodes)
 
+    def _build_connections(self, input_nodes, output_nodes):
         for i in range(len(input_nodes)):
             for j in range(len(output_nodes)):
                 input_node = input_nodes[i]
                 output_node = output_nodes[j]
-                base_genotype.create_connection_gene(
+                self.create_connection_gene(
                     input_node.innovation_id, 
                     output_node.innovation_id, 
-                    cls.generate_weight_modifier())
+                    self.generate_weight_modifier())
+    
+    @classmethod
+    def generate_weight_modifier(cls):
+        if rand.uniform(0, 1) < cls.severe_weight_mut_chance:
+            power = cls.severe_weight_mut_power
+        else:
+            power = cls.weight_mut_power
 
-        return base_genotype
+        return rand.uniform(-1, 1) * power
 
     def generate_copy(self):
         genotype_copy = Genotype()
@@ -86,8 +94,6 @@ class Genotype:
 
     @classmethod
     def base_genotype_factory(cls):
-        if cls.base_genotype is None:
-            cls.initialize_base_genotype()
         new_genotype = cls.base_genotype.generate_copy()
         if cls.mutate_starting_topologies:
             new_genotype.attempt_topological_mutations()
@@ -131,15 +137,6 @@ class Genotype:
             
             conn.weight = min(max(conn.weight, -self.weight_cap), self.weight_cap)
 
-    @classmethod
-    def generate_weight_modifier(cls):
-        if rand.uniform(0, 1) < cls.severe_weight_mut_chance:
-            power = cls.severe_weight_mut_power
-        else:
-            power = cls.weight_mut_power
-
-        return rand.uniform(-1, 1) * power
-
     def add_node_gene(self, node_gene):
         idx = 0
         for existing_gene in self._node_genes:
@@ -156,7 +153,16 @@ class Genotype:
         self._connection_genes.insert(idx, connection_gene)
         self._connection_structures.add(connection_gene.structure)
 
-    def create_node_gene(self, input_node_id, output_node_id, node_type):
+    def _create_input_node(self):
+        return self._create_node_gene(None, None, NodeType.INPUT)
+
+    def _create_output_node(self):
+        return self._create_node_gene(None, None, NodeType.OUTPUT)
+
+    def _create_hidden_node(self, input_node_id, output_node_id):
+        return self._create_node_gene(input_node_id, output_node_id, NodeType.HIDDEN)
+
+    def _create_node_gene(self, input_node_id, output_node_id, node_type):
         node_gene = gene_factory.create_node_gene(self, input_node_id, output_node_id, node_type)
         self.add_node_gene(node_gene)
         return node_gene
@@ -198,7 +204,7 @@ class Genotype:
             return False
 
         selected_conn = rand.choice(conn_candidates)
-        new_node = self.create_node_gene(selected_conn.input_node_id, selected_conn.output_node_id, NodeType.HIDDEN)
+        new_node = self._create_node_gene(selected_conn.input_node_id, selected_conn.output_node_id, NodeType.HIDDEN)
         selected_conn.enabled = False
         new_input_conn = self.create_connection_gene(selected_conn.input_node_id, new_node.innovation_id, 1)
         new_output_conn = self.create_connection_gene(new_node.innovation_id, selected_conn.output_node_id, selected_conn.weight)
