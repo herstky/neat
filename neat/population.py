@@ -48,7 +48,7 @@ class Population:
             if species.in_species(agent):
                 return species
         else:
-            return None
+            return RuntimeError('Species not assigned')
 
     def create_species(self, representative):
         new_species = Species(representative)
@@ -73,7 +73,6 @@ class Population:
             agent = Agent(phenotype)
             self._agents.append(agent)
             self._agent_dict[agent.agent_id] = agent
-
 
     def speciate(self):
         for agent in self._agents:

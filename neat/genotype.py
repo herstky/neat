@@ -1,7 +1,8 @@
 import random as rand
 
-from neat.genes import NodeType, gene_factory
+from neat.genes import Gene, NodeType, gene_factory
 from neat.phenotype import Phenotype
+from neat.gene_set_list import GeneSetList
 
 class Genotype:
     base_genotype = None
@@ -9,22 +10,21 @@ class Genotype:
     allow_recurrence = False
     
     starting_weight_variance = 1
-    genotype_mutation_chance = 0
+    genotype_mutation_chance = 0.8
     stable_weight_mutation_chance = 0.7
-    stable_weight_cold_mutation_chance = 0.1
+    stable_weight_cold_mutation_chance = 0.05
     stable_gene_threshold = 0.8 
-    unstable_weight_mutation_chance = 0.9
-    unstable_weight_cold_mutation_chance = 0.1
+    unstable_weight_mutation_chance = 0.7
+    unstable_weight_cold_mutation_chance = 0.05
     severe_weight_mutation_chance = 0.1
-    weight_mutation_power = 3
+    weight_mutation_power = 5
     severe_weight_mutation_power = 5
     weight_cap = 8.0
 
-    node_mutation_chance = 0.03
+    node_mutation_chance = 0.02
     connection_mutation_chance = 0.05
 
-    toggle_connection_chance = 0.1
-    toggle_mutation_rate = 0.1
+    toggle_connection_chance = 0.01
     reenable_connection_chance = 0.2
 
     excess_coeff = 1
@@ -32,10 +32,8 @@ class Genotype:
     weight_coeff = 0.4
     
     def __init__(self):
-        self._node_genes = []
-        self._node_structures = set()
-        self._connection_genes = []
-        self._connection_structures = set()
+        self._node_gene_set_list = GeneSetList()
+        self._connection_gene_set_list = GeneSetList()
     
     @classmethod
     def initialize(cls, num_inputs, num_outputs):
@@ -97,44 +95,34 @@ class Genotype:
         return genotype_copy
 
     def _copy_node_genes_to(self, genotype_copy):
-        for node_gene in self._node_genes:
+        for node_gene in self.node_genes:
             genotype_copy._copy_node_gene(node_gene)
 
+    @property
+    def node_genes(self):
+        return self._node_gene_set_list.genes
+
     def _copy_connection_genes_to(self, genotype_copy):
-        for connection_gene in self._connection_genes:
+        for connection_gene in self.connection_genes:
             genotype_copy._copy_connection_gene(connection_gene)
+
+    @property
+    def connection_genes(self):
+        return self._connection_gene_set_list.genes
 
     def _copy_node_gene(self, node_gene):
         node_gene_copy = gene_factory.copy_node_gene(node_gene)
         self.add_node_gene(node_gene_copy)
 
     def add_node_gene(self, node_gene):
-        index = self._get_index_of_new_node_gene(node_gene)
-        self._node_genes.insert(index, node_gene)
-        self._node_structures.add(node_gene.structure)
-
-    def _get_index_of_new_node_gene(self, node_gene):
-        index = 0
-        for existing_gene in self._node_genes:
-            if node_gene.innovation_id > existing_gene.innovation_id:
-                index += 1
-        return index
+        self._node_gene_set_list.add_gene(node_gene)
 
     def _copy_connection_gene(self, connection_gene):
         connection_gene_copy = gene_factory.copy_connection_gene(connection_gene)
         self.add_connection_gene(connection_gene_copy)
 
     def add_connection_gene(self, connection_gene):
-        index = self._get_index_of_new_connection_gene(connection_gene)
-        self._connection_genes.insert(index, connection_gene)
-        self._connection_structures.add(connection_gene.structure)
-
-    def _get_index_of_new_connection_gene(self, connection_gene):
-        index = 0
-        for existing_gene in self._connection_genes:
-            if connection_gene.innovation_id > existing_gene.innovation_id:
-                index += 1
-        return index
+        self._connection_gene_set_list.add_gene(connection_gene)
 
     @classmethod
     def generate_mutated_base_genotype_copy(cls):
@@ -146,7 +134,7 @@ class Genotype:
         return genotype_copy
 
     def mutate_weights(self):
-        for i, conn in enumerate(self._connection_genes):
+        for i, conn in enumerate(self.connection_genes):
             stable = not self._exceeds_stable_genes(i)
             self._attempt_mutate_weight(conn, stable)
 
@@ -158,7 +146,11 @@ class Genotype:
         self._cap_connection_weight(conn)
 
     def _exceeds_stable_genes(self, index):
-        return index / len(self._connection_genes) < self.stable_gene_threshold
+        return index / self.num_connection_genes < self.stable_gene_threshold
+
+    @property
+    def num_connection_genes(self):
+        return len(self.connection_genes)
 
     def _attempt_mutate_unstable_connection(self, conn):
         self._attempt_weight_mutation(conn, self.unstable_weight_mutation_chance)
@@ -180,19 +172,11 @@ class Genotype:
         conn.weight = min(max(conn.weight, -self.weight_cap), self.weight_cap)
 
     @property
-    def node_genes(self):
-        return self._node_genes
-
-    @property
-    def connection_genes(self):
-        return self._connection_genes
-
-    @property
     def num_enabled_connection_genes(self):
         return len([gene for gene in self.connection_genes if gene.enabled])
 
     def node_structure_exists(self, structure):
-        return structure in self._node_structures
+        return self._node_gene_set_list.contains_structure(structure)
 
     def _create_input_node(self):
         return self._create_node_gene(None, None, NodeType.INPUT)
@@ -210,16 +194,14 @@ class Genotype:
 
     def _attempt_node_mutation(self):
         if not self._event_occurs(Genotype.node_mutation_chance):
-            return False
+            return
         connection_to_split = self._get_connection_to_split()
-        if connection_to_split is None:
-            return False
-        self._build_node_mutation(connection_to_split)
-        return True
+        if connection_to_split:
+            self._build_node_mutation(connection_to_split)
 
     def _get_connection_to_split(self):
         conn_candidates = []
-        for conn in self._connection_genes:
+        for conn in self.connection_genes:
             if not self.node_structure_exists(conn.structure):
                 conn_candidates.append(conn)
         if not len(conn_candidates):
@@ -243,17 +225,15 @@ class Genotype:
 
     def _attempt_connection_mutation(self):
         if not self._event_occurs(Genotype.connection_mutation_chance):
-            return False
+            return
         connection_structure_to_add = self._get_connection_structure_to_add()
-        if connection_structure_to_add is None:
-            return False
-        self._build_connection_mutation(connection_structure_to_add)
-        return True
+        if connection_structure_to_add:
+            self._build_connection_mutation(connection_structure_to_add)
 
     def _get_connection_structure_to_add(self):
         structure_candidates = []
-        for input_node in self._node_genes:
-            for output_node in self._node_genes:
+        for input_node in self.node_genes:
+            for output_node in self.node_genes:
                 if self._connection_mutation_is_valid(input_node, output_node):
                     structure = (input_node.innovation_id, output_node.innovation_id)
                     structure_candidates.append(structure)
@@ -271,7 +251,7 @@ class Genotype:
             self._recurrency_is_valid(input_node.innovation_id, output_node.innovation_id))
     
     def _connection_structure_exists(self, structure):
-        return structure in self._connection_structures
+        return self._connection_gene_set_list.contains_structure(structure)
 
     def _bridges_input_nodes(self, input_node, output_node):
         return (input_node.node_type is NodeType.INPUT 
@@ -317,26 +297,18 @@ class Genotype:
         self._attempt_node_mutation()
         self._attempt_connection_mutation()
         self._attempt_mutate_all_weights()
-        self._attempt_mutate_all_connection_states()
+        self._attempt_mutate_connection_states()
 
     def _attempt_mutate_all_weights(self):
-        if not self._event_occurs(Genotype.genotype_mutation_chance):
-            return False
-        self.mutate_weights()
-        return True
+        if self._event_occurs(Genotype.genotype_mutation_chance):
+            self.mutate_weights()
         
-    def _attempt_mutate_all_connection_states(self):
-        if not self._event_occurs(Genotype.toggle_connection_chance):
-            return False
-        self._mutate_connection_states()
-        return True
-
-    def _mutate_connection_states(self):
-        for conn in self._connection_genes:
+    def _attempt_mutate_connection_states(self):
+        for conn in self.connection_genes:
             self._attempt_toggle_connection(conn)
 
     def _attempt_toggle_connection(self, conn):
-        if self._event_occurs(Genotype.toggle_mutation_rate):
+        if self._event_occurs(Genotype.toggle_connection_chance):
             conn.enabled = not conn.enabled
 
     def _inherit_connection_gene(self, gene):  
@@ -371,7 +343,7 @@ class Genotype:
                 p1 += 1
             else:
                 gene1 = self.connection_genes[p1]
-                gene2 = other._connection_genes[p2]
+                gene2 = other.connection_genes[p2]
                 if gene1.innovation_id == gene2.innovation_id:
                     num_matching += 1
                     total_weight_diff += abs(gene1.weight - gene2.weight)
@@ -384,7 +356,7 @@ class Genotype:
                     num_disjoint += 1
                     p2 += 1
                 else:
-                    raise RuntimeError('Something went wrong')
+                    raise RuntimeError(f'Invalid argument {other}')
             
         N = larger_genotype_size if larger_genotype_size >= 20 else 1
 
@@ -397,7 +369,7 @@ class Genotype:
         num_excess = 0
         num_matching = 0
         offspring_genotype = Genotype()
-        offspring_genotype._node_genes = self.node_genes[:]
+        offspring_genotype._node_gene_set_list = self._generate_node_gene_set_list_copy()
         p1, p2 = 0, 0
         while p1 < len(self.connection_genes) or p2 < len(other.connection_genes):
             if p1 >= len(self.connection_genes):
@@ -414,7 +386,7 @@ class Genotype:
                     num_matching += 1
                     chosen_gene = rand.choice([gene1, gene2])
                     offspring_genotype._inherit_connection_gene(chosen_gene)
-                    offspring_genotype._connection_genes[-1].weight = (gene1.weight + gene2.weight) / 2
+                    offspring_genotype.connection_genes[-1].weight = (gene1.weight + gene2.weight) / 2
                     p1 += 1
                     p2 += 1
                 elif gene1.innovation_id < gene2.innovation_id:
@@ -428,7 +400,10 @@ class Genotype:
         offspring_genotype.attempt_all_mutations()
 
         return offspring_genotype
-                
+
+    def _generate_node_gene_set_list_copy(self):
+        return self._node_gene_set_list.generate_copy()
+
     def copy_and_mutate(self):
         genotype_copy = self.generate_copy()
         genotype_copy.attempt_all_mutations()
