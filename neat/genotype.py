@@ -15,16 +15,16 @@ class Genotype:
     stable_gene_threshold = 0.8 
     unstable_weight_mutation_chance = 0.9
     unstable_weight_cold_mutation_chance = 0.1
-    severe_weight_mutation_chance = 0.01
-    weight_mutation_power = 2
-    severe_weight_mutation_power = 5 
+    severe_weight_mutation_chance = 0.1
+    weight_mutation_power = 3
+    severe_weight_mutation_power = 5
     weight_cap = 8.0
 
     node_mutation_chance = 0.03
-    connection_mutation_chance = 0.08
+    connection_mutation_chance = 0.05
 
-    toggle_connection_chance = 0.1 # chance a genotype's connections will be considered for toggling state
-    toggle_mutation_rate = 0.1  # chace for each individual connection to be toggled
+    toggle_connection_chance = 0.1
+    toggle_mutation_rate = 0.1
     reenable_connection_chance = 0.2
 
     excess_coeff = 1
@@ -62,6 +62,11 @@ class Genotype:
                     output_node.innovation_id, 
                     self._generate_starting_weight())
     
+    def create_connection_gene(self, input_node_id, output_node_id, weight, enabled=True):
+        connection_gene = gene_factory.create_connection_gene(self, input_node_id, output_node_id, weight, enabled)
+        self.add_connection_gene(connection_gene)
+        return connection_gene
+
     @classmethod
     def _generate_starting_weight(cls):
         return rand.uniform(-1, 1) * cls.starting_weight_variance  
@@ -188,11 +193,6 @@ class Genotype:
         node_gene = gene_factory.create_node_gene(self, input_node_id, output_node_id, node_type)
         self.add_node_gene(node_gene)
         return node_gene
-
-    def create_connection_gene(self, input_node_id, output_node_id, weight, enabled=True):
-        connection_gene = gene_factory.create_connection_gene(self, input_node_id, output_node_id, weight, enabled)
-        self.add_connection_gene(connection_gene)
-        return connection_gene
 
     def _attempt_node_mutation(self):
         if not self._event_occurs(Genotype.node_mutation_chance):
