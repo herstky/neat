@@ -92,35 +92,49 @@ class Genotype:
 
     def generate_copy(self):
         genotype_copy = Genotype()
+        self._copy_node_genes_to(genotype_copy)
+        self._copy_connection_genes_to(genotype_copy)                      
+        return genotype_copy
+
+    def _copy_node_genes_to(self, genotype_copy):
         for node_gene in self._node_genes:
             genotype_copy._copy_node_gene(node_gene)
+
+    def _copy_connection_genes_to(self, genotype_copy):
         for connection_gene in self._connection_genes:
-            genotype_copy._copy_connection_gene(connection_gene)                      
-        return genotype_copy
+            genotype_copy._copy_connection_gene(connection_gene)
 
     def _copy_node_gene(self, node_gene):
         node_gene_copy = gene_factory.copy_node_gene(node_gene)
         self.add_node_gene(node_gene_copy)
 
     def add_node_gene(self, node_gene):
-        idx = 0
+        index = self._get_index_of_new_node_gene(node_gene)
+        self._node_genes.insert(index, node_gene)
+        self._node_structures.add(node_gene.structure)
+
+    def _get_index_of_new_node_gene(self, node_gene):
+        index = 0
         for existing_gene in self._node_genes:
             if node_gene.innovation_id > existing_gene.innovation_id:
-                idx += 1
-        self._node_genes.insert(idx, node_gene)
-        self._node_structures.add(node_gene.structure)
+                index += 1
+        return index
 
     def _copy_connection_gene(self, connection_gene):
         connection_gene_copy = gene_factory.copy_connection_gene(connection_gene)
         self.add_connection_gene(connection_gene_copy)
 
     def add_connection_gene(self, connection_gene):
-        idx = 0
+        index = self._get_index_of_new_connection_gene(connection_gene)
+        self._connection_genes.insert(index, connection_gene)
+        self._connection_structures.add(connection_gene.structure)
+
+    def _get_index_of_new_connection_gene(self, connection_gene):
+        index = 0
         for existing_gene in self._connection_genes:
             if connection_gene.innovation_id > existing_gene.innovation_id:
-                idx += 1
-        self._connection_genes.insert(idx, connection_gene)
-        self._connection_structures.add(connection_gene.structure)
+                index += 1
+        return index
 
     @classmethod
     def generate_mutated_base_genotype_copy(cls):
